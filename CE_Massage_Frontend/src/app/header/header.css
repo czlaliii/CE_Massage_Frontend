@@ -1,0 +1,41 @@
+header {
+    background: rgba(249, 246, 242, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 15px rgba(139, 115, 95, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #8b7360;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #7d6f63;
+    font-weight: 300;
+    transition: color 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: #b89f8a;
+}
