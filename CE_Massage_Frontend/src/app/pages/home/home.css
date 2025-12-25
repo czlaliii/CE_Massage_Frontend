@@ -1,0 +1,274 @@
+/* ===== FONT ===== */
+.montserrat-regular {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* ===== INTRO SECTION ===== */
+.intro-section {
+    position: relative;
+    overflow: hidden;
+    min-height: 70vh;
+    color: #faecca;
+}
+
+.intro-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('/images/home/massage01.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 70%;
+    filter: blur(5px);
+    transform: scale(1.05);
+    z-index: -2;
+}
+
+.intro-content {
+    position: relative;
+    width: 100%;
+    min-height: 70vh;
+    margin: 0 auto;
+}
+
+.intro-title {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 0 1rem;
+    width: 90%;
+}
+
+.intro-title h3 {
+    font-size: 2rem;
+    line-height: 1.4;
+}
+
+.intro-social-wrapper {
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.intro-social {
+    background-color: rgba(255, 255, 255, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    transform-origin: center;
+}
+
+.intro-social:hover {
+    transform: scale(1.1);
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.intro-social a {
+    width: 2.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.icon-social svg {
+    width: 100%;
+    height: auto;
+    fill: #faecca;
+}
+
+.icon-social:hover svg {
+    fill: #FFD700;
+}
+
+/* ===== SERVICES SECTION ===== */
+.services-section {
+    position: relative;
+    overflow: hidden;
+}
+
+/* háttér blur */
+.services-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('/images/home/bg2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.8;
+    filter: blur(6px);
+    transform: scale(1.05);
+    z-index: 0;
+}
+
+/* tartalom előrébb */
+.services-content {
+    position: relative;
+    z-index: 1;
+    padding: 4rem 2rem;
+}
+
+.services-list {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 2rem;
+    color: #454545;
+}
+
+.service-item {
+    background-color: hsla(43, 82%, 89%, 0.616);
+    text-align: center;
+    border-radius: 10px;
+    padding: 1.2rem;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-item h3 {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.service-item p {
+    flex-grow: 1;
+}
+
+.services-list img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+}
+
+.expanse-therapy img {
+    object-position: center 50%;
+}
+
+.five-continents-massage img {
+    object-position: bottom;
+}
+
+.vibecodes-therapy img {
+    object-position: center;
+}
+
+.five-continents-massage,
+.expanse-therapy,
+.vibecodes-therapy {
+    flex: 1;
+}
+
+/* ===== ABOUT SECTION ===== */
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 4rem 2rem;
+}
+
+.about-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.about-content img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-text {
+    flex: 1;
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #333;
+}
+
+.google-maps {
+    display: flex;
+    justify-content: center;
+    padding: 4rem 2rem;
+}
+
+.google-maps iframe {
+    width: 70%;
+    height: 400px;
+    border: none;
+    border-radius: 10px;
+}
+
+/* ===== DESKTOP ===== */
+@media (min-width: 1025px) {
+    .intro-title h3 {
+        font-size: 2.5rem;
+    }
+
+    .intro-title {
+        width: 70%;
+    }
+
+    .five-continents-massage img {
+        object-position: center 90%;
+    }
+
+    .vibecodes-therapy img {
+        object-position: center 60%;
+    }
+
+    .google-maps iframe {
+        width: 60%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .intro-title h3 {
+        font-size: 1.5rem;
+    }
+
+    .intro-title {
+        width: 70%;
+    }
+
+    .icon-social svg {
+        width: 2rem;
+    }
+}
+
+/* ===== MOBIL ===== */
+@media (max-width: 768px) {
+    .intro-title h3 {
+        font-size: 1.5rem;
+    }
+
+    .intro-social {
+        gap: 0;
+    }
+
+    .icon-social svg {
+        height: 1.5rem;
+        width: 100%;
+    }
+
+    .services-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-item {
+        max-width: 100%;
+    }
+}

@@ -1,5 +1,5 @@
 header {
-    background: rgba(249, 246, 242, 0.95);
+    background: #454545;
     backdrop-filter: blur(10px);
     box-shadow: 0 2px 15px rgba(139, 115, 95, 0.1);
     position: sticky;
@@ -10,32 +10,232 @@ header {
 nav {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px 30px;
+    padding: 6px 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: 400;
-    color: #8b7360;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.logo img {
+    height: 98px;
+    width: auto;
+    max-width: 240px;
+    object-fit: contain;
 }
 
 nav ul {
     display: flex;
     list-style: none;
-    gap: 30px;
+    gap: 28px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
-nav a {
+nav a,
+.dropdown-title {
     text-decoration: none;
-    color: #7d6f63;
-    font-weight: 300;
-    transition: color 0.3s;
+    color: #faecca;
+    font-size: 1rem;
+    transition: color 0.25s ease;
+    background: none;
+    border: none;
+    cursor: pointer;
 }
 
 nav a:hover,
+.dropdown-title:hover,
 nav a.active {
-    color: #b89f8a;
+    color: #FFD700;
+}
+
+/* =========================
+   DROPDOWN
+========================= */
+
+.dropdown {
+    position: relative;
+}
+
+/* alapállapot */
+.dropdown-menu {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.2s ease;
+}
+
+/* nyitott */
+.dropdown-menu.open {
+    max-height: 300px;
+    opacity: 1;
+}
+
+/* =========================
+   DESKTOP DROPDOWN
+========================= */
+
+@media (min-width: 1025px) {
+
+    .dropdown-menu {
+        position: absolute;
+        top: calc(100% + 6px);
+        left: 0;
+
+        background: #454545;
+        border-radius: 8px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+        min-width: 320px;
+        max-width: 90vw;
+
+        display: flex;
+        flex-direction: column;
+
+        z-index: 200;
+    }
+
+    .dropdown-menu a {
+        display: block;
+        white-space: normal;
+        color: #faecca;
+    }
+
+    .dropdown-menu a:hover {
+        color: #f7c845;
+    }
+}
+
+/* =========================
+    NYÍL
+========================= */
+
+.arrow {
+    margin-left: 4px;
+    transition: transform 0.25s ease;
+}
+
+.arrow.open {
+    transform: rotate(180deg);
+}
+
+/* =========================
+    BURGER
+========================= */
+
+.burger {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.burger span {
+    width: 26px;
+    height: 2px;
+    background: #f7c845;
+    display: block;
+}
+
+/* =========================
+    BODY LOCK
+========================= */
+
+body.menu-open {
+    overflow: hidden;
+}
+
+/* =========================
+    TABLET + MOBIL
+========================= */
+
+@media (max-width: 1024px) {
+
+    .burger {
+        display: flex;
+    }
+
+    nav ul {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+
+        background: #454545;
+        flex-direction: column;
+        align-items: center;
+
+        gap: 20px;
+        padding: 36px 0;
+        display: none;
+    }
+
+    nav ul.open {
+        display: flex;
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: center;
+    }
+
+    nav a,
+    .dropdown-title {
+        font-size: 1.15rem;
+    }
+
+    /* dropdown mobilban */
+    .dropdown-menu {
+        position: static;
+        width: 100%;
+        background: transparent;
+        padding-top: 4px;
+    }
+
+    .dropdown-menu li {
+        padding: 0;
+    }
+
+    .dropdown-menu a {
+        font-size: 1rem;
+        color: #faecca;          /* 🔥 NEM SÁRGA */
+        padding: 6px 0;
+    }
+
+    .dropdown-menu a:hover {
+        color: #f7c845;
+    }
+
+    .logo img {
+        height: 64px;
+        max-width: 220px;
+    }
+}
+
+/* =========================
+   MOBIL FINOMHANGOLÁS
+========================= */
+
+@media (max-width: 480px) {
+
+    nav {
+        padding: 5px 20px;
+    }
+
+    nav ul {
+        gap: 18px;
+    }
+
+    .logo img {
+        height: 68px;
+        max-width: 200px;
+    }
 }
