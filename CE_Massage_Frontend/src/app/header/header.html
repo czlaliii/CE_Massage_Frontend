@@ -11,39 +11,22 @@
         </button>
 
         <ul [class.open]="menuOpen">
-            <li><a routerLink="/" (click)="closeMenu()"><strong>Kezdőlap</strong></a></li>
-        <li class="dropdown">
-                <button
-                    class="dropdown-title"
-                    (click)="toggleServices($event)"
-                    aria-expanded="{{ servicesOpen }}"
-                >
-                    <strong>Szolgáltatások</strong>
-                    <span class="arrow" [class.open]="servicesOpen">▾</span>
-                </button>
-
-                <ul class="dropdown-menu" [class.open]="servicesOpen">
-                    <li>
-                    <a routerLink="/services/five-continents" (click)="closeMenu()">
-                        M5C® – Five Continents Massage®
+            <li><a routerLink="/" (click)="closeMenu()">Kezdőlap</a></li>
+            <button matButton [matMenuTriggerFor]="afterMenu" class="services-button-title">Szolgáltatások</button>
+                <mat-menu #afterMenu="matMenu" xPosition="after" class="services-menu">
+                    <a routerLink="/services/five-continents">
+                        <button mat-menu-item>M5C® – Five Continents Massage®</button>
                     </a>
-                    </li>
-                    <li>
-                    <a routerLink="/services/expanse" (click)="closeMenu()">
-                        Expanse terápia®
+                    <a routerLink="/services/expanse">
+                        <button mat-menu-item>Expanse terápia®</button>
                     </a>
-                    </li>
-                    <li>
-                    <a routerLink="/services/vibecodes" (click)="closeMenu()">
-                        Vibecodes®
+                    <a routerLink="/services/vibecodes">
+                        <button mat-menu-item>Vibecodes®</button>
                     </a>
-                    </li>
-                </ul>
-                </li>
-
-            <li><a routerLink="/galery" (click)="closeMenu()"><strong>Galéria</strong></a></li>
-            <li><a routerLink="/about" (click)="closeMenu()"><strong>Rólam</strong></a></li>
-            <li><a routerLink="/faq" (click)="closeMenu()"><strong>GYIK</strong></a></li>
+                </mat-menu>
+            <li><a routerLink="/gallery" (click)="closeMenu()">Galéria</a></li>
+            <li><a routerLink="/about" (click)="closeMenu()">Rólam</a></li>
+            <li><a routerLink="/faq" (click)="closeMenu()">GYIK</a></li>
         </ul>
     </nav>
 </header>

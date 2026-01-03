@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
+import { RouterLink } from '@angular/router';
+import {MatCardModule} from '@angular/material/card';
+import { Reviews } from './components/reviews/reviews';
 
 @Component({
   selector: 'app-home',
-  imports: [],
+  imports: [RouterLink, MatCardModule, Reviews],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })

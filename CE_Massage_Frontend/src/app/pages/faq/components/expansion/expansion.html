@@ -1,0 +1,12 @@
+<div class="expansion-container">
+    <mat-accordion>
+        <mat-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+            <mat-expansion-panel-header>
+                <mat-panel-description>
+                    <p class="faq-question-title">{{ question }}</p>
+                </mat-panel-description>
+            </mat-expansion-panel-header>
+            <p class="faq-question-answer">{{ answer }}</p>
+        </mat-expansion-panel>
+    </mat-accordion>
+</div>

@@ -1,0 +1,25 @@
+mat-grid-tile {
+  background: lightblue;
+}
+
+mat-grid-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* vagy contain, fill */
+  object-position: center;
+}
+
+.hero {
+  position: relative;
+  height: 75vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('/images/gallery/gallery1.jpg') no-repeat center;
+}
+
+.hero h1 {
+  position: absolute;
+  color: white;
+  font-size: 4rem;
+}

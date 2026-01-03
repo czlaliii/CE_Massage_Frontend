@@ -40,76 +40,22 @@ nav ul {
 }
 
 nav a,
-.dropdown-title {
+.services-button-title {
     text-decoration: none;
-    color: #faecca;
+    color: #faecca !important;
     font-size: 1rem;
+    font-weight: 300;
     transition: color 0.25s ease;
     background: none;
     border: none;
     cursor: pointer;
+    padding-right: 1rem;
 }
 
 nav a:hover,
-.dropdown-title:hover,
+.services-button-title:hover,
 nav a.active {
-    color: #FFD700;
-}
-
-/* =========================
-   DROPDOWN
-========================= */
-
-.dropdown {
-    position: relative;
-}
-
-/* alapállapot */
-.dropdown-menu {
-    max-height: 0;
-    overflow: hidden;
-    opacity: 0;
-    transition: max-height 0.3s ease, opacity 0.2s ease;
-}
-
-/* nyitott */
-.dropdown-menu.open {
-    max-height: 300px;
-    opacity: 1;
-}
-
-/* =========================
-   DESKTOP DROPDOWN
-========================= */
-
-@media (min-width: 1025px) {
-
-    .dropdown-menu {
-        position: absolute;
-        top: calc(100% + 6px);
-        left: 0;
-
-        background: #454545;
-        border-radius: 8px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-        min-width: 320px;
-        max-width: 90vw;
-
-        display: flex;
-        flex-direction: column;
-
-        z-index: 200;
-    }
-
-    .dropdown-menu a {
-        display: block;
-        white-space: normal;
-        color: #faecca;
-    }
-
-    .dropdown-menu a:hover {
-        color: #f7c845;
-    }
+    color: #FFD700 !important;
 }
 
 /* =========================
@@ -188,30 +134,8 @@ body.menu-open {
     }
 
     nav a,
-    .dropdown-title {
+    .services-button {
         font-size: 1.15rem;
-    }
-
-    /* dropdown mobilban */
-    .dropdown-menu {
-        position: static;
-        width: 100%;
-        background: transparent;
-        padding-top: 4px;
-    }
-
-    .dropdown-menu li {
-        padding: 0;
-    }
-
-    .dropdown-menu a {
-        font-size: 1rem;
-        color: #faecca;          /* 🔥 NEM SÁRGA */
-        padding: 6px 0;
-    }
-
-    .dropdown-menu a:hover {
-        color: #f7c845;
     }
 
     .logo img {

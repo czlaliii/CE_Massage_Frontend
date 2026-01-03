@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home';
-import { GaleryComponent } from './pages/galery/galery';
+import { GalleryComponent } from './pages/gallery/gallery';
 import { FiveContinentsComponent } from './pages/services/five-continents/five-continents';
 import { ExpanseComponent } from './pages/services/expanse/expanse';
 import { VibecodesComponent } from './pages/services/vibecodes/vibecodes';
@@ -17,7 +17,7 @@ export const routes: Routes = [
         { path: 'vibecodes', component: VibecodesComponent }
         ]
     },
-    { path: 'galery', component: GaleryComponent },
+    { path: 'gallery', component: GalleryComponent },
     { path: 'about', component: AboutComponent },
     { path: 'faq', component: FaqComponent },
     { path: '**', redirectTo: '' }

@@ -1,33 +1,41 @@
-Gyakran 
-Ismételt Kérdések 
+<section class="faq-section">
+    <section class="faq-hero">
+        <div class="faq-hero-title">
+            <h1>Gyakran Ismételt Kérdések</h1>
+        </div>
+        <div class="example-button-row">
+            <div class="faq-ask-text">
+                <h3>Nem találta meg a választ kérdésére?</h3>
+                <p>Lépjen kapcsolatba velünk!</p>
+            </div>
+            <a matButton="filled" href="https://www.google.com/" target="_blank">Kapcsolat</a>
+        </div>
+    </section>
 
-Érkezhetek bejelentkezés nélkül? Ha nem, mennyivel korábban kell időpontot foglalnom? 
-
-Lehetséges az érkezés bejelentkezés nélkül, viszont nem garantált hogy tudom fogadni.  
-Érdemes a foglalást minimum 2 órával érkezés előtt véglegesíteni, de akár 1–2 héttel korábban is kérhetsz időpontot. 
-Ideális foglalási idő: 2–3 nappal előre. 
-
-Mikor kell fizetnem? Készpénzzel vagy kártyával lehet fizetni? 
-
-A szolgáltatás díját érkezéskor, még a rituálé előtt szükséges kifizetni. 
-Készpénzzel és bankkártyával is lehetséges a kifizetés. 
-
-Mikor érkezzek a helyszínre? 
-
-Kérjük, érkezz 10–15 perccel korábban. 
-Késés esetén a kezelési időt sajnos nem tudjuk csúsztatni. 
-
-Milyen ruházatot visel a masszőr? 
-
-Munkaruha: Póló és nadrág - vagyis normál ruházatot visel. 
-Meztelen kezelés nem történik. 
-
-A terapeuta képzett és folyamatosan fejlesztett szakember? 
-
-Igen. Minden kezelés típushoz (5 kontinens masszázs, Expanse terápia, Vibecodes) külön kezelői és oktatói végzettséget szerzett az International Massage Federation of the 5 Continents - szövetségnél. Folyamatosan képzésekre jár. 
- 
-
-Kérhetek extra, eltérő vagy erotikus tartalmú szolgáltatást? 
-
-Nem. 
-Sem erotikus, sem szexuális jellegű szolgáltatás nem elérhető. 
+    <section class="faq-questions">
+        <app-expansion
+            [question]="'Érkezhetek bejelentkezés nélkül? Ha nem, mennyivel korábban kell időpontot foglalnom?'"
+            [answer]="'Lehetséges az érkezés bejelentkezés nélkül, viszont nem garantált hogy tudom fogadni. Érdemes a foglalást minimum 2 órával érkezés előtt véglegesíteni, de akár 1–2 héttel korábban is kérhetsz időpontot.'">
+        </app-expansion>
+        <app-expansion
+            [question]="'Mikor kell fizetnem? Készpénzzel vagy kártyával lehet fizetni?'"
+            [answer]="'A szolgáltatás díját érkezéskor, még a rituálé előtt szükséges kifizetni. Készpénzzel és bankkártyával is lehetséges a kifizetés.'">
+        </app-expansion>
+        <app-expansion
+            [question]="'Mikor érkezzek a helyszínre? '"
+            [answer]="'Kérjük, érkezz 10–15 perccel korábban. Késés esetén a kezelési időt sajnos nem tudjuk csúsztatni.'">
+        </app-expansion>
+        <app-expansion
+            [question]="' Milyen ruházatot visel a masszőr? '"
+            [answer]="'Munkaruha: Póló és nadrág - vagyis normál ruházatot visel. Meztelen kezelés nem történik.'">
+        </app-expansion>
+        <app-expansion
+            [question]="'A terapeuta képzett és folyamatosan fejlesztett szakember? '"
+            [answer]="'Igen. Minden kezelés típushoz (5 kontinens masszázs, Expanse terápia, Vibecodes) külön kezelői és oktatói végzettséget szerzett az International Massage Federation of the 5 Continents - szövetségnél. Folyamatosan képzésekre jár.'">
+        </app-expansion>
+        <app-expansion
+            [question]="'Kérhetek extra, eltérő vagy erotikus tartalmú szolgáltatást? '"
+            [answer]="'Nem. Sem erotikus, sem szexuális jellegű szolgáltatás nem elérhető. '">
+        </app-expansion>
+    </section>
+</section>
