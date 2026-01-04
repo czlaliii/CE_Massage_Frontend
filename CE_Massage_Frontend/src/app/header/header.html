@@ -12,18 +12,22 @@
 
         <ul [class.open]="menuOpen">
             <li><a routerLink="/" (click)="closeMenu()">Kezdőlap</a></li>
-            <button matButton [matMenuTriggerFor]="afterMenu" class="services-button-title">Szolgáltatások</button>
+            <li>
+                <button matButton [matMenuTriggerFor]="afterMenu" class="services-button-title">
+                    Szolgáltatások
+                </button>
                 <mat-menu #afterMenu="matMenu" xPosition="after" class="services-menu">
-                    <a routerLink="/services/five-continents">
-                        <button mat-menu-item>M5C® – Five Continents Massage®</button>
-                    </a>
-                    <a routerLink="/services/expanse">
-                        <button mat-menu-item>Expanse terápia®</button>
-                    </a>
-                    <a routerLink="/services/vibecodes">
-                        <button mat-menu-item>Vibecodes®</button>
-                    </a>
+                    <button mat-menu-item class="services-menu-item" routerLink="/services/five-continents">
+                        M5C® – Five Continents Massage®
+                    </button>
+                    <button mat-menu-item class="services-menu-item" routerLink="/services/expanse">
+                        Expanse terápia®
+                    </button>
+                    <button mat-menu-item class="services-menu-item" routerLink="/services/vibecodes">
+                        Vibecodes®
+                    </button>
                 </mat-menu>
+            </li>
             <li><a routerLink="/gallery" (click)="closeMenu()">Galéria</a></li>
             <li><a routerLink="/about" (click)="closeMenu()">Rólam</a></li>
             <li><a routerLink="/faq" (click)="closeMenu()">GYIK</a></li>

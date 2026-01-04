@@ -253,21 +253,186 @@
 
 .reviews-section {
     background-color: #F5F1ED;
+    padding: 4rem 1rem;
+    position: relative;
 }
 
-.reviews-content {
+.carousel-wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 2rem 0;
+}
+
+.carousel-container {
     display: flex;
-    flex-direction: row;
-    gap: 2rem;
-    max-height: fit-content;
-    overflow-x: auto;
-    padding: 2rem;
-    scroll-behavior: smooth;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 0 80px;
+    min-height: 450px;
 }
 
-.review-card {
-    min-width: 300px;
-    flex: 0 0 auto;
+.reviews-viewport {
+    width: 100%;
+    overflow: visible;
+    position: relative;
+}
+
+.reviews-track {
+    display: flex;
+    gap: 2rem;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    align-items: stretch;
+}
+
+.review-slide {
+    flex: 0 0 calc((100% - 4rem) / 3);
+    min-width: 0;
+    display: flex;
+}
+
+.review-slide app-reviews {
+    width: 100%;
+    display: flex;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(217, 170, 82, 0.9);
+    border: none;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.carousel-btn:hover:not(:disabled) {
+    background: rgba(217, 170, 82, 1);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.carousel-btn svg {
+    width: 24px;
+    height: 24px;
+}
+
+.carousel-btn.prev {
+    left: 10px;
+}
+
+.carousel-btn.next {
+    right: 10px;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 2.5rem;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #ccc;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 0;
+}
+
+.dot.hidden {
+    display: none;
+}
+
+.dot.active {
+    background: #D9AA52;
+    transform: scale(1.4);
+}
+
+.dot:hover {
+    background: #D9AA52;
+    transform: scale(1.2);
+}
+
+/* Tablet - 2 kártya */
+@media (max-width: 1024px) {
+    .carousel-container {
+        padding: 0 60px;
+    }
+    
+    .review-slide {
+        flex: 0 0 calc((100% - 1.5rem) / 2);
+    }
+    
+    .reviews-track {
+        gap: 1.5rem;
+    }
+}
+
+/* Mobil - 1 kártya TELJES SZÉLESSÉGBEN */
+@media (max-width: 768px) {
+    .carousel-container {
+        padding: 0 60px;
+        min-height: 500px;
+    }
+    
+    .carousel-wrapper {
+        padding: 2rem 1rem; /* JAVÍTVA: oldalsó padding */
+    }
+    
+    .review-slide {
+        flex: 0 0 100%; /* JAVÍTVA: teljes szélesség */
+        max-width: 500px; /* HOZZÁADVA: max szélesség */
+        margin: 0 auto; /* HOZZÁADVA: centrázzuk */
+    }
+    
+    .reviews-track {
+        gap: 0; /* JAVÍTVA: nincs gap, mert úgy is csak 1 látszik */
+    }
+    
+    .carousel-btn {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+@media (max-width: 480px) {
+    .carousel-container {
+        padding: 0 50px;
+        min-height: 520px;
+    }
+    
+    .review-slide {
+        flex: 0 0 100%; /* JAVÍTVA: teljes szélesség */
+        max-width: 400px; /* HOZZÁADVA: kisebb max szélesség kicsi képernyőn */
+    }
+    
+    .reviews-track {
+        gap: 0; /* JAVÍTVA */
+    }
+    
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+    }
 }
 
 /* ===== GOOGLE MAPS SECTION ===== */

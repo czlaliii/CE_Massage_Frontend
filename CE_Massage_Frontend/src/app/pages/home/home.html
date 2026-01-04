@@ -85,31 +85,50 @@
 </section>
 
 <section id="reviews" class="reviews-section">
-    <div class="reviews-content">
-        <app-reviews
-            reviewText="Edina masszázsa csodálatos élmény volt! Már az első alkalom után éreztem a változást a testemben és az elmémben is."
-            reviewAuthor="Katalin, Budapest">
-        </app-reviews>
-        <app-reviews
-            reviewText="Biztonságban éreztem magam, teljesen ki tudtam kapcsolni. Nagyon feltöltött."
-            reviewAuthor="Anna">
-        </app-reviews>
-        <app-reviews
-            reviewText="Edina szakértelme és figyelme minden részletre lenyűgöző. Minden alkalommal újra és újra visszatérek hozzá."
-            reviewAuthor="Miklós, Debrecen">
-        </app-reviews>
-        <app-reviews
-            reviewText="Az Expanse terápia teljesen megváltoztatta az életemet. Edina segített megtalálni a belső békét és egyensúlyt."
-            reviewAuthor="Zsófia">
-        </app-reviews>
-        <app-reviews
-            reviewText="A Vibecodes kezelés fantasztikus volt! Soha nem éreztem még ilyen mély relaxációt és feltöltődést."
-            reviewAuthor="Gábor, Szeged">
-        </app-reviews>
-        <app-reviews
-            reviewText="Edina masszázsa nem csak a testemet, hanem a lelkemet is gyógyította. Hálás vagyok érte."
-            reviewAuthor="Eszter">
-        </app-reviews>
+    <div class="carousel-wrapper">
+        <div class="carousel-container"
+            (mouseenter)="pauseAutoPlay()"
+            (mouseleave)="resumeAutoPlay()">
+
+            <button class="carousel-btn prev"
+                    (click)="prevSlide()"
+                    aria-label="Előző"
+                    [disabled]="currentIndex === 0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+            </button>
+
+            <div class="reviews-viewport">
+                <div class="reviews-track" [style.transform]="transformValue">
+                    <div class="review-slide" *ngFor="let review of reviews">
+                        <app-reviews
+                            [reviewText]="review.text"
+                            [reviewAuthor]="review.author">
+                        </app-reviews>
+                    </div>
+                </div>
+            </div>
+
+            <button class="carousel-btn next"
+                    (click)="nextSlide()"
+                    aria-label="Következő"
+                    [disabled]="currentIndex === maxIndex">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <div class="carousel-dots">
+        <button *ngFor="let review of reviews; let i = index"
+                class="dot"
+                [class.active]="i === currentIndex"
+                [class.hidden]="i > maxIndex"
+                (click)="goToSlide(i)"
+                [attr.aria-label]="'Ugrás a ' + (i + 1) + '. csoporthoz'">
+        </button>
     </div>
 </section>
 

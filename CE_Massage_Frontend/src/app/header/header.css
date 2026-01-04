@@ -43,19 +43,37 @@ nav a,
 .services-button-title {
     text-decoration: none;
     color: #faecca !important;
-    font-size: 1rem;
-    font-weight: 300;
+    font-size: 1rem !important;
+    font-weight: 300 !important;
     transition: color 0.25s ease;
-    background: none;
-    border: none;
-    cursor: pointer;
     padding-right: 1rem;
 }
 
-nav a:hover,
+.services-menu {
+    margin-top: 8px;
+    background-color: #454545 !important;
+}
+
+.services-menu-item {
+    color: #faecca !important;
+    text-decoration: none !important;
+    transition: color 0.25s ease;
+}
+
+.services-button-title .mat-mdc-button-persistent-ripple,
+.services-button-title .mat-mdc-button-ripple,
+.services-button-title .mat-ripple-element {
+    opacity: 0 !important;
+}
+
+nav a:hover, .services-menu-item:hover,
 .services-button-title:hover,
 nav a.active {
     color: #FFD700 !important;
+}
+
+.services-menu .mat-mdc-menu-item span {
+    font-weight: 300 !important;
 }
 
 /* =========================
