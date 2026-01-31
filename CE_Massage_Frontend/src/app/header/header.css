@@ -76,18 +76,6 @@ nav a.active {
     font-weight: 300 !important;
 }
 
-/* =========================
-    NYÍL
-========================= */
-
-.arrow {
-    margin-left: 4px;
-    transition: transform 0.25s ease;
-}
-
-.arrow.open {
-    transform: rotate(180deg);
-}
 
 /* =========================
     BURGER
@@ -157,7 +145,7 @@ body.menu-open {
     }
 
     .logo img {
-        height: 64px;
+        height: 85px;
         max-width: 220px;
     }
 }

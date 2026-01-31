@@ -22,14 +22,23 @@
                 </a>
             </div>
         </div>
+        <video loop muted autoplay >
+            <source src="/videos/hero_placeholder.mp4" type="video/mp4">
+        </video>
     </div>
 </section>
 
 <section class="services-section">
+    <img ngSrc="/images/home/bg2.jpg" fill>
     <div class="services-content">
         <div class="services-list">
             <div class="service-item five-continents-massage">
-                <img src="/images/home/five_continents.jpg" alt="five-continents-massage">
+                <img ngSrc="/images/home/five_continents.jpg"
+                    width="400"
+                    height="300"
+                    alt="five-continents-massage"
+                    priority
+                >
                 <h3>5 kontinens masszázs</h3>
                 <p>Egy holisztikus masszázstechnika, amely
                     ötvözi az 5 kontinens különböző masszázs- és gyógyító
@@ -37,14 +46,23 @@
                     harmóniáját.</p>
             </div>
             <div class="service-item expanse-therapy">
-                <img src="/images/home/expanse.jpg" alt="expanse-therapy">
+                <img ngSrc="/images/home/expanse.jpg"
+                    width="400"
+                    height="300"
+                    alt="expanse-therapy"
+                    priority
+                    >
                 <h3>Expanse terápia</h3>
                 <p>Egy innovatív módszer, amely segít
                     felszabadítani a testben és az elmében rejlő blokkokat,
                     elősegítve ezzel a mélyebb relaxációt és a belső egyensúlyt.</p>
             </div>
             <div class="service-item vibecodes-therapy">
-                <img src="/images/home/vibecodes.jpg" alt="vibecodes">
+                <img ngSrc="/images/home/vibecodes.jpg"
+                    width="400"
+                    height="300"
+                    alt="vibecodes"
+                    priority>
                 <h3>Vibecodes kezelés</h3>
                 <p>Egy rezgésalapú terápia, amely speciális
                     hangfrekvenciákat használ a test energiarendszerének
@@ -57,7 +75,11 @@
 <section id="about" class="about-section">
     <div class="about-content">
         <div class="about-image">
-            <img src="/images/home/about-photo.jpg" alt="czinege_edina">
+            <img ngSrc="/images/home/about-photo1.jpg"
+                width="400"
+                height="500"
+                alt="czinege_edina_erzsebet"
+                priority>
         </div>
         <div class="about-text-wrapper">
             <div class="about-text">

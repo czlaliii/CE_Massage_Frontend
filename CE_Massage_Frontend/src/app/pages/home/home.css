@@ -14,19 +14,19 @@
     color: #faecca;
 }
 
-.intro-section::before {
-    content: "";
+.intro-section video {
     position: absolute;
-    inset: 0;
-    background-image: url('/images/home/massage01.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center 70%;
-    filter: blur(5px);
-    transform: scale(1.05);
-    z-index: -2;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    filter: brightness(0.6);
 }
-
 .intro-content {
     position: relative;
     width: 100%;
@@ -47,6 +47,7 @@
 .intro-title h3 {
     font-size: 2rem;
     line-height: 1.4;
+    font-weight: 500;
 }
 
 .intro-social-wrapper {
@@ -88,25 +89,15 @@
     fill: #FFD700;
 }
 
-/* ===== SERVICES SECTION ===== */
+/* ===== SERVICES ===== */
 .services-section {
     position: relative;
-    overflow: hidden;
 }
 
 /* háttér blur */
-.services-section::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: url('/images/home/bg2.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    opacity: 0.8;
-    filter: blur(6px);
-    transform: scale(1.05);
-    z-index: 0;
+.services-section > img {
+    opacity: 0.75;
+    object-fit: cover;
 }
 
 /* tartalom előrébb */
@@ -214,6 +205,10 @@
     position: relative;
     max-height: 400px;
     overflow: hidden;
+}
+
+.about-text h2 {
+    font-size: 2.5rem;
 }
 
 .about-text::after {
@@ -472,7 +467,7 @@
     }
 
     .service-item {
-        max-width: 100%;
+        max-width: 300px;
     }
 
     .about-content {
@@ -528,7 +523,7 @@
 
     .service-item {
         width: 100%;
-        max-width: 520px;
+        max-width: 350px;
         margin: 0 auto;
     }
 

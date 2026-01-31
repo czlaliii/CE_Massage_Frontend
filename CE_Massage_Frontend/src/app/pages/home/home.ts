@@ -2,12 +2,13 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { RouterLink } from '@angular/router';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 import { Reviews } from './components/reviews/reviews';
+import { NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-home',
-  imports: [RouterLink, MatCardModule, Reviews, CommonModule],
+  imports: [RouterLink, MatCardModule, Reviews, CommonModule, NgOptimizedImage],
   templateUrl: './home.html',
   styleUrl: './home.css',
   animations: [
