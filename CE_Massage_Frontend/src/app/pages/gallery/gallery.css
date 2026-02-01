@@ -11,15 +11,26 @@ mat-grid-tile img {
 
 .hero {
   position: relative;
-  height: 75vh;
+  height: 70vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url('/images/gallery/gallery1.jpg') no-repeat center;
 }
 
 .hero h1 {
   position: absolute;
   color: white;
   font-size: 4rem;
+  z-index: 1;
+  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.hero img {
+  object-fit: cover;
+  filter: brightness(50%);
+}
+
+.gallery-container {
+  padding: 2rem;
 }

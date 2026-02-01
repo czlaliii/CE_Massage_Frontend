@@ -1,15 +1,63 @@
 <section class="hero">
-    <h1>Galéria</h1>
+    <h1 class="font-monsterrat">Galéria</h1>
+    <img ngSrc="/images/gallery/gallery5.jpg" alt="hero_image" fill>
 </section>
 
-<mat-grid-list cols="3" rowHeight="2:1" gutterSize="1rem">
-    <mat-grid-tile>1</mat-grid-tile>
-    <mat-grid-tile colspan="2" rowspan="2"><img src="/images/gallery/gallery1.jpg" alt=""></mat-grid-tile>
-    <mat-grid-tile>3</mat-grid-tile>
-    <mat-grid-tile>4</mat-grid-tile>
-    <mat-grid-tile>5</mat-grid-tile>
-    <mat-grid-tile>6</mat-grid-tile>
-    <mat-grid-tile>7</mat-grid-tile>
-    <mat-grid-tile>8</mat-grid-tile>
-    <mat-grid-tile>9</mat-grid-tile>
-</mat-grid-list>
+<section class="gallery-container">
+    <mat-grid-list cols="4" rowHeight="1:1" gutterSize="0.8rem">
+        <mat-grid-tile colspan="1" rowspan="1">
+            <img ngSrc="/images/gallery/gallery1.jpg"
+                width="600"
+                height="400"
+                alt="gallery_photo_1">
+        </mat-grid-tile>
+        <mat-grid-tile colspan="1" rowspan="2">
+            <img ngSrc="/images/gallery/gallery2.jpg"
+                width="600"
+                height="400"
+                alt="gallery_photo_2">
+        </mat-grid-tile>
+        <mat-grid-tile colspan="1" rowspan="1">
+            <img ngSrc="/images/gallery/gallery3.jpg"
+                width="600"
+                height="400"
+                alt="gallery_photo_3">
+        </mat-grid-tile>
+        <mat-grid-tile  colspan="1" rowspan="2">
+            <img ngSrc="/images/gallery/gallery4.jpg"
+                width="600"
+                height="400"
+                alt="gallery_photo_4">
+        </mat-grid-tile>
+                <mat-grid-tile colspan="1" rowspan="1">
+            <img ngSrc="/images/gallery/gallery9.jpg"
+                width="600"
+                height="400"
+                alt="gallery_photo_9">
+        </mat-grid-tile>
+        <mat-grid-tile colspan="1" rowspan="1">
+            <img ngSrc="/images/gallery/gallery7.jpg"
+                width="600"
+                height="400"
+                alt="gallery_photo_7">
+        </mat-grid-tile>
+        <mat-grid-tile   colspan="2" rowspan="1">
+            <img ngSrc="/images/gallery/gallery5.jpg"
+                width="600"
+                height="400"
+                alt="gallery_photo_5">
+        </mat-grid-tile>
+        <mat-grid-tile colspan="1" rowspan="1">
+            <img ngSrc="/images/gallery/gallery6.jpg"
+                width="600"
+                height="400"
+                alt="gallery_photo_6">
+        </mat-grid-tile>
+        <mat-grid-tile colspan="1" rowspan="1">
+            <img ngSrc="/images/gallery/gallery8.jpg"
+                width="600"
+                height="400"
+                alt="gallery_photo_8">
+        </mat-grid-tile>
+    </mat-grid-list>
+</section>
