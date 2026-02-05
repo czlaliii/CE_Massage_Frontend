@@ -108,6 +108,12 @@
     margin-bottom: 1rem;
 }
 
+.about-text h3 {
+    color: #454545;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
 @media (max-width: 1024px) {
     .about-container {
         flex-direction: column;
