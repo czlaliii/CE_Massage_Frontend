@@ -43,7 +43,7 @@ nav a,
 .services-button-title {
     text-decoration: none;
     color: #faecca !important;
-    font-size: 1rem !important;
+    font-size: 1.05rem !important;
     font-weight: 300 !important;
     transition: color 0.25s ease;
     padding-right: 1rem;
@@ -69,7 +69,7 @@ nav a,
 nav a:hover, .services-menu-item:hover,
 .services-button-title:hover,
 nav a.active {
-    color: #FFD700 !important;
+    color: #f7c845 !important;
 }
 
 .services-menu .mat-mdc-menu-item span {

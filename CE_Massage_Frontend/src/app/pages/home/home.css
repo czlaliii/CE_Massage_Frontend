@@ -14,16 +14,13 @@
     color: #faecca;
 }
 
-.intro-section video {
+.intro-video {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     z-index: -1;
-    transform: translate(-50%, -50%);
     object-fit: cover;
     filter: brightness(0.6);
 }
@@ -95,7 +92,7 @@
 }
 
 /* háttér blur */
-.services-section > img {
+.services-bg{
     opacity: 0.75;
     object-fit: cover;
 }
@@ -115,6 +112,24 @@
     color: #454545;
 }
 
+.services-list a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.services-list a:hover {
+    transform: scale(1.02);
+    transition: transform 0.3s ease;
+}
+
+.services-list img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+}
+
 .service-item {
     background-color: hsla(43, 82%, 89%, 0.616);
     text-align: center;
@@ -123,6 +138,7 @@
     max-width: 300px;
     display: flex;
     flex-direction: column;
+    height: 100%;
 }
 
 .service-item h3 {
@@ -132,14 +148,7 @@
 
 .service-item p {
     flex-grow: 1;
-}
-
-.services-list img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    margin-bottom: 1rem;
-    border-radius: 10px;
+    font-size: 0.9rem;
 }
 
 .expanse-therapy img {

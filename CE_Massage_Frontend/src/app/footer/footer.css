@@ -8,13 +8,6 @@ footer {
     padding: 1rem 0;;
 }
 
-.footer-copyright {
-    text-align: center;
-    color: #faecca;
-    font-size: 0.9rem;
-    padding: 0.5rem 0;
-}
-
 .footer-nav-wrapper {
     border-top: #faecca 1px solid;
     margin-top: 5rem;
@@ -100,4 +93,12 @@ footer {
 
 .icon-social:hover svg {
     fill: #D9AA52;
+}
+
+.footer-copyright {
+    text-align: center;
+    color: #faecca;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+    padding: 1rem 0;
 }

@@ -22,52 +22,59 @@
                 </a>
             </div>
         </div>
-        <video loop muted autoplay>
+        <video loop muted autoplay playsinline poster="/images/home/hero_placeholder.jpg" class="intro-video">
             <source src="/videos/hero_placeholder.mp4" type="video/mp4">
+            A böngésződ nem támogatja a videó lejátszását.
         </video>
     </div>
 </section>
 
 <section class="services-section">
-    <img ngSrc="/images/home/bg2.jpg" fill>
+    <img ngSrc="/images/home/bg2.jpg" fill class="services-bg" alt="services-bg" priority>
     <div class="services-content">
         <div class="services-list">
-            <div class="service-item five-continents-massage">
-                <img ngSrc="/images/home/five_continents.jpg"
-                    width="400"
-                    height="300"
-                    alt="five-continents-massage"
-                    priority
-                >
-                <h3>5 kontinens masszázs</h3>
-                <p>Egy holisztikus masszázstechnika, amely
-                    ötvözi az 5 kontinens különböző masszázs- és gyógyító
-                    hagyományait, hogy elősegítse a test, az elme és a lélek
-                    harmóniáját.</p>
-            </div>
-            <div class="service-item expanse-therapy">
-                <img ngSrc="/images/home/expanse.jpg"
-                    width="400"
-                    height="300"
-                    alt="expanse-therapy"
-                    priority
+            <a routerLink="/services/five-continents">
+                <div class="service-item five-continents-massage">
+                    <img ngSrc="/images/home/five_continents.jpg"
+                        width="400"
+                        height="300"
+                        alt="five-continents-massage"
+                        priority
                     >
-                <h3>Expanse terápia</h3>
-                <p>Egy innovatív módszer, amely segít
-                    felszabadítani a testben és az elmében rejlő blokkokat,
-                    elősegítve ezzel a mélyebb relaxációt és a belső egyensúlyt.</p>
-            </div>
-            <div class="service-item vibecodes-therapy">
-                <img ngSrc="/images/home/vibecodes.jpg"
-                    width="400"
-                    height="300"
-                    alt="vibecodes"
-                    priority>
-                <h3>Vibecodes kezelés</h3>
-                <p>Egy rezgésalapú terápia, amely speciális
-                    hangfrekvenciákat használ a test energiarendszerének
-                    harmonizálására és a gyógyulás elősegítésére.</p>
-            </div>
+                    <h3>5 kontinens masszázs</h3>
+                    <p>Egy holisztikus masszázstechnika, amely
+                        ötvözi az 5 kontinens különböző masszázs- és gyógyító
+                        hagyományait, hogy elősegítse a test, az elme és a lélek
+                        harmóniáját.</p>
+                </div>
+            </a>
+            <a routerLink="/services/expanse">
+                <div class="service-item expanse-therapy">
+                    <img ngSrc="/images/home/expanse.jpg"
+                        width="400"
+                        height="300"
+                        alt="expanse-therapy"
+                        priority
+                        >
+                    <h3>Expanse terápia</h3>
+                    <p>Egy innovatív módszer, amely segít
+                        felszabadítani a testben és az elmében rejlő blokkokat,
+                        elősegítve ezzel a mélyebb relaxációt és a belső egyensúlyt.</p>
+                </div>
+            </a>
+            <a routerLink="/services/vibecodes">
+                <div class="service-item vibecodes-therapy">
+                    <img ngSrc="/images/home/vibecodes.jpg"
+                        width="400"
+                        height="300"
+                        alt="vibecodes"
+                        priority>
+                    <h3>Vibecodes kezelés</h3>
+                    <p>Egy rezgésalapú terápia, amely speciális
+                        hangfrekvenciákat használ a test energiarendszerének
+                        harmonizálására és a gyógyulás elősegítésére.</p>
+                </div>
+            </a>
         </div>
     </div>
 </section>
