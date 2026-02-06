@@ -17,6 +17,7 @@ footer {
 
 .footer-nav-wrapper {
     border-top: #faecca 1px solid;
+    margin-top: 5rem;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -32,14 +33,71 @@ footer {
 .footer-nav a {
     color: #faecca;
     text-decoration: none;
-    font-size: 1.1rem;
+    font-size: 1rem;
     transition: color 0.25s ease;
 }
 
 .footer-nav a:hover {
-    color: #FFD700;
+    color: #D9AA52;
 }
 
 .footer-nav-img {
     display: flex;
+}
+
+.footer-info-contact svg {
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: #D9AA52;
+    margin-right: 0.5rem;
+}
+
+.footer-info-contact p {
+    font-weight: 500;
+}
+
+.info-email, .info-phone, .info-location {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.footer-info-wrapper h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1.4rem;
+}
+
+.footer-info-wrapper p {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.footer-info-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 5rem;
+}
+
+/* Social media icons */
+
+.intro-social {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.intro-social a {
+    width: 2.1rem;
+    display: flex;
+    align-items: center;
+}
+
+.icon-social svg {
+    width: 100%;
+    height: auto;
+    fill: #faecca;
+}
+
+.icon-social:hover svg {
+    fill: #D9AA52;
 }

@@ -1,0 +1,24 @@
+.intro-socials {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0.3rem 0;
+}
+
+.intro-social a {
+    width: 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.icon-social svg {
+    width: 100%;
+    height: auto;
+    fill: #454545;
+    transition: transform 0.3s ease;
+}
+
+.icon-social:hover svg {
+    fill: #8a8a8a;
+    transform: scale(1.1);
+}
