@@ -4,15 +4,36 @@ footer {
     color: #faecca;
 }
 
+/* ===============================
+   INFO WRAPPER (felső rész)
+================================= */
+
 .footer-info-wrapper {
-    padding: 1rem 0;;
+    display: flex;
+    justify-content: space-between;
+    gap: 5rem;
+    padding: 1rem 0;
 }
+
+.footer-info-wrapper h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1.4rem;
+}
+
+.footer-info-wrapper p {
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* ===============================
+   NAV WRAPPER (alsó rész)
+================================= */
 
 .footer-nav-wrapper {
     border-top: #faecca 1px solid;
     margin-top: 5rem;
+    padding-top: 2rem;
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: space-between;
 }
@@ -21,6 +42,7 @@ footer {
     display: flex;
     gap: 2rem;
     margin-top: 1rem;
+    flex-wrap: wrap;
 }
 
 .footer-nav a {
@@ -38,6 +60,10 @@ footer {
     display: flex;
 }
 
+/* ===============================
+   CONTACT ICONS
+================================= */
+
 .footer-info-contact svg {
     width: 1.5rem;
     height: 1.5rem;
@@ -49,34 +75,23 @@ footer {
     font-weight: 500;
 }
 
-.info-email, .info-phone, .info-location {
+.info-email,
+.info-phone,
+.info-location {
     display: flex;
     align-items: center;
     gap: 0.5rem;
     margin-bottom: 0.5rem;
 }
 
-.footer-info-wrapper h2 {
-    font-size: 1.3rem;
-    margin-bottom: 1.4rem;
-}
-
-.footer-info-wrapper p {
-    font-size: 1rem;
-    margin: 0;
-}
-
-.footer-info-wrapper {
-    display: flex;
-    justify-content: space-between;
-    gap: 5rem;
-}
-
-/* Social media icons */
+/* ===============================
+   SOCIAL MEDIA
+================================= */
 
 .intro-social {
     display: flex;
     gap: 0.8rem;
+    flex-wrap: wrap;
 }
 
 .intro-social a {
@@ -89,11 +104,16 @@ footer {
     width: 100%;
     height: auto;
     fill: #faecca;
+    transition: fill 0.25s ease;
 }
 
 .icon-social:hover svg {
     fill: #D9AA52;
 }
+
+/* ===============================
+   COPYRIGHT
+================================= */
 
 .footer-copyright {
     text-align: center;
@@ -101,4 +121,95 @@ footer {
     font-size: 0.9rem;
     margin-top: 2rem;
     padding: 1rem 0;
+}
+
+
+/* =====================================================
+   ================== RESPONSIVE ========================
+   ===================================================== */
+
+
+/* ---------- TABLET (1024px alatt) ---------- */
+@media (max-width: 1024px) {
+
+    footer {
+        padding: 80px 40px 20px 40px;
+    }
+
+    .footer-info-wrapper {
+        gap: 3rem;
+    }
+
+    .footer-nav-wrapper {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-nav {
+        justify-content: center;
+    }
+}
+
+
+/* ---------- MOBIL (768px alatt) ---------- */
+@media (max-width: 768px) {
+
+    footer {
+        padding: 60px 25px 20px 25px;
+    }
+
+    .footer-info-wrapper {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    .footer-info-wrapper > div {
+        width: 100%;
+    }
+
+    .footer-nav {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .footer-nav-wrapper {
+        margin-top: 3rem;
+    }
+
+    .footer-nav-img img {
+        width: 90px;
+        height: auto;
+    }
+
+    .intro-social {
+        justify-content: flex-start;
+    }
+}
+
+
+/* ---------- KIS MOBIL (480px alatt) ---------- */
+@media (max-width: 480px) {
+
+    footer {
+        padding: 50px 20px 15px 20px;
+    }
+
+    .footer-info-wrapper h2 {
+        font-size: 1.15rem;
+    }
+
+    .footer-info-wrapper p {
+        font-size: 0.95rem;
+    }
+
+    .icon-social {
+        width: 1.8rem;
+    }
+
+    .footer-nav-img img {
+        width: 80px;
+    }
 }
