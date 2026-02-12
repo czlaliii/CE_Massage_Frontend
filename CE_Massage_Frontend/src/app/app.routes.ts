@@ -6,6 +6,7 @@ import { ExpanseComponent } from './pages/services/expanse/expanse';
 import { VibecodesComponent } from './pages/services/vibecodes/vibecodes';
 import { FaqComponent } from './pages/faq/faq';
 import { AboutComponent } from './pages/about/about';
+import { PricesComponent } from './pages/prices/prices';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -20,5 +21,6 @@ export const routes: Routes = [
     { path: 'gallery', component: GalleryComponent },
     { path: 'about', component: AboutComponent },
     { path: 'faq', component: FaqComponent },
+    { path: 'prices', component: PricesComponent},
     { path: '**', redirectTo: '' }
 ];

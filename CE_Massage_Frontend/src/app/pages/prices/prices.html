@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Árlista | Masszázsterápia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        :root {
+            --dark: #454545;
+            --light: #faecca;
+            --gold: #D9AA52;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--light);
+            color: var(--dark);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .price-container {
+            background: #ffffff;
+            width: 100%;
+            max-width: 900px;
+            padding: 60px 60px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.08);
+            border-radius: 6px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .header h2 {
+            letter-spacing: 3px;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+
+        .header h1 {
+            font-size: 48px;
+            font-weight: 300;
+            margin-bottom: 20px;
+        }
+
+        .divider {
+            height: 2px;
+            background: var(--gold);
+            width: 120px;
+            margin: 0 auto;
+        }
+
+        .services {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+        }
+
+        .service-box {
+            padding: 25px 30px;
+            border: 1px solid rgba(0,0,0,0.05);
+            border-left: 5px solid var(--gold);
+            background-color: #fff;
+            transition: 0.3s ease;
+        }
+
+        .service-box:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        .service-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .service-title {
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .service-price {
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--gold);
+        }
+
+        .service-description {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .price-container {
+                padding: 40px 25px;
+            }
+
+            .header h1 {
+                font-size: 36px;
+            }
+
+            .service-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="price-container">
+
+        <div class="header">
+            <h2>MASSZÁZSTERÁPIA</h2>
+            <h1>Árlista</h1>
+            <div class="divider"></div>
+        </div>
+
+        <div class="services">
+
+            <div class="service-box">
+                <div class="service-header">
+                    <div class="service-title">5 Kontinens Masszázs</div>
+                    <div class="service-price">25 000 Ft</div>
+                </div>
+                <div class="service-description">
+                    Egyedülálló holisztikus kezelés, amely ötvözi az öt kontinens masszázstechnikáit, 
+                    energetikai tisztítást és relaxációt. Mély testi-lelki harmonizálás.
+                </div>
+            </div>
+
+            <div class="service-box">
+                <div class="service-header">
+                    <div class="service-title">Vibecodes Terápia</div>
+                    <div class="service-price">22 000 Ft</div>
+                </div>
+                <div class="service-description">
+                    Modern frekvenciaalapú módszer, amely segíti az érzelmi blokkok oldását, 
+                    belső egyensúly megteremtését és az energetikai rendszer harmonizálását.
+                </div>
+            </div>
+
+            <div class="service-box">
+                <div class="service-header">
+                    <div class="service-title">Expanse Terápia</div>
+                    <div class="service-price">20 000 Ft</div>
+                </div>
+                <div class="service-description">
+                    Tudat- és testfókuszú kezelés, amely támogatja a mély ellazulást, 
+                    mentális felszabadulást és a belső tér kitágítását.
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+</body>
+</html>
