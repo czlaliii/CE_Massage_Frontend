@@ -103,53 +103,7 @@
     </div>
 </section>
 
-<section id="reviews" class="reviews-section">
-    <div class="carousel-wrapper">
-        <div class="carousel-container"
-            (mouseenter)="pauseAutoPlay()"
-            (mouseleave)="resumeAutoPlay()">
-
-            <button class="carousel-btn prev"
-                    (click)="prevSlide()"
-                    aria-label="Előző"
-                    [disabled]="currentIndex === 0">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="15 18 9 12 15 6"></polyline>
-                </svg>
-            </button>
-
-            <div class="reviews-viewport">
-                <div class="reviews-track" [style.transform]="transformValue">
-                    <div class="review-slide" *ngFor="let review of reviews">
-                        <app-reviews
-                            [reviewText]="review.text"
-                            [reviewAuthor]="review.author">
-                        </app-reviews>
-                    </div>
-                </div>
-            </div>
-
-            <button class="carousel-btn next"
-                    (click)="nextSlide()"
-                    aria-label="Következő"
-                    [disabled]="currentIndex === maxIndex">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-            </button>
-        </div>
-    </div>
-
-    <div class="carousel-dots">
-        <button *ngFor="let review of reviews; let i = index"
-                class="dot"
-                [class.active]="i === currentIndex"
-                [class.hidden]="i > maxIndex"
-                (click)="goToSlide(i)"
-                [attr.aria-label]="'Ugrás a ' + (i + 1) + '. csoporthoz'">
-        </button>
-    </div>
-</section>
+<app-reviews />
 
 <section class="google-maps-section">
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d673.8280202824203!2d19.057873510768275!3d47.503313198206286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741dc6c7bdd028d%3A0xed46ea0bda513371!2sCSERNEK%20HAJSZALON!5e0!3m2!1shu!2shu!4v1766675740299!5m2!1shu!2shu" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
