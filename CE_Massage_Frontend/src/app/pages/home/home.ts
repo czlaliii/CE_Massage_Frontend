@@ -4,11 +4,14 @@ import { trigger, transition, style, animate } from '@angular/animations';
 import { RouterLink } from '@angular/router';
 import { MatCardModule } from '@angular/material/card';
 import { NgOptimizedImage } from '@angular/common';
-import { Reviews } from './components/reviews/reviews';
+import { Reviews } from './reviews/reviews';
+import { Socials } from '../../shared/socials';
+import { ServicesSection } from './services-section/services-section';
+import { AboutSection } from './about-section/about-section';
 
 @Component({
   selector: 'app-home',
-  imports: [RouterLink, MatCardModule, Reviews, CommonModule, NgOptimizedImage],
+  imports: [RouterLink, MatCardModule, Reviews, CommonModule, NgOptimizedImage, Socials, ServicesSection, AboutSection],
   templateUrl: './home.html',
   styleUrl: './home.css',
   animations: [

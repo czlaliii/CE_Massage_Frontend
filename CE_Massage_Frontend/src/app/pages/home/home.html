@@ -29,79 +29,9 @@
     </div>
 </section>
 
-<section class="services-section">
-    <img ngSrc="/images/home/bg2.jpg" fill class="services-bg" alt="services-bg" priority>
-    <div class="services-content">
-        <div class="services-list">
-            <a routerLink="/services/five-continents">
-                <div class="service-item five-continents-massage">
-                    <img ngSrc="/images/home/five_continents.jpg"
-                        width="400"
-                        height="300"
-                        alt="five-continents-massage"
-                        priority
-                    >
-                    <h3>5 kontinens masszázs</h3>
-                    <p>Egy holisztikus masszázstechnika, amely
-                        ötvözi az 5 kontinens különböző masszázs- és gyógyító
-                        hagyományait, hogy elősegítse a test, az elme és a lélek
-                        harmóniáját.</p>
-                </div>
-            </a>
-            <a routerLink="/services/expanse">
-                <div class="service-item expanse-therapy">
-                    <img ngSrc="/images/home/expanse.jpg"
-                        width="400"
-                        height="300"
-                        alt="expanse-therapy"
-                        priority
-                        >
-                    <h3>Expanse terápia</h3>
-                    <p>Egy innovatív módszer, amely segít
-                        felszabadítani a testben és az elmében rejlő blokkokat,
-                        elősegítve ezzel a mélyebb relaxációt és a belső egyensúlyt.</p>
-                </div>
-            </a>
-            <a routerLink="/services/vibecodes">
-                <div class="service-item vibecodes-therapy">
-                    <img ngSrc="/images/home/vibecodes.jpg"
-                        width="400"
-                        height="300"
-                        alt="vibecodes"
-                        priority>
-                    <h3>Vibecodes kezelés</h3>
-                    <p>Egy rezgésalapú terápia, amely speciális
-                        hangfrekvenciákat használ a test energiarendszerének
-                        harmonizálására és a gyógyulás elősegítésére.</p>
-                </div>
-            </a>
-        </div>
-    </div>
-</section>
+<app-services-section />
 
-<section id="about" class="about-section">
-    <div class="about-content">
-        <div class="about-image">
-            <img ngSrc="/images/home/about-photo1.jpg"
-                width="400"
-                height="500"
-                alt="czinege_edina_erzsebet"
-                priority>
-        </div>
-        <div class="about-text-wrapper">
-            <div class="about-text">
-                <h1>Czinege Edina Erzsébet</h1>
-                <h3>Masszőr</h3>
-                <br>
-                <h2>Út egy belső átalakulás felé</h2>
-                <p>2018-ban megszereztem a Műszaki Menedzser Diplomámat, miközben építészmérnöki tanulmányt folytattam. Akkor még nem tudtam, hogy az építőipari pályafutásom 8 évig fog tartani. Kezdetben egy kisebb cégnél, majd az ország legnagyobb vállalatánál dolgoztam, a Market Építő Zrt. Vállalkozási Igazgatóságán, majd két évig egyéni vállalkozásba vállaltam építőipari munkák árazását.Mindeközben az 5 kontinens masszázs szövetség oszlopos tagja, Komáromi Bori bevezetett a coaching és wellness kezelések világába, amely annyira magával ragadott, hogy ma már teljes munkaidőbe fogadom vendégeimet 5 kontinens masszázs, Expanse terápia és Vibecodes kezelésekre.</p>
-            </div>
-            <div class="about-btn-wrapper">
-                <a routerLink="/about" class="about-more-btn">Több</a>
-            </div>
-        </div>
-    </div>
-</section>
+<app-about-section />
 
 <app-reviews />
 

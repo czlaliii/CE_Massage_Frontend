@@ -1,7 +1,7 @@
 /* REVIEWS SECTION */
 
 .reviews-section {
-    background-color: #F5F1ED;
+    background-color: #F5F1ED  ;
     padding: 4rem 1rem;
     position: relative;
 }
@@ -41,7 +41,7 @@
     display: flex;
 }
 
-.review-slide app-reviews {
+.review-slide {
     width: 100%;
     display: flex;
 }
@@ -170,8 +170,8 @@
     }
     
     .review-slide {
-        flex: 0 0 100%; /* JAVÍTVA: teljes szélesség */
-        max-width: 400px; /* HOZZÁADVA: kisebb max szélesség kicsi képernyőn */
+        flex: 0 0 100%;
+        max-width: 400px;
     }
     
     .reviews-track {
