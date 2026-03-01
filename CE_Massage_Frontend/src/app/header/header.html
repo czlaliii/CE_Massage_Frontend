@@ -11,7 +11,7 @@
         </button>
 
         <ul [class.open]="menuOpen">
-            <li><a routerLink="/" (click)="closeMenu()">Kezdőlap</a></li>
+            <li><button matButton class="services-button-title"><a routerLink="/" (click)="closeMenu()">Kezdőlap</a></button></li>
             <li>
                 <button matButton [matMenuTriggerFor]="afterMenu" class="services-button-title">
                     Szolgáltatások
@@ -28,9 +28,9 @@
                     </button>
                 </mat-menu>
             </li>
-            <li><a routerLink="/gallery" (click)="closeMenu()">Galéria</a></li>
-            <li><a routerLink="/about" (click)="closeMenu()">Rólam</a></li>
-            <li><a routerLink="/prices" (click)="closeMenu()">Árak</a></li>
+            <li><button matButton class="services-button-title"><a routerLink="/gallery" (click)="closeMenu()">Galéria</a></button></li>
+            <li><button matButton class="services-button-title"><a routerLink="/about" (click)="closeMenu()">Rólam</a></button></li>
+            <li><button matButton class="services-button-title"><a routerLink="/prices" (click)="closeMenu()">Árak</a></button></li>
         </ul>
     </nav>
 </header>

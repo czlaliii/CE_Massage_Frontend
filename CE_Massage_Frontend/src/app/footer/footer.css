@@ -4,6 +4,11 @@ footer {
     color: #faecca;
 }
 
+.footer-info-wrapper, .footer-nav-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
 /* ===============================
    INFO WRAPPER (felső rész)
 ================================= */
@@ -41,7 +46,6 @@ footer {
 .footer-nav {
     display: flex;
     gap: 2rem;
-    margin-top: 1rem;
     flex-wrap: wrap;
 }
 
