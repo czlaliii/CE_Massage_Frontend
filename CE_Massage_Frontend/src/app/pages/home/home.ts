@@ -6,23 +6,13 @@ import { Reviews } from './reviews/reviews';
 import { ServicesSection } from './services-section/services-section';
 import { AboutSection } from './about-section/about-section';
 import { Hero } from './hero/hero';
+import { GoogleMaps } from "./google-maps/google-maps";
 
 @Component({
   selector: 'app-home',
-  imports: [MatCardModule, Reviews, CommonModule, ServicesSection, AboutSection, Hero],
+  imports: [MatCardModule, Reviews, CommonModule, ServicesSection, AboutSection, Hero, GoogleMaps],
   templateUrl: './home.html',
   styleUrl: './home.css',
-  animations: [
-    trigger('slideAnimation', [
-      transition(':enter', [
-        style({ opacity: 0, transform: 'translateX(100px)' }),
-        animate('500ms ease-out', style({ opacity: 1, transform: 'translateX(0)' }))
-      ]),
-      transition(':leave', [
-        animate('500ms ease-in', style({ opacity: 0, transform: 'translateX(-100px)' }))
-      ])
-    ])
-  ]
 })
 
 export class HomeComponent{}

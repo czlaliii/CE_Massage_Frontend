@@ -7,7 +7,6 @@ import { Component, Input } from '@angular/core';
   styleUrl: './socials.css',
 })
 export class Socials {
-  @Input() wrapperClass: string = 'intro-social-wrapper';
   @Input() innerClass: string = 'intro-social';
   @Input() linkClass: string = 'icon-social';
 }

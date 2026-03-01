@@ -1,3 +1,10 @@
+.intro-social-wrapper {
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 .intro-section {
     position: relative;
     overflow: hidden;

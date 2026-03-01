@@ -85,33 +85,6 @@ footer {
 }
 
 /* ===============================
-   SOCIAL MEDIA
-================================= */
-
-.intro-social {
-    display: flex;
-    gap: 0.8rem;
-    flex-wrap: wrap;
-}
-
-.intro-social a {
-    width: 2.1rem;
-    display: flex;
-    align-items: center;
-}
-
-.icon-social svg {
-    width: 100%;
-    height: auto;
-    fill: #faecca;
-    transition: fill 0.25s ease;
-}
-
-.icon-social:hover svg {
-    fill: #D9AA52;
-}
-
-/* ===============================
    COPYRIGHT
 ================================= */
 
@@ -182,10 +155,6 @@ footer {
     .footer-nav-img img {
         width: 90px;
         height: auto;
-    }
-
-    .intro-social {
-        justify-content: flex-start;
     }
 }
 

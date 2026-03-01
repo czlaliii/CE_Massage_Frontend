@@ -8,6 +8,7 @@ import { ReviewsService } from './reviews.service';
   templateUrl: './reviews.html',
   styleUrl: './reviews.css',
 })
+
 export class Reviews {
 
   currentIndex = 0;
