@@ -2,15 +2,9 @@
     position: relative;
 }
 
-.services-bg{
+.services-bg {
     opacity: 0.75;
     object-fit: cover;
-}
-
-.services-content {
-    position: relative;
-    z-index: 1;
-    padding: 4rem 2rem;
 }
 
 .services-list {
@@ -19,22 +13,43 @@
     align-items: stretch;
     gap: 2rem;
     color: #454545;
+    position: relative;
+    z-index: 1;
+    padding: 4rem 2rem;
 }
 
-.expanse-therapy img {
-    object-position: center 50%;
+@media (max-width: 768px) {
+    .services-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-item {
+        max-width: 300px;
+    }
 }
 
-.five-continents-massage img {
-    object-position: bottom;
-}
+@media (min-width: 769px) and (max-width: 1024px) {
+    .services-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        padding: 0 1.5rem;
+    }
 
-.vibecodes-therapy img {
-    object-position: center;
-}
+    .service-item {
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+    }
 
-.five-continents-massage,
-.expanse-therapy,
-.vibecodes-therapy {
-    flex: 1;
+    .services-list img {
+        height: 200px;
+    }
+
+    .service-item p {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+    }
 }

@@ -6,86 +6,6 @@
     font-style: normal;
 }
 
-/* ===== INTRO SECTION ===== */
-.intro-section {
-    position: relative;
-    overflow: hidden;
-    min-height: 70vh;
-    color: #faecca;
-}
-
-.intro-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    object-fit: cover;
-    filter: brightness(0.6);
-}
-.intro-content {
-    position: relative;
-    width: 100%;
-    min-height: 70vh;
-    margin: 0 auto;
-}
-
-.intro-title {
-    position: absolute;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    padding: 0 1rem;
-    width: 90%;
-}
-
-.intro-title h3 {
-    font-size: 2rem;
-    line-height: 1.4;
-    font-weight: 500;
-}
-
-.intro-social-wrapper {
-    position: absolute;
-    top: 85%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-.intro-social {
-    background-color: rgba(255, 255, 255, 0.3);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem 1rem;
-    border-radius: 30px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-    transform-origin: center;
-}
-
-.intro-social:hover {
-    transform: scale(1.1);
-    background-color: rgba(255, 255, 255, 0.4);
-}
-
-.intro-social a {
-    width: 2.5rem;
-    display: flex;
-    align-items: center;
-}
-
-.icon-social svg {
-    width: 100%;
-    height: auto;
-    fill: #faecca;
-}
-
-.icon-social:hover svg {
-    fill: #FFD700;
-}
-
 /* ===== GOOGLE MAPS SECTION ===== */
 
 .google-maps-section {
@@ -104,48 +24,6 @@
 
 /* ===== MOBIL ===== */
 @media (max-width: 768px) {
-    .intro-title h3 {
-        font-size: 1.2rem;
-    }
-
-    .intro-social {
-        gap: 0;
-    }
-
-    .icon-social svg {
-        height: 1.5rem;
-        width: 100%;
-    }
-
-    .services-list {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .service-item {
-        max-width: 300px;
-    }
-
-    .about-content {
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
-    }
-
-    .about-image {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .about-content img {
-        max-width: 300px;
-    }
-
-    .about-text-wrapper {
-        width: 100%;
-        align-items: center;
-        text-align: center;
-    }
 
     .google-maps iframe {
         width: 100%;
@@ -158,55 +36,6 @@
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
-    .intro-title h3 {
-        font-size: 2rem;
-    }
-
-    .intro-title {
-        width: 70%;
-    }
-
-    .icon-social svg {
-        width: 2rem;
-    }
-
-    .services-list {
-        flex-direction: column;
-        align-items: center;
-        gap: 2rem;
-        padding: 0 1.5rem;
-    }
-
-    .service-item {
-        width: 100%;
-        max-width: 350px;
-        margin: 0 auto;
-    }
-
-    .services-list img {
-        height: 200px;
-    }
-
-    .service-item p {
-        flex-grow: 1;
-        display: flex;
-        align-items: center;
-    }
-
-    .about-content {
-        max-width: 900px;
-        padding: 1.5rem;
-    }
-
-    .about-text-wrapper {
-        max-width: 600px;
-        margin: 0 auto;
-    }
-
-    .about-text {
-        text-align: center;
-    }
-
     .google-maps iframe {
         width: 80%;
         height: 400px;
@@ -216,24 +45,7 @@
     }
 }
 
-/* ===== DESKTOP ===== */
 @media (min-width: 1025px) {
-    .intro-title h3 {
-        font-size: 2.5rem;
-    }
-
-    .intro-title {
-        width: 70%;
-    }
-
-    .five-continents-massage img {
-        object-position: center 90%;
-    }
-
-    .vibecodes-therapy img {
-        object-position: center 60%;
-    }
-
     .google-maps iframe {
         width: 60%;
     }

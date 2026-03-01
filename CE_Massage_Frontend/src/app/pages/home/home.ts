@@ -3,13 +3,13 @@ import { CommonModule } from '@angular/common';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { MatCardModule } from '@angular/material/card';
 import { Reviews } from './reviews/reviews';
-import { Socials } from '../../shared/socials';
 import { ServicesSection } from './services-section/services-section';
 import { AboutSection } from './about-section/about-section';
+import { Hero } from './hero/hero';
 
 @Component({
   selector: 'app-home',
-  imports: [MatCardModule, Reviews, CommonModule, Socials, ServicesSection, AboutSection],
+  imports: [MatCardModule, Reviews, CommonModule, ServicesSection, AboutSection, Hero],
   templateUrl: './home.html',
   styleUrl: './home.css',
   animations: [

@@ -95,3 +95,42 @@
     text-align: center;
     margin-top: 1rem;
 }
+
+@media (max-width: 768px) {
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .about-image {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .about-content img {
+        max-width: 300px;
+    }
+
+    .about-text-wrapper {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .about-content {
+        max-width: 900px;
+        padding: 1.5rem;
+    }
+
+    .about-text-wrapper {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+}

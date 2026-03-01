@@ -1,0 +1,65 @@
+.intro-section {
+    position: relative;
+    overflow: hidden;
+    min-height: 70vh;
+    color: #faecca;
+}
+
+.intro-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    object-fit: cover;
+    filter: brightness(0.6);
+}
+.intro-content {
+    position: relative;
+    width: 100%;
+    min-height: 70vh;
+    margin: 0 auto;
+}
+
+.intro-title {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 0 1rem;
+    width: 90%;
+}
+
+.intro-title h3 {
+    font-size: 2rem;
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .intro-title h3 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .intro-title h3 {
+        font-size: 2rem;
+    }
+
+    .intro-title {
+        width: 70%;
+    }
+}
+
+@media (min-width: 1025px) {
+    .intro-title h3 {
+        font-size: 2.3rem;
+    }
+
+    .intro-title {
+        width: 70%;
+    }
+}
