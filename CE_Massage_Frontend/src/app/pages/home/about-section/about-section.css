@@ -52,7 +52,8 @@
 
 .about-text h3 {
     font-size: 1.5rem;
-    font-weight: 500;
+    font-weight: 400;
+    color:#4d4d4d;
 }
 
 .about-text h2 {
@@ -116,6 +117,19 @@
         width: 100%;
         align-items: center;
         text-align: center;
+    }
+
+    .about-text h1 {
+        font-size: 2rem;
+    }
+
+    .about-text h2 {
+        font-size: 1.75rem;
+    }
+
+    .about-text h3 {
+        font-size: 1.25rem;
+        font-weight: 400;
     }
 }
 

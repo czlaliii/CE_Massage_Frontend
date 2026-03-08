@@ -71,7 +71,7 @@ h1 {
     height: 20px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .carousel-container {
         gap: 0.5rem;
     }
@@ -79,5 +79,9 @@ h1 {
     .carousel-btn {
         width: 36px;
         height: 36px;
+    }
+
+    .reviews-section {
+        background-position: center -20%;
     }
 }
