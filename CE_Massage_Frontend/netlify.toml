@@ -1,7 +1,7 @@
 [build]
   base = "CE_Massage_Frontend"
   command = "npx ng build --configuration production"
-  publish = "dist/ce-massage-frontend/browser"
+  publish = "dist/CE_Massage_Frontend"
 
 [[redirects]]
   from = "/*"
