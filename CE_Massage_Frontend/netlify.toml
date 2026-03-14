@@ -3,6 +3,9 @@
   command = "npx ng build --configuration production"
   publish = "dist/CE_Massage_Frontend"
 
+[build.environment]
+  NPM_FLAGS = "--legacy-peer-deps"
+
 [[redirects]]
   from = "/*"
   to = "/index.html"
