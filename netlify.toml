@@ -1,7 +1,7 @@
 [build]
   base = "CE_Massage_Frontend"
   command = "npx ng build --configuration production"
-  publish = "CE_Massage_Frontend/dist/CE_Massage_Frontend/browser"
+  publish = "dist/CE_Massage_Frontend/browser"
 
 [build.environment]
   NPM_FLAGS = "--legacy-peer-deps"
