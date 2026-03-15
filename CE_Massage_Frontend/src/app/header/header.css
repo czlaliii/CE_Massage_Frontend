@@ -23,7 +23,7 @@ nav {
 }
 
 .logo img {
-    height: 98px;
+    height: 70px;
     width: auto;
     max-width: 240px;
     object-fit: contain;
@@ -119,12 +119,13 @@ body.menu-open {
         left: 0;
         right: 0;
 
-        background: #454545;
+        background: rgba(65, 65, 65, 0.97);
+        backdrop-filter: blur(10px);
         flex-direction: column;
         align-items: center;
 
-        gap: 20px;
-        padding: 36px 0;
+        gap: 8px;
+        padding: 16px 0;
         display: none;
     }
 
@@ -135,6 +136,12 @@ body.menu-open {
     nav ul li {
         width: 100%;
         text-align: center;
+        padding: 8px 0;
+        border-bottom: 1px solid rgba(247, 200, 69, 0.1);
+    }
+
+    nav ul li:last-child {
+        border-bottom: none;
     }
 
     nav a,
@@ -143,7 +150,7 @@ body.menu-open {
     }
 
     .logo img {
-        height: 85px;
+        height: 65px;
         max-width: 220px;
     }
 }
@@ -159,11 +166,11 @@ body.menu-open {
     }
 
     nav ul {
-        gap: 18px;
+        gap: 4px;
     }
 
     .logo img {
-        height: 68px;
+        height: 50px;
         max-width: 200px;
     }
 }
