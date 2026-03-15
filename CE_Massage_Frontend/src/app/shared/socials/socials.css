@@ -90,6 +90,15 @@
         width: 100%;
     }
 
+    .intro-social {
+        padding: 0.5rem 0.6rem;
+    }
+
+    .intro-social a {
+        width: 2.8rem;
+        height: 2.3rem;
+    }
+
     .footer-social {
         justify-content: flex-start;
     }

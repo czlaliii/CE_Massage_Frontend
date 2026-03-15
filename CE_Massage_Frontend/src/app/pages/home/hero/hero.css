@@ -56,7 +56,19 @@
 
 @media (max-width: 768px) {
     .intro-title h3 {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
+    }
+
+    .intro-title {
+        width: 80%;
+    }
+
+    .intro-social-wrapper {
+        top: 90%;
+    }
+
+    .intro-section {
+        min-height: 85vh;
     }
 }
 
