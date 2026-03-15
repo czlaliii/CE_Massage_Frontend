@@ -1,10 +1,18 @@
 .services-section {
     position: relative;
+    width: 100%;
+    overflow: hidden;
 }
 
-.services-bg {
+.services-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url('/images/home/bg2.jpg');
+    background-size: cover;
+    background-position: center;
     opacity: 0.75;
-    object-fit: cover;
+    z-index: 0;
 }
 
 .services-list {
