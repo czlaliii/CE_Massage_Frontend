@@ -1,5 +1,5 @@
 header {
-    background: #454545;
+    background: #414141;
     backdrop-filter: blur(10px);
     box-shadow: 0 2px 15px rgba(139, 115, 95, 0.1);
     position: sticky;
@@ -24,6 +24,7 @@ nav {
 
 .logo img {
     height: 70px;
+    padding: 0.5rem;
     width: auto;
     max-width: 240px;
     object-fit: contain;
