@@ -150,4 +150,8 @@ h1 {
   .services-grid {
     grid-template-columns: 1fr;
   }
+  .subtitle {
+    font-size: 11px;
+    letter-spacing: 2px;
+  }
 }
