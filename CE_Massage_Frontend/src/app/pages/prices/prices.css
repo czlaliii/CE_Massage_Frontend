@@ -18,17 +18,20 @@
 
 h1 {
   text-align: center;
-  font-weight: 300;
-  font-size: 46px;
+  font-family: 'Allura', cursive;
+  font-size: 56px;
+  font-weight: 400;
   margin-bottom: 10px;
+  color: #666666;
 }
 
 .subtitle {
   text-align: center;
   color: #a89a8b;
-  letter-spacing: 2px;
-  font-size: 14px;
+  letter-spacing: 3px;
+  font-size: 13px;
   margin-bottom: 40px;
+  text-transform: uppercase;
 }
 
 .section {
@@ -107,25 +110,44 @@ h1 {
 
 /* ===== Választható kezelések ===== */
 
+/* ===== Masszázstípus lista (átláthatóbb) ===== */
+
 .services-title {
-  font-weight: 600;
-  margin-bottom: 10px;
+  font-weight: 700;
+  margin: 20px 0 12px;
+  font-size: 18px;
+  color: #666666;
 }
 
-.services-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px 20px;
+  font-size: 15px;
+  color: #555;
 }
 
-.tag {
-  background: #f3edda;
-  padding: 6px 12px;
-  border-radius: 20px;
-  font-size: 14px;
+.services-grid div {
+  position: relative;
+  padding-left: 18px;
+}
+
+/* kis elegáns pont */
+.services-grid div::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 6px;
+  height: 6px;
+  background: #a89a8b;
+  border-radius: 50%;
 }
 
 @media (max-width: 600px) {
   h1 { font-size: 34px; }
   .container { padding: 35px 20px; }
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
 }
