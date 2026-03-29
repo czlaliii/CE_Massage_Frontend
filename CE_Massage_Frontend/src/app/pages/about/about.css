@@ -20,6 +20,7 @@
     padding: 40px;
     background-color: #f9f9f9;
     max-width: 1200px;
+    gap: 40px;
 }
 
 .about-image {
@@ -66,6 +67,11 @@
     color: #333;
 }
 
+.about-text .about-image {
+    margin: 20px 0;
+    align-items: center;
+}
+
 .about-text p {
     margin-bottom: 1rem;
     line-height: 1.6;
@@ -91,42 +97,74 @@
 @media (max-width: 1024px) {
     .about-container {
         flex-direction: column;
-        padding: 30px;
+        padding: 25px;
+        gap: 25px;
+    }
+
+    .margin-left {
+        margin: 0 !important;
+    }
+
+    .about-text h1 {
+        font-size: 1.6rem;
+    }
+
+    .about-text h2 {
+        font-size: 1.2rem;
     }
 
     .about-image {
-        margin-right: 0;
-        margin-bottom: 20px;
         max-width: 100%;
-    }
-
-    .about-title {
-        font-size: 1.2rem;
+        align-items: center;
         text-align: center;
-    }
-
-    .about-text {
-        font-size: 1.3rem;
     }
 }
 
 @media (max-width: 768px) {
+
+    .about-section {
+        padding: 30px 15px;
+    }
+
     .about-container {
-        flex-direction: column;
-        padding: 20px;
+        padding: 20px 15px;
+        gap: 20px;
     }
 
     .about-text {
+        font-size: 15px;
+    }
+
+    .about-text h1 {
+        font-size: 1.4rem;
+    }
+
+    .about-text h2 {
+        font-size: 1.1rem;
+    }
+
+    .about-text h3 {
         font-size: 1rem;
+    }
+
+    .about-image h1 {
+        font-size: 1.4rem;
+    }
+
+    .about-image p {
+        font-size: 0.9rem;
     }
 
     .about-image {
-        margin-right: 0;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
     }
 
-    .about-title {
-        font-size: 1rem;
-        text-align: center;
+    .margin-left {
+        margin: 0 !important;
+    }
+
+    .about-image img {
+        max-width: 280px;
+        margin: 0 auto;
     }
 }
