@@ -153,6 +153,10 @@
         font-size: 15px;
     }
 
+    .about-text p {
+        max-width: 600px;
+    }
+
     .about-text h1 {
         font-size: 1.4rem;
     }
@@ -189,6 +193,26 @@
     }
 
     .about-container:first-child {
+        text-align: center;
+    }
+
+    .about-text,
+    .about-text p,
+    .about-text h1,
+    .about-text h2,
+    .about-text h3 {
+        text-align: left !important;
+    }
+
+    .about-container {
+        text-align: left !important;
+    }
+
+    .about-container p[style*="italic"] {
+        text-align: center !important;
+    }
+
+    .about-container:first-child .about-image {
         text-align: center;
     }
 }
