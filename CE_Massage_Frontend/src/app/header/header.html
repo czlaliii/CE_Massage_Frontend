@@ -13,7 +13,11 @@
         <ul [class.open]="menuOpen">
             <li><button matButton class="services-button-title"><a routerLink="/" (click)="closeMenu()">Kezdőlap</a></button></li>
             <li>
-                <button matButton [matMenuTriggerFor]="afterMenu" class="services-button-title">
+                <button 
+                    matButton 
+                    [matMenuTriggerFor]="afterMenu" 
+                    class="services-button-title"
+                    (click)="closeMenu()">
                     Szolgáltatások
                 </button>
                 <mat-menu #afterMenu="matMenu" xPosition="after" class="services-menu">

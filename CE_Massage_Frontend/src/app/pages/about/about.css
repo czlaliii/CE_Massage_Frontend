@@ -25,7 +25,6 @@
 
 .about-image {
     flex: 1;
-    margin-right: 3rem;
     max-width: 500px;
     display: flex;
     flex-direction: column;
@@ -94,6 +93,25 @@
     margin-bottom: 0.5rem;
 }
 
+.closing-block {
+    justify-content: center;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.closing-content {
+    max-width: 700px;
+}
+
+.closing-content h1 {
+    margin-bottom: 20px;
+}
+
+.closing-content p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+}
+
 @media (max-width: 1024px) {
     .about-container {
         flex-direction: column;
@@ -156,15 +174,21 @@
     }
 
     .about-image {
-        margin-bottom: 10px;
+        align-items: center;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .about-image img {
+        display: block;
+        margin: 0 auto;
     }
 
     .margin-left {
         margin: 0 !important;
     }
 
-    .about-image img {
-        max-width: 280px;
-        margin: 0 auto;
+    .about-container:first-child {
+        text-align: center;
     }
 }
