@@ -10,6 +10,7 @@ header {
 nav {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -35,45 +36,21 @@ nav ul {
     align-items: center;
     margin: 0;
     padding: 0;
-    gap: 30px;
+    gap: 60px;
 }
 
-nav a,
-.services-button-title {
+nav a {
     text-decoration: none;
-    color: #faecca !important;
-    font-size: 1.05rem !important;
-    font-weight: 400 !important;
+    color: #faecca;
+    font-size: 1.05rem;
+    font-weight: 400;
     transition: color 0.25s ease;
 }
 
-.services-menu {
-    margin-top: 8px;
-    background-color: #454545 !important;
-}
-
-.services-menu-item {
-    color: #faecca !important;
-    text-decoration: none !important;
-    transition: color 0.25s ease;
-}
-
-.services-button-title .mat-mdc-button-persistent-ripple,
-.services-button-title .mat-mdc-button-ripple,
-.services-button-title .mat-ripple-element {
-    opacity: 0 !important;
-}
-
-nav a:hover, .services-menu-item:hover,
-.services-button-title:hover,
+nav a:hover,
 nav a.active {
     color: #f7c845 !important;
 }
-
-.services-menu .mat-mdc-menu-item span {
-    font-weight: 300 !important;
-}
-
 
 /* =========================
     BURGER
@@ -96,6 +73,68 @@ nav a.active {
 }
 
 /* =========================
+    DROPDOWN MENU
+========================= */
+
+.dropbtn {
+    background-color: #414141;
+    color: #faecca;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: color 0.25s ease;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown a {
+    color: #faecca !important;
+    cursor: pointer;
+}
+
+.dropdown a.active {
+    color: #f7c845 !important;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: rgba(65, 65, 65, 0.97);
+    min-width: 250px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 4px;
+    padding-top: 10px;
+}
+
+.dropdown-content a {
+    color: #faecca;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-radius: 4px;
+    font-size: 0.875rem;
+}
+
+.dropdown-content a:hover {
+    background: rgba(60, 60, 60, 0.97);
+    backdrop-filter: blur(10px);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: transparent;
+    color: #f7c845;
+}
+
+/* =========================
     BODY LOCK
 ========================= */
 
@@ -108,6 +147,10 @@ body.menu-open {
 ========================= */
 
 @media (max-width: 1024px) {
+
+    nav a:hover {
+        color: #faecca !important;
+    }
 
     .burger {
         display: flex;
@@ -136,7 +179,7 @@ body.menu-open {
     nav ul li {
         width: 100%;
         text-align: center;
-        padding: 8px 0;
+        padding: 10px 0;
         border-bottom: 1px solid rgba(247, 200, 69, 0.1);
     }
 
@@ -144,14 +187,36 @@ body.menu-open {
         border-bottom: none;
     }
 
-    nav a,
-    .services-button {
+    nav {
         font-size: 1.15rem;
     }
 
     .logo img {
         height: 65px;
         max-width: 220px;
+    }
+
+    .dropdown:hover .dropdown-content {
+        display: none;
+    }
+
+    .dropdown.open .dropdown-content {
+        display: block;
+        position: static;
+        box-shadow: none;
+        background: transparent;
+    }
+
+    .dropdown-content a {
+        padding: 10px;
+    }
+
+    .dropdown:hover > a {
+        color: #faecca;
+    }
+
+    .dropdown.open > a {
+        color: #f7c845;
     }
 }
 

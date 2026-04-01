@@ -11,31 +11,21 @@
         </button>
 
         <ul [class.open]="menuOpen">
-            <li><button matButton class="services-button-title"><a routerLink="/" (click)="closeMenu()">Kezdőlap</a></button></li>
+            <li><a routerLink="/" (click)="closeMenu()">Kezdőlap</a></li>
             <li>
-                <button 
-                    matButton 
-                    [matMenuTriggerFor]="afterMenu" 
-                    class="services-button-title"
-                    (click)="closeMenu()">
-                    Szolgáltatások
-                </button>
-                <mat-menu #afterMenu="matMenu" xPosition="after" class="services-menu">
-                    <button mat-menu-item class="services-menu-item" routerLink="/services/five-continents">
-                        M5C® – Five Continents Massage®
-                    </button>
-                    <button mat-menu-item class="services-menu-item" routerLink="/services/expanse">
-                        Expanse terápia®
-                    </button>
-                    <button mat-menu-item class="services-menu-item" routerLink="/services/vibecodes">
-                        Vibecodes®
-                    </button>
-                </mat-menu>
+                <div class="dropdown" [class.open]="serviceOpen">
+                    <a (click)="toggleServices()" [class.active]="serviceOpen">Szolgáltatások</a>
+                    <div class="dropdown-content">
+                        <a routerLink="/services/five-continents" (click)="closeMenu()">5 Kontinens Masszázs®</a>
+                        <a routerLink="/services/expanse" (click)="closeMenu()">Expanse terápia®</a>
+                        <a routerLink="/services/vibecodes" (click)="closeMenu()">Vibecodes®</a>
+                    </div>
+                </div>
             </li>
-            <li><button matButton class="services-button-title"><a routerLink="/prices" (click)="closeMenu()">Árak</a></button></li>
-            <li><button matButton class="services-button-title"><a routerLink="/gallery" (click)="closeMenu()">Galéria</a></button></li>
-            <li><button matButton class="services-button-title"><a routerLink="/about" (click)="closeMenu()">Rólam</a></button></li>
-            <li><button matButton class="services-button-title"><a routerLink="/faq" (click)="closeMenu()">GYIK</a></button></li>
+            <li><a routerLink="/prices" (click)="closeMenu()">Árak</a></li>
+            <li><a routerLink="/gallery" (click)="closeMenu()">Galéria</a></li>
+            <li><a routerLink="/about" (click)="closeMenu()">Rólam</a></li>
+            <li><a routerLink="/faq" (click)="closeMenu()">GYIK</a></li>
         </ul>
     </nav>
 </header>
