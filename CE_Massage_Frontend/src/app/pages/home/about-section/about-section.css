@@ -143,12 +143,20 @@
         padding: 1.5rem;
     }
 
+    .about-content img {
+        max-width: 500px;
+    }
+
     .about-text-wrapper {
         max-width: 600px;
         margin: 0 auto;
     }
 
-    .about-text {
-        text-align: center;
+    .about-text h1 {
+        font-size: 2.1rem;
+    }
+
+    .about-text h3 {
+        font-size: 1.3rem;
     }
 }
