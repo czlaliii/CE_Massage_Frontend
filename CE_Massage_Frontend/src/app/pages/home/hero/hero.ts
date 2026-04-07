@@ -1,10 +1,11 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Socials } from '../../../shared/socials/socials';
 import { AfterViewInit } from '@angular/core';
+import { ScrollAnimateDirective } from '../../../shared/directives/scroll.directive';
 
 @Component({
   selector: 'app-hero',
-  imports: [Socials],
+  imports: [Socials, ScrollAnimateDirective],
   templateUrl: './hero.html',
   styleUrl: './hero.css',
 })
