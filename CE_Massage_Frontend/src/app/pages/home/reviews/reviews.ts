@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { Review } from "../review/review";
 import { ReviewsService } from './reviews.service';
+import { ScrollAnimateDirective } from '../../../shared/directives/scroll.directive';
 
 @Component({
   selector: 'app-reviews',
-  imports: [Review],
+  imports: [Review, ScrollAnimateDirective],
   templateUrl: './reviews.html',
   styleUrl: './reviews.css',
 })

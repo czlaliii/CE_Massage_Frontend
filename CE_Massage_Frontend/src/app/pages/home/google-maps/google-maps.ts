@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { ScrollAnimateDirective } from '../../../shared/directives/scroll.directive';
 
 @Component({
   selector: 'app-google-maps',
-  imports: [],
+  imports: [ScrollAnimateDirective],
   templateUrl: './google-maps.html',
   styleUrl: './google-maps.css',
 })
