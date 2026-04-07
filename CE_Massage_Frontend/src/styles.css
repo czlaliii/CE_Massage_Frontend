@@ -22,3 +22,33 @@ body {
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+/* ALAP */
+.sa-init {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.sa-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* VARIÁCIÓK */
+.fade-up {
+    transform: translateY(-40px);
+    transform: translateY(40px);
+}
+
+.fade-in {
+    transform: none;
+}
+
+.zoom-in {
+    transform: scale(0.9);
+}
+
+.sa-visible.zoom-in {
+    transform: scale(1);
+}
