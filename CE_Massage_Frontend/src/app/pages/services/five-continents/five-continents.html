@@ -1,19 +1,10 @@
-<section class="hero">
-    <div class="hero-overlay">
-        <img
-            ngSrc="/images/five_continents_massage_logo.jpg"
-            alt="five-continents-massage-logo"
-            width="170"
-            height="170"
-            priority
-            class="hero-logo">
-
-        <h1>5 Kontinens Masszázs ®</h1>
-        <p class="hero-subtitle">
-            A világ gyógyító érintése egyetlen harmonikus élményben
-        </p>
-    </div>
-</section>
+<app-hero
+    [imageUrl]="'/images/services/five-continents/five_continents_massage_logo.jpg'"
+    [title]="'5 Kontinens Masszázs ®'"
+    [description]="'A világ gyógyító érintése egyetlen harmonikus élményben'"
+    [width]="225/1.5"
+    [height]="225/1.5"
+/>
 
 <section class="five-continents-section">
     <!-- INTRO BLOCK -->

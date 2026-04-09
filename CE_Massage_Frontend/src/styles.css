@@ -26,7 +26,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 /* ALAP */
 .sa-init {
     opacity: 0;
-    transform: translateY(30px);
     transition: all 0.8s ease;
 }
 
@@ -37,7 +36,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 /* VARIÁCIÓK */
 .fade-up {
-    transform: translateY(-40px);
     transform: translateY(40px);
 }
 
