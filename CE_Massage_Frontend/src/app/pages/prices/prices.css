@@ -19,7 +19,7 @@
 h1 {
   text-align: center;
   font-family: 'Allura', cursive;
-  font-size: 56px;
+  font-size: 4rem;
   font-weight: 400;
   margin-bottom: 10px;
   color: #666666;
@@ -32,6 +32,16 @@ h1 {
   font-size: 13px;
   margin-bottom: 40px;
   text-transform: uppercase;
+  font-size: 1rem;
+}
+
+.item a {
+  text-decoration: none;
+  color: #454545;
+}
+
+.item a:hover {
+  color: #a89a8b;
 }
 
 .section {
@@ -41,8 +51,9 @@ h1 {
 .section-title {
   background: #a89a8b;
   color: white;
-  padding: 10px 18px;
+  padding: 12px 18px;
   font-weight: 600;
+  font-size: 1.2rem;
   letter-spacing: 1px;
   margin-bottom: 18px;
   border-radius: 4px;
@@ -59,6 +70,7 @@ h1 {
   justify-content: space-between;
   align-items: baseline;
   padding-bottom: 8px;
+  font-size: 1rem;
   border-bottom: 1px dashed #ddd;
 }
 
@@ -115,7 +127,7 @@ h1 {
 .services-title {
   font-weight: 700;
   margin: 20px 0 12px;
-  font-size: 18px;
+  font-size: 1.2rem;
   color: #666666;
 }
 
@@ -130,6 +142,12 @@ h1 {
 .services-grid div {
   position: relative;
   padding-left: 18px;
+  padding-bottom: 14px;
+}
+
+.massage-info p {
+  margin-bottom: 13px;
+  font-size: 1rem;
 }
 
 /* kis elegáns pont */

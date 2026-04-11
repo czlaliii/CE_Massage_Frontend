@@ -55,9 +55,10 @@
 }
 
 .about-text h3 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: 400;
-    color:#4d4d4d;
+    font-style: italic;
+    color:#878787;
 }
 
 .about-text h2 {

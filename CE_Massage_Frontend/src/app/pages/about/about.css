@@ -6,6 +6,11 @@
     padding: 60px 20px;
 }
 
+p {
+    font-size: 1.1rem;
+    text-align: justify;
+}
+
 .about-title {
     font-size: 1.5rem;
     font-weight: bold;
@@ -110,6 +115,14 @@
 .closing-content p {
     font-size: 1.05rem;
     line-height: 1.7;
+}
+
+.today {
+    max-width: 700px;
+}
+
+.today p {
+    font-size: 1.3rem;
 }
 
 @media (max-width: 1024px) {

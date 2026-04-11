@@ -10,4 +10,5 @@ import { RouterLink } from '@angular/router';
 })
 export class Button {
   @Input({required: true}) buttonText!: string;
+  @Input({required: true}) path!: string;
 }
