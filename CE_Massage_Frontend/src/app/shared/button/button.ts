@@ -1,10 +1,9 @@
 import { Component, Input } from '@angular/core';
-import { ScrollAnimateDirective } from '../directives/scroll.directive';
 import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-button',
-  imports: [ScrollAnimateDirective, RouterLink],
+  imports: [RouterLink],
   templateUrl: './button.html',
   styleUrl: './button.css',
 })

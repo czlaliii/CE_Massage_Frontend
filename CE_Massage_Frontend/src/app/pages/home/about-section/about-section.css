@@ -58,7 +58,7 @@
     font-size: 1.3rem;
     font-weight: 400;
     font-style: italic;
-    color:#878787;
+    color:#6e6e6e;
 }
 
 .about-text h2 {
@@ -105,13 +105,11 @@
 @media (max-width: 768px) {
     .about-content {
         flex-direction: column;
-        align-items: center;
         gap: 2rem;
     }
 
     .about-image {
         width: 100%;
-        justify-content: center;
     }
 
     .about-content img {
@@ -120,21 +118,22 @@
 
     .about-text-wrapper {
         width: 100%;
-        align-items: center;
-        text-align: center;
     }
 
     .about-text h1 {
         font-size: 2rem;
-    }
-
-    .about-text h2 {
-        font-size: 1.75rem;
+        text-align: center;
     }
 
     .about-text h3 {
-        font-size: 1.25rem;
+        font-size: 1rem;
         font-weight: 400;
+        text-align: center;
+    }
+
+    .about-text p {
+        text-align: justify;
+        font-size: 1rem;
     }
 }
 
