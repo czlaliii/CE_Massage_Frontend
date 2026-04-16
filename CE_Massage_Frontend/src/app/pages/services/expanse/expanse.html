@@ -1,1 +1,123 @@
-<p>Hamarosan...</p>
+<app-hero
+    [imageUrl]="'/images/services/expanse/expanse-logo.png'"
+    [title]="'Expanse terápia ®'"
+    [description]="'A belső egyensúly helyreállítása a teljes kiteljesedésért'"
+    [width]="8000/60"
+    [height]="7105/60"
+/>
+
+<section class="expanse-section">
+
+    <!-- INTRO -->
+    <div class="section">
+        <div class="container expanse-intro">
+            <h1>Az Expanse terápia</h1>
+            <p class="lead">
+                Segít felszabadítani a szerveinkbe berögzült traumákat és érzelmeket azáltal,
+                hogy elvezeti a tárolt méreganyagokat, elősegíti a jobb szervműködést,
+                és lehetővé teszi, hogy az energia szabadabban áramoljon a testben.
+            </p>
+        </div>
+    </div>
+
+    <!-- TECHNIKÁK -->
+    <div class="section">
+        <div class="container-wide">
+            <div class="expanse-tech">
+                <div class="expanse-tech-text">
+                    <h2>A kezelés három szakaszból áll</h2>
+                    <h3>FEJ</h3>
+                    <p>
+                        A fejmasszázs egyik legkülönlegesebb eleme a digipunktúra, amely a koponyán keresztül segíti az egész test ellazulását és felszabadulását.
+                    </p>
+                    <h3>SZÍV</h3>
+                    <p>
+                        A szív területén, a szívkoherencia során a szívburok felszabadítása kiemelt szerepet kap, mivel ezáltal visszaáll annak rugalmassága, és csökkenhetnek a működési zavarok hatásai.
+                    </p>
+                    <h3>HAS</h3>
+                    <p>
+                        A has masszázsánál fontos tudni, hogy a szerotonin – amely a hangulatért, alvásért és étvágyért felel – nagyrészt a bélrendszerben termelődik. A masszázs fokozza a vérkeringést, így támogatja ennek az anyagnak a szervezeten belüli hatását.
+                    </p>
+                </div>
+                <app-list class="wider">
+                    <h2>Alkalmazott technikák</h2>
+                    <app-list-item item="aromaterápia"></app-list-item>
+                    <app-list-item item="arc- és hasmasszázs"></app-list-item>
+                    <app-list-item item="kopogtatás (EFT)"></app-list-item>
+                    <app-list-item item="akupresszúra"></app-list-item>
+                    <app-list-item item="olfaktor terápia"></app-list-item>
+                    <app-list-item item="hangterápia"></app-list-item>
+                    <app-list-item item="fényterápia"></app-list-item>
+                    <app-list-item item="szívkoherencia"></app-list-item>
+                </app-list>
+            </div>
+        </div>
+    </div>
+
+    <!-- NEURO BLOKK -->
+    <div class="section-tight">
+        <div class="container">
+            <div class="expanse-neuro">
+                <div>
+                    <h2 class="did-you-know">Tudtad?</h2>
+                    <p class="neuro-intro">
+                        A fényterápia fő célja a belső biológiai óra felborulásából eredő problémák – például a szezonális depresszió – támogatása és enyhítése. Amikor a fény a szembe jut, idegi jelekké alakul, amelyek az agyba továbbítva hatással vannak a neurotranszmitterek működésére.
+                    </p>
+                    <h1>Jóllétünket befolyásoló hormonok</h1>
+                </div>
+        <app-card-grid>
+            <app-card
+                title="Dopamin"
+                description="Az elégedettség hormonja"
+            />
+            <app-card
+                title="Szerotonin"
+                description="A jóllét hormonja"
+            />
+            <app-card
+                title="Oxitocin"
+                description="Az ölelés hormonja"
+            />
+            <app-card
+                title="Adrenalin & noradrenalin"
+                description="A bátorság hormonjai"
+            />
+            <app-card
+                title="Endorfinok"
+                description="Az energia hormonjai"
+            />
+            <app-card
+                title="Feniletilamin"
+                description="Az öröm hormonja"
+            />
+        </app-card-grid>
+            </div>
+        </div>
+    </div>
+
+    <!-- EREDMÉNYEK + INFO -->
+    <div class="section">
+        <div class="container">
+            <h2 class="did-you-know">Tudtad?</h2>
+            <p class="neuro-intro">
+                A fényterápia fő célja a belső biológiai óra felborulásából eredő problémák – például a szezonális depresszió – támogatása és enyhítése. Amikor a fény a szembe jut, idegi jelekké alakul, amelyek az agyba továbbítva hatással vannak a neurotranszmitterek működésére.
+            </p>
+        </div>
+    </div>
+    <div class="text-image-container section container">
+        <div class="info">
+            <h2>Expanse terápia kezelések</h2>
+            <h3>1 alkalmas Expanse kezelés (60 perc)</h3>
+            <p>Kifejezetten expanse terápiához alkalmazandó, svájcban megalkotott illóolaj és növényi olaj keverékeket alkalmazok.</p>
+            <p>A szív területén kizárólag a bordaközi izmokkal dolgozok pólón/törölközőn keresztül.</p>
+            <p>A kezelés masszázs ágyon, ruhában történik, csak a hasmasszázshoz kell a hasat szabadon hagyni. Érdemes laza, kényelmes ruházatban érkezni.
+                Kezelés előtt legalább 2 órával étel fogyasztása nem javasolt.</p>
+            <h3>Négy ülésből álló Expanse terápia</h3>
+            <p>Magában foglal egy kezdeti konzultációt négy kezelést és személyre szabott utánkövetést az egészséges életmódbeli szokások kialakításához.</p>
+        </div>
+        <div class="expanse-img">
+            <img ngSrc="/images/services/expanse/gallery4.jpg" alt="expanse-image" width="384" height="512">
+        </div>
+    </div>
+
+</section>

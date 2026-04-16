@@ -69,41 +69,6 @@ blockquote {
     margin: 0 auto 50px;
 }
 
-/* GRID */
-.vibe-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 25px;
-    padding-top: 50px;
-    align-items: stretch;
-}
-
-/* CARD */
-.vibe-card {
-    background: #ffffff;
-    padding: 25px;
-    border-radius: 16px;
-    transition: all 0.3s ease;
-    border: 1px solid rgba(0,0,0,0.05);
-    position: relative;
-    height: 100%;
-}
-
-/* Title */
-.vibe-card h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    color: #6b5b55;
-    font-weight: 500;
-}
-
-/* Text */
-.vibe-card p {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    color: #6b5b55;
-}
-
 /* Program */
 .vibe-program {
     padding: 80px 20px 0px 20px;
@@ -128,45 +93,6 @@ blockquote {
 .vibe-program p {
     margin-bottom: 20px;
     font-size: 1rem;
-}
-
-.vibe-program ul {
-    margin-bottom: 30px;
-    list-style: none;
-}
-
-.vibe-program li {
-    position: relative;
-    padding-left: 20px;
-}
-
-.program-list {
-    flex: 1;
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 60px;
-    align-items: center;
-    background-color: #F6F3F1;
-    border-radius: 16px;
-}
-
-.program-list li {
-    margin-bottom: 15px;
-    font-size: 1rem !important;
-}
-
-.program-list li::before {
-    content: "✔";
-    position: absolute;
-    left: 0;
-    top: 0;
-    color: rgb(92, 77, 72);
-}
-
-svg {
-    left: 0;
-    width: 40px;
-    height: auto;
 }
 
 .wave-bg {
@@ -277,10 +203,6 @@ svg {
         font-size: 1.2rem;
     }
 
-    .vibe-grid {
-        grid-template-columns: 1fr;
-    }
-
     .about h2{
         padding-top: 20px;
     }
@@ -293,23 +215,6 @@ svg {
     .vibecodes-section {
         padding: 40px 0px;
         margin: 0;
-    }
-
-    .vibe-program {
-        flex-direction: column;
-    }
-
-    .vibe-program h2 {
-        text-align: center;
-    }
-
-    .vibe-program p {
-        font-size: 1rem;
-    }
-
-    .program-list {
-        margin: 3rem auto;
-        width: 100%;
     }
 
     .text-block {

@@ -17,69 +17,44 @@
                 átprogramozni és harmonizálni a belső működésedet –
                 mentális, érzelmi és energetikai szinten.
             </p>
-
-            <div class="vibe-grid">
-                <div class="vibe-card" scrollAnimate animation="fade-in" [delay]="300">
-                    <h3>1. Auto-hipnózis</h3>
-                    <p>
-                        Tudatos kapcsolat a benned lévő energiával és rezgéssel,
-                        amely hatással van a tested működésére és állapotára.
-                    </p>
-                </div>
-
-                <div class="vibe-card" scrollAnimate animation="fade-in" [delay]="300">
-                    <h3>2. Korlátozó hiedelmek</h3>
-                    <p>
-                        Azonosítjuk és feloldjuk azokat a mintákat,
-                        amelyek visszatartanak a bőség megélésétől.
-                    </p>
-                </div>
-
-                <div class="vibe-card" scrollAnimate animation="fade-in" [delay]="450">
-                    <h3>3. Hiedelmeink átprogramozása</h3>
-                    <p>
-                        Leválasztjuk azt, ami nem te vagy,
-                        és erősítjük azt, ami valóban hozzád tartozik.
-                    </p>
-                </div>
-
-                <div class="vibe-card" scrollAnimate animation="fade-in" [delay]="450">
-                    <h3>4. Önmagaddal való harmonizálás</h3>
-                    <p>
-                        Gyakorlati lépések a stabil, magasabb működési szint eléréséhez.
-                    </p>
-                </div>
-
-                <div class="vibe-card" scrollAnimate animation="fade-in" [delay]="600">
-                    <h3>5. Előrehaladás útvonala</h3>
-                    <p>
-                        Strukturált rendszer, amely végigvezet a fejlődési folyamaton.
-                    </p>
-                </div>
-
-                <div class="vibe-card" scrollAnimate animation="fade-in" [delay]="600">
-                    <h3>6. Pénz és bőség</h3>
-                    <p>
-                        Új gondolkodásmód kialakítása a pénzzel és lehetőségekkel kapcsolatban.
-                    </p>
-                </div>
-
-                <div class="vibe-card" scrollAnimate animation="fade-in" [delay]="750">
-                    <h3>7. Tanulás & fejlődés</h3>
-                    <p>
-                        Trendek követése és folyamatos önfejlesztés beépítése a mindennapokba.
-                    </p>
-                </div>
-
-                <div class="vibe-card" scrollAnimate animation="fade-in" [delay]="750">
-                    <h3>8. 3-6-9 módszer</h3>
-                    <p>
-                        Vizualizációs és fókusz technika a célok gyorsabb megvalósításához.
-                    </p>
-                </div>
-
-            </div>
-        </div>
+        <app-card-grid>
+            <app-card
+                title="1. Auto-hipnózis"
+                description="Tudatos kapcsolat a benned lévő energiával és rezgéssel,
+                            amely hatással van a tested működésére és állapotára."
+            />
+            <app-card
+                title="2. Korlátozó hiedelmek"
+                description="Azonosítjuk és feloldjuk azokat a mintákat,
+                        amelyek visszatartanak a bőség megélésétől."
+            />
+            <app-card
+                title="3. Hiedelmeink átprogramozása"
+                description="Leválasztjuk azt, ami nem te vagy,
+                        és erősítjük azt, ami valóban hozzád tartozik."
+            />
+            <app-card
+                title="4. Önmagaddal való harmonizálás"
+                description="Gyakorlati lépések a stabil, magasabb működési szint eléréséhez."
+            />
+            <app-card
+                title="5. Előrehaladás útvonala"
+                description="Strukturált rendszer, amely végigvezet a fejlődési folyamaton."
+            />
+            <app-card
+                title="6. Pénz és bőség"
+                description="Új gondolkodásmód kialakítása a pénzzel és lehetőségekkel kapcsolatban."
+            />
+            <app-card
+                title="7. Tanulás & fejlődés"
+                description="Trendek követése és folyamatos önfejlesztés beépítése a mindennapokba."
+            />
+            <app-card
+                title="8. 3-6-9 módszer"
+                description="Vizualizációs és fókusz technika a célok gyorsabb megvalósításához."
+            />
+        </app-card-grid>
+    </div>
         <!-- QUOTE -->
         <div class="quote-section">
             <blockquote scrollAnimate animation="fade-up" [delay]="0">
@@ -115,22 +90,22 @@
                 </div>
                 <app-button path="/prices" [buttonText]="'Érdekel'" scrollAnimate animation="fade-in" [delay]="400"/>
             </div>
-                <ul class="program-list" scrollAnimate animation="fade-in" [delay]="600">
-                    <li>Auto-hipnózis</li>
-                    <li>Korlátozó hiedelmek</li>
-                    <li>Hiedelmeink átprogramozása</li>
-                    <li>Önmagaddal való harmonizálás</li>
-                    <li>Előrehaladás útvonala</li>
-                    <li>Pénz és bőség</li>
-                    <li>Tanulás & fejlődés</li>
-                    <li>3-6-9 módszer</li>
-                </ul>
+        <app-list>
+            <app-list-item item="Auto-hipnózis" />
+            <app-list-item item="Korlátozó hiedelmek" />
+            <app-list-item item="Hiedelmeink átprogramozása" />
+            <app-list-item item="Önmagaddal való harmonizálás" />
+            <app-list-item item="Előrehaladás útvonala" />
+            <app-list-item item="Pénz és bőség" />
+            <app-list-item item="Tanulás & fejlődés" />
+            <app-list-item item="3-6-9 módszer" />
+        </app-list>
         </div>
 
         <!-- SZEMÉLYES KEZELÉS -->
         <div class="vibe-treatment">
             <div class="treatment-img" scrollAnimate animation="fade-in" [delay]="0">
-                <img ngSrc="/images/gallery/gallery4.jpg" alt="Vibecodes kezelés" width="384" height="512" priority/>
+                <img ngSrc="/images/services/vibecodes/vibecodes-img.jpg" alt="Vibecodes kezelés" width="384" height="512" priority/>
             </div>
             <div class="treatment-text text-block">
                 <h2 class="big-title" scrollAnimate animation="fade-in" [delay]="150">Személyes Vibecodes kezelés</h2>

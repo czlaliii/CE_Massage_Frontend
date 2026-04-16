@@ -1,0 +1,20 @@
+li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 15px;
+    font-size: 1rem !important;
+}
+
+li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: rgb(92, 77, 72);
+}
+
+svg {
+    left: 0;
+    width: 40px;
+    height: auto;
+}

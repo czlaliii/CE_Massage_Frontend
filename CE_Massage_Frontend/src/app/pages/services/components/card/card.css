@@ -1,0 +1,25 @@
+/* CARD */
+.vibe-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+    position: relative;
+    height: 100%;
+}
+
+/* Title */
+.vibe-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #6b5b55;
+    font-weight: 500;
+}
+
+/* Text */
+.vibe-card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #6b5b55;
+}

@@ -1,0 +1,21 @@
+ul {
+    margin-bottom: 30px;
+    list-style: none;
+}
+
+.program-list {
+    flex: 1;
+    min-width: 450px;
+    margin: 0 auto;
+    padding: 60px;
+    align-items: center;
+    background-color: #F6F3F1;
+    border-radius: 16px;
+}
+
+@media (max-width: 768px) {
+    .program-list {
+        margin: 3rem auto;
+        width: ;
+    }
+}
