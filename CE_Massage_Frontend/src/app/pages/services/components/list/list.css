@@ -15,7 +15,7 @@ ul {
 
 @media (max-width: 768px) {
     .program-list {
-        margin: 3rem auto;
-        width: ;
+        min-width: 0;
+        padding: 40px;
     }
 }

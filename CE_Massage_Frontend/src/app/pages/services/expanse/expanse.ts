@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { Hero } from '../components/hero/hero';
 import { ScrollAnimateDirective } from '../../../shared/directives/scroll.directive';
 import { NgOptimizedImage } from '@angular/common';
-import { Button } from "../../../shared/button/button";
 import { Card } from '../components/card/card';
 import { CardGrid } from '../components/card-grid/card-grid';
 import { AboutComponent } from "../../about/about";
@@ -14,7 +13,7 @@ import { List } from "../components/list/list";
   standalone: true,
   templateUrl: './expanse.html',
   styleUrl: './expanse.css',
-  imports: [Hero, ScrollAnimateDirective, NgOptimizedImage, Button, Card, CardGrid, AboutComponent, ListItem, List]
+  imports: [Hero, ScrollAnimateDirective, NgOptimizedImage, Card, CardGrid, AboutComponent, ListItem, List]
 })
 export class ExpanseComponent {
 
