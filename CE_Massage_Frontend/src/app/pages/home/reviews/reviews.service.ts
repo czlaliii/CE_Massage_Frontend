@@ -1,38 +1,57 @@
 import { Injectable } from '@angular/core';
-import { ReviewDto } from '../review/review.model';
 
 @Injectable({providedIn: 'root'})
 export class ReviewsService {
     private reviews = [
         {
             id: 1,
-            text: "Edina masszázsa csodálatos élmény volt! Már az első alkalom után éreztem a változást a testemben és az elmémben is.",
-            author: "Katalin, Budapest"
+            text: "Életem első masszázsa volt, de nagyon jó élmény volt, ajánlom a helyet, kifejezetten Edinát! Nagyon jó beszélgetőtárs és odafigyelt rám végig.",
+            author: "Bence"
         },
         {
             id: 2,
-            text: "Biztonságban éreztem magam, teljesen ki tudtam kapcsolni. Nagyon feltöltött.",
-            author: "Anna"
+            text: "Edina masszázsa tökéletessé tette a budapesti látogatásomat.",
+            author: "Francisca S. O., Spanyolország"
         },
         {
             id: 3,
-            text: "Edina szakértelme és figyelme minden részletre lenyűgöző. Minden alkalommal újra és újra visszatérek hozzá.",
-            author: "Miklós, Debrecen"
+            text: "Czinege Edinánál voltam és tökéletes választásnak bizonyult! Nagyon kedves, profi és intelligens masszőr, aki pontosan tudja, hogy épp mire van szüksége a vendégének. Három év után kezdtem újra a futást, így mindenem fájt, de Edina nálam is jobban érezte, hogy mely területekre érdemes kiemelten fókuszálni. Ez is bizonyítja, hogy mestere szakmájának, így csak ajánlani tudom!",
+            author: "Nándor"
         },
         {
             id: 4,
-            text: "Az Expanse terápia teljesen megváltoztatta az életemet. Edina segített megtalálni a belső békét és egyensúlyt.",
-            author: "Zsófia"
+            text: "Edinánál jártam! Nagyon szuper csodás kezei vannak! Remekül masszíroz! Nagyon ajánlom mindenkinek!",
+            author: "Maria"
         },
         {
             id: 5,
-            text: "A Vibecodes kezelés fantasztikus volt! Soha nem éreztem még ilyen mély relaxációt és feltöltődést.",
-            author: "Gábor, Szeged"
+            text: "Nagyon kellemes wellness kezelés volt, a masszázs utáni energia különleges volt!",
+            author: "Zia, Dubaj"
         },
         {
             id: 6,
-            text: "Edina masszázsa nem csak a testemet, hanem a lelkemet is gyógyította. Hálás vagyok érte.",
-            author: "Eszter"
+            text: "Sok masszőrnél megfordultam már és magabiztosan mondhatom, hogy az egyik legjobb élményben volt Edinánál részem. Már le is foglaltam a következő időpontom.",
+            author: "Elisabeth"
+        },
+        {
+            id: 7,
+            text: "Nagyon köszönöm az 5 kontinens masszázst, isteni volt, egész nap chill-ben voltam 2 cm-el a föld fölött. :D Te vagy a kedvenc masszőröm.",
+            author: "Niki"
+        },
+        {
+            id: 8,
+            text: "Edina egy fantasztikus 5 kontinens masszázst adott, nagyon képzett. Mindenképpen ajánlom.",
+            author: "A. Shrivastava, India"
+        },
+        {
+            id: 9,
+            text: "Nagyon kedves, barátságos és igazi profi. Edinának erős kezei vannak és ismeri a triggerpontokat. Nagyon szépen köszönöm <3 <3 <3",
+            author: "Bogdana"
+        },
+        {
+            id: 10,
+            text: "Nagyon jól éreztem magam az 5 kontinens masszázson, Edina valóban tehetséges.",
+            author: "Luana, Brazília"
         }
     ];
 
