@@ -92,4 +92,8 @@ img {
     .split-content-wrapper {
         flex-direction: column;
     }
+
+    img {
+        width: 100%;
+    }
 }
