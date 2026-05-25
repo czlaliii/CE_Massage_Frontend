@@ -1,6 +1,5 @@
 html,
 body {
-    font-family: 'Open Sans', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     font-weight: 300;
 }
 
@@ -15,8 +14,6 @@ html {
 }
 
 body {
-    font-family: 'Segoe UI', 'Arial', sans-serif;
-    font-weight: 300;
     color: #5c4d42;
     line-height: 1.6;
 }
