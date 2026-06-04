@@ -14,21 +14,36 @@
         </button>
 
         <ul [class.open]="menuOpen">
-            <li><a routerLink="/" (click)="closeMenu()">Kezdőlap</a></li>
+            <li><a routerLink="/" (click)="closeMenu()">{{ 'NAV.HOME' | translate }}</a></li>
             <li>
                 <div class="dropdown" [class.open]="serviceOpen">
-                    <a (click)="toggleServices()" [class.active]="serviceOpen">Szolgáltatások</a>
+                    <a (click)="toggleServices()" [class.active]="serviceOpen">{{ 'NAV.SERVICES' | translate }}</a>
                     <div class="dropdown-content">
-                        <a routerLink="/services/five-continents" (click)="closeMenu()">5 Kontinens Masszázs®</a>
-                        <a routerLink="/services/expanse" (click)="closeMenu()">Expanse terápia®</a>
-                        <a routerLink="/services/vibecodes" (click)="closeMenu()">Vibecodes®</a>
+                        <a routerLink="/services/five-continents" (click)="closeMenu()">{{ 'SERVICES.FIVE_CONTINENTS' | translate }}</a>
+                        <a routerLink="/services/expanse" (click)="closeMenu()">{{ 'SERVICES.EXPANSE' | translate }}</a>
+                        <a routerLink="/services/vibecodes" (click)="closeMenu()">{{ 'SERVICES.VIBECODES' | translate }}</a>
                     </div>
                 </div>
             </li>
-            <li><a routerLink="/prices" (click)="closeMenu()">Árak</a></li>
-            <li><a routerLink="/gallery" (click)="closeMenu()">Galéria</a></li>
-            <li><a routerLink="/about" (click)="closeMenu()">Rólam</a></li>
-            <li><a routerLink="/faq" (click)="closeMenu()">GYIK</a></li>
+            <li><a routerLink="/prices" (click)="closeMenu()">{{ 'NAV.PRICES' | translate }}</a></li>
+            <li><a routerLink="/gallery" (click)="closeMenu()">{{ 'NAV.GALLERY' | translate }}</a></li>
+            <li><a routerLink="/about" (click)="closeMenu()">{{ 'NAV.ABOUT' | translate }}</a></li>
+            <li><a routerLink="/faq" (click)="closeMenu()">{{ 'NAV.FAQ' | translate }}</a></li>
+            <div class="language-switch">
+                <button
+                    [class.active]="currentLanguage === 'hu'"
+                    (click)="changeLanguage('hu')">
+                    HU
+                </button>
+
+                <span>|</span>
+
+                <button
+                    [class.active]="currentLanguage === 'en'"
+                    (click)="changeLanguage('en')">
+                    EN
+                </button>
+            </div>
         </ul>
     </nav>
 </header>

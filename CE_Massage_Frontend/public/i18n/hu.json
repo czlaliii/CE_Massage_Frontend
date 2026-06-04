@@ -1,0 +1,15 @@
+{
+    "NAV": {
+        "HOME": "Kezdőlap",
+        "SERVICES": "Szolgáltatások",
+        "PRICES": "Árak",
+        "GALLERY": "Galéria",
+        "ABOUT": "Rólam",
+        "FAQ": "GYIK"
+    },
+    "SERVICES": {
+        "FIVE_CONTINENTS": "5 Kontinens Masszázs®",
+        "EXPANSE": "Expanse terápia®",
+        "VIBECODES": "Vibecodes®"
+    }
+}

@@ -1,10 +1,12 @@
 import { Component, HostListener, ElementRef, ViewEncapsulation } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { NgOptimizedImage } from '@angular/common';
+import { TranslatePipe } from '@ngx-translate/core';
+import { LanguageService } from '../services/Language.service';
 
 @Component({
   selector: 'app-header',
-  imports: [RouterLink, NgOptimizedImage],
+  imports: [RouterLink, NgOptimizedImage, TranslatePipe],
   templateUrl: './header.html',
   styleUrl: './header.css',
   encapsulation: ViewEncapsulation.None
@@ -12,8 +14,15 @@ import { NgOptimizedImage } from '@angular/common';
 export class Header {
   menuOpen = false;
   serviceOpen = false;
+  currentLanguage: string;
 
-  constructor(private eRef: ElementRef) {}
+  constructor(
+    private eRef: ElementRef,
+    private languageService: LanguageService
+  )
+  {
+    this.currentLanguage = this.languageService.getCurrentLanguage();
+  }
 
   toggleMenu() {
     this.menuOpen = !this.menuOpen;
@@ -31,6 +40,11 @@ export class Header {
     if (window.innerWidth <= 1024) {
       this.serviceOpen = !this.serviceOpen;
     }
+  }
+
+  changeLanguage(lang: string): void {
+    this.languageService.switchLanguage(lang);
+    this.currentLanguage = lang;
   }
 
   @HostListener('document:click', ['$event'])

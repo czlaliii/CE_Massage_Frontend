@@ -1,0 +1,15 @@
+{
+    "NAV": {
+        "HOME": "Home",
+        "SERVICES": "Services",
+        "PRICES": "Prices",
+        "GALLERY": "Gallery",
+        "ABOUT": "About Me",
+        "FAQ": "FAQ"
+    },
+    "SERVICES": {
+        "FIVE_CONTINENTS": "5 Continents Massage®",
+        "EXPANSE": "Expanse Therapy®",
+        "VIBECODES": "Vibecodes®"
+    }
+}
