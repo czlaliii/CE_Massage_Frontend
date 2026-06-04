@@ -7,9 +7,54 @@
         "ABOUT": "Rólam",
         "FAQ": "GYIK"
     },
+    "HOME": {
+        "HERO": {
+            "TITLE": "Egy utazás, amely visszarepít önmagadhoz, oda, ahol a legnagyobb kincseid rejlenek."
+        },
+        "SERVICES": {
+            "FIVE_CONTINENTS": {
+                "TITLE": "5 Kontinens Masszázs®",
+                "DESCRIPTION": "Az M5C egy mélyen ható érintésmód, amely ősi technikákat ötvöz. Támogatja a szervezet öngyógyító folyamatait, méregtelenít és oldja a feszültségeket."
+            },
+            "EXPANSE": {
+                "TITLE": "Expanse terápia®",
+                "DESCRIPTION": "Egy olyan kezelés, amely a fej–szív–has tengelyen keresztül segíti az idegrendszer megnyugvását, a stressz oldását és a test természetes regenerációját."
+            },
+            "VIBECODES": {
+                "TITLE": "Vibecodes® kezelés",
+                "DESCRIPTION": "Egy egyedülálló rendszer, amely segít tudatosítani, átprogramozni és harmonizálni a belső működésedet – mentális, érzelmi és energetikai szinten."
+            }
+        }
+    },
+    "ABOUT": {},
+    "PRICES": {},
+    "FAQ": {},
+    "BOOKING": {},
+    "CONTACT": {},
     "SERVICES": {
         "FIVE_CONTINENTS": "5 Kontinens Masszázs®",
         "EXPANSE": "Expanse terápia®",
         "VIBECODES": "Vibecodes®"
+    },
+    "BUTTONS": {},
+    "FOOTER": {
+        "TITLES": {
+            "CONTACT": "Elérhetőség",
+            "OPEN_HOURS": "Nyitvatartás",
+            "SOCIAL_MEDIA": "Közösségi oldalaim"
+        },
+        "WEEKDAYS": {
+            "MONDAY-FRIDAY": "Hétfő - Péntek",
+            "SATURDAY": "Szombat",
+            "SUNDAY": "Vasárnap: Zárva"
+        },
+        "NAV": {
+            "HOME": "Kezdőlap",
+            "PRICES": "Árak",
+            "GALLERY": "Galéria",
+            "ABOUT": "Rólam",
+            "FAQ": "GYIK"
+        },
+        "COPYRIGHT": "Minden szerzői jog fenntartva."
     }
 }

@@ -3,10 +3,11 @@ import { Socials } from '../../../shared/socials/socials';
 import { AfterViewInit } from '@angular/core';
 import { ScrollAnimateDirective } from '../../../shared/directives/scroll.directive';
 import { Button } from "../../../shared/button/button";
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-hero',
-  imports: [Socials, ScrollAnimateDirective, Button],
+  imports: [Socials, ScrollAnimateDirective, Button, TranslatePipe],
   templateUrl: './hero.html',
   styleUrl: './hero.css',
 })

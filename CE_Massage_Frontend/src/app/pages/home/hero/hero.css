@@ -48,7 +48,7 @@
 
 .intro-social-wrapper {
     position: absolute;
-    top: 75%;
+    top: 80%; /*change back to 75% if other buttons are used*/
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 2;
@@ -64,7 +64,7 @@
     }
 
     .intro-social-wrapper {
-        top: 70%;
+        top: 80%; /*change back to 70% if other buttons are used*/
     }
 
     .intro-section {

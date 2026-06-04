@@ -7,9 +7,54 @@
         "ABOUT": "About Me",
         "FAQ": "FAQ"
     },
+    "HOME": {
+        "HERO": {
+            "TITLE": "A journey that takes you back to yourself, to the place where your greatest treasures lie."
+        },
+        "SERVICES": {
+        "FIVE_CONTINENTS": {
+            "TITLE": "5 Continents Massage®",
+            "DESCRIPTION": "M5C is a deeply transformative touch therapy that combines ancient techniques. It supports the body's natural self-healing processes, promotes detoxification, and releases tension."
+        },
+        "EXPANSE": {
+            "TITLE": "Expanse Therapy®",
+            "DESCRIPTION": "A treatment that helps calm the nervous system, reduce stress, and support the body's natural regeneration through the head–heart–gut connection."
+        },
+        "VIBECODES": {
+            "TITLE": "Vibecodes® Therapy",
+            "DESCRIPTION": "A unique system that helps you become aware of, reprogram, and harmonize your inner patterns on a mental, emotional, and energetic level."
+        }
+        }
+    },
+    "ABOUT": {},
+    "PRICES": {},
+    "FAQ": {},
+    "BOOKING": {},
+    "CONTACT": {},
     "SERVICES": {
         "FIVE_CONTINENTS": "5 Continents Massage®",
         "EXPANSE": "Expanse Therapy®",
         "VIBECODES": "Vibecodes®"
+    },
+    "BUTTONS": {},
+    "FOOTER": {
+        "TITLES": {
+            "CONTACT": "Contact",
+            "OPEN_HOURS": "Open hours",
+            "SOCIAL_MEDIA": "Social media"
+        },
+        "WEEKDAYS": {
+            "MONDAY-FRIDAY": "Monday - Friday",
+            "SATURDAY": "Saturday",
+            "SUNDAY": "Sunday: Closed"
+        },
+        "NAV": {
+            "HOME": "Home",
+            "PRICES": "Prices",
+            "GALLERY": "Gallery",
+            "ABOUT": "About Me",
+            "FAQ": "FAQ"
+        },
+        "COPYRIGHT": "All copyrights reserved."
     }
 }
