@@ -9,14 +9,14 @@
         </div>
         <div class="about-text-wrapper">
             <div class="about-text" scrollAnimate animation="fade-in">
-                <h1>Czinege Edina Erzsébet</h1>
-                <h3>5 Kontinens masszőr, Expanse terapeuta, Vibecodes kezelő és tréner</h3>
+                <h1>{{ 'HOME.ABOUT.NAME' | translate }}</h1>
+                <h3>{{ 'HOME.ABOUT.TITLE' | translate }}</h3>
                 <br>
-                <p>Szeretettel várlak egy olyan térben, ahol megállhatsz egy pillanatra, és leteheted mindazt, ami a testedet és a lelkedet nehezíti. Hiszem, hogy még a legnehezebb időszakokban is ott van bennünk a belső erő és a nyugalom lehetősége – még akkor is, ha ezt éppen nem érezzük.
-                <p>A munkám során figyelemmel, elfogadással és tudatos jelenléttel kísérlek, hogy újra kapcsolódni tudj önmagadhoz, és közelebb kerülj egy kiegyensúlyozottabb állapothoz.</p>
-                <p>Ha szeretnél többet megtudni az én utamról és arról, hogyan jutottam el idáig, kattints tovább.</p>
+                <p>{{ 'HOME.ABOUT.DESCRIPTION_1' | translate }}</p>
+                <p>{{ 'HOME.ABOUT.DESCRIPTION_2' | translate }}</p>
+                <p>{{ 'HOME.ABOUT.DESCRIPTION_3' | translate }}</p>
             </div>
-            <app-button path="/about" [buttonText]="'Több'" scrollAnimate animation="fade-in"/>
+            <app-button path="/about" [buttonText]="'HOME.ABOUT.BUTTON' | translate" scrollAnimate animation="fade-in"/>
         </div>
     </div>
 </section>

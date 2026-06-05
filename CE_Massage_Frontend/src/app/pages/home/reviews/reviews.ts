@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { Review } from "../review/review";
 import { ReviewsService } from './reviews.service';
 import { ScrollAnimateDirective } from '../../../shared/directives/scroll.directive';
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-reviews',
-  imports: [Review, ScrollAnimateDirective],
+  imports: [Review, ScrollAnimateDirective, TranslatePipe],
   templateUrl: './reviews.html',
   styleUrl: './reviews.css',
 })
@@ -18,7 +19,7 @@ export class Reviews {
   constructor(private reviewsService: ReviewsService) {}
 
   get reviews() {
-    return this.reviewsService.getReviews({});
+    return this.reviewsService.getReviews();
   }
 
   ngOnInit() {

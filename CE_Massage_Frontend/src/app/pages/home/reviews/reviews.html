@@ -1,5 +1,5 @@
 <section id="reviews" class="reviews-section" scrollAnimate animation="fade-in">
-    <h1>A vendégeim szerint</h1>
+    <h1>{{ 'HOME.REVIEWS.TITLE' | translate }}</h1>
 
     <div class="carousel-wrapper">
         <div class="carousel-container"
@@ -17,7 +17,7 @@
                     @for (review of reviews; track review) {
                         <div class="review-slide">
                             <app-review
-                                [reviewText]="review.text"
+                                [reviewText]="review.textKey | translate"
                                 [reviewAuthor]="review.author">
                             </app-review>
                         </div>

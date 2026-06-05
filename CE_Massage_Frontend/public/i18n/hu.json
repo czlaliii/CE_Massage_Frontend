@@ -24,6 +24,38 @@
                 "TITLE": "Vibecodes® kezelés",
                 "DESCRIPTION": "Egy egyedülálló rendszer, amely segít tudatosítani, átprogramozni és harmonizálni a belső működésedet – mentális, érzelmi és energetikai szinten."
             }
+        },
+        "ABOUT":{
+            "NAME": "Czinege Edina Erzsébet",
+            "TITLE": "5 Kontinens masszőr, Expanse terapeuta, Vibecodes kezelő és tréner",
+            "DESCRIPTION_1": "Szeretettel várlak egy olyan térben, ahol megállhatsz egy pillanatra, és leteheted mindazt, ami a testedet és a lelkedet nehezíti. Hiszem, hogy még a legnehezebb időszakokban is ott van bennünk a belső erő és a nyugalom lehetősége – még akkor is, ha ezt éppen nem érezzük.",
+            "DESCRIPTION_2": "A munkám során figyelemmel, elfogadással és tudatos jelenléttel kísérlek, hogy újra kapcsolódni tudj önmagadhoz, és közelebb kerülj egy kiegyensúlyozottabb állapothoz.",
+            "DESCRIPTION_3": "Ha szeretnél többet megtudni az én utamról és arról, hogyan jutottam el idáig, kattints tovább.",
+            "BUTTON": "Több"
+        },
+        "REVIEWS" : {
+            "TITLE": "A vendégeim szerint",
+            "REVIEW_1": "Életem első masszázsa volt, de nagyon jó élmény volt, ajánlom a helyet, kifejezetten Edinát! Nagyon jó beszélgetőtárs és odafigyelt rám végig.",
+            "REVIEW_2": "Edina masszázsa tökéletessé tette a budapesti látogatásomat.",
+            "REVIEW_3": "Czinege Edinánál voltam és tökéletes választásnak bizonyult! Nagyon kedves, profi és intelligens masszőr, aki pontosan tudja, hogy épp mire van szüksége a vendégének. Három év után kezdtem újra a futást, így mindenem fájt, de Edina nálam is jobban érezte, hogy mely területekre érdemes kiemelten fókuszálni. Ez is bizonyítja, hogy mestere szakmájának, így csak ajánlani tudom!",
+            "REVIEW_4": "Edinánál jártam! Nagyon szuper csodás kezei vannak! Remekül masszíroz! Nagyon ajánlom mindenkinek!",
+            "REVIEW_5": "Nagyon kellemes wellness kezelés volt, a masszázs utáni energia különleges volt!",
+            "REVIEW_6": "Sok masszőrnél megfordultam már és magabiztosan mondhatom, hogy az egyik legjobb élményben volt Edinánál részem. Már le is foglaltam a következő időpontom.",
+            "REVIEW_7": "Nagyon köszönöm az 5 kontinens masszázst, isteni volt, egész nap chill-ben voltam 2 cm-el a föld fölött. :D Te vagy a kedvenc masszőröm.",
+            "REVIEW_8": "Edina egy fantasztikus 5 kontinens masszázst adott, nagyon képzett. Mindenképpen ajánlom.",
+            "REVIEW_9": "Nagyon kedves, barátságos és igazi profi. Edinának erős kezei vannak és ismeri a triggerpontokat. Nagyon szépen köszönöm <3 <3 <3",
+            "REVIEW_10": "Nagyon jól éreztem magam az 5 kontinens masszázson, Edina valóban tehetséges."
+        },
+        "GOOGLE_MAPS": {
+            "TITLE": "Megközelítés",
+            "PARKING_TITLE": "Parkolás",
+            "PARKING_DESCRIPTION": "Érdemes a Városligetnél leparkolni és onnan az 1-es metróval kb. 1 perc az Opera megálló.",
+            "PUBLIC_TRANSPORT_TITLE": "Tömegközlekedés",
+            "PUBLIC_TRANSPORT_1": "3-as metró Arany János utca megállótól 5 perc séta.",
+            "PUBLIC_TRANSPORT_2": "1-es metró Opera megállótól 1 perc séta.",
+            "PUBLIC_TRANSPORT_3": "4-es és 6-os villamos Oktogon megállótól 10 perc séta vagy 1-es metró.",
+            "PUBLIC_TRANSPORT_4": "70-es és 78-as troli Opera M megállótól 3 perc séta.",
+            "PUBLIC_TRANSPORT_5": "72-es troli Szent István Bazilika megállótól 5 perc séta."
         }
     },
     "ABOUT": {},

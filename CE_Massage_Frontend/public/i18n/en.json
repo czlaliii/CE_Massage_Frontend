@@ -12,18 +12,50 @@
             "TITLE": "A journey that takes you back to yourself, to the place where your greatest treasures lie."
         },
         "SERVICES": {
-        "FIVE_CONTINENTS": {
-            "TITLE": "5 Continents Massage®",
-            "DESCRIPTION": "M5C is a deeply transformative touch therapy that combines ancient techniques. It supports the body's natural self-healing processes, promotes detoxification, and releases tension."
+            "FIVE_CONTINENTS": {
+                "TITLE": "5 Continents Massage®",
+                "DESCRIPTION": "M5C is a deeply transformative touch therapy that combines ancient techniques. It supports the body's natural self-healing processes, promotes detoxification, and releases tension."
+            },
+            "EXPANSE": {
+                "TITLE": "Expanse Therapy®",
+                "DESCRIPTION": "A treatment that helps calm the nervous system, reduce stress, and support the body's natural regeneration through the head–heart–gut connection."
+            },
+            "VIBECODES": {
+                "TITLE": "Vibecodes® Therapy",
+                "DESCRIPTION": "A unique system that helps you become aware of, reprogram, and harmonize your inner patterns on a mental, emotional, and energetic level."
+            }
         },
-        "EXPANSE": {
-            "TITLE": "Expanse Therapy®",
-            "DESCRIPTION": "A treatment that helps calm the nervous system, reduce stress, and support the body's natural regeneration through the head–heart–gut connection."
+        "ABOUT":{
+            "NAME": "Edina Erzsébet Czinege",
+            "TITLE": "5 Continents Massage Practitioner, Expanse Therapist, Vibecodes Practitioner and Trainer",
+            "DESCRIPTION_1": "I warmly welcome you into a space where you can pause for a moment and let go of everything that weighs on your body and soul. I believe that even during the most challenging periods of life, the possibility of inner strength and peace remains within us – even when we cannot feel it.",
+            "DESCRIPTION_2": "Through my work, I support you with attention, acceptance, and mindful presence, helping you reconnect with yourself and move closer to a more balanced state of being.",
+            "DESCRIPTION_3": "If you would like to learn more about my journey and how I arrived where I am today, click below to continue.",
+            "BUTTON": "More"
         },
-        "VIBECODES": {
-            "TITLE": "Vibecodes® Therapy",
-            "DESCRIPTION": "A unique system that helps you become aware of, reprogram, and harmonize your inner patterns on a mental, emotional, and energetic level."
-        }
+        "REVIEWS": {
+            "TITLE": "What My Guests Say",
+            "REVIEW_1": "It was the first massage of my life, and it was an amazing experience. I highly recommend this place, especially Edina! She is a great conversationalist and paid attention to me throughout the entire session.",
+            "REVIEW_2": "Edina's massage made my visit to Budapest absolutely perfect.",
+            "REVIEW_3": "I had a massage with Edina Czinege and it turned out to be the perfect choice! She is a very kind, professional, and intelligent massage therapist who knows exactly what her clients need. I had just started running again after a three-year break, so my whole body was aching, yet Edina could identify even better than I could which areas needed special attention. This proves that she is truly a master of her profession. I can only recommend her!",
+            "REVIEW_4": "I visited Edina and it was wonderful! She has amazing hands and gives fantastic massages. I highly recommend her to everyone!",
+            "REVIEW_5": "It was a truly pleasant wellness treatment, and the energy I felt after the massage was something special.",
+            "REVIEW_6": "I have visited many massage therapists, and I can confidently say that one of my best experiences was with Edina. I have already booked my next appointment.",
+            "REVIEW_7": "Thank you so much for the 5 Continents Massage. It was heavenly! I felt completely relaxed all day, as if I were floating above the ground. :D You are my favorite massage therapist.",
+            "REVIEW_8": "Edina provided a fantastic 5 Continents Massage and is highly skilled. I would definitely recommend her.",
+            "REVIEW_9": "Very kind, friendly, and a true professional. Edina has strong hands and knows exactly how to work with trigger points. Thank you so much <3 <3 <3",
+            "REVIEW_10": "I had a wonderful experience during the 5 Continents Massage. Edina is truly talented."
+        },
+        "GOOGLE_MAPS": {
+            "TITLE": "Location & Directions",
+            "PARKING_TITLE": "Parking",
+            "PARKING_DESCRIPTION": "It is recommended to park near City Park (Városliget) and take Metro Line 1. The Opera station is approximately 1 minute away.",
+            "PUBLIC_TRANSPORT_TITLE": "Public Transport",
+            "PUBLIC_TRANSPORT_1": "A 5-minute walk from Arany János Street station on Metro Line 3.",
+            "PUBLIC_TRANSPORT_2": "A 1-minute walk from Opera station on Metro Line 1.",
+            "PUBLIC_TRANSPORT_3": "A 10-minute walk from Oktogon station on Tram Lines 4 and 6, or accessible via Metro Line 1.",
+            "PUBLIC_TRANSPORT_4": "A 3-minute walk from Opera M stop on Trolleybus Lines 70 and 78.",
+            "PUBLIC_TRANSPORT_5": "A 5-minute walk from Szent István Bazilika stop on Trolleybus Line 72."
         }
     },
     "ABOUT": {},
