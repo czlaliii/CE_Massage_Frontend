@@ -60,7 +60,42 @@
     },
     "ABOUT": {},
     "PRICES": {},
-    "FAQ": {},
+    "FAQ": {
+        "TITLE": "Gyakran Ismételt Kérdések",
+
+        "CONTACT_BOX": {
+            "TITLE": "Nem találta meg a választ kérdésére?",
+            "DESCRIPTION": "Lépjen kapcsolatba velünk!",
+            "BUTTON": "Kapcsolat"
+        },
+
+        "QUESTIONS": {
+                "QUESTION_1": {
+                "QUESTION": "Érkezhetek bejelentkezés nélkül? Ha nem, mennyivel korábban kell időpontot foglalnom?",
+                "ANSWER": "Bejelentkezés nélkül is érkezhetsz, azonban a szabad időpontok függvényében tudlak fogadni. A biztos időpont érdekében érdemes legalább 2 órával korábban foglalni, de akár 1–2 héttel előre is bejelentkezhetsz."
+            },
+                "QUESTION_2": {
+                "QUESTION": "Mikor kell fizetnem? Készpénzzel vagy kártyával lehet fizetni?",
+                "ANSWER": "A szolgáltatás díját a kezelést követően tudod rendezni, készpénzzel vagy bankkártyával."
+            },
+                "QUESTION_3": {
+                "QUESTION": "Mikor érkezzek a helyszínre?",
+                "ANSWER": "Kérjük, érkezz 10–15 perccel korábban. Késés esetén a kezelési időt sajnos nem tudjuk csúsztatni."
+            },
+                "QUESTION_4": {
+                "QUESTION": "Milyen ruházatot visel a masszőr?",
+                "ANSWER": "A kezelések során munkaruhát (pólót és nadrágot) viselek, a szolgáltatás minden esetben a szakmai kereteken belül zajlik."
+            },
+                "QUESTION_5": {
+                "QUESTION": "A terapeuta képzett és folyamatosan fejlesztett szakember?",
+                "ANSWER": "Igen. Svédmasszázs végzettséggel rendelkezem, emellett az 5 kontinens masszázs, az Expanse terápia és a Vibecodes terápia területén kezelői és oktatói képesítést szereztem az International Massage Federation of the 5 Continents szövetségnél. Számomra kiemelten fontos a folyamatos fejlődés, ezért rendszeresen részt veszek szakmai továbbképzéseken."
+            },
+                "QUESTION_6": {
+                "QUESTION": "Kérhetek extra, eltérő vagy erotikus tartalmú szolgáltatást?",
+                "ANSWER": "A kezelések kizárólag szakmai keretek között zajlanak, sem erotikus sem szexuális jellegű szolgáltatás nem elérhető. A teljes testes kezelés során a vendég alsóneműben vesz részt, a kényelmet és diszkréciót törölköző biztosítja. A szakmai keretektől eltérő kérés vagy utalás esetén a kezelést megszakítom, és megkérem a vendéget a távozásra."
+            }
+        }
+    },
     "BOOKING": {},
     "CONTACT": {},
     "SERVICES": {

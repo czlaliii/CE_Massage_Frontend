@@ -60,7 +60,42 @@
     },
     "ABOUT": {},
     "PRICES": {},
-    "FAQ": {},
+    "FAQ": {
+        "TITLE": "Frequently Asked Questions",
+
+        "CONTACT_BOX": {
+            "TITLE": "Didn't find the answer to your question?",
+            "DESCRIPTION": "Get in touch with us!",
+            "BUTTON": "Contact"
+        },
+
+        "QUESTIONS": {
+                "QUESTION_1": {
+                "QUESTION": "Can I arrive without an appointment? If not, how far in advance should I book?",
+                "ANSWER": "You are welcome to arrive without an appointment, but availability cannot be guaranteed. To secure your preferred time, it is recommended to book at least 2 hours in advance, though appointments can also be made 1–2 weeks ahead."
+            },
+                "QUESTION_2": {
+                "QUESTION": "When do I need to pay? Can I pay by cash or card?",
+                "ANSWER": "Payment is made after the treatment. Both cash and bank card payments are accepted."
+            },
+                "QUESTION_3": {
+                "QUESTION": "When should I arrive for my appointment?",
+                "ANSWER": "Please arrive 10–15 minutes early. Unfortunately, treatment times cannot be extended in the event of a late arrival."
+            },
+                "QUESTION_4": {
+                "QUESTION": "What does the therapist wear during the treatment?",
+                "ANSWER": "During treatments, I wear professional work attire (shirt and trousers). All services are provided strictly within professional boundaries."
+            },
+                "QUESTION_5": {
+                "QUESTION": "Is the therapist qualified and continuously developing professionally?",
+                "ANSWER": "Yes. I am qualified in Swedish massage and hold practitioner and trainer certifications in 5 Continents Massage, Expanse Therapy, and Vibecodes Therapy through the International Massage Federation of the 5 Continents. Continuous professional development is very important to me, and I regularly participate in advanced training programs."
+            },
+            "QUESTION_6": {
+            "QUESTION": "Can I request additional, non-standard, or erotic services?",
+            "ANSWER": "All treatments are provided strictly within professional boundaries. No erotic or sexual services are offered. During full-body treatments, clients remain in their underwear, and towels are used to ensure comfort and privacy. Any request or implication that falls outside professional boundaries will result in the treatment being terminated and the client being asked to leave."
+            }
+        }
+    },
     "BOOKING": {},
     "CONTACT": {},
     "SERVICES": {
