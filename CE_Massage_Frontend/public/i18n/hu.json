@@ -58,8 +58,81 @@
             "PUBLIC_TRANSPORT_5": "72-es troli Szent István Bazilika megállótól 5 perc séta."
         }
     },
-    "ABOUT": {},
-    "PRICES": {},
+    "ABOUT": {
+        "PROFILE": {
+            "NAME": "Czinege Edina Erzsébet",
+            "TITLE": "5 Kontinens masszőr, Expanse terapeuta, Vibecodes kezelő és tréner",
+            "CONTACT": "Kapcsolat"
+        },
+        "CONTENT": {
+            "SECTION_TITLE": "Rólam",
+            "MAIN_TITLE": "Út a belső egyensúly felé",
+
+            "PARAGRAPH_1": "Műszaki menedzserként, vörös diplomával végeztem, és éveken keresztül alkalmazotti világban dolgoztam, ahol a fejlődés támogatása és mások szakmai útjának segítése kiemelt szerepet kapott az életemben. Az építőiparban szerzett 8 év tapasztalat után azonban egy személyes fordulópont új irányba vezetett.",
+
+            "PARAGRAPH_2": "A Covid időszakot követően egészségügyi kihívásokkal szembesültem, amelyek életmódváltásra ösztönöztek. Ez az időszak indított el egy mélyebb önismereti úton, ahol fokozatosan alakítottam ki egy olyan rendszert, amelyben a táplálkozás, a mozgás, a pihenés és a mentális egyensúly egységben működik.",
+
+            "PARAGRAPH_3": "2024-ben édesanyámmal együtt végeztem el az 5 kontinens masszázs képzést. A masszázs világa számomra nem volt ismeretlen, hiszen édesanyám gyógymasszőrként már gyermekkoromban betekintést adott ennek az alapjaiba. Bármikor fordulhatok hozzá szakmai kérdésekkel, amiért nagyon hálás vagyok neki.",
+
+            "PARAGRAPH_4": "Ugyanebben az évben Balin elvégeztem a Vibecodes oktatói képzést is, amely egy radikálisan új szemléletet hozott az életembe. Megértettem, hogy a belső működésünk és a hozzáállásunk alapvetően határozza meg a mindennapi megéléseinket.",
+
+            "PARAGRAPH_5": "Ma azokkal dolgozom, akik sok terhet visznek, maximalisták, és szeretnének egy kiegyensúlyozottabb, tudatosabb életet kialakítani.",
+
+            "PARAGRAPH_6": "Célom, hogy olyan eszközöket és szemléletet adjak át, amelyek segítenek a feszültségek oldásában és a belső egyensúly megteremtésében."
+        }
+    },
+    "PRICES": {
+        "TITLE": "Árlista",
+        "SUBTITLE": "Masszázs & Terápiák",
+
+        "FIVE_CONTINENTS": {
+            "TITLE": "5 Kontinens Masszázs",
+            "PASS_TITLE": "10 alkalmas bérlet",
+            "PASS_NOTE": "Az egyes alkalmak között 30 napnál több idő nem telhet el. Kezdés időpontja legfeljebb 30 nap a bérlet vásárlásától számítva."
+        },
+
+        "EXPANSE": {
+            "TITLE": "Expanse Terápia",
+            "COURSE_4": "4 alkalmas kúra",
+            "COURSE_4_MASSAGE": "4 alkalmas kúra + 1 db 100 perces 5 kontinens masszázs"
+        },
+
+        "VIBECODES": {
+            "TITLE": "Vibecodes",
+            "TREATMENT_35": "35 perc kezelés",
+            "TREATMENT_60": "60 perc kezelés és coaching",
+            "ONLINE_INFO": "Online alkalmakról további információ",
+            "FACEBOOK": "Facebookon",
+            "INSTAGRAM": "Instagramon"
+        },
+
+        "UNIT_MASSAGE": {
+            "TITLE": "Egységáras Masszázsok",
+            "SERVICES_TITLE": "Választható kezelések:",
+
+            "SERVICE_1": "Svédmasszázs",
+            "SERVICE_2": "Relax masszázs",
+            "SERVICE_3": "Teljes test masszázs",
+            "SERVICE_4": "Frissítő masszázs",
+
+            "SERVICE_5": "Lomi lomi masszázs",
+            "SERVICE_6": "Hátmasszázs (30 perc)",
+            "SERVICE_7": "Arc- és fejmasszázs (30 perc)",
+            "SERVICE_8": "Reflexpontos talpmasszázs (30 perc)"
+        },
+
+        "INFO": {
+            "TITLE": "Információk az Egységáras Masszázsaimról",
+
+            "OILS_TITLE": "Milyen olajakkal dolgozok?",
+
+            "OILS_TEXT_1": "Svédmasszázs kezeléshez természetes (illatmentes) növényi és bőrbarát összetevőket tartalmazó masszázskrémeket és olajokat használok, valamint opcionálisan 5 Kontinens Masszázs olajjal is dolgozom.",
+
+            "OILS_TEXT_2": "Az arcmasszázshoz is kifejezetten erre a célra kifejlesztett 5 Kontinens Masszázs olajat használok."
+        },
+
+        "BUTTON": "További kérdések"
+    },
     "FAQ": {
         "TITLE": "Gyakran Ismételt Kérdések",
 

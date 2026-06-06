@@ -58,8 +58,81 @@
             "PUBLIC_TRANSPORT_5": "A 5-minute walk from Szent István Bazilika stop on Trolleybus Line 72."
         }
     },
-    "ABOUT": {},
-    "PRICES": {},
+    "ABOUT": {
+        "PROFILE": {
+            "NAME": "Edina Erzsébet Czinege",
+            "TITLE": "5 Continents Massage Practitioner, Expanse Therapist, Vibecodes Practitioner and Trainer",
+            "CONTACT": "Contact"
+        },
+        "CONTENT": {
+            "SECTION_TITLE": "About Me",
+            "MAIN_TITLE": "The Journey Toward Inner Balance",
+
+            "PARAGRAPH_1": "I graduated with honors as an Engineering Manager and spent many years working in the corporate world, where supporting growth and helping others advance in their professional journeys became an important part of my life. After eight years in the construction industry, however, a personal turning point led me in a new direction.",
+
+            "PARAGRAPH_2": "Following the COVID period, I faced health challenges that inspired me to make significant lifestyle changes. This period marked the beginning of a deeper journey of self-discovery, during which I gradually developed a lifestyle where nutrition, movement, rest, and mental well-being work together in harmony.",
+
+            "PARAGRAPH_3": "In 2024, I completed the 5 Continents Massage training together with my mother. The world of massage was not unfamiliar to me, as my mother, a medical massage therapist, introduced me to its foundations from an early age. I am deeply grateful that I can always turn to her for professional guidance and support.",
+
+            "PARAGRAPH_4": "In the same year, I completed the Vibecodes Trainer Program in Bali, which brought a radically new perspective into my life. I came to understand that our inner patterns and attitudes fundamentally shape how we experience everyday life.",
+
+            "PARAGRAPH_5": "Today, I work with people who carry many responsibilities, strive for perfection, and wish to create a more balanced and conscious way of living.",
+
+            "PARAGRAPH_6": "My goal is to share tools and perspectives that help release tension and support the creation of lasting inner balance."
+        }
+    },
+    "PRICES": {
+        "TITLE": "Price List",
+        "SUBTITLE": "Massages & Therapies",
+
+        "FIVE_CONTINENTS": {
+            "TITLE": "5 Continents Massage",
+            "PASS_TITLE": "10-Session Package",
+            "PASS_NOTE": "No more than 30 days may pass between individual sessions. The first session must take place within 30 days of purchasing the package."
+        },
+
+        "EXPANSE": {
+            "TITLE": "Expanse Therapy",
+            "COURSE_4": "4-Session Program",
+            "COURSE_4_MASSAGE": "4-Session Program + 1 x 100-minute 5 Continents Massage"
+        },
+
+        "VIBECODES": {
+            "TITLE": "Vibecodes",
+            "TREATMENT_35": "35-Minute Session",
+            "TREATMENT_60": "60-Minute Session and Coaching",
+            "ONLINE_INFO": "For more information about online sessions",
+            "FACEBOOK": "on Facebook",
+            "INSTAGRAM": "on Instagram"
+        },
+
+        "UNIT_MASSAGE": {
+            "TITLE": "Fixed-Rate Massages",
+            "SERVICES_TITLE": "Available Treatments:",
+
+            "SERVICE_1": "Swedish Massage",
+            "SERVICE_2": "Relaxation Massage",
+            "SERVICE_3": "Full Body Massage",
+            "SERVICE_4": "Refreshing Massage",
+
+            "SERVICE_5": "Lomi Lomi Massage",
+            "SERVICE_6": "Back Massage (30 min)",
+            "SERVICE_7": "Face and Head Massage (30 min)",
+            "SERVICE_8": "Reflexology Foot Massage (30 min)"
+        },
+
+        "INFO": {
+            "TITLE": "Information About My Fixed-Rate Massages",
+
+            "OILS_TITLE": "What Oils Do I Use?",
+
+            "OILS_TEXT_1": "For Swedish massage treatments, I use natural (fragrance-free), skin-friendly massage creams and oils made from plant-based ingredients. Optionally, I also work with 5 Continents Massage oils.",
+
+            "OILS_TEXT_2": "For facial massages, I use specially developed 5 Continents Massage oils designed specifically for this purpose."
+        },
+
+        "BUTTON": "More Questions"
+    },
     "FAQ": {
         "TITLE": "Frequently Asked Questions",
 

@@ -1,25 +1,32 @@
 <div class="container">
 
-  <h1>Árlista</h1>
-  <div class="subtitle">Masszázs & Terápiák</div>
+  <h1>{{ 'PRICES.TITLE' | translate }}</h1>
+  <div class="subtitle">{{ 'PRICES.SUBTITLE' | translate }}</div>
 
   <!-- 5 Kontinens -->
   <div class="section">
-    <div class="section-title">5 Kontinens Masszázs</div>
+    <div class="section-title">{{ 'PRICES.FIVE_CONTINENTS.TITLE' | translate }}</div>
 
     <div class="price-list">
-      <div class="item"><div>60 perc</div><div class="price">40 000 Ft</div></div>
-      <div class="item"><div>90 perc</div><div class="price">47 000 Ft</div></div>
+      <div class="item">
+        <div>60 perc</div>
+        <div class="price">40 000 Ft</div>
+      </div>
+
+      <div class="item">
+        <div>90 perc</div>
+        <div class="price">47 000 Ft</div>
+      </div>
 
       <div class="item multi">
         <div>
-          10 alkalmas bérlet
-          <div class="note">
-            Az egyes alkalmak között 30 napnál több idő nem telhet el.
-            Kezdés időpontja legfeljebb 30 nap a bérlet vásárlásától számítva.
+          {{ 'PRICES.FIVE_CONTINENTS.PASS_TITLE' | translate }}
 
+          <div class="note">
+            {{ 'PRICES.FIVE_CONTINENTS.PASS_NOTE' | translate }}
           </div>
         </div>
+
         <div class="price">250 000 Ft</div>
       </div>
     </div>
@@ -27,24 +34,56 @@
 
   <!-- Expanse -->
   <div class="section">
-    <div class="section-title">Expanse Terápia</div>
+    <div class="section-title">{{ 'PRICES.EXPANSE.TITLE' | translate }}</div>
 
     <div class="price-list">
-      <div class="item"><div>60 perc</div><div class="price">47 000 Ft</div></div>
-      <div class="item"><div>4 alkalmas kúra</div><div class="price">141 000 Ft</div></div>
-      <div class="item"><div>4 alkalmas kúra + 1db 100 perces 5 kontinens masszázs</div><div class="price">166 000 Ft</div></div>
+      <div class="item">
+        <div>60 perc</div>
+        <div class="price">47 000 Ft</div>
+      </div>
+
+      <div class="item">
+        <div>{{ 'PRICES.EXPANSE.COURSE_4' | translate }}</div>
+        <div class="price">141 000 Ft</div>
+      </div>
+
+      <div class="item">
+        <div>{{ 'PRICES.EXPANSE.COURSE_4_MASSAGE' | translate }}</div>
+        <div class="price">166 000 Ft</div>
+      </div>
     </div>
   </div>
 
   <!-- Vibecodes -->
   <div class="section">
-    <div class="section-title">Vibecodes</div>
+    <div class="section-title">{{ 'PRICES.VIBECODES.TITLE' | translate }}</div>
 
     <div class="price-list">
-      <div class="item"><div>35 perc kezelés</div><div class="price">40 000 Ft</div></div>
-      <div class="item"><div>60 perc kezelés és coaching</div><div class="price">50 000 Ft</div></div>
-      <div class="item"><div>Online alkalmakról további információ <a href="https://www.facebook.com/cemassagee" target="_blank">Facebookon</a> vagy <a href="https://www.instagram.com/cemassage_/" target="_blank">Instagramon</a></div></div>
-      <!-- <div class="item multi">
+      <div class="item">
+        <div>{{ 'PRICES.VIBECODES.TREATMENT_35' | translate }}</div>
+        <div class="price">40 000 Ft</div>
+      </div>
+
+      <div class="item">
+        <div>{{ 'PRICES.VIBECODES.TREATMENT_60' | translate }}</div>
+        <div class="price">50 000 Ft</div>
+      </div>
+
+      <div class="item">
+        <div>
+          {{ 'PRICES.VIBECODES.ONLINE_INFO' | translate }}
+          <a href="https://www.facebook.com/cemassagee" target="_blank">
+            {{ 'PRICES.VIBECODES.FACEBOOK' | translate }}
+          </a>
+          vagy
+          <a href="https://www.instagram.com/cemassage_/" target="_blank">
+            {{ 'PRICES.VIBECODES.INSTAGRAM' | translate }}
+          </a>
+        </div>
+      </div>
+
+      <!--
+      <div class="item multi">
         <div>
           21 napos csoportos online Vibecodes gyakorlás
           <div class="note">
@@ -53,6 +92,7 @@
         </div>
         <div class="price">50 000 Ft</div>
       </div>
+
       <div class="item multi">
         <div>
           8 online alkalom - Vibecodes kódjainak elsajátítása külön-külön
@@ -61,64 +101,100 @@
           </div>
         </div>
         <div class="price">70 000 Ft</div>
-      </div> -->
+      </div>
+      -->
     </div>
   </div>
 
   <!-- Egységár -->
-<div class="section">
-  <div class="section-title">Egységáras Masszázsok</div>
+  <div class="section">
+    <div class="section-title">{{ 'PRICES.UNIT_MASSAGE.TITLE' | translate }}</div>
 
-  <!-- Időtartam kártyák -->
-  <div class="unit-grid">
-    <div class="unit-card">
-      <div class="unit-time">30 perc</div>
-      <div class="unit-price">14 000 Ft</div>
+    <!-- Időtartam kártyák -->
+    <div class="unit-grid">
+      <div class="unit-card">
+        <div class="unit-time">30 perc</div>
+        <div class="unit-price">14 000 Ft</div>
+      </div>
+
+      <div class="unit-card">
+        <div class="unit-time">60 perc</div>
+        <div class="unit-price">17 000 Ft</div>
+      </div>
+
+      <div class="unit-card">
+        <div class="unit-time">90 perc</div>
+        <div class="unit-price">23 000 Ft</div>
+      </div>
+
+      <div class="unit-card">
+        <div class="unit-time">120 perc</div>
+        <div class="unit-price">30 000 Ft</div>
+      </div>
     </div>
 
-    <div class="unit-card">
-      <div class="unit-time">60 perc</div>
-      <div class="unit-price">17 000 Ft</div>
+    <!-- Választható kezelések -->
+    <div class="services-title">
+      {{ 'PRICES.UNIT_MASSAGE.SERVICES_TITLE' | translate }}
     </div>
 
-    <div class="unit-card">
-      <div class="unit-time">90 perc</div>
-      <div class="unit-price">23 000 Ft</div>
+    <div class="services-grid">
+      <section class="services-col">
+        <div>{{ 'PRICES.UNIT_MASSAGE.SERVICE_1' | translate }}</div>
+        <div>{{ 'PRICES.UNIT_MASSAGE.SERVICE_2' | translate }}</div>
+        <div>{{ 'PRICES.UNIT_MASSAGE.SERVICE_3' | translate }}</div>
+        <div>{{ 'PRICES.UNIT_MASSAGE.SERVICE_4' | translate }}</div>
+      </section>
+
+      <section class="services-col">
+        <div>{{ 'PRICES.UNIT_MASSAGE.SERVICE_5' | translate }}</div>
+        <div>{{ 'PRICES.UNIT_MASSAGE.SERVICE_6' | translate }}</div>
+        <div>{{ 'PRICES.UNIT_MASSAGE.SERVICE_7' | translate }}</div>
+        <div>{{ 'PRICES.UNIT_MASSAGE.SERVICE_8' | translate }}</div>
+      </section>
     </div>
 
-    <div class="unit-card">
-      <div class="unit-time">120 perc</div>
-      <div class="unit-price">30 000 Ft</div>
+    <br>
+
+    <div class="section-title">
+      {{ 'PRICES.INFO.TITLE' | translate }}
     </div>
+
+    <div class="massage-info">
+
+      <!--
+      <h2 class="services-title">Milyen a svédmasszázsom?</h2>
+
+      <p>
+        Úgy masszírozok, ahogyan arra a vendégemnek éppen szüksége van...
+      </p>
+
+      <p>
+        A kezelés során nyitott vagyok rövid, könnyed beszélgetésre...
+      </p>
+
+      <p>
+        Nálam a masszázs nem csak kezelés...
+      </p>
+      -->
+
+      <h2 class="services-title">
+        {{ 'PRICES.INFO.OILS_TITLE' | translate }}
+      </h2>
+
+      <p>
+        {{ 'PRICES.INFO.OILS_TEXT_1' | translate }}
+      </p>
+
+      <p>
+        {{ 'PRICES.INFO.OILS_TEXT_2' | translate }}
+      </p>
+    </div>
+
+    <app-button
+      path="/faq"
+      [buttonText]="'PRICES.BUTTON' | translate">
+    </app-button>
   </div>
 
-  <!-- Választható kezelések -->
-  <div class="services-title">Választható kezelések:</div>
-
-  <div class="services-grid">
-    <section class="services-col">
-      <div>Svédmasszázs</div>
-      <div>Relax masszázs</div>
-      <div>Teljes test masszázs</div>
-      <div>Frissítő masszázs</div>
-    </section>
-    <section class="services-col">
-      <div>Lomi lomi masszázs</div>
-      <div>Hátmasszázs (30 perc)</div>
-      <div>Arc- és fejmasszázs (30 perc)</div>
-      <div>Reflexpontos talpmasszázs (30 perc)</div>
-    </section>
-  </div>
-<br>
-<div class="section-title">Információk az Egységáras Masszázsaimról</div>
-  <div class="massage-info">
-    <!-- <h2 class="services-title">Milyen a svédmasszázsom?</h2>
-    <p>Úgy masszírozok, ahogyan arra a vendégemnek éppen szüksége van. Legyen szó erőteljesebb, mélyebb fogásokról vagy egy lágy kezelésről, amely teljesen ellazít, a célom ugyanaz: megszabadítani a fájdalmaktól, oldani a felgyülemlett terheket, és visszaadni a könnyedség érzését.</p>
-    <p>A kezelés során nyitott vagyok rövid, könnyed beszélgetésre akár angol nyelven is, ugyanakkor a nyugodt, csendes pihenést is teljes mértékben biztosítom.</p>
-    <p>Nálam a masszázs nem csak kezelés – egy biztonságos tér, ahol újra kapcsolódhatsz önmagadhoz.</p> -->
-    <h2 class="services-title">Milyen olajakkal dolgozok?</h2>
-    <p>Svédmasszázs kezeléshez természetes (illatmentes) növényi és bőrbarát összetevőket tartalmazó masszázs krémeket-olajokat használok és opcionálisan 5 kontinens masszázs olajjal is dolgozok. </p>
-    <p>Az arcmasszázshoz is kifejezetten erre a célra kifejlesztett 5 kontinens masszázsolajat használok.</p>
-  </div>
-  <app-button path="/faq" buttonText="További kérdések"/>
 </div>
