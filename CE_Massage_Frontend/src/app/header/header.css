@@ -182,6 +182,12 @@ body.menu-open {
   color: #999;
 }
 
+.separator {
+    color: #999;
+    display: flex;
+    align-items: center;
+}
+
 /* =========================
     TABLET + MOBIL
 ========================= */

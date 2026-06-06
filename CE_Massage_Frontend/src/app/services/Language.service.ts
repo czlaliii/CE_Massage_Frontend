@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
@@ -6,29 +6,19 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class LanguageService {
 
-    private readonly STORAGE_KEY = 'language';
+    currentLanguage = signal<string>('hu');
 
     constructor(private translate: TranslateService) {
-
-        this.translate.addLangs(['hu', 'en']);
-        this.translate.setDefaultLang('hu');
-
-        const savedLanguage = localStorage.getItem(this.STORAGE_KEY);
-
-        if (savedLanguage && ['hu', 'en'].includes(savedLanguage)) {
-        this.translate.use(savedLanguage);
-        } else {
-        this.translate.use('hu');
-        localStorage.setItem(this.STORAGE_KEY, 'hu');
-        }
+        const savedLanguage =
+            localStorage.getItem('language') || 'hu';
+        translate.setFallbackLang('hu');
+        translate.use(savedLanguage);
+        this.currentLanguage.set(savedLanguage);
     }
 
     switchLanguage(lang: string): void {
         this.translate.use(lang);
-        localStorage.setItem(this.STORAGE_KEY, lang);
-    }
-
-    getCurrentLanguage(): string {
-        return this.translate.currentLang || 'hu';
+        localStorage.setItem('language', lang);
+        this.currentLanguage.set(lang);
     }
 }
