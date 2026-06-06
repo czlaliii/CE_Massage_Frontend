@@ -5,13 +5,14 @@ import { Card } from '../components/card/card';
 import { CardGrid } from '../components/card-grid/card-grid';
 import { ListItem } from "../components/list-item/list-item";
 import { List } from "../components/list/list";
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-expanse',
   standalone: true,
   templateUrl: './expanse.html',
   styleUrl: './expanse.css',
-  imports: [Hero, NgOptimizedImage, Card, CardGrid, ListItem, List]
+  imports: [Hero, NgOptimizedImage, Card, CardGrid, ListItem, List, TranslatePipe]
 })
 export class ExpanseComponent {
 

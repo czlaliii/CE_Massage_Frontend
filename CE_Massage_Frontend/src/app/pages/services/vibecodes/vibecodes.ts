@@ -7,10 +7,11 @@ import { Card } from '../components/card/card';
 import { CardGrid } from '../components/card-grid/card-grid';
 import { List } from '../components/list/list';
 import { ListItem } from "../components/list-item/list-item";
+import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-vibecodes',
-  imports: [Hero, ScrollAnimateDirective, Button, NgOptimizedImage, Card, CardGrid, List, ListItem],
+  imports: [Hero, ScrollAnimateDirective, Button, NgOptimizedImage, Card, CardGrid, List, ListItem, TranslatePipe],
   templateUrl: './vibecodes.html',
   styleUrl: './vibecodes.css',
 })

@@ -1,107 +1,200 @@
 <app-hero
     [imageUrl]="'/images/services/five-continents/five_continents_massage_logo.jpg'"
-    [title]="'5 Kontinens Masszázs ®'"
-    [description]="'A világ gyógyító érintése egyetlen harmonikus élményben'"
+    [title]="'SERVICES.FIVE_CONTINENTS_PAGE.HERO.TITLE' | translate"
+    [description]="'SERVICES.FIVE_CONTINENTS_PAGE.HERO.DESCRIPTION' | translate"
     [width]="225/1.5"
     [height]="225/1.5"
 />
 
 <section class="five-continents-section">
+
     <div class="five-continents-intro">
-        <h1>5 Kontinens Masszázs</h1>
-        <p>Különféle eredetű masszázsformák a biodinamikai elemek és a Svájcban összeállított illóolaj keverékek szinergiája.</p>
+        <h1>{{ 'SERVICES.FIVE_CONTINENTS_PAGE.INTRO.TITLE' | translate }}</h1>
+
+        <p>
+            {{ 'SERVICES.FIVE_CONTINENTS_PAGE.INTRO.DESCRIPTION' | translate }}
+        </p>
     </div>
-        <!-- WHAT IS M5C -->
+
+    <!-- WHAT IS M5C -->
     <div class="split-section">
+
         <div class="image-content">
-            <img ngSrc="/images/gallery/gallery8.jpg"
+            <img
+                ngSrc="/images/gallery/gallery8.jpg"
                 alt="Energiaáramlás"
                 width="400"
                 height="500">
         </div>
+
         <div class="text-content">
-            <h2>Jótékony hatásai</h2>
-            <h3>Fizikai hatások</h3>
+
+            <h2>{{ 'SERVICES.FIVE_CONTINENTS_PAGE.BENEFITS.TITLE' | translate }}</h2>
+
+            <h3>{{ 'SERVICES.FIVE_CONTINENTS_PAGE.BENEFITS.PHYSICAL_TITLE' | translate }}</h3>
+
             <p>
-                Az 5 Kontinens masszázs számos jótékony hatással van az emberi szervezetre: ellazít és lehetővé teszi a stressz feloldását, serkenti a vér- és nyirokkeringést, ezáltal oxigénnel telíti a szöveteket és eltávolítja a salakanyagokat a szervezetből, stimulálja az immunrendszert, enyhíti a fájdalmakat (hátfájás, izomfájdalom, emésztési problémák, migrén...), és az anyagcsere javításával elősegíti a fogyást.
+                {{ 'SERVICES.FIVE_CONTINENTS_PAGE.BENEFITS.PHYSICAL_TEXT' | translate }}
             </p>
-            <h3>Mentális hatások</h3>
-            <p>Felébreszti a test természetes öngyógyító folyamatait azáltal, hogy felszabadítja a nehéz érzelmi emlékeket és méreganyagokat.</p>
-            <p>Fokozatosan segít helyreállítani az önbizalmat és a vitalitást, visszanyerni az önbecsülést, a békeérzetet és az életörömöt.</p>
+
+            <h3>{{ 'SERVICES.FIVE_CONTINENTS_PAGE.BENEFITS.MENTAL_TITLE' | translate }}</h3>
+
+            <p>
+                {{ 'SERVICES.FIVE_CONTINENTS_PAGE.BENEFITS.MENTAL_TEXT_1' | translate }}
+            </p>
+
+            <p>
+                {{ 'SERVICES.FIVE_CONTINENTS_PAGE.BENEFITS.MENTAL_TEXT_2' | translate }}
+            </p>
+
         </div>
+
     </div>
+
     <div class="five-continents-intro">
-        <h2>Tudtad?</h2>
-        <p>A szív mágneses mezeje ötezerszer erősebb, mint az agy mágneses mezeje a HearthMath Institute tudósainak kutatási eredményei alapján.</p>
+
+        <h2>{{ 'SERVICES.FIVE_CONTINENTS_PAGE.FACT.TITLE' | translate }}</h2>
+
+        <p>
+            {{ 'SERVICES.FIVE_CONTINENTS_PAGE.FACT.TEXT' | translate }}
+        </p>
+
     </div>
+
     <!-- INTRO BLOCK -->
-     <br><br>
+    <br><br>
+
     <div class="split-section">
+
         <div class="text-content">
-            <h2>A kezelés menete</h2>
-            <h3>1 alkalmas 5 kontinens masszázs kezelés</h3>
-            <p>Kifejezetten 5 kontinens masszázshoz alkalmazandó, svájcban megalkotott illóolaj és növényi olaj keverékeket alkalmazok: az első fázisban a méregtelenítéshez, a második fázisban a relaxációhoz és elengedéshez.</p>
-            <p>Az arc, fej és has is érintve van a teljes test masszázs során.</p>
-            <p>Érdemes hajmosás előtt érkezni, mert a haj olajos lesz.</p>
-            <p>Kezelés előtt legalább 2 órával étel fogyasztása nem javasolt.</p>
-            <p>A kezelést 3 hetente javasolt megismételni.</p>
+
+            <h2>{{ 'SERVICES.FIVE_CONTINENTS_PAGE.TREATMENT.TITLE' | translate }}</h2>
+
+            <h3>{{ 'SERVICES.FIVE_CONTINENTS_PAGE.TREATMENT.SUBTITLE' | translate }}</h3>
+
+            <p>
+                {{ 'SERVICES.FIVE_CONTINENTS_PAGE.TREATMENT.TEXT_1' | translate }}
+            </p>
+
+            <p>
+                {{ 'SERVICES.FIVE_CONTINENTS_PAGE.TREATMENT.TEXT_2' | translate }}
+            </p>
+
+            <p>
+                {{ 'SERVICES.FIVE_CONTINENTS_PAGE.TREATMENT.TEXT_3' | translate }}
+            </p>
+
+            <p>
+                {{ 'SERVICES.FIVE_CONTINENTS_PAGE.TREATMENT.TEXT_4' | translate }}
+            </p>
+
+            <p>
+                {{ 'SERVICES.FIVE_CONTINENTS_PAGE.TREATMENT.TEXT_5' | translate }}
+            </p>
+
         </div>
 
         <div class="image-content">
-            <img ngSrc="/images/services/five-continents/massage.jpg"
+            <img
+                ngSrc="/images/services/five-continents/massage.jpg"
                 alt="Relaxáló masszázs"
                 width="400"
                 height="500">
         </div>
+
     </div>
 
     <!-- HOW IT WORKS -->
-     <br>
-     <br>
+    <br>
+    <br>
+
     <div class="centered-section">
-        <h2>5 Kontinens Masszázs technikái</h2>
+
+        <h2>{{ 'SERVICES.FIVE_CONTINENTS_PAGE.TECHNIQUES.TITLE' | translate }}</h2>
+
         <p>
-            Az 5 Kontinens Masszázs ereje abban rejlik, hogy az alábbi masszázstechnikákat a szív ritmusában és energiájában ötvözi, ami ezerszeresére felerősíti hatását.
+            {{ 'SERVICES.FIVE_CONTINENTS_PAGE.TECHNIQUES.DESCRIPTION' | translate }}
         </p>
+
     </div>
 
     <!-- CONTINENTS GRID -->
     <div class="continents-grid">
+
         <div class="continent-card">
-            <h3>Kína</h3>
-            <p><strong>Shiatsu & Tuina & akupresszúra</strong><br>
-            Nagyobb egyensúlyba hozzák a testet</p>
+            <h3>{{ 'SERVICES.FIVE_CONTINENTS_PAGE.COUNTRIES.CHINA.TITLE' | translate }}</h3>
+
+            <p>
+                <strong>
+                    {{ 'SERVICES.FIVE_CONTINENTS_PAGE.COUNTRIES.CHINA.TECHNIQUE' | translate }}
+                </strong>
+                <br>
+                {{ 'SERVICES.FIVE_CONTINENTS_PAGE.COUNTRIES.CHINA.DESCRIPTION' | translate }}
+            </p>
         </div>
 
         <div class="continent-card">
-            <h3>Hawaii</h3>
-            <p><strong>Lomi-Lomi</strong><br>
-            Hullámok, amelyek az egész testet ellazítják</p>
+            <h3>{{ 'SERVICES.FIVE_CONTINENTS_PAGE.COUNTRIES.HAWAII.TITLE' | translate }}</h3>
+
+            <p>
+                <strong>
+                    {{ 'SERVICES.FIVE_CONTINENTS_PAGE.COUNTRIES.HAWAII.TECHNIQUE' | translate }}
+                </strong>
+                <br>
+                {{ 'SERVICES.FIVE_CONTINENTS_PAGE.COUNTRIES.HAWAII.DESCRIPTION' | translate }}
+            </p>
         </div>
 
         <div class="continent-card">
-            <h3>India</h3>
-            <p><strong>Ajurvédikus technikák</strong><br>
-            Aromaterápiás masszázs</p>
+            <h3>{{ 'SERVICES.FIVE_CONTINENTS_PAGE.COUNTRIES.INDIA.TITLE' | translate }}</h3>
+
+            <p>
+                <strong>
+                    {{ 'SERVICES.FIVE_CONTINENTS_PAGE.COUNTRIES.INDIA.TECHNIQUE' | translate }}
+                </strong>
+                <br>
+                {{ 'SERVICES.FIVE_CONTINENTS_PAGE.COUNTRIES.INDIA.DESCRIPTION' | translate }}
+            </p>
         </div>
 
         <div class="continent-card">
-            <h3>USA</h3>
-            <p><strong>Kaliforniai</strong><br>
-            Lassú, hosszan alkalmazott technikák</p>
+            <h3>{{ 'SERVICES.FIVE_CONTINENTS_PAGE.COUNTRIES.USA.TITLE' | translate }}</h3>
+
+            <p>
+                <strong>
+                    {{ 'SERVICES.FIVE_CONTINENTS_PAGE.COUNTRIES.USA.TECHNIQUE' | translate }}
+                </strong>
+                <br>
+                {{ 'SERVICES.FIVE_CONTINENTS_PAGE.COUNTRIES.USA.DESCRIPTION' | translate }}
+            </p>
         </div>
 
         <div class="continent-card">
-            <h3>Svédország</h3>
-            <p><strong>Svéd masszázs</strong><br>
-            Az izomrendszer és a test anatómiai jellegzetességei</p>
+            <h3>{{ 'SERVICES.FIVE_CONTINENTS_PAGE.COUNTRIES.SWEDEN.TITLE' | translate }}</h3>
+
+            <p>
+                <strong>
+                    {{ 'SERVICES.FIVE_CONTINENTS_PAGE.COUNTRIES.SWEDEN.TECHNIQUE' | translate }}
+                </strong>
+                <br>
+                {{ 'SERVICES.FIVE_CONTINENTS_PAGE.COUNTRIES.SWEDEN.DESCRIPTION' | translate }}
+            </p>
         </div>
 
         <div class="continent-card">
-            <h3>Törökország</h3>
-            <p><strong>Török masszázs</strong><br>
-            Energikus és dinamikus masszázs a kezeken és lábakon</p>
+            <h3>{{ 'SERVICES.FIVE_CONTINENTS_PAGE.COUNTRIES.TURKEY.TITLE' | translate }}</h3>
+
+            <p>
+                <strong>
+                    {{ 'SERVICES.FIVE_CONTINENTS_PAGE.COUNTRIES.TURKEY.TECHNIQUE' | translate }}
+                </strong>
+                <br>
+                {{ 'SERVICES.FIVE_CONTINENTS_PAGE.COUNTRIES.TURKEY.DESCRIPTION' | translate }}
+            </p>
         </div>
+
     </div>
+
     <br><br><br>
+
 </section>

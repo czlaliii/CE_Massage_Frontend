@@ -1,117 +1,207 @@
 <app-hero
     [imageUrl]="'/images/services/expanse/expanse-logo.png'"
-    [title]="'Expanse terápia ®'"
-    [description]="'Az idegrendszer megnyugtatása és a belső egyensúly támogatása.'"
+    [title]="'SERVICES.EXPANSE_PAGE.HERO.TITLE' | translate"
+    [description]="'SERVICES.EXPANSE_PAGE.HERO.DESCRIPTION' | translate"
     [width]="8000/60"
     [height]="7105/60"
 />
 
 <section class="expanse-section">
+
     <!-- INTRO -->
     <div class="section">
         <div class="container text-center">
-            <h1>Az Expanse terápia</h1>
+            <h1>{{ 'SERVICES.EXPANSE_PAGE.INTRO.TITLE' | translate }}</h1>
+
             <p class="p-bigger">
-                Segít oldani a testben rögzült traumákat és érzelmi lenyomatokat, támogatja a szervezet természetes tisztulási folyamatait, hozzájárul a kiegyensúlyozott testi működéshez, és elősegíti az energia szabadabb áramlását.
+                {{ 'SERVICES.EXPANSE_PAGE.INTRO.DESCRIPTION' | translate }}
             </p>
         </div>
     </div>
+
     <!-- TECHNIQUES -->
     <div class="section">
         <div class="container-wide">
+
             <div class="split-content-wrapper">
+
                 <div>
-                    <h2>A kezelés három szakaszból áll</h2>
+
+                    <h2>{{ 'SERVICES.EXPANSE_PAGE.STAGES.TITLE' | translate }}</h2>
+
                     <div class="text-justify">
-                        <h3>FEJ</h3>
+
+                        <h3>{{ 'SERVICES.EXPANSE_PAGE.STAGES.HEAD_TITLE' | translate }}</h3>
+
                         <p>
-                            A fejmasszázs egyik legkülönlegesebb eleme a digipunktúra, amely a koponyán keresztül segíti az egész test ellazulását és felszabadulását.
+                            {{ 'SERVICES.EXPANSE_PAGE.STAGES.HEAD_TEXT' | translate }}
                         </p>
-                        <h3>SZÍV</h3>
+
+                        <h3>{{ 'SERVICES.EXPANSE_PAGE.STAGES.HEART_TITLE' | translate }}</h3>
+
                         <p>
-                            A szív területén, a szívkoherencia során a szívburok felszabadítása kiemelt szerepet kap, mivel ezáltal visszaáll annak rugalmassága, és csökkenhetnek a működési zavarok hatásai.
+                            {{ 'SERVICES.EXPANSE_PAGE.STAGES.HEART_TEXT' | translate }}
                         </p>
-                        <h3>HAS</h3>
+
+                        <h3>{{ 'SERVICES.EXPANSE_PAGE.STAGES.ABDOMEN_TITLE' | translate }}</h3>
+
                         <p>
-                            A szerotonin nagyrészt a bélrendszerben termelődik. Ezt azért jó tudni, mert a has masszázs támogatja ennek a hormonnak a szervezeten belüli hatását, amely a hangulatért, alvásért és étvágyért felel.
+                            {{ 'SERVICES.EXPANSE_PAGE.STAGES.ABDOMEN_TEXT' | translate }}
                         </p>
+
                     </div>
+
                 </div>
+
                 <app-list class="wider">
-                    <h3>Alkalmazott technikák</h3> <br>
-                    <app-list-item item="aromaterápia"></app-list-item>
-                    <app-list-item item="arc- és hasmasszázs"></app-list-item>
-                    <app-list-item item="kopogtatás (EFT)"></app-list-item>
-                    <app-list-item item="akupresszúra"></app-list-item>
-                    <app-list-item item="olfaktor terápia"></app-list-item>
-                    <app-list-item item="hangterápia"></app-list-item>
-                    <app-list-item item="fényterápia"></app-list-item>
-                    <app-list-item item="szívkoherencia"></app-list-item>
+
+                    <h3>{{ 'SERVICES.EXPANSE_PAGE.TECHNIQUES.TITLE' | translate }}</h3>
+
+                    <br>
+
+                    <app-list-item
+                        [item]="'SERVICES.EXPANSE_PAGE.TECHNIQUES.ITEM_1' | translate">
+                    </app-list-item>
+
+                    <app-list-item
+                        [item]="'SERVICES.EXPANSE_PAGE.TECHNIQUES.ITEM_2' | translate">
+                    </app-list-item>
+
+                    <app-list-item
+                        [item]="'SERVICES.EXPANSE_PAGE.TECHNIQUES.ITEM_3' | translate">
+                    </app-list-item>
+
+                    <app-list-item
+                        [item]="'SERVICES.EXPANSE_PAGE.TECHNIQUES.ITEM_4' | translate">
+                    </app-list-item>
+
+                    <app-list-item
+                        [item]="'SERVICES.EXPANSE_PAGE.TECHNIQUES.ITEM_5' | translate">
+                    </app-list-item>
+
+                    <app-list-item
+                        [item]="'SERVICES.EXPANSE_PAGE.TECHNIQUES.ITEM_6' | translate">
+                    </app-list-item>
+
+                    <app-list-item
+                        [item]="'SERVICES.EXPANSE_PAGE.TECHNIQUES.ITEM_7' | translate">
+                    </app-list-item>
+
+                    <app-list-item
+                        [item]="'SERVICES.EXPANSE_PAGE.TECHNIQUES.ITEM_8' | translate">
+                    </app-list-item>
+
                 </app-list>
+
             </div>
+
         </div>
     </div>
+
     <!-- DID YOU KNOW -->
     <div class="section container text-center did-you-know">
-        <h2>Tudtad?</h2>
+
+        <h2>{{ 'SERVICES.EXPANSE_PAGE.FACT_1.TITLE' | translate }}</h2>
+
         <p>
-            A fényterápia fő célja a belső biológiai óra felborulásából eredő problémák – például a szezonális depresszió – támogatása és enyhítése. Amikor a fény a szembe jut, idegi jelekké alakul, amelyek az agyba továbbítva hatással vannak a neurotranszmitterek működésére.
+            {{ 'SERVICES.EXPANSE_PAGE.FACT_1.TEXT' | translate }}
         </p>
+
     </div>
+
     <!-- HORMONES -->
     <div class="section container text-center">
-        <h2>Jóllétünket befolyásoló hormonok</h2>
+
+        <h2>{{ 'SERVICES.EXPANSE_PAGE.HORMONES.TITLE' | translate }}</h2>
+
         <app-card-grid>
+
             <app-card
-                title="Dopamin"
-                description="Az elégedettség hormonja"
-            />
+                [title]="'SERVICES.EXPANSE_PAGE.HORMONES.DOPAMINE.TITLE' | translate"
+                [description]="'SERVICES.EXPANSE_PAGE.HORMONES.DOPAMINE.DESCRIPTION' | translate">
+            </app-card>
+
             <app-card
-                title="Szerotonin"
-                description="A jóllét hormonja"
-            />
+                [title]="'SERVICES.EXPANSE_PAGE.HORMONES.SEROTONIN.TITLE' | translate"
+                [description]="'SERVICES.EXPANSE_PAGE.HORMONES.SEROTONIN.DESCRIPTION' | translate">
+            </app-card>
+
             <app-card
-                title="Oxitocin"
-                description="Az ölelés hormonja"
-            />
+                [title]="'SERVICES.EXPANSE_PAGE.HORMONES.OXYTOCIN.TITLE' | translate"
+                [description]="'SERVICES.EXPANSE_PAGE.HORMONES.OXYTOCIN.DESCRIPTION' | translate">
+            </app-card>
+
             <app-card
-                title="Adrenalin & noradrenalin"
-                description="A bátorság hormonjai"
-            />
+                [title]="'SERVICES.EXPANSE_PAGE.HORMONES.ADRENALINE.TITLE' | translate"
+                [description]="'SERVICES.EXPANSE_PAGE.HORMONES.ADRENALINE.DESCRIPTION' | translate">
+            </app-card>
+
             <app-card
-                title="Endorfinok"
-                description="Az energia hormonjai"
-            />
+                [title]="'SERVICES.EXPANSE_PAGE.HORMONES.ENDORPHINS.TITLE' | translate"
+                [description]="'SERVICES.EXPANSE_PAGE.HORMONES.ENDORPHINS.DESCRIPTION' | translate">
+            </app-card>
+
             <app-card
-                title="Feniletilamin"
-                description="Az öröm hormonja"
-            />
+                [title]="'SERVICES.EXPANSE_PAGE.HORMONES.PEA.TITLE' | translate"
+                [description]="'SERVICES.EXPANSE_PAGE.HORMONES.PEA.DESCRIPTION' | translate">
+            </app-card>
+
         </app-card-grid>
+
     </div>
+
     <!-- DID YOU KNOW #2 -->
     <div class="section container text-center did-you-know">
-        <h2>Tudtad?</h2>
+
+        <h2>{{ 'SERVICES.EXPANSE_PAGE.FACT_2.TITLE' | translate }}</h2>
+
         <p>
-            Az Expanse terápia során a testen keresztül finoman összehangolódnak az idegi és hormonális folyamatok, amelyek a bőrön át jutva az agy gondolkodási és érzelmi feldolgozó központjaihoz kapcsolódnak. A bolygóideg rostjai szinte az összes belső szervet behálózzák, és összekötik az agytörzset a szívvel, a tüdővel és a bélrendszerrel – ezek alkotják az Expanse terápia három fő pillérét.
+            {{ 'SERVICES.EXPANSE_PAGE.FACT_2.TEXT' | translate }}
         </p>
+
     </div>
-    <!--  -->
+
+    <!-- TREATMENTS -->
     <div class="split-content-wrapper section container-wide">
+
         <div class="info">
-            <h2>Expanse terápia kezelések</h2>
-            <h3>1 alkalmas Expanse kezelés (60 perc)</h3>
+
+            <h2>{{ 'SERVICES.EXPANSE_PAGE.TREATMENTS.TITLE' | translate }}</h2>
+
+            <h3>{{ 'SERVICES.EXPANSE_PAGE.TREATMENTS.SINGLE_TITLE' | translate }}</h3>
+
             <div class="text-justify">
-                <p>Kifejezetten expanse terápiához alkalmazandó, svájcban megalkotott illóolaj és növényi olaj keverékeket alkalmazok.</p>
-                <p>A szív területén kizárólag a bordaközi izmokkal dolgozok pólón/törölközőn keresztül.</p>
-                <p>A kezelés masszázs ágyon, ruhában történik, csak a hasmasszázshoz kell a hasat szabadon hagyni. Érdemes laza, kényelmes ruházatban érkezni.
-                    Kezelés előtt legalább 2 órával étel fogyasztása nem javasolt.</p>
+
+                <p>
+                    {{ 'SERVICES.EXPANSE_PAGE.TREATMENTS.SINGLE_TEXT_1' | translate }}
+                </p>
+
+                <p>
+                    {{ 'SERVICES.EXPANSE_PAGE.TREATMENTS.SINGLE_TEXT_2' | translate }}
+                </p>
+
+                <p>
+                    {{ 'SERVICES.EXPANSE_PAGE.TREATMENTS.SINGLE_TEXT_3' | translate }}
+                </p>
+
             </div>
-            <h3>Négy ülésből álló Expanse terápia</h3>
-            <p class="text-justify">Magában foglal egy kezdeti konzultációt négy kezelést és személyre szabott utánkövetést az egészséges életmódbeli szokások kialakításához.</p>
+
+            <h3>{{ 'SERVICES.EXPANSE_PAGE.TREATMENTS.COURSE_TITLE' | translate }}</h3>
+
+            <p class="text-justify">
+                {{ 'SERVICES.EXPANSE_PAGE.TREATMENTS.COURSE_TEXT' | translate }}
+            </p>
+
         </div>
+
         <div>
-            <img ngSrc="/images/services/expanse/gallery4.jpg" alt="expanse-image" width="384" height="512">
+            <img
+                ngSrc="/images/services/expanse/gallery4.jpg"
+                alt="expanse-image"
+                width="384"
+                height="512">
         </div>
+
     </div>
 
 </section>

@@ -2,6 +2,9 @@
     "NAV": {
         "HOME": "Home",
         "SERVICES": "Services",
+        "FIVE_CONTINENTS": "5 Continents Massage®",
+        "EXPANSE": "Expanse Therapy®",
+        "VIBECODES": "Vibecodes® Therapy",
         "PRICES": "Prices",
         "GALLERY": "Gallery",
         "ABOUT": "About Me",
@@ -169,14 +172,270 @@
             }
         }
     },
-    "BOOKING": {},
-    "CONTACT": {},
     "SERVICES": {
-        "FIVE_CONTINENTS": "5 Continents Massage®",
-        "EXPANSE": "Expanse Therapy®",
-        "VIBECODES": "Vibecodes®"
+        "FIVE_CONTINENTS_PAGE": {
+            "HERO": {
+            "TITLE": "5 Continents Massage®",
+            "DESCRIPTION": "The healing touch of the world in one harmonious experience"
+            },
+
+            "INTRO": {
+            "TITLE": "5 Continents Massage",
+            "DESCRIPTION": "A unique synergy of massage techniques from different traditions, biodynamic elements, and essential oil blends developed in Switzerland."
+            },
+
+            "BENEFITS": {
+            "TITLE": "Benefits",
+
+            "PHYSICAL_TITLE": "Physical Benefits",
+
+            "PHYSICAL_TEXT": "The 5 Continents Massage offers numerous benefits for the body: it promotes deep relaxation and stress relief, stimulates blood and lymphatic circulation, oxygenates tissues, supports detoxification, strengthens the immune system, relieves pain such as back pain, muscle tension, digestive issues and migraines, and may support weight loss by improving metabolism.",
+
+            "MENTAL_TITLE": "Mental & Emotional Benefits",
+
+            "MENTAL_TEXT_1": "It awakens the body's natural self-healing abilities by helping release emotional blockages and accumulated toxins.",
+
+            "MENTAL_TEXT_2": "It gradually restores self-confidence and vitality while helping to regain self-esteem, inner peace, and joy in life."
+            },
+
+            "FACT": {
+            "TITLE": "Did You Know?",
+            "TEXT": "According to research conducted by the HeartMath Institute, the magnetic field of the heart is approximately 5,000 times stronger than that of the brain."
+            },
+
+            "TREATMENT": {
+            "TITLE": "How the Treatment Works",
+            "SUBTITLE": "Single Session of 5 Continents Massage",
+
+            "TEXT_1": "I use specially developed Swiss essential oil and plant oil blends created specifically for the 5 Continents Massage: the first phase focuses on detoxification, while the second phase supports relaxation and letting go.",
+
+            "TEXT_2": "The massage includes the face, head, and abdominal area as part of the full-body treatment.",
+
+            "TEXT_3": "It is recommended to arrive before washing your hair, as the oils will leave it oily.",
+
+            "TEXT_4": "Eating is not recommended within 2 hours before the treatment.",
+
+            "TEXT_5": "For optimal results, repeating the treatment every 3 weeks is recommended."
+            },
+
+            "TECHNIQUES": {
+            "TITLE": "5 Continents Massage Techniques",
+
+            "DESCRIPTION": "The power of the 5 Continents Massage lies in combining the following massage techniques with the rhythm and energy of the heart, greatly amplifying their effectiveness."
+            },
+
+            "COUNTRIES": {
+            "CHINA": {
+                "TITLE": "China",
+                "TECHNIQUE": "Shiatsu, Tuina & Acupressure",
+                "DESCRIPTION": "Bringing the body into greater balance"
+            },
+
+            "HAWAII": {
+                "TITLE": "Hawaii",
+                "TECHNIQUE": "Lomi-Lomi",
+                "DESCRIPTION": "Wave-like movements that relax the entire body"
+            },
+
+            "INDIA": {
+                "TITLE": "India",
+                "TECHNIQUE": "Ayurvedic Techniques",
+                "DESCRIPTION": "Aromatherapy-based massage"
+            },
+
+            "USA": {
+                "TITLE": "USA",
+                "TECHNIQUE": "Californian Massage",
+                "DESCRIPTION": "Slow and flowing long-stroke techniques"
+            },
+
+            "SWEDEN": {
+                "TITLE": "Sweden",
+                "TECHNIQUE": "Swedish Massage",
+                "DESCRIPTION": "Focused on muscles and anatomical structures"
+            },
+
+            "TURKEY": {
+                "TITLE": "Turkey",
+                "TECHNIQUE": "Turkish Massage",
+                "DESCRIPTION": "Energetic and dynamic techniques for hands and feet"
+            }
+            }
+        },
+        "EXPANSE_PAGE": {
+            "HERO": {
+            "TITLE": "Expanse Therapy®",
+            "DESCRIPTION": "Calming the nervous system and supporting inner balance."
+            },
+
+            "INTRO": {
+            "TITLE": "Expanse Therapy",
+            "DESCRIPTION": "Helps release trauma and emotional imprints stored in the body, supports the body's natural cleansing processes, contributes to balanced physical functioning, and promotes the free flow of energy."
+            },
+
+            "STAGES": {
+            "TITLE": "The Treatment Consists of Three Stages",
+
+            "HEAD_TITLE": "HEAD",
+            "HEAD_TEXT": "One of the most unique elements of the head massage is digipuncture, which promotes relaxation and release throughout the entire body through the skull.",
+
+            "HEART_TITLE": "HEART",
+            "HEART_TEXT": "In the heart phase, pericardium release plays a key role during heart coherence work, helping restore flexibility and reduce the effects of functional imbalances.",
+
+            "ABDOMEN_TITLE": "ABDOMEN",
+            "ABDOMEN_TEXT": "Most serotonin is produced in the digestive system. Abdominal massage supports the body's natural serotonin-related functions, which influence mood, sleep, and appetite."
+            },
+
+            "TECHNIQUES": {
+            "TITLE": "Techniques Used",
+
+            "ITEM_1": "Aromatherapy",
+            "ITEM_2": "Face and Abdominal Massage",
+            "ITEM_3": "Tapping (EFT)",
+            "ITEM_4": "Acupressure",
+            "ITEM_5": "Olfactory Therapy",
+            "ITEM_6": "Sound Therapy",
+            "ITEM_7": "Light Therapy",
+            "ITEM_8": "Heart Coherence"
+            },
+
+            "FACT_1": {
+            "TITLE": "Did You Know?",
+            "TEXT": "The primary purpose of light therapy is to support and alleviate issues caused by disruptions to the body's internal biological clock, such as seasonal depression. When light enters the eyes, it is converted into neural signals that influence neurotransmitter activity in the brain."
+            },
+
+            "HORMONES": {
+            "TITLE": "Hormones That Influence Well-Being",
+
+            "DOPAMINE": {
+                "TITLE": "Dopamine",
+                "DESCRIPTION": "The Hormone of Satisfaction"
+            },
+
+            "SEROTONIN": {
+                "TITLE": "Serotonin",
+                "DESCRIPTION": "The Hormone of Well-Being"
+            },
+
+            "OXYTOCIN": {
+                "TITLE": "Oxytocin",
+                "DESCRIPTION": "The Hormone of Connection"
+            },
+
+            "ADRENALINE": {
+                "TITLE": "Adrenaline & Noradrenaline",
+                "DESCRIPTION": "The Hormones of Courage"
+            },
+
+            "ENDORPHINS": {
+                "TITLE": "Endorphins",
+                "DESCRIPTION": "The Hormones of Energy"
+            },
+
+            "PEA": {
+                "TITLE": "Phenylethylamine",
+                "DESCRIPTION": "The Hormone of Joy"
+            }
+            },
+
+            "FACT_2": {
+            "TITLE": "Did You Know?",
+            "TEXT": "During Expanse Therapy, neural and hormonal processes gently synchronize through the body. Signals transmitted through the skin connect with the brain's cognitive and emotional processing centers. The vagus nerve connects nearly all internal organs, linking the brainstem with the heart, lungs, and digestive system—the three core pillars of Expanse Therapy."
+            },
+
+            "TREATMENTS": {
+            "TITLE": "Expanse Therapy Treatments",
+
+            "SINGLE_TITLE": "Single Expanse Therapy Session (60 minutes)",
+
+            "SINGLE_TEXT_1": "I use Swiss-developed essential oil and plant oil blends specifically designed for Expanse Therapy.",
+
+            "SINGLE_TEXT_2": "In the heart area, I work exclusively with the intercostal muscles through clothing or a towel.",
+
+            "SINGLE_TEXT_3": "The treatment is performed fully clothed on a massage table, with only the abdomen exposed for abdominal massage. Comfortable clothing is recommended. Eating is not advised within two hours before the treatment.",
+
+            "COURSE_TITLE": "Four-Session Expanse Therapy Program",
+
+            "COURSE_TEXT": "Includes an initial consultation, four therapy sessions, and personalized follow-up support to help establish healthy lifestyle habits."
+            }
+        },
+        "VIBECODES_PAGE": {
+            "HERO": {
+            "TITLE": "Vibecodes Treatment®",
+            "DESCRIPTION": "A method that helps rewrite the foundations of how you operate"
+            },
+
+            "INTRO": {
+            "TITLE": "What is Vibecodes?",
+            "DESCRIPTION": "A comprehensive system that helps you become aware of, reprogram, and harmonize your inner patterns on mental, emotional, and energetic levels."
+            },
+
+            "CODES": {
+            "CODE_1": {
+                "TITLE": "1. Self-Hypnosis",
+                "DESCRIPTION": "A conscious connection with the energy and vibration within you, influencing your body's functioning and overall state."
+            },
+            "CODE_2": {
+                "TITLE": "2. Limiting Beliefs",
+                "DESCRIPTION": "Identifying and releasing patterns that hold you back from experiencing abundance."
+            },
+            "CODE_3": {
+                "TITLE": "3. Reprogramming Beliefs",
+                "DESCRIPTION": "Letting go of what is not truly you and strengthening what genuinely belongs to you."
+            },
+            "CODE_4": {
+                "TITLE": "4. Harmonizing with Yourself",
+                "DESCRIPTION": "Practical steps toward achieving a stable and elevated state of being."
+            },
+            "CODE_5": {
+                "TITLE": "5. The Path of Progress",
+                "DESCRIPTION": "A structured framework that guides you through the process of growth."
+            },
+            "CODE_6": {
+                "TITLE": "6. Money & Abundance",
+                "DESCRIPTION": "Developing a new mindset around money, opportunities, and prosperity."
+            },
+            "CODE_7": {
+                "TITLE": "7. Learning & Growth",
+                "DESCRIPTION": "Following trends and integrating continuous personal development into everyday life."
+            },
+            "CODE_8": {
+                "TITLE": "8. The 3-6-9 Method",
+                "DESCRIPTION": "A visualization and focus technique for achieving goals more effectively."
+            }
+            },
+
+            "QUOTE": {
+            "TEXT": "Everything is energy. That's all there is to it. Match the frequency of the reality you want and you cannot help but get that reality. It can be no other way.",
+            "DESCRIPTION": "This is not philosophy. This is physics.",
+            "AUTHOR": "Albert Einstein"
+            },
+
+            "ONLINE": {
+            "TITLE": "Online Programs",
+
+            "CHALLENGE_TITLE": "21-Day Challenge",
+            "CHALLENGE_DESCRIPTION": "A structured process that guides you step by step through the entire system.",
+
+            "WORKSHOP_TITLE": "8-Session Workshop",
+            "WORKSHOP_DESCRIPTION": "You can learn each Vibecodes code individually. During each session, we focus on a single code and explore the topic in depth. The program consists of 8 online sessions (1 hour per week over 2 months).",
+
+            "BUTTON": "I'm Interested"
+            },
+
+            "TREATMENT": {
+            "TITLE": "In-Person Vibecodes Treatment",
+
+            "SESSION_TITLE": "35-Minute Treatment",
+            "SESSION_TEXT_1": "During the first phase, we gently release blocks formed by negative thoughts and past emotional obstacles, creating space for inner freedom.",
+            "SESSION_TEXT_2": "In the second phase, the focus shifts to activating life force energy while a unique blend of 42 essential oils supports the harmonization process.",
+
+            "COACHING_TITLE": "25-Minute Coaching",
+            "COACHING_TEXT_1": "I use one of the 8 Vibecodes, with a primary focus on hypnosis and meditation, as these tend to be the most effective approaches within a 25-minute session.",
+            "COACHING_TEXT_2": "The treatment is performed through clothing. Comfortable, loose-fitting attire is recommended."
+            }
+        }
     },
-    "BUTTONS": {},
     "FOOTER": {
         "TITLES": {
             "CONTACT": "Contact",

@@ -1,137 +1,276 @@
 <app-hero
     [imageUrl]="'/images/services/vibecodes/vibecodes-logo.png'"
-    [title]="'Vibecodes kezelés ®'"
-    [description]="'Egy módszer, ami segít átírni a működésed alapjait'"
+    [title]="'SERVICES.VIBECODES_PAGE.HERO.TITLE' | translate"
+    [description]="'SERVICES.VIBECODES_PAGE.HERO.DESCRIPTION' | translate"
     [width]="1500/5"
     [height]="425/5"
 />
 
 <section class="wave-bg">
     <div class="vibecodes-section">
+
         <!-- WHAT IS VIBECODES -->
         <div class="about text-block">
-            <h2 class="big-title" scrollAnimate animation="fade-in" [delay]="0">Mi az a Vibecodes?</h2>
 
-            <p class="about-intro" scrollAnimate animation="fade-in" [delay]="150">
-                Egy komplex rendszer, amely segít tudatosítani,
-                átprogramozni és harmonizálni a belső működésedet –
-                mentális, érzelmi és energetikai szinten.
+            <h2
+                class="big-title"
+                scrollAnimate
+                animation="fade-in"
+                [delay]="0">
+                {{ 'SERVICES.VIBECODES_PAGE.INTRO.TITLE' | translate }}
+            </h2>
+
+            <p
+                class="about-intro"
+                scrollAnimate
+                animation="fade-in"
+                [delay]="150">
+                {{ 'SERVICES.VIBECODES_PAGE.INTRO.DESCRIPTION' | translate }}
             </p>
-        <app-card-grid>
-            <app-card
-                title="1. Auto-hipnózis"
-                description="Tudatos kapcsolat a benned lévő energiával és rezgéssel,
-                            amely hatással van a tested működésére és állapotára."
-            />
-            <app-card
-                title="2. Korlátozó hiedelmek"
-                description="Azonosítjuk és feloldjuk azokat a mintákat,
-                        amelyek visszatartanak a bőség megélésétől."
-            />
-            <app-card
-                title="3. Hiedelmeink átprogramozása"
-                description="Leválasztjuk azt, ami nem te vagy,
-                        és erősítjük azt, ami valóban hozzád tartozik."
-            />
-            <app-card
-                title="4. Önmagaddal való harmonizálás"
-                description="Gyakorlati lépések a stabil, magasabb működési szint eléréséhez."
-            />
-            <app-card
-                title="5. Előrehaladás útvonala"
-                description="Strukturált rendszer, amely végigvezet a fejlődési folyamaton."
-            />
-            <app-card
-                title="6. Pénz és bőség"
-                description="Új gondolkodásmód kialakítása a pénzzel és lehetőségekkel kapcsolatban."
-            />
-            <app-card
-                title="7. Tanulás & fejlődés"
-                description="Trendek követése és folyamatos önfejlesztés beépítése a mindennapokba."
-            />
-            <app-card
-                title="8. 3-6-9 módszer"
-                description="Vizualizációs és fókusz technika a célok gyorsabb megvalósításához."
-            />
-        </app-card-grid>
-    </div>
+
+            <app-card-grid>
+
+                <app-card
+                    [title]="'SERVICES.VIBECODES_PAGE.CODES.CODE_1.TITLE' | translate"
+                    [description]="'SERVICES.VIBECODES_PAGE.CODES.CODE_1.DESCRIPTION' | translate">
+                </app-card>
+
+                <app-card
+                    [title]="'SERVICES.VIBECODES_PAGE.CODES.CODE_2.TITLE' | translate"
+                    [description]="'SERVICES.VIBECODES_PAGE.CODES.CODE_2.DESCRIPTION' | translate">
+                </app-card>
+
+                <app-card
+                    [title]="'SERVICES.VIBECODES_PAGE.CODES.CODE_3.TITLE' | translate"
+                    [description]="'SERVICES.VIBECODES_PAGE.CODES.CODE_3.DESCRIPTION' | translate">
+                </app-card>
+
+                <app-card
+                    [title]="'SERVICES.VIBECODES_PAGE.CODES.CODE_4.TITLE' | translate"
+                    [description]="'SERVICES.VIBECODES_PAGE.CODES.CODE_4.DESCRIPTION' | translate">
+                </app-card>
+
+                <app-card
+                    [title]="'SERVICES.VIBECODES_PAGE.CODES.CODE_5.TITLE' | translate"
+                    [description]="'SERVICES.VIBECODES_PAGE.CODES.CODE_5.DESCRIPTION' | translate">
+                </app-card>
+
+                <app-card
+                    [title]="'SERVICES.VIBECODES_PAGE.CODES.CODE_6.TITLE' | translate"
+                    [description]="'SERVICES.VIBECODES_PAGE.CODES.CODE_6.DESCRIPTION' | translate">
+                </app-card>
+
+                <app-card
+                    [title]="'SERVICES.VIBECODES_PAGE.CODES.CODE_7.TITLE' | translate"
+                    [description]="'SERVICES.VIBECODES_PAGE.CODES.CODE_7.DESCRIPTION' | translate">
+                </app-card>
+
+                <app-card
+                    [title]="'SERVICES.VIBECODES_PAGE.CODES.CODE_8.TITLE' | translate"
+                    [description]="'SERVICES.VIBECODES_PAGE.CODES.CODE_8.DESCRIPTION' | translate">
+                </app-card>
+
+            </app-card-grid>
+
+        </div>
+
         <!-- QUOTE -->
         <div class="quote-section">
-            <blockquote scrollAnimate animation="fade-up" [delay]="0">
-                „Minden energia.
-                Mindössze ennyit kell tudnod.
-                Hangolódj rá annak a valóságnak a frekvenciájára,
-                amelyet meg akarsz élni és megkapod.
-                Nem lehet másképp.”
+
+            <blockquote
+                scrollAnimate
+                animation="fade-up"
+                [delay]="0">
+
+                {{ 'SERVICES.VIBECODES_PAGE.QUOTE.TEXT' | translate }}
 
             </blockquote>
-            <p scrollAnimate animation="fade-up" [delay]="150">
-                Ez nem filozófia. Ez fizika.
+
+            <p
+                scrollAnimate
+                animation="fade-up"
+                [delay]="150">
+
+                {{ 'SERVICES.VIBECODES_PAGE.QUOTE.DESCRIPTION' | translate }}
+
             </p>
-            <p class="quote-author" scrollAnimate animation="fade-up" [delay]="300">– Albert Einstein</p>
+
+            <p
+                class="quote-author"
+                scrollAnimate
+                animation="fade-up"
+                [delay]="300">
+
+                – {{ 'SERVICES.VIBECODES_PAGE.QUOTE.AUTHOR' | translate }}
+
+            </p>
+
         </div>
+
         <!-- PROGRAM BLOKK -->
         <div class="vibe-program">
+
             <div class="vibe-program-text">
-                <h2 class="big-title" scrollAnimate animation="fade-in" [delay]="0">Online alkalmak</h2>
-                <div scrollAnimate animation="fade-in" [delay]="150">
-                    <h3 class="smaller-title">21 napos kihívás</h3>
+
+                <h2
+                    class="big-title"
+                    scrollAnimate
+                    animation="fade-in"
+                    [delay]="0">
+
+                    {{ 'SERVICES.VIBECODES_PAGE.ONLINE.TITLE' | translate }}
+
+                </h2>
+
+                <div
+                    scrollAnimate
+                    animation="fade-in"
+                    [delay]="150">
+
+                    <h3 class="smaller-title">
+                        {{ 'SERVICES.VIBECODES_PAGE.ONLINE.CHALLENGE_TITLE' | translate }}
+                    </h3>
+
                     <p>
-                        Egy strukturált folyamat, ahol lépésről lépésre haladsz végig
-                        a teljes rendszeren.
+                        {{ 'SERVICES.VIBECODES_PAGE.ONLINE.CHALLENGE_DESCRIPTION' | translate }}
                     </p>
+
                 </div>
-                <div scrollAnimate animation="fade-in" [delay]="300">
-                    <h3 class="smaller-title">8 alkalmas workshop</h3>
+
+                <div
+                    scrollAnimate
+                    animation="fade-in"
+                    [delay]="300">
+
+                    <h3 class="smaller-title">
+                        {{ 'SERVICES.VIBECODES_PAGE.ONLINE.WORKSHOP_TITLE' | translate }}
+                    </h3>
+
                     <p>
-                        Van lehetőséged külön-külön is elsajátítanod a Vibecodes kódjait, így minden alkalommal csak egy kódot veszünk és végignézzük részletesen, teljeskörűen az adott témakört.
-                        8 online alkalom (heti 1 óra 2 hónapon keresztül).
+                        {{ 'SERVICES.VIBECODES_PAGE.ONLINE.WORKSHOP_DESCRIPTION' | translate }}
                     </p>
+
                 </div>
-                <app-button path="/prices" [buttonText]="'Érdekel'" scrollAnimate animation="fade-in" [delay]="400"/>
+
+                <app-button
+                    path="/prices"
+                    [buttonText]="'SERVICES.VIBECODES_PAGE.ONLINE.BUTTON' | translate"
+                    scrollAnimate
+                    animation="fade-in"
+                    [delay]="400">
+                </app-button>
+
             </div>
-        <app-list>
-            <app-list-item item="Auto-hipnózis" />
-            <app-list-item item="Korlátozó hiedelmek" />
-            <app-list-item item="Hiedelmeink átprogramozása" />
-            <app-list-item item="Önmagaddal való harmonizálás" />
-            <app-list-item item="Előrehaladás útvonala" />
-            <app-list-item item="Pénz és bőség" />
-            <app-list-item item="Tanulás & fejlődés" />
-            <app-list-item item="3-6-9 módszer" />
-        </app-list>
+
+            <app-list>
+
+                <app-list-item
+                    [item]="'SERVICES.VIBECODES_PAGE.CODES.CODE_1.TITLE' | translate">
+                </app-list-item>
+
+                <app-list-item
+                    [item]="'SERVICES.VIBECODES_PAGE.CODES.CODE_2.TITLE' | translate">
+                </app-list-item>
+
+                <app-list-item
+                    [item]="'SERVICES.VIBECODES_PAGE.CODES.CODE_3.TITLE' | translate">
+                </app-list-item>
+
+                <app-list-item
+                    [item]="'SERVICES.VIBECODES_PAGE.CODES.CODE_4.TITLE' | translate">
+                </app-list-item>
+
+                <app-list-item
+                    [item]="'SERVICES.VIBECODES_PAGE.CODES.CODE_5.TITLE' | translate">
+                </app-list-item>
+
+                <app-list-item
+                    [item]="'SERVICES.VIBECODES_PAGE.CODES.CODE_6.TITLE' | translate">
+                </app-list-item>
+
+                <app-list-item
+                    [item]="'SERVICES.VIBECODES_PAGE.CODES.CODE_7.TITLE' | translate">
+                </app-list-item>
+
+                <app-list-item
+                    [item]="'SERVICES.VIBECODES_PAGE.CODES.CODE_8.TITLE' | translate">
+                </app-list-item>
+
+            </app-list>
+
         </div>
 
         <!-- SZEMÉLYES KEZELÉS -->
         <div class="vibe-treatment">
-            <div class="treatment-img" scrollAnimate animation="fade-in" [delay]="0">
-                <img ngSrc="/images/services/vibecodes/vibecodes-img.jpg" alt="Vibecodes kezelés" width="384" height="512" priority/>
+
+            <div
+                class="treatment-img"
+                scrollAnimate
+                animation="fade-in"
+                [delay]="0">
+
+                <img
+                    ngSrc="/images/services/vibecodes/vibecodes-img.jpg"
+                    alt="Vibecodes kezelés"
+                    width="384"
+                    height="512"
+                    priority>
+
             </div>
+
             <div class="treatment-text text-block">
-                <h2 class="big-title" scrollAnimate animation="fade-in" [delay]="150">Személyes Vibecodes kezelés</h2>
-                <div scrollAnimate animation="fade-in" [delay]="300">
+
+                <h2
+                    class="big-title"
+                    scrollAnimate
+                    animation="fade-in"
+                    [delay]="150">
+
+                    {{ 'SERVICES.VIBECODES_PAGE.TREATMENT.TITLE' | translate }}
+
+                </h2>
+
+                <div
+                    scrollAnimate
+                    animation="fade-in"
+                    [delay]="300">
+
                     <h3 class="smaller-title">
-                        35 perces kezelés
+                        {{ 'SERVICES.VIBECODES_PAGE.TREATMENT.SESSION_TITLE' | translate }}
                     </h3>
+
                     <p>
-                        Az első fázisban finoman oldjuk a negatív gondolatokból és múltbeli elakadásokból kialakult blokkokat, teret adva a belső felszabadulásnak.
+                        {{ 'SERVICES.VIBECODES_PAGE.TREATMENT.SESSION_TEXT_1' | translate }}
                     </p>
+
                     <p>
-                        A második kezelésben az életerő aktiválására helyezzük a fókuszt, miközben egy 42 illóolajból álló különleges formula támogatja a harmonizációt.
+                        {{ 'SERVICES.VIBECODES_PAGE.TREATMENT.SESSION_TEXT_2' | translate }}
                     </p>
+
                 </div>
-                <div scrollAnimate animation="fade-in" [delay]="450">
+
+                <div
+                    scrollAnimate
+                    animation="fade-in"
+                    [delay]="450">
+
                     <h3 class="smaller-title">
-                        25 perces coaching
+                        {{ 'SERVICES.VIBECODES_PAGE.TREATMENT.COACHING_TITLE' | translate }}
                     </h3>
+
                     <p>
-                        A 8 kód egyikét alkalmazom, de leginkább a hipnózison és a meditáción van a fő fókusz, mert az személyesen hatékonyabb 25 perc alatt.
+                        {{ 'SERVICES.VIBECODES_PAGE.TREATMENT.COACHING_TEXT_1' | translate }}
                     </p>
+
                     <p>
-                        A kezelés ruhán keresztül történik. Ajánlott öltözet: kényelmes, laza ruházat.
+                        {{ 'SERVICES.VIBECODES_PAGE.TREATMENT.COACHING_TEXT_2' | translate }}
                     </p>
+
                 </div>
+
             </div>
+
         </div>
+
     </div>
 </section>

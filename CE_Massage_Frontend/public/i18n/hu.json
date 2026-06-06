@@ -2,6 +2,9 @@
     "NAV": {
         "HOME": "Kezdőlap",
         "SERVICES": "Szolgáltatások",
+        "FIVE_CONTINENTS": "5 Kontinens Masszázs®",
+        "EXPANSE": "Expanse terápia®",
+        "VIBECODES": "Vibecodes® kezelés",
         "PRICES": "Árak",
         "GALLERY": "Galéria",
         "ABOUT": "Rólam",
@@ -169,14 +172,270 @@
             }
         }
     },
-    "BOOKING": {},
-    "CONTACT": {},
     "SERVICES": {
-        "FIVE_CONTINENTS": "5 Kontinens Masszázs®",
-        "EXPANSE": "Expanse terápia®",
-        "VIBECODES": "Vibecodes®"
+        "FIVE_CONTINENTS_PAGE": {
+            "HERO": {
+            "TITLE": "5 Kontinens Masszázs®",
+            "DESCRIPTION": "A világ gyógyító érintése egyetlen harmonikus élményben"
+            },
+
+            "INTRO": {
+            "TITLE": "5 Kontinens Masszázs",
+            "DESCRIPTION": "Különféle eredetű masszázsformák a biodinamikai elemek és a Svájcban összeállított illóolaj keverékek szinergiája."
+            },
+
+            "BENEFITS": {
+            "TITLE": "Jótékony hatásai",
+
+            "PHYSICAL_TITLE": "Fizikai hatások",
+
+            "PHYSICAL_TEXT": "Az 5 Kontinens masszázs számos jótékony hatással van az emberi szervezetre: ellazít és lehetővé teszi a stressz feloldását, serkenti a vér- és nyirokkeringést, ezáltal oxigénnel telíti a szöveteket és eltávolítja a salakanyagokat a szervezetből, stimulálja az immunrendszert, enyhíti a fájdalmakat (hátfájás, izomfájdalom, emésztési problémák, migrén...), és az anyagcsere javításával elősegíti a fogyást.",
+
+            "MENTAL_TITLE": "Mentális hatások",
+
+            "MENTAL_TEXT_1": "Felébreszti a test természetes öngyógyító folyamatait azáltal, hogy felszabadítja a nehéz érzelmi emlékeket és méreganyagokat.",
+
+            "MENTAL_TEXT_2": "Fokozatosan segít helyreállítani az önbizalmat és a vitalitást, visszanyerni az önbecsülést, a békeérzetet és az életörömöt."
+            },
+
+            "FACT": {
+            "TITLE": "Tudtad?",
+            "TEXT": "A szív mágneses mezeje ötezerszer erősebb, mint az agy mágneses mezeje a HearthMath Institute tudósainak kutatási eredményei alapján."
+            },
+
+            "TREATMENT": {
+            "TITLE": "A kezelés menete",
+            "SUBTITLE": "1 alkalmas 5 kontinens masszázs kezelés",
+
+            "TEXT_1": "Kifejezetten 5 kontinens masszázshoz alkalmazandó, Svájcban megalkotott illóolaj és növényi olaj keverékeket alkalmazok: az első fázisban a méregtelenítéshez, a második fázisban a relaxációhoz és elengedéshez.",
+
+            "TEXT_2": "Az arc, fej és has is érintve van a teljes test masszázs során.",
+
+            "TEXT_3": "Érdemes hajmosás előtt érkezni, mert a haj olajos lesz.",
+
+            "TEXT_4": "Kezelés előtt legalább 2 órával étel fogyasztása nem javasolt.",
+
+            "TEXT_5": "A kezelést 3 hetente javasolt megismételni."
+            },
+
+            "TECHNIQUES": {
+            "TITLE": "5 Kontinens Masszázs technikái",
+
+            "DESCRIPTION": "Az 5 Kontinens Masszázs ereje abban rejlik, hogy az alábbi masszázstechnikákat a szív ritmusában és energiájában ötvözi, ami ezerszeresére felerősíti hatását."
+            },
+
+            "COUNTRIES": {
+            "CHINA": {
+                "TITLE": "Kína",
+                "TECHNIQUE": "Shiatsu & Tuina & akupresszúra",
+                "DESCRIPTION": "Nagyobb egyensúlyba hozzák a testet"
+            },
+
+            "HAWAII": {
+                "TITLE": "Hawaii",
+                "TECHNIQUE": "Lomi-Lomi",
+                "DESCRIPTION": "Hullámok, amelyek az egész testet ellazítják"
+            },
+
+            "INDIA": {
+                "TITLE": "India",
+                "TECHNIQUE": "Ajurvédikus technikák",
+                "DESCRIPTION": "Aromaterápiás masszázs"
+            },
+
+            "USA": {
+                "TITLE": "USA",
+                "TECHNIQUE": "Kaliforniai",
+                "DESCRIPTION": "Lassú, hosszan alkalmazott technikák"
+            },
+
+            "SWEDEN": {
+                "TITLE": "Svédország",
+                "TECHNIQUE": "Svéd masszázs",
+                "DESCRIPTION": "Az izomrendszer és a test anatómiai jellegzetességei"
+            },
+
+            "TURKEY": {
+                "TITLE": "Törökország",
+                "TECHNIQUE": "Török masszázs",
+                "DESCRIPTION": "Energikus és dinamikus masszázs a kezeken és lábakon"
+            }
+            }
+        },
+        "EXPANSE_PAGE": {
+            "HERO": {
+            "TITLE": "Expanse terápia®",
+            "DESCRIPTION": "Az idegrendszer megnyugtatása és a belső egyensúly támogatása."
+            },
+
+            "INTRO": {
+            "TITLE": "Az Expanse terápia",
+            "DESCRIPTION": "Segít oldani a testben rögzült traumákat és érzelmi lenyomatokat, támogatja a szervezet természetes tisztulási folyamatait, hozzájárul a kiegyensúlyozott testi működéshez, és elősegíti az energia szabadabb áramlását."
+            },
+
+            "STAGES": {
+            "TITLE": "A kezelés három szakaszból áll",
+
+            "HEAD_TITLE": "FEJ",
+            "HEAD_TEXT": "A fejmasszázs egyik legkülönlegesebb eleme a digipunktúra, amely a koponyán keresztül segíti az egész test ellazulását és felszabadulását.",
+
+            "HEART_TITLE": "SZÍV",
+            "HEART_TEXT": "A szív területén, a szívkoherencia során a szívburok felszabadítása kiemelt szerepet kap, mivel ezáltal visszaáll annak rugalmassága, és csökkenhetnek a működési zavarok hatásai.",
+
+            "ABDOMEN_TITLE": "HAS",
+            "ABDOMEN_TEXT": "A szerotonin nagyrészt a bélrendszerben termelődik. Ezt azért jó tudni, mert a has masszázs támogatja ennek a hormonnak a szervezeten belüli hatását, amely a hangulatért, alvásért és étvágyért felel."
+            },
+
+            "TECHNIQUES": {
+            "TITLE": "Alkalmazott technikák",
+
+            "ITEM_1": "aromaterápia",
+            "ITEM_2": "arc- és hasmasszázs",
+            "ITEM_3": "kopogtatás (EFT)",
+            "ITEM_4": "akupresszúra",
+            "ITEM_5": "olfaktor terápia",
+            "ITEM_6": "hangterápia",
+            "ITEM_7": "fényterápia",
+            "ITEM_8": "szívkoherencia"
+            },
+
+            "FACT_1": {
+            "TITLE": "Tudtad?",
+            "TEXT": "A fényterápia fő célja a belső biológiai óra felborulásából eredő problémák – például a szezonális depresszió – támogatása és enyhítése. Amikor a fény a szembe jut, idegi jelekké alakul, amelyek az agyba továbbítva hatással vannak a neurotranszmitterek működésére."
+            },
+
+            "HORMONES": {
+            "TITLE": "Jóllétünket befolyásoló hormonok",
+
+            "DOPAMINE": {
+                "TITLE": "Dopamin",
+                "DESCRIPTION": "Az elégedettség hormonja"
+            },
+
+            "SEROTONIN": {
+                "TITLE": "Szerotonin",
+                "DESCRIPTION": "A jóllét hormonja"
+            },
+
+            "OXYTOCIN": {
+                "TITLE": "Oxitocin",
+                "DESCRIPTION": "Az ölelés hormonja"
+            },
+
+            "ADRENALINE": {
+                "TITLE": "Adrenalin & noradrenalin",
+                "DESCRIPTION": "A bátorság hormonjai"
+            },
+
+            "ENDORPHINS": {
+                "TITLE": "Endorfinok",
+                "DESCRIPTION": "Az energia hormonjai"
+            },
+
+            "PEA": {
+                "TITLE": "Feniletilamin",
+                "DESCRIPTION": "Az öröm hormonja"
+            }
+            },
+
+            "FACT_2": {
+            "TITLE": "Tudtad?",
+            "TEXT": "Az Expanse terápia során a testen keresztül finoman összehangolódnak az idegi és hormonális folyamatok, amelyek a bőrön át jutva az agy gondolkodási és érzelmi feldolgozó központjaihoz kapcsolódnak. A bolygóideg rostjai szinte az összes belső szervet behálózzák, és összekötik az agytörzset a szívvel, a tüdővel és a bélrendszerrel – ezek alkotják az Expanse terápia három fő pillérét."
+            },
+
+            "TREATMENTS": {
+            "TITLE": "Expanse terápia kezelések",
+
+            "SINGLE_TITLE": "1 alkalmas Expanse kezelés (60 perc)",
+
+            "SINGLE_TEXT_1": "Kifejezetten Expanse terápiához alkalmazandó, Svájcban megalkotott illóolaj és növényi olaj keverékeket alkalmazok.",
+
+            "SINGLE_TEXT_2": "A szív területén kizárólag a bordaközi izmokkal dolgozok pólón vagy törölközőn keresztül.",
+
+            "SINGLE_TEXT_3": "A kezelés masszázságyon, ruhában történik, csak a hasmasszázshoz kell a hasat szabadon hagyni. Érdemes laza, kényelmes ruházatban érkezni. Kezelés előtt legalább 2 órával étel fogyasztása nem javasolt.",
+
+            "COURSE_TITLE": "Négy ülésből álló Expanse terápia",
+
+            "COURSE_TEXT": "Magában foglal egy kezdeti konzultációt, négy kezelést és személyre szabott utánkövetést az egészséges életmódbeli szokások kialakításához."
+            }
+        },
+        "VIBECODES_PAGE": {
+            "HERO": {
+            "TITLE": "Vibecodes kezelés®",
+            "DESCRIPTION": "Egy módszer, ami segít átírni a működésed alapjait"
+            },
+
+            "INTRO": {
+            "TITLE": "Mi az a Vibecodes?",
+            "DESCRIPTION": "Egy komplex rendszer, amely segít tudatosítani, átprogramozni és harmonizálni a belső működésedet – mentális, érzelmi és energetikai szinten."
+            },
+
+            "CODES": {
+            "CODE_1": {
+                "TITLE": "1. Auto-hipnózis",
+                "DESCRIPTION": "Tudatos kapcsolat a benned lévő energiával és rezgéssel, amely hatással van a tested működésére és állapotára."
+            },
+            "CODE_2": {
+                "TITLE": "2. Korlátozó hiedelmek",
+                "DESCRIPTION": "Azonosítjuk és feloldjuk azokat a mintákat, amelyek visszatartanak a bőség megélésétől."
+            },
+            "CODE_3": {
+                "TITLE": "3. Hiedelmeink átprogramozása",
+                "DESCRIPTION": "Leválasztjuk azt, ami nem te vagy, és erősítjük azt, ami valóban hozzád tartozik."
+            },
+            "CODE_4": {
+                "TITLE": "4. Önmagaddal való harmonizálás",
+                "DESCRIPTION": "Gyakorlati lépések a stabil, magasabb működési szint eléréséhez."
+            },
+            "CODE_5": {
+                "TITLE": "5. Előrehaladás útvonala",
+                "DESCRIPTION": "Strukturált rendszer, amely végigvezet a fejlődési folyamaton."
+            },
+            "CODE_6": {
+                "TITLE": "6. Pénz és bőség",
+                "DESCRIPTION": "Új gondolkodásmód kialakítása a pénzzel és lehetőségekkel kapcsolatban."
+            },
+            "CODE_7": {
+                "TITLE": "7. Tanulás & fejlődés",
+                "DESCRIPTION": "Trendek követése és folyamatos önfejlesztés beépítése a mindennapokba."
+            },
+            "CODE_8": {
+                "TITLE": "8. 3-6-9 módszer",
+                "DESCRIPTION": "Vizualizációs és fókusz technika a célok gyorsabb megvalósításához."
+            }
+            },
+
+            "QUOTE": {
+            "TEXT": "Minden energia. Mindössze ennyit kell tudnod. Hangolódj rá annak a valóságnak a frekvenciájára, amelyet meg akarsz élni és megkapod. Nem lehet másképp.",
+            "DESCRIPTION": "Ez nem filozófia. Ez fizika.",
+            "AUTHOR": "Albert Einstein"
+            },
+
+            "ONLINE": {
+            "TITLE": "Online alkalmak",
+
+            "CHALLENGE_TITLE": "21 napos kihívás",
+            "CHALLENGE_DESCRIPTION": "Egy strukturált folyamat, ahol lépésről lépésre haladsz végig a teljes rendszeren.",
+
+            "WORKSHOP_TITLE": "8 alkalmas workshop",
+            "WORKSHOP_DESCRIPTION": "Van lehetőséged külön-külön is elsajátítanod a Vibecodes kódjait, így minden alkalommal csak egy kódot veszünk és végignézzük részletesen, teljeskörűen az adott témakört. 8 online alkalom (heti 1 óra 2 hónapon keresztül).",
+
+            "BUTTON": "Érdekel"
+            },
+
+            "TREATMENT": {
+            "TITLE": "Személyes Vibecodes kezelés",
+
+            "SESSION_TITLE": "35 perces kezelés",
+            "SESSION_TEXT_1": "Az első fázisban finoman oldjuk a negatív gondolatokból és múltbeli elakadásokból kialakult blokkokat, teret adva a belső felszabadulásnak.",
+            "SESSION_TEXT_2": "A második kezelésben az életerő aktiválására helyezzük a fókuszt, miközben egy 42 illóolajból álló különleges formula támogatja a harmonizációt.",
+
+            "COACHING_TITLE": "25 perces coaching",
+            "COACHING_TEXT_1": "A 8 kód egyikét alkalmazom, de leginkább a hipnózison és a meditáción van a fő fókusz, mert az személyesen hatékonyabb 25 perc alatt.",
+            "COACHING_TEXT_2": "A kezelés ruhán keresztül történik. Ajánlott öltözet: kényelmes, laza ruházat."
+            }
+        }
     },
-    "BUTTONS": {},
     "FOOTER": {
         "TITLES": {
             "CONTACT": "Elérhetőség",
