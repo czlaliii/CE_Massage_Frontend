@@ -4,6 +4,27 @@
         <img ngSrc="/images/Logo_01.png" alt="CE Massage logo" width="1826" height="576" priority>
         </div>
 
+        <div class="mobile-actions">
+
+            <div class="language-switch mobile-language">
+
+                <button
+                    [class.active]="languageService.currentLanguage() === 'hu'"
+                    (click)="changeLanguage('hu')">
+                    HU
+                </button>
+
+                <span>•</span>
+
+                <button
+                    [class.active]="languageService.currentLanguage() === 'en'"
+                    (click)="changeLanguage('en')">
+                    EN
+                </button>
+
+            </div>
+        </div>
+
         <button class="burger"
         [class.open]="menuOpen"
         (click)="toggleMenu()"

@@ -102,6 +102,10 @@ nav a.active {
     display: inline-block;
 }
 
+.mobile-actions {
+    display: none;
+}
+
 .dropdown a {
     color: #faecca !important;
     cursor: pointer;
@@ -198,23 +202,72 @@ body.menu-open {
         color: #faecca !important;
     }
 
-    .burger {
+    nav {
+
         display: flex;
+
+        align-items: center;
+
+        justify-content: space-between;
+    }
+
+    .mobile-actions {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 1rem;
+
+        margin-left: auto;
+    }
+
+    .mobile-language {
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 0.35rem;
+
+        margin-right: 1rem;
+    }
+
+    .mobile-language button {
+
+        font-size: 0.9rem;
+
+        padding: 0;
+
+        min-width: auto;
+    }
+
+    .burger {
+
+        display: flex;
+
+        margin: 0;
     }
 
     nav ul {
         position: absolute;
+
         top: 100%;
         left: 0;
         right: 0;
 
         background: rgba(65, 65, 65, 0.97);
+
         backdrop-filter: blur(10px);
+
         flex-direction: column;
+
         align-items: center;
 
         gap: 8px;
+
         padding: 16px 0;
+
         display: none;
     }
 
@@ -224,9 +277,13 @@ body.menu-open {
 
     nav ul li {
         width: 100%;
+
         text-align: center;
+
         padding: 10px 0;
-        border-bottom: 1px solid rgba(247, 200, 69, 0.1);
+
+        border-bottom:
+            1px solid rgba(247, 200, 69, 0.1);
     }
 
     nav ul li:last-child {
@@ -248,8 +305,11 @@ body.menu-open {
 
     .dropdown.open .dropdown-content {
         display: block;
+
         position: static;
+
         box-shadow: none;
+
         background: transparent;
     }
 
@@ -263,6 +323,10 @@ body.menu-open {
 
     .dropdown.open > a {
         color: #f7c845;
+    }
+
+    nav ul .language-switch {
+        display: none;
     }
 }
 
