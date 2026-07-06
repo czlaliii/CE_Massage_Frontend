@@ -1,0 +1,200 @@
+<section class="booking-container">
+
+    <h1>Időpontfoglalás</h1>
+
+    @if(bookingSuccess()) {
+
+        <div class="success-message">
+
+            <h2>🎉 Sikeres foglalás!</h2>
+
+            <p>
+                Köszönjük a foglalást.
+            </p>
+
+            <p>
+                Hamarosan felvesszük veled a kapcsolatot a megadott elérhetőségeken.
+            </p>
+
+            <button
+                type="button"
+                (click)="bookingSuccess.set(false)">
+
+                Új foglalás
+
+            </button>
+
+        </div>
+
+    }
+
+    @if(!bookingSuccess()) {
+        <div class="booking-form">
+
+            <div class="form-group">
+
+                <label>
+                    Szolgáltatás
+                </label>
+
+                <select
+                    (change)="selectedServiceId.set($any($event.target).value); loadSlots()">
+
+                    <option value="">
+                        Válassz szolgáltatást
+                    </option>
+
+                    @for(service of services(); track service.id) {
+
+                        <option [value]="service.id">
+                            {{ service.name }}
+                        </option>
+
+                    }
+
+                </select>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>
+                    Dátum
+                </label>
+
+                <input
+                    type="date"
+                    [min]="minDate"
+                    (change)="selectedDate.set($any($event.target).value); loadSlots()">
+
+            </div>
+
+            @if(availableSlots().length > 0) {
+
+                <div class="slots-section">
+
+                    <h2>Elérhető időpontok</h2>
+
+                    <div class="slots-grid">
+
+                        @for(slot of availableSlots(); track slot) {
+
+                            <button
+                                type="button"
+                                class="slot-btn"
+                                [class.selected]="selectedSlot() === slot"
+                                (click)="selectedSlot.set(slot)">
+
+                                {{ slot }}
+
+                            </button>
+
+                        }
+
+                    </div>
+
+                </div>
+
+            }
+            <p class="booking-note">
+                Az időpont foglalásáról email visszaigazolást küldünk.
+            </p>
+
+            @if(selectedSlot()) {
+
+                <div class="customer-form">
+
+                    <h2>Kapcsolati adatok</h2>
+
+                    <div class="form-group">
+
+                        <label>
+                            Név *
+                        </label>
+
+                        <input
+                            type="text"
+                            [value]="customerName()"
+                            (input)="customerName.set($any($event.target).value)">
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>
+                            Email *
+                        </label>
+
+                        <input
+                            type="email"
+                            [value]="customerEmail()"
+                            (input)="customerEmail.set($any($event.target).value)">
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>
+                            Telefonszám
+                        </label>
+
+                        <input
+                            type="tel"
+                            [value]="customerPhone()"
+                            (input)="customerPhone.set($any($event.target).value)">
+
+                    </div>
+
+                    <h3>Számlázási adatok</h3>
+
+                    <input
+                        type="text"
+                        placeholder="Számlázási név"
+                        [value]="billingName()"
+                        (input)="billingName.set($any($event.target).value)"
+                    >
+
+                    <input
+                        type="text"
+                        placeholder="Irányítószám"
+                        [value]="billingZip()"
+                        (input)="billingZip.set($any($event.target).value)"
+                    >
+
+                    <input
+                        type="text"
+                        placeholder="Város"
+                        [value]="billingCity()"
+                        (input)="billingCity.set($any($event.target).value)"
+                    >
+
+                    <input
+                        type="text"
+                        placeholder="Cím"
+                        [value]="billingAddress()"
+                        (input)="billingAddress.set($any($event.target).value)"
+                    >
+
+                    <button
+                        type="button"
+                        [disabled]="loading()"
+                        (click)="createBooking()">
+
+                        @if(!loading()) {
+                            Foglalás véglegesítése
+                        }
+
+                        @if(loading()) {
+                            Foglalás...
+                        }
+
+                    </button>
+
+                </div>
+
+            }
+
+        </div>
+    }
+
+</section>

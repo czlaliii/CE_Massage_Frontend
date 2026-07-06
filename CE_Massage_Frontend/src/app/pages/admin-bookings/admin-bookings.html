@@ -1,0 +1,198 @@
+<section class="admin-bookings">
+
+    <div class="admin-header">
+
+        <h1>Foglalások</h1>
+
+        <button
+            class="logout-btn"
+            (click)="logout()">
+
+            Kijelentkezés
+
+        </button>
+
+    </div>
+
+    <div
+        class="dashboard-cards"
+        *ngIf="dashboardStats()"
+    >
+
+        <div class="card">
+
+            <h3>
+                Mai foglalások
+            </h3>
+
+            <p>
+                {{
+                    dashboardStats()
+                        ?.todayBookings
+                }}
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>
+                Mai bevétel
+            </h3>
+
+            <p>
+                {{
+                    dashboardStats()
+                        ?.todayRevenue
+                }}
+                Ft
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>
+                Havi foglalások
+            </h3>
+
+            <p>
+                {{
+                    dashboardStats()
+                        ?.monthBookings
+                }}
+            </p>
+
+        </div>
+
+        <div class="card">
+
+            <h3>
+                Havi bevétel
+            </h3>
+
+            <p>
+                {{
+                    dashboardStats()
+                        ?.monthRevenue
+                }}
+                Ft
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="chart-container">
+
+        <h2>
+            Elmúlt 7 nap bevétele
+        </h2>
+
+        <canvas
+            id="revenueChart"
+        ></canvas>
+
+    </div>
+
+    <div class="calendar-legend">
+
+        <div class="legend-item">
+            <span class="legend-color five"></span>
+            5 Kontinens Masszázs
+        </div>
+
+        <div class="legend-item">
+            <span class="legend-color expanse"></span>
+            Expanse Terápia
+        </div>
+
+        <div class="legend-item">
+            <span class="legend-color vibecodes"></span>
+            Vibecodes
+        </div>
+
+    </div>
+
+    <full-calendar
+        [options]="calendarOptions()">
+    </full-calendar>
+
+    @if(showModal() && selectedBooking()) {
+        <div
+            class="modal-backdrop"
+            (click)="closeModal()">
+
+            <div
+                class="modal"
+                (click)="$event.stopPropagation()">
+
+                <h2>
+                    Foglalás részletei
+                </h2>
+
+                <p>
+                    <strong>Név:</strong>
+                    {{ selectedBooking()!.customerName }}
+                </p>
+
+                <p>
+                    <strong>Email:</strong>
+                    {{ selectedBooking()!.customerEmail }}
+                </p>
+
+                @if(selectedBooking()!.customerPhone) {
+
+                    <p>
+                        <strong>Telefon:</strong>
+                        {{ selectedBooking()!.customerPhone }}
+                    </p>
+
+                }
+
+                <p>
+                    <strong>Szolgáltatás:</strong>
+                    {{ selectedBooking()!.serviceName }}
+                </p>
+
+                <p>
+                    <strong>Dátum:</strong>
+                    {{ selectedBooking()!.date }}
+                </p>
+
+                <p>
+                    <strong>Időpont:</strong>
+                    {{ selectedBooking()!.startTime }}
+                    -
+                    {{ selectedBooking()!.endTime }}
+                </p>
+
+                <div class="modal-actions">
+
+                    <button
+                        class="cancel-btn"
+                        (click)="deleteBooking(
+                            selectedBooking()!.id
+                        )">
+
+                        Foglalás törlése
+
+                    </button>
+
+                    <button
+                        class="close-btn"
+                        (click)="closeModal()">
+
+                        Bezárás
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    }
+
+</section>

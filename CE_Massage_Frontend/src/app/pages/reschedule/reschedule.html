@@ -1,0 +1,130 @@
+<section class="reschedule-container">
+
+    @if(success()) {
+
+        <div class="success-message">
+
+            <h2>
+                🎉 Az időpont sikeresen módosítva!
+            </h2>
+
+            <p>
+                A foglalás új időpontja rögzítésre került.
+            </p>
+
+            <p>
+                Hamarosan emailben is megkapod a visszaigazolást.
+            </p>
+
+        </div>
+
+    } @else if(booking()) {
+
+        <div class="reschedule-card">
+
+            <h1>
+                Időpont módosítása
+            </h1>
+
+            <div class="current-booking">
+
+                <h2>
+                    Jelenlegi foglalás
+                </h2>
+
+                <p>
+                    <strong>Szolgáltatás:</strong>
+                    {{ booking()!.serviceName }}
+                </p>
+
+                <p>
+                    <strong>Dátum:</strong>
+                    {{ booking()!.date }}
+                </p>
+
+                <p>
+                    <strong>Időpont:</strong>
+                    {{ booking()!.startTime }}
+                </p>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>
+                    Új dátum
+                </label>
+
+                <input
+                    type="date"
+                    [value]="selectedDate()"
+                    (input)="selectedDate.set($any($event.target).value)"
+                    (change)="loadSlots()"
+                    [min]="minDate"
+                >
+
+            </div>
+
+            @if(availableSlots().length > 0) {
+
+                <div class="slots-section">
+
+                    <h2>
+                        Elérhető időpontok
+                    </h2>
+
+                    <div class="slots-grid">
+
+                        @for(
+                            slot of availableSlots();
+                            track slot
+                        ) {
+
+                            <button
+                                type="button"
+                                class="slot-btn"
+                                [class.selected]="selectedSlot() === slot"
+                                (click)="selectedSlot.set(slot)">
+
+                                {{ slot }}
+
+                            </button>
+
+                        }
+
+                    </div>
+
+                </div>
+
+            }
+
+            @if(errorMessage()) {
+
+                <div class="error-message">
+
+                    {{ errorMessage() }}
+
+                </div>
+
+            }
+
+            <button
+                class="submit-btn"
+                [disabled]="!selectedSlot() || loading()"
+                (click)="submit()">
+
+                @if(!loading()) {
+                    Időpont módosítása
+                }
+
+                @if(loading()) {
+                    Mentés...
+                }
+
+            </button>
+
+        </div>
+
+    }
+
+</section>
