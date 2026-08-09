@@ -1,8 +1,11 @@
 /* GLOBAL */
 body {
-    background-color: #faf9fd;
     font-family: 'Segoe UI', sans-serif;
     color: #4a403c;
+}
+
+.five-all {
+    background-color: white;
 }
 
 h1 {
@@ -32,7 +35,7 @@ p {
 
 .five-continents-intro {
     text-align: center;
-    padding: 1rem 0rem 3rem 0rem;
+    padding: 3rem 0rem;
 }
 
 .five-continents-intro p {
@@ -41,7 +44,7 @@ p {
 
 .five-continents-section {
     max-width: 1100px;
-    margin: 4rem auto;
+    margin: 4rem auto 0rem auto;
     padding: 0 20px;
 }
 

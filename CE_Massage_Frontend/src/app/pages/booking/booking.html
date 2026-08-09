@@ -1,7 +1,5 @@
 <section class="booking-container">
 
-    <h1>Időpontfoglalás</h1>
-
     @if(bookingSuccess()) {
 
         <div class="success-message">
@@ -31,41 +29,244 @@
     @if(!bookingSuccess()) {
         <div class="booking-form">
 
-            <div class="form-group">
+            <h1>Időpontfoglalás</h1>
 
-                <label>
-                    Szolgáltatás
-                </label>
+            <div class="booking-steps">
 
-                <select
-                    (change)="selectedServiceId.set($any($event.target).value); loadSlots()">
+                <!-- 1. Masszázs -->
 
-                    <option value="">
-                        Válassz szolgáltatást
-                    </option>
+                <div
+                    class="step"
+                    [class.active]="!hasServiceSelected()"
+                    [class.completed]="hasServiceSelected()">
 
-                    @for(service of services(); track service.id) {
+                    <div class="step-number">
 
-                        <option [value]="service.id">
-                            {{ service.name }}
-                        </option>
+                        @if(hasServiceSelected()) {
 
-                    }
+                            <span class="step-check">✓</span>
 
-                </select>
+                        } @else {
+
+                            1
+
+                        }
+
+                    </div>
+
+                    <span>
+                        Masszázs
+                    </span>
+
+                </div>
+
+                <div
+                    class="step-line"
+                    [class.active]="hasServiceSelected()">
+                </div>
+
+                <!-- 2. Időtartam -->
+
+                <div
+                    class="step"
+                    [class.active]="hasServiceSelected() && !hasDurationSelected()"
+                    [class.completed]="hasDurationSelected()">
+
+                    <div class="step-number">
+
+                        @if(hasDurationSelected()) {
+
+                            <span class="step-check">✓</span>
+
+                        } @else {
+
+                            2
+
+                        }
+
+                    </div>
+
+                    <span>
+                        Időtartam
+                    </span>
+
+                </div>
+
+                <div
+                    class="step-line"
+                    [class.active]="hasDurationSelected()">
+                </div>
+
+                <!-- 3. Időpont -->
+
+                <div
+                    class="step"
+                    [class.active]="hasDurationSelected() && !hasTimeSelected()"
+                    [class.completed]="hasTimeSelected()">
+
+                    <div class="step-number">
+
+                        @if(hasTimeSelected()) {
+
+                            <span class="step-check">✓</span>
+
+                        } @else {
+
+                            3
+
+                        }
+
+                    </div>
+
+                    <span>
+                        Időpont
+                    </span>
+
+                </div>
+
+                <div
+                    class="step-line"
+                    [class.active]="hasTimeSelected()">
+                </div>
+
+                <!-- 4. Adatok -->
+
+                <div
+                    class="step"
+                    [class.active]="hasTimeSelected()"
+                    [class.completed]="bookingSuccess()">
+
+                    <div class="step-number">
+
+                        @if(bookingSuccess()) {
+
+                            <span class="step-check">✓</span>
+
+                        } @else {
+
+                            4
+
+                        }
+
+                    </div>
+
+                    <span>
+                        Adatok
+                    </span>
+
+                </div>
 
             </div>
 
             <div class="form-group">
 
                 <label>
-                    Dátum
+                    Masszázs típusa
                 </label>
 
-                <input
-                    type="date"
-                    [min]="minDate"
-                    (change)="selectedDate.set($any($event.target).value); loadSlots()">
+                <div class="service-section">
+                    <p class="service-intro">
+
+                        Válassza ki a kívánt kezelést. A foglalás
+                        véglegesítéséhez egységesen
+                        <strong>5 000 Ft online fizetés</strong>
+                        szükséges.
+
+                    </p>
+
+                    <div class="service-grid">
+
+                        @for(service of services(); track service.id) {
+
+                            <button
+                                type="button"
+                                class="service-card"
+                                [class.selected]="selectedService()?.id === service.id"
+                                (click)="selectService(service)">
+
+                                <h3>{{ service.name }}</h3>
+
+                            </button>
+
+                        }
+
+                    </div>
+
+                    @if(selectedService()) {
+
+                        <div class="duration-section">
+
+                            <h2>
+
+                                Időtartam kiválasztása
+
+                            </h2>
+
+                            <div class="duration-grid">
+
+                                @for(option of selectedService()!.service_options; track option.id) {
+
+                                    <button
+
+                                        type="button"
+
+                                        class="service-card"
+
+                                        [class.selected]="selectedServiceOptionId() === option.id"
+
+                                        (click)="selectOption(option.id)">
+
+                                        <div class="service-duration">
+
+                                            ⏱ {{ option.duration_minutes }} perc
+
+                                        </div>
+
+                                        <div class="deposit-box">
+
+                                            <span class="deposit-label">
+
+                                                Online fizetés
+
+                                            </span>
+
+                                            <span class="deposit-price">
+
+                                                5 000 Ft
+
+                                            </span>
+
+                                        </div>
+
+                                        <div class="full-price">
+
+                                            Teljes ár:
+
+                                            {{ formatPrice(option.price) }} Ft
+
+                                        </div>
+
+                                    </button>
+
+                                }
+
+                            </div>
+
+                        </div>
+
+                    }
+
+                </div>
+
+            </div>
+
+            <div
+                class="calendar-section"
+                [class.hidden]="!selectedServiceOptionId()">
+
+                <h2>Dátum kiválasztása</h2>
+
+                <div #datePicker></div>
 
             </div>
 
@@ -97,7 +298,7 @@
 
             }
             <p class="booking-note">
-                Az időpont foglalásáról email visszaigazolást küldünk.
+                A sikeres fizetés után e-mailben elküldjük a visszaigazolást és a számlát.
             </p>
 
             @if(selectedSlot()) {
@@ -106,74 +307,85 @@
 
                     <h2>Kapcsolati adatok</h2>
 
-                    <div class="form-group">
+                    <div class="form-grid">
 
-                        <label>
-                            Név *
-                        </label>
+                        <div class="form-group">
 
-                        <input
-                            type="text"
-                            [value]="customerName()"
-                            (input)="customerName.set($any($event.target).value)">
+                            <label>Név *</label>
 
-                    </div>
+                            <input
+                                type="text"
+                                [value]="customerName()"
+                                (input)="customerName.set($any($event.target).value)">
 
-                    <div class="form-group">
+                        </div>
 
-                        <label>
-                            Email *
-                        </label>
+                        <div class="form-group">
 
-                        <input
-                            type="email"
-                            [value]="customerEmail()"
-                            (input)="customerEmail.set($any($event.target).value)">
+                            <label>Email *</label>
 
-                    </div>
+                            <input
+                                type="email"
+                                [value]="customerEmail()"
+                                (input)="customerEmail.set($any($event.target).value)">
 
-                    <div class="form-group">
+                        </div>
 
-                        <label>
-                            Telefonszám
-                        </label>
+                        <div class="form-group full-width">
 
-                        <input
-                            type="tel"
-                            [value]="customerPhone()"
-                            (input)="customerPhone.set($any($event.target).value)">
+                            <label>Telefonszám (opcionális)</label>
+
+                            <input
+                                type="tel"
+                                [value]="customerPhone()"
+                                (input)="customerPhone.set($any($event.target).value)">
+
+                        </div>
 
                     </div>
 
                     <h3>Számlázási adatok</h3>
 
-                    <input
-                        type="text"
-                        placeholder="Számlázási név"
-                        [value]="billingName()"
-                        (input)="billingName.set($any($event.target).value)"
-                    >
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label>Irányítószám *</label>
 
-                    <input
-                        type="text"
-                        placeholder="Irányítószám"
-                        [value]="billingZip()"
-                        (input)="billingZip.set($any($event.target).value)"
-                    >
+                            <input
+                                type="text"
+                                [value]="billingZip()"
+                                (input)="billingZip.set($any($event.target).value)">
+                        </div>
 
-                    <input
-                        type="text"
-                        placeholder="Város"
-                        [value]="billingCity()"
-                        (input)="billingCity.set($any($event.target).value)"
-                    >
+                        <div class="form-group">
+                            <label>Város *</label>
 
-                    <input
-                        type="text"
-                        placeholder="Cím"
-                        [value]="billingAddress()"
-                        (input)="billingAddress.set($any($event.target).value)"
-                    >
+                            <input
+                                type="text"
+                                [value]="billingCity()"
+                                (input)="billingCity.set($any($event.target).value)">
+                        </div>
+
+                        <div class="form-group full-width">
+                            <label>Cím *</label>
+
+                            <input
+                                type="text"
+                                [value]="billingAddress()"
+                                (input)="billingAddress.set($any($event.target).value)">
+                        </div>
+
+                    </div>
+
+                    <div class="payment-info">
+
+                        <strong>5 000 Ft online fizetés szükséges.</strong>
+
+                        <p>
+                            A fennmaradó összeget a kezelés napján,
+                            személyesen lehet kiegyenlíteni.
+                        </p>
+
+                    </div>
 
                     <button
                         type="button"
@@ -181,11 +393,11 @@
                         (click)="createBooking()">
 
                         @if(!loading()) {
-                            Foglalás véglegesítése
+                            Tovább a biztonságos fizetéshez
                         }
 
                         @if(loading()) {
-                            Foglalás...
+                            Átirányítás...
                         }
 
                     </button>

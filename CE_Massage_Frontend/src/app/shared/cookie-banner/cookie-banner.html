@@ -1,0 +1,51 @@
+@if (cookieService.shouldShowBanner) {
+
+<div class="cookie-banner">
+
+    <div class="cookie-icon">
+
+        🍪
+
+    </div>
+
+    <div class="cookie-content">
+
+        <h3>{{ 'COOKIES.TITLE' | translate }}</h3>
+
+        <p>
+            {{ 'COOKIES.DESCRIPTION' | translate }}
+        </p>
+
+        <a
+            routerLink="/legal/cookies"
+            class="cookie-link">
+
+            {{ 'COOKIES.LINK' | translate }}
+
+        </a>
+
+    </div>
+
+    <div class="cookie-buttons">
+
+        <button
+            class="cookie-secondary"
+            (click)="cookieService.acceptNecessary()">
+
+            {{ 'COOKIES.BUTTON_ONLY' | translate }}
+
+        </button>
+
+        <button
+            class="cookie-primary"
+            (click)="cookieService.acceptAll()">
+
+            {{ 'COOKIES.BUTTON_ALL' | translate }}
+
+        </button>
+
+    </div>
+
+</div>
+
+}

@@ -1,6 +1,7 @@
 html,
 body {
     font-weight: 300;
+    background: #FEFAEE;
 }
 
 * {
@@ -46,4 +47,292 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .sa-visible.zoom-in {
     transform: scale(1);
+}
+
+.flatpickr-calendar {
+
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(250,236,202,.12);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.18);
+
+    overflow: hidden;
+
+    color: #faecca;
+
+}
+
+.flatpickr-current-month {
+
+    color: #faecca;
+
+    font-weight: 500;
+
+    font-size: 1rem;
+
+    padding-top: .35rem !important;
+
+    padding-bottom: .35rem !important;
+
+}
+
+.flatpickr-weekdays {
+
+    border-top: 1px solid rgba(250,236,202,.05);
+
+    border-bottom: 1px solid rgba(250,236,202,.05);
+
+}
+
+.cur-month {
+
+    color:#faecca !important;
+
+    font-weight:500;
+}
+
+.cur-year {
+
+    color:#faecca !important;
+
+    pointer-events:none;
+
+    background:none;
+
+    border:none;
+}
+
+.flatpickr-weekday {
+
+    color: rgba(247,200,69,.9) !important;
+
+    font-weight: 600 !important;
+
+    letter-spacing: .04em !important;
+
+}
+
+.flatpickr-day {
+
+    color: #faecca !important;
+
+    border-radius: 12px;
+
+    border: 1px solid transparent;
+
+    font-weight: 500;
+
+    transition:
+        border-color .2s ease,
+        transform .2s ease,
+        box-shadow .2s ease;
+
+}
+
+.flatpickr-day:hover {
+
+    background: rgba(247,200,69,.08);
+
+    color: #faecca !important;
+
+    border-color: #f7c845;
+
+}
+
+.flatpickr-day.selected,
+.flatpickr-day.startRange,
+.flatpickr-day.endRange {
+
+    background: #f7c845 !important;
+
+    color: #414141 !important;
+
+    border: none !important;
+
+    font-weight: 700;
+
+    box-shadow:
+
+        0 4px 14px rgba(247,200,69,.25);
+}
+
+.flatpickr-day.today {
+
+    border: 1px solid rgba(247,200,69,.85);
+
+}
+
+.flatpickr-day.today.selected {
+
+    border: none;
+}
+
+.flatpickr-day:not(.flatpickr-disabled):not(.selected):hover {
+
+    background: rgba(247,200,69,.08);
+
+    border-color: rgba(247,200,69,.65);
+
+    color: #faecca !important;
+
+    transform: translateY(-1px);
+
+}
+
+.flatpickr-day.flatpickr-disabled,
+.flatpickr-day.prevMonthDay,
+.flatpickr-day.nextMonthDay {
+
+    color: rgba(250,236,202,.28) !important;
+
+    opacity: .45;
+
+    cursor: not-allowed;
+
+}
+
+.flatpickr-day.flatpickr-disabled:hover,
+.flatpickr-day.prevMonthDay:hover,
+.flatpickr-day.nextMonthDay:hover {
+
+    background: transparent !important;
+
+    border: 1px solid transparent !important;
+
+    transform: none !important;
+
+    box-shadow: none !important;
+
+}
+
+.flatpickr-day:hover:not(.selected) {
+
+    transform: translateY(-2px);
+
+}
+
+.flatpickr-prev-month svg,
+.flatpickr-next-month svg {
+
+    width: 16px;
+
+    height: 16px;
+
+    fill: #faecca !important;
+}
+
+.flatpickr-prev-month:hover svg,
+.flatpickr-next-month:hover svg {
+
+    fill: #f7c845 !important;
+}
+
+.flatpickr-monthDropdown-months {
+
+    background: #414141 !important;
+
+    color: #faecca !important;
+
+    border: none !important;
+
+}
+
+.flatpickr-monthDropdown-month {
+
+    background: #414141 !important;
+
+    color: #faecca !important;
+
+}
+
+.flatpickr-monthDropdown-month:hover {
+
+    background: rgba(247,200,69,.15) !important;
+
+    color: #faecca !important;
+
+}
+
+.flatpickr-monthDropdown-month.selected {
+
+    background: #f7c845 !important;
+
+    color: #414141 !important;
+
+}
+
+.flatpickr-prev-month,
+.flatpickr-next-month {
+
+    width: 34px;
+
+    height: 34px;
+
+    border-radius: 10px;
+
+    transition: all .2s ease;
+
+}
+
+.flatpickr-calendar.inline {
+
+    display: inline-block;
+
+    margin: 0 auto;
+
+    background: #414141;
+
+    border-radius: 18px;
+
+    box-shadow: 0 18px 45px rgba(0,0,0,.35);
+
+}
+
+.flatpickr-prev-month:hover,
+.flatpickr-next-month:hover {
+
+    background: rgba(247,200,69,.08);
+
+    transform: translateY(-1px);
+
+}
+
+.flatpickr-months {
+
+    padding: .1rem 0;
+
+}
+
+.calendar-section {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    margin-top: 2rem;
+
+    margin-bottom: 2.5rem;
+
+}
+
+.calendar-section h2 {
+    margin-bottom: 2rem;
+
+	color: #faecca;
+
+	font-size: 1.5rem;
+
+	font-weight: 400;
+}
+
+.flatpickr-rContainer,
+.flatpickr-innerContainer,
+.flatpickr-days {
+
+    background: rgba(255,255,255,.03);
+
 }

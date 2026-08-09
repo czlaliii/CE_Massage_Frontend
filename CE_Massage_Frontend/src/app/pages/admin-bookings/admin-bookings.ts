@@ -55,20 +55,56 @@ export class AdminBookings implements OnInit {
   private router =
     inject(Router);
 
+  todayBookings = signal<Booking[]>([]);
+
   bookings =
     signal<Booking[]>([]);
 
   selectedDate =
     signal('');
 
-    dashboardStats =
-      signal<DashboardStats | null>(
-          null
-      );
+  dashboardStats =
+    signal<DashboardStats | null>(
+        null
+    );
+
+  selectedMonth = signal(
+    new Date().getMonth() + 1
+  );
+
+  selectedYear = signal(
+      new Date().getFullYear()
+  );
+
+    months = [
+      { value: 1, name: 'Január' },
+      { value: 2, name: 'Február' },
+      { value: 3, name: 'Március' },
+      { value: 4, name: 'Április' },
+      { value: 5, name: 'Május' },
+      { value: 6, name: 'Június' },
+      { value: 7, name: 'Július' },
+      { value: 8, name: 'Augusztus' },
+      { value: 9, name: 'Szeptember' },
+      { value: 10, name: 'Október' },
+      { value: 11, name: 'November' },
+      { value: 12, name: 'December' }
+  ];
+
+  currentYear = new Date().getFullYear();
+
+  years = Array.from(
+      { length: 10 },
+      (_, i) => this.currentYear - 5 + i
+  );
 
   ngOnInit(): void {
     this.loadBookings();
     this.loadDashboardStats();
+    console.log(
+    this.selectedMonth(),
+    this.selectedYear()
+);
   }
 
   selectedBooking =
@@ -84,14 +120,16 @@ export class AdminBookings implements OnInit {
       interactionPlugin
     ],
 
+    displayEventTime: false,
+
     initialView: 'timeGridWeek',
 
     locale: huLocale,
 
     height: 'auto',
 
-    slotMinTime: '09:00:00',
-    slotMaxTime: '18:00:00',
+    slotMinTime: '08:00:00',
+    slotMaxTime: '20:00:00',
 
     allDaySlot: false,
 
@@ -107,23 +145,69 @@ export class AdminBookings implements OnInit {
       right: 'timeGridDay,timeGridWeek,dayGridMonth'
     },
 
-  //   eventContent: (arg) => {
+    eventDidMount(info){
 
-  //   return {
+      if(info.view.type==="dayGridMonth"){
 
-  //     html: `
-  //       <div>
-  //         <strong>
-  //           ${arg.event.title}
-  //         </strong>
-  //         <br>
-  //         <small>
-  //           ${arg.event.extendedProps['serviceName']}
-  //         </small>
-  //       </div>
-  //     `
-  //   };
-  // },
+          info.el.style.borderLeft =
+              `5px solid ${info.event.backgroundColor}`;
+
+          info.el.style.borderRadius="6px";
+
+      }
+
+    },
+
+    eventContent: (arg) => {
+
+      console.log(arg.event.backgroundColor);
+
+      const view = arg.view.type;
+
+      const service =
+          this.shortServiceName(
+              arg.event.extendedProps['serviceName']
+          );
+
+      const duration =
+          arg.event.extendedProps['duration'];
+
+      if (arg.view.type === 'dayGridMonth') {
+
+          return {
+              html: `
+                  <div class="month-booking">
+                      ${arg.event.title}
+                  </div>
+              `
+          };
+
+      }
+
+      return {
+
+          html: `
+              <div class="calendar-event">
+
+                  <div class="calendar-name">
+                      ${arg.event.title}
+                  </div>
+
+                  <div class="calendar-service">
+                      ${service}
+                  </div>
+
+                  ${
+                      duration >= 60
+                      ? `<div class="calendar-duration">${duration} perc</div>`
+                      : ''
+                  }
+
+              </div>
+          `
+      };
+
+  },
 
     eventClick: (info) => {
 
@@ -147,6 +231,30 @@ export class AdminBookings implements OnInit {
   }
   });
 
+  changeMonth(event: Event){
+
+      this.selectedMonth.set(
+          Number(
+              (event.target as HTMLSelectElement).value
+          )
+      );
+
+      this.loadDashboardStats();
+
+  }
+
+  changeYear(event: Event){
+
+      this.selectedYear.set(
+          Number(
+              (event.target as HTMLSelectElement).value
+          )
+      );
+
+      this.loadDashboardStats();
+
+  }
+
   closeModal(): void {
 
     this.showModal.set(
@@ -158,41 +266,55 @@ export class AdminBookings implements OnInit {
     );
   }
 
-  private updateCalendarEvents(
-    bookings: Booking[]
-  ): void {
+  formatPrice(price: number): string {
 
-    const events = bookings.map(
-    booking => ({
+      return new Intl.NumberFormat(
+          'hu-HU'
+      ).format(price);
+
+  }
+
+  private updateCalendarEvents(
+      bookings: Booking[]
+    ): void {
+
+      console.log(bookings[0]);
+
+      const events = bookings.map(booking => ({
 
       id: booking.id,
 
-      title:
-        `${booking.customerName}`,
+      title: booking.customerName,
 
-      start:
-        `${booking.date}T${booking.startTime}`,
+      start: `${booking.date}T${booking.startTime}`,
 
-      end:
-        `${booking.date}T${booking.endTime}`,
+      end: `${booking.date}T${booking.endTime}`,
 
       backgroundColor:
-        this.getEventColor(
-          booking.serviceName
-        ),
+          this.getEventColor(
+              booking.serviceName
+          ),
 
       borderColor:
-        this.getEventColor(
-          booking.serviceName
-        ),
+          this.getEventColor(
+              booking.serviceName
+          ),
+
+      textColor: '#fff',
 
       extendedProps: {
 
-        serviceName:
-          booking.serviceName
+          serviceName:
+              booking.serviceName,
+
+          duration:
+              this.getDuration(
+                  booking
+              )
+
       }
-    })
-  );
+
+  }));
 
     this.calendarOptions.update(
       options => ({
@@ -204,7 +326,28 @@ export class AdminBookings implements OnInit {
     console.log(events);
   }
 
-  private createRevenueChart(
+  private shortServiceName(
+      serviceName: string
+  ): string {
+
+      switch (serviceName) {
+
+          case '5 Kontinens Masszázs':
+              return '5 Kontinens';
+
+          case 'Expanse Terápia':
+              return 'Expanse';
+
+          case 'Vibecodes':
+              return 'Vibecodes';
+
+          default:
+              return serviceName;
+      }
+
+  }
+
+  private createBookingsChart(
       stats: DashboardStats
   ): void {
 
@@ -219,57 +362,116 @@ export class AdminBookings implements OnInit {
 
       new Chart(canvas, {
 
-          type: 'line',
+        type: 'line',
 
-          data: {
+        data: {
 
-              labels:
-                  stats.revenueByDay.map(
-                      day =>
-                          day.date
-                  ),
+            labels:
 
-              datasets: [
-                  {
-                      label:
-                          'Napi bevétel',
+                stats.bookingsByDay.map(
+                    day => this.formatChartDate(day.date)
+                ),
 
-                      data:
-                          stats.revenueByDay.map(
-                              day =>
-                                  day.revenue
-                          )
-                  }
-              ]
-          },
+            datasets: [
 
-          options: {
+                {
 
-              responsive: true,
+                    label: 'Foglalások',
 
-              plugins: {
+                    data:
 
-                  legend: {
-                      display: true
-                  }
+                        stats.bookingsByDay.map(
+                            day => day.bookings
+                        ),
+
+                    tension: .35,
+
+                    borderWidth: 3,
+
+                    pointRadius: 5,
+
+                    pointHoverRadius: 7,
+
+                    fill: true
+
+                }
+
+            ]
+
+        },
+
+        options: {
+
+            responsive: true,
+
+            scales: {
+
+                y: {
+
+                    beginAtZero: true,
+
+                    ticks: {
+
+                        precision: 0,
+
+                        stepSize: 1
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    });
+  }
+
+  formatChartDate(date: string): string {
+
+      return new Date(date)
+          .toLocaleDateString(
+
+              'hu-HU',
+
+              {
+
+                  weekday: 'short',
+
+                  day: 'numeric'
+
               }
-          }
-      });
+
+          );
+
   }
 
   loadBookings(): void {
 
     this.bookingService
-      .getBookings()
-      .subscribe(bookings => {
+        .getBookings()
+        .subscribe(bookings => {
 
-        this.bookings.set(bookings);
+            this.bookings.set(bookings);
 
-        this.updateCalendarEvents(
-          bookings
-        );
+            this.todayBookings.set(
 
-      });
+                bookings.filter(
+
+                    booking =>
+
+                        booking.date ===
+                        new Date()
+                            .toISOString()
+                            .split('T')[0]
+
+                )
+
+            );
+
+            this.updateCalendarEvents(bookings);
+
+        });
   }
 
   getStartMinutes(
@@ -363,37 +565,37 @@ export class AdminBookings implements OnInit {
     switch (serviceName) {
 
       case '5 Kontinens Masszázs':
-        return '#4CAF50';
+            return '#D4AF37'; // arany
 
-      case 'Expanse Terápia':
-        return '#2196F3';
+        case 'Expanse Terápia':
+            return '#5A8DEE'; // kék
 
-      case 'Vibecodes':
-        return '#9C27B0';
+        case 'Vibecodes':
+            return '#8E44AD'; // lila
 
-      default:
-        return '#607D8B';
+        default:
+            return '#95A5A6';
     }
   }
 
   loadDashboardStats(): void {
 
-      this.bookingService
-          .getDashboardStats()
-          .subscribe(stats => {
+      this.bookingService.getDashboardStats(
 
-              this.dashboardStats.set(
-                  stats
-              );
+        this.selectedYear(),
 
-              setTimeout(() => {
+        this.selectedMonth()
 
-                  this.createRevenueChart(
-                      stats
-                  );
+    )
+    .subscribe(stats => {
 
-              });
-          });
+        this.dashboardStats.set(stats);
+
+        setTimeout(() => {
+            this.createBookingsChart(stats);
+        });
+
+    });
   }
 
   logout(): void {

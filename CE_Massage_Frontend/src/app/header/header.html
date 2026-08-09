@@ -1,8 +1,8 @@
-<header>
-    <nav>
+<header [class.scrolled]="glassHeader">
+    <nav [class.menu-open]="menuOpen">
         <div class="logo" routerLink="/">
-        <img ngSrc="/images/Logo_01.png" alt="CE Massage logo" width="1826" height="576" priority>
-        </div>
+        <img ngSrc="/images/CE_Logo_cropped.png" alt="CE Massage logo" width="1024" height="1024" priority>
+    </div>
 
         <div class="mobile-actions">
 
@@ -35,21 +35,74 @@
         </button>
 
         <ul [class.open]="menuOpen">
-            <li><a routerLink="/" (click)="closeMenu()">{{ 'NAV.HOME' | translate }}</a></li>
+            <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"  (click)="closeMenu()">{{ 'NAV.HOME' | translate }}</a></li>
             <li>
                 <div class="dropdown" [class.open]="serviceOpen">
-                    <a (click)="toggleServices()" [class.active]="serviceOpen">{{ 'NAV.SERVICES' | translate }}</a>
+                    <a
+                        class="dropdown-toggle"
+                        [class.active]="serviceOpen || isServicesRoute"
+                        (click)="toggleServices(); $event.stopPropagation()">
+
+                        <span class="dropdown-label">
+                            {{ 'NAV.SERVICES' | translate }}
+                        </span>
+
+                        <svg
+                            class="dropdown-arrow"
+                            [class.open]="serviceOpen"
+                            viewBox="0 0 24 24">
+
+                            <path
+                                d="M6 9l6 6 6-6"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                fill="none"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"/>
+                        </svg>
+
+                    </a>
                     <div class="dropdown-content">
-                        <a routerLink="/services/five-continents" (click)="closeMenu()">{{ 'NAV.FIVE_CONTINENTS' | translate }}</a>
-                        <a routerLink="/services/expanse" (click)="closeMenu()">{{ 'NAV.EXPANSE' | translate }}</a>
-                        <a routerLink="/services/vibecodes" (click)="closeMenu()">{{ 'NAV.VIBECODES' | translate }}</a>
+                        <a routerLink="/services/five-continents"
+                            routerLinkActive="active-sub"
+                            [routerLinkActiveOptions]="{ exact: true }"
+                            (click)="closeMenu()"
+                        >
+                            {{ 'NAV.FIVE_CONTINENTS' | translate }}
+                        </a>
+                        <a routerLink="/services/expanse"
+                            routerLinkActive="active-sub"
+                            [routerLinkActiveOptions]="{ exact: true }"
+                            (click)="closeMenu()"
+                        >
+                            {{ 'NAV.EXPANSE' | translate }}
+                        </a>
+                        <a routerLink="/services/vibecodes"
+                            routerLinkActive="active-sub"
+                            [routerLinkActiveOptions]="{ exact: true }"
+                            (click)="closeMenu()"
+                        >
+                            {{ 'NAV.VIBECODES' | translate }}
+                        </a>
                     </div>
                 </div>
             </li>
-            <li><a routerLink="/prices" (click)="closeMenu()">{{ 'NAV.PRICES' | translate }}</a></li>
-            <li><a routerLink="/gallery" (click)="closeMenu()">{{ 'NAV.GALLERY' | translate }}</a></li>
-            <li><a routerLink="/about" (click)="closeMenu()">{{ 'NAV.ABOUT' | translate }}</a></li>
-            <li><a routerLink="/faq" (click)="closeMenu()">{{ 'NAV.FAQ' | translate }}</a></li>
+            <li><a routerLink="/prices"  routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">{{ 'NAV.PRICES' | translate }}</a></li>
+            <li><a routerLink="/gallery" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">{{ 'NAV.GALLERY' | translate }}</a></li>
+            <li><a routerLink="/about" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">{{ 'NAV.ABOUT' | translate }}</a></li>
+            <li><a routerLink="/faq" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" (click)="closeMenu()">{{ 'NAV.FAQ' | translate }}</a></li>
+            <li class="booking-item">
+                <a
+                    routerLink="/booking"
+                    routerLinkActive="active"
+                    [routerLinkActiveOptions]="{ exact: true }"
+                    class="booking-link"
+                    (click)="closeMenu()">
+
+                    {{ 'HOME.HERO.BOOKING' | translate }}
+
+                </a>
+            </li>
             <div class="language-switch">
                 <button
                     [class.active]="languageService.currentLanguage() === 'hu'"

@@ -14,11 +14,25 @@ private authService = inject(AuthService);
 
   username = signal('');
   password = signal('');
+  showPassword = signal(false);
 
   errorMessage = signal('');
   loading = signal(false);
 
+  togglePassword(): void {
+
+      this.showPassword.update(
+          value => !value
+      );
+
+  }
+
   login(): void {
+
+    console.log({
+        username: this.username(),
+        password: this.password()
+    });
 
     this.errorMessage.set('');
     this.loading.set(true);

@@ -1,0 +1,95 @@
+<section class="legal-page">
+
+    <div class="legal-card">
+
+        <h1>{{ 'COOKIE_POLICY.TITLE' | translate }}</h1>
+
+        <p class="legal-last-update">
+            {{ 'COOKIE_POLICY.EFFECTIVE' | translate }}
+        </p>
+
+        <div class="legal-section">
+
+            <h2>1. {{ 'COOKIE_POLICY.SECTION_1.TITLE' | translate }}</h2>
+
+            <p>
+                {{ 'COOKIE_POLICY.SECTION_1.DESCRIPTION' | translate }}
+            </p>
+
+        </div>
+
+        <div class="legal-section">
+
+            <h2>2. {{ 'COOKIE_POLICY.SECTION_2.TITLE' | translate }}</h2>
+
+            <p>
+                {{ 'COOKIE_POLICY.SECTION_2.DESCRIPTION' | translate }}
+            </p>
+
+            <ul>
+                <li><strong>{{ 'COOKIE_POLICY.SECTION_2.LIST_1_STRONG' | translate }}</strong> – {{ 'COOKIE_POLICY.SECTION_2.LIST_1' | translate }}</li>
+                <li><strong>{{ 'COOKIE_POLICY.SECTION_2.LIST_2_STRONG' | translate }}</strong> – {{ 'COOKIE_POLICY.SECTION_2.LIST_2' | translate }}</li>
+                <li><strong>{{ 'COOKIE_POLICY.SECTION_2.LIST_3_STRONG' | translate }}</strong> – {{ 'COOKIE_POLICY.SECTION_2.LIST_3' | translate }}</li>
+            </ul>
+
+        </div>
+
+        <div class="legal-section">
+
+            <h2>3. {{ 'COOKIE_POLICY.SECTION_3.TITLE' | translate }}</h2>
+
+            <p>
+                {{ 'COOKIE_POLICY.SECTION_3.DESCRIPTION' | translate }}
+            </p>
+
+        </div>
+
+        <div class="legal-section">
+
+            <h2>4. Google Maps</h2>
+
+            <p>
+                {{ 'COOKIE_POLICY.SECTION_4.DESCRIPTION_1' | translate }}
+            </p>
+
+            <p>
+                {{ 'COOKIE_POLICY.SECTION_4.DESCRIPTION_2' | translate }}
+            </p>
+
+        </div>
+
+        <div class="legal-section">
+
+            <h2>5. {{ 'COOKIE_POLICY.SECTION_5.TITLE' | translate }}</h2>
+
+            <p>
+                {{ 'COOKIE_POLICY.SECTION_5.DESCRIPTION_1' | translate }}
+            </p>
+
+            <p>
+                {{ 'COOKIE_POLICY.SECTION_5.DESCRIPTION_2' | translate }}
+            </p>
+
+        </div>
+
+        <div class="legal-cookie-settings">
+
+            <h2>{{ 'COOKIE_POLICY.SETTINGS.TITLE' | translate }}</h2>
+
+            <p>
+                {{ 'COOKIE_POLICY.SETTINGS.DESCRIPTION' | translate }}
+            </p>
+
+            <button
+                class="cookie-settings-button"
+                (click)="cookieService.openSettings()">
+
+                {{ 'COOKIE_POLICY.SETTINGS.BUTTON' | translate }}
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>

@@ -1,0 +1,222 @@
+.legal-page {
+
+    max-width: 900px;
+
+    margin: 4rem auto;
+
+    padding: 0 1.5rem;
+
+}
+
+.legal-card {
+
+    background: rgba(65,65,65,.75);
+
+    backdrop-filter: blur(10px);
+
+    border-radius: 24px;
+
+    padding: 3rem;
+
+    border: 1px solid rgba(250,236,202,.12);
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.15);
+
+}
+
+.legal-card h1 {
+
+    text-align: center;
+
+    color: #faecca;
+
+    font-size: 2.6rem;
+
+    font-weight: 300;
+
+    margin-bottom: .5rem;
+
+}
+
+.legal-last-update {
+
+    text-align: center;
+
+    color: rgba(250,236,202,.55);
+
+    margin-bottom: 3rem;
+
+    font-size: .95rem;
+
+}
+
+.legal-section {
+
+    padding: 2rem 0;
+
+}
+
+.legal-section:not(:last-child) {
+
+    border-bottom: 1px solid rgba(250,236,202,.08);
+
+}
+
+.legal-section h2 {
+
+    color: #f4e4bc;
+
+    font-size: 1.4rem;
+
+    font-weight: 500;
+
+    margin-bottom: 1.25rem;
+
+}
+
+.legal-section p {
+
+    color: rgba(250,236,202,.88);
+
+    line-height: 1.8;
+
+    margin-bottom: 1rem;
+
+}
+
+.legal-section strong {
+
+    color: #faecca;
+
+    font-weight: 600;
+
+}
+
+.legal-section a,
+.legal-section a:visited {
+
+    color: #faecca;
+
+    text-decoration: underline;
+
+    text-underline-offset: 0.18em;
+
+}
+
+.legal-section a:hover,
+.legal-section a:focus-visible {
+
+    color: #D9AA52;
+
+}
+
+.legal-section h2 {
+
+    position: relative;
+
+    padding-left: 1rem;
+
+}
+
+.legal-section h2::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 4px;
+
+    bottom: 4px;
+
+    width: 3px;
+
+    border-radius: 999px;
+
+    background: rgba(250,236,202,.35);
+
+}
+
+.legal-section ul {
+
+    margin: 1.25rem 0;
+
+    padding-left: 1.4rem;
+
+}
+
+.legal-section li {
+
+    color: rgba(250,236,202,.88);
+
+    line-height: 1.8;
+
+    margin-bottom: .7rem;
+
+}
+
+.legal-section li::marker {
+
+    color: #D9AA52;
+
+}
+
+.legal-cookie-settings{
+
+    margin-top:3rem;
+
+    padding:2rem;
+
+    border-radius:18px;
+
+    background:rgba(250,236,202,.04);
+
+    border:1px solid rgba(250,236,202,.08);
+
+}
+
+.legal-cookie-settings h2{
+
+    margin-top:0;
+
+    color:#FAECCA;
+
+}
+
+.legal-cookie-settings p{
+
+    color:rgba(250,236,202,.8);
+
+    margin-bottom:1.5rem;
+
+}
+
+.cookie-settings-button{
+
+    padding:.9rem 1.6rem;
+
+    border:none;
+
+    border-radius:999px;
+
+    background:#D9AA52;
+
+    color:#2e2e2e;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:.25s;
+
+}
+
+.cookie-settings-button:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 25px rgba(217,170,82,.35);
+
+}

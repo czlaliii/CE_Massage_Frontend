@@ -1,3 +1,3 @@
 export const environment = {
-    apiUrl: 'https://api.cemassage.hu'
+    apiUrl: 'http://localhost:3000'
 };

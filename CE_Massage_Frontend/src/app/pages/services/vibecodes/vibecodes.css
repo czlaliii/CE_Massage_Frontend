@@ -6,6 +6,10 @@
     text-align: center;
 }
 
+.vibecodes-all {
+    background-color: white;
+}
+
 .smaller-title {
     font-size: 1.3rem;
     margin-bottom: 5px;
@@ -93,59 +97,6 @@ blockquote {
 .vibe-program p {
     margin-bottom: 20px;
     font-size: 1rem;
-}
-
-.wave-bg {
-    position: relative;
-    overflow: hidden;
-}
-
-/* FELSŐ hullám */
-.wave-bg::before {
-    content: "";
-    position: absolute;
-    top: -40px;
-    left: 0;
-    width: 200%;
-    height: 180px;
-    opacity: 0.6;
-    filter: blur(1px);
-
-    background: url("data:image/svg+xml,%3Csvg width='1600' height='140' viewBox='0 0 1600 140' xmlns='http://www.w3.org/2000/svg'%3E%3Cg transform='scale(1,-1) translate(0,-140)'%3E%3Cpath d='M0 70 Q200 20 400 70 T800 70 T1200 70 T1600 70 V140 H0 Z' fill='%23f7c845' fill-opacity='0.15'/%3E%3C/g%3E%3C/svg%3E");
-
-    background-repeat: repeat-x;
-    background-size: 1600px 140px;
-
-    animation: waveMove 50s linear infinite;
-}
-
-/* ALSÓ hullám */
-.wave-bg::after {
-    content: "";
-    position: absolute;
-    bottom: -50px;
-    left: 0;
-    width: 200%;
-    height: 180px;
-    opacity: 0.6;
-    filter: blur(1px);
-
-    background: url("data:image/svg+xml,%3Csvg width='1600' height='140' viewBox='0 0 1600 140' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 70 Q200 20 400 70 T800 70 T1200 70 T1600 70 V140 H0 Z' fill='%23d6b47a' fill-opacity='0.15'/%3E%3C/svg%3E");
-
-    background-repeat: repeat-x;
-    background-size: 1600px 140px;
-
-    animation: waveMoveReverse 50s linear infinite;
-}
-
-@keyframes waveMove {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-}
-
-@keyframes waveMoveReverse {
-    from { transform: translateX(-50%); }
-    to { transform: translateX(0); }
 }
 
 /* IMAGE */

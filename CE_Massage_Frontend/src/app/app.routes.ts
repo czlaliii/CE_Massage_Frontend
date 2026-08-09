@@ -11,6 +11,10 @@ import { BookingComponent } from './pages/booking/booking';
 import { AdminBookings } from './pages/admin-bookings/admin-bookings';
 import { AdminLogin } from './pages/admin-login/admin-login';
 import { authGuard } from './guards/auth.guard';
+import { Terms } from './pages/legal/terms/terms';
+import { Privacy } from './pages/legal/privacy/privacy';
+import { Cookies } from './pages/legal/cookies/cookies';
+import { Impressum } from './pages/legal/impressum/impressum';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -38,7 +42,7 @@ export const routes: Routes = [
                     component.Reschedule
             )
     },
-     {
+    {
         path: 'payment-success',
         loadComponent: () =>
         import('./pages/payment-success/payment-success')
@@ -51,5 +55,9 @@ export const routes: Routes = [
         import('./pages/payment-cancel/payment-cancel')
             .then(m => m.PaymentCancel)
     },
+    { path: 'legal/terms', component: Terms},
+    { path: 'legal/privacy', component: Privacy},
+    { path: 'legal/cookies', component: Cookies},
+    { path: 'legal/impressum', component: Impressum},
     { path: '**', redirectTo: '' }
 ];

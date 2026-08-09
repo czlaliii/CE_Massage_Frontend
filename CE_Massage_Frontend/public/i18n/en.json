@@ -12,7 +12,8 @@
     },
     "HOME": {
         "HERO": {
-            "TITLE": "A journey that takes you back to yourself, to the place where your greatest treasures lie."
+            "TITLE": "A journey that takes you back to yourself, to the place where your greatest treasures lie.",
+            "BOOKING": "Book an Appointment"
         },
         "SERVICES": {
             "FIVE_CONTINENTS": {
@@ -58,7 +59,10 @@
             "PUBLIC_TRANSPORT_2": "A 1-minute walk from Opera station on Metro Line 1.",
             "PUBLIC_TRANSPORT_3": "A 10-minute walk from Oktogon station on Tram Lines 4 and 6, or accessible via Metro Line 1.",
             "PUBLIC_TRANSPORT_4": "A 3-minute walk from Opera M stop on Trolleybus Lines 70 and 78.",
-            "PUBLIC_TRANSPORT_5": "A 5-minute walk from Szent István Bazilika stop on Trolleybus Line 72."
+            "PUBLIC_TRANSPORT_5": "A 5-minute walk from Szent István Bazilika stop on Trolleybus Line 72.",
+            "MAP_PREVIEW": "Map preview",
+            "MAP_ENABLE_TEXT": "To display Google Maps, you must enable external cookies.",
+            "MAP_ENABLE_BUTTON_TEXT": "Show Google Maps"
         }
     },
     "ABOUT": {
@@ -438,15 +442,22 @@
     },
     "FOOTER": {
         "TITLES": {
-            "CONTACT": "Contact",
+            "NAVIGATION": "Navigation",
             "OPEN_HOURS": "Open hours",
-            "SOCIAL_MEDIA": "Social media"
+            "LEGAL_INFO": "Legal information"
         },
         "WEEKDAYS": {
-            "MONDAY-FRIDAY": "Monday - Friday",
-            "SATURDAY": "Saturday",
-            "SUNDAY": "Sunday: Closed"
+            "MONDAY-FRIDAY": "Mon - Fri",
+            "MONDAY-SUNDAY": "Mon - Sun",
+            "MONDAY": "Mon",
+            "TUESDAY": "Tue",
+            "WEDNESDAY": "Wed",
+            "THURSDAY": "Thu",
+            "FRIDAY": "Fri",
+            "SATURDAY": "Sat",
+            "SUNDAY": "Sun"
         },
+        "CLOSED": "CLOSED",
         "NAV": {
             "HOME": "Home",
             "PRICES": "Prices",
@@ -454,6 +465,55 @@
             "ABOUT": "About Me",
             "FAQ": "FAQ"
         },
+        "LEGAL": {
+            "IMPRESSUM": "Impressum",
+            "TERMS": "Terms & Conditions",
+            "PRIVACY": "Privacy Policy",
+            "COOKIES": "Cookie Policy"
+        },
         "COPYRIGHT": "All copyrights reserved."
+    },
+    "COOKIES": {
+        "TITLE": "Use of cookies",
+        "DESCRIPTION": "This website uses cookies to ensure proper functioning, improve user experience and make certain features available. You can read more about the use of cookies and the settings options in the Cookie Policy.",
+        "LINK": "Cookie policy",
+        "BUTTON_ONLY": "Only necessary",
+        "BUTTON_ALL": "Accept all"
+    },
+    "COOKIE_POLICY": {
+        "TITLE": "Cookie information",
+        "EFFECTIVE": "Effective: July 30, 2026",
+        "SECTION_1": {
+            "TITLE": "What are cookies?",
+            "DESCRIPTION": "Cookies are small data files that your browser stores on your device. They help the website remember certain settings, ensure proper operation, and provide a more convenient user experience."
+        },
+        "SECTION_2": {
+            "TITLE": "What cookies do we use?",
+            "DESCRIPTION": "The following types of cookies may occur on the website:",
+            "LIST_1_STRONG": "Necessary cookies",
+            "LIST_1": "necessary for the proper functioning of the website.",
+            "LIST_2_STRONG": "Functional cookies",
+            "LIST_2": "ensure the operation of certain convenience functions.",
+            "LIST_3_STRONG": "Third-party cookies",
+            "LIST_3": "for example, when using the Google Maps service."
+        },
+        "SECTION_3": {
+            "TITLE": "What do we use them for?",
+            "DESCRIPTION": "We use cookies to ensure the proper functioning of the website, to improve the user experience, and to display certain external services."
+        },
+        "SECTION_4": {
+            "DESCRIPTION_1": "The map on this website is displayed using the Google Maps service. When loading the map, Google may place its own cookies and process personal data (such as your IP address).",
+            "DESCRIPTION_2": "Google Maps will only load if you consent to this. If you do not consent to the use of third-party cookies, the map will not load, but the rest of the website will still be fully usable."
+        },
+        "SECTION_5": {
+            "TITLE": "Manage cookies",
+            "DESCRIPTION_1": "You can make your decision regarding the use of cookies using the cookie banner. You can also modify or withdraw your previously given consent later.",
+            "DESCRIPTION_2": "Cookies can be deleted or disabled at any time in your browser settings, however this may affect the operation of some functions of the website."
+        },
+        "SETTINGS": {
+            "TITLE": "Cookie settings",
+            "DESCRIPTION": "You can change your cookie settings at any time. If you would like to re-select which cookies you allow, click the button below.",
+            "BUTTON": "Open cookie settings"
+        }
     }
 }

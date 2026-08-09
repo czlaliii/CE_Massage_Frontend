@@ -3,11 +3,22 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from '../../environments/environment';
 
-export interface Service {
+export interface ServiceOption {
+
     id: string;
-    name: string;
+
     duration_minutes: number;
+
     price: number;
+}
+
+export interface Service {
+
+    id: string;
+
+    name: string;
+
+    service_options: ServiceOption[];
 }
 
 export interface Booking {
@@ -35,28 +46,26 @@ export interface RescheduleBooking {
 export interface DashboardStats {
 
     todayBookings: number;
-
     todayRevenue: number;
 
     monthBookings: number;
-
     monthRevenue: number;
+
+    yearBookings: number;
+    yearRevenue: number;
+
+    totalBookings: number;
+    totalRevenue: number;
+
+    bookingsByDay: {
+        date: string;
+        bookings: number;
+    }[];
 
     revenueByDay: {
         date: string;
         revenue: number;
     }[];
-}
-
-export interface DashboardStats {
-
-    todayBookings: number;
-
-    todayRevenue: number;
-
-    monthBookings: number;
-
-    monthRevenue: number;
 }
 
 @Injectable({
@@ -74,11 +83,11 @@ export class BookingService {
 
     getSlots(
         date: string,
-        serviceId: string
+        serviceOptionId: string
     ): Observable<string[]> {
 
         return this.http.get<string[]>(
-        `${environment.apiUrl}/slots?date=${date}&serviceId=${serviceId}`
+        `${environment.apiUrl}/slots?date=${date}&serviceOptionId=${serviceOptionId}`
         );
     }
 
@@ -127,10 +136,22 @@ export class BookingService {
         return this.http.get<Booking[]>(url);
     }
 
-    getDashboardStats() {
-
+    getDashboardStats(
+        year: number,
+        month: number
+    ) {
         return this.http.get<DashboardStats>(
-            `${environment.apiUrl}/admin/dashboard`
+            `${environment.apiUrl}/admin/dashboard?year=${year}&month=${month}`
         );
+    }
+
+    getAvailableDates(
+        serviceOptionId: string
+    ) {
+
+        return this.http.get<string[]>(
+            `${environment.apiUrl}/availability?serviceOptionId=${serviceOptionId}`
+        );
+
     }
 }

@@ -4,69 +4,91 @@ footer {
     color: #faecca;
 }
 
-.footer-info-wrapper, .footer-nav-wrapper {
-    max-width: 1200px;
-    margin: 0 auto;
+nav {
+    padding: 0;
+    margin: 0;
+}
+nav a {
+    text-decoration: none;
+    color: #faecca;
+    font-weight: 400;
+    transition: .25s;
+    padding-bottom: 0.35rem;
+}
+
+nav a:hover {
+    color: #f7c845 !important;
 }
 
 /* ===============================
    INFO WRAPPER (felső rész)
 ================================= */
 
-.footer-info-wrapper {
-    display: flex;
-    justify-content: space-between;
-    gap: 5rem;
-    padding: 1rem 0;
-}
+.footer-content{
 
-.footer-info-wrapper h2 {
-    font-size: 1.3rem;
-    margin-bottom: 1.4rem;
-}
+    max-width:1200px;
 
-.footer-info-wrapper p {
-    font-size: 1rem;
-    margin: 0;
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:1.7fr 1.2fr 1fr 1fr;
+
+    gap:4rem;
+
+    align-items:start;
+
 }
 
 /* ===============================
    NAV WRAPPER (alsó rész)
 ================================= */
 
-.footer-nav-wrapper {
-    border-top: #faecca 1px solid;
-    margin-top: 5rem;
-    padding-top: 2rem;
+.footer-links {
+
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: .7rem;
+
+    width: 100%;
+
 }
 
-.footer-nav {
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
+.footer-links a {
+
+    display: inline-block;
+
+    text-align: left;
+
 }
 
-.footer-nav a {
+.footer-links a:hover {
+
     color: #faecca;
-    text-decoration: none;
-    font-size: 1rem;
-    transition: color 0.25s ease;
+
+    transform: translateX(5px);
+
 }
 
-.footer-nav a:hover {
-    color: #D9AA52;
-}
+.footer-links h2 {
 
-.footer-nav-img {
-    display: flex;
+    width: 100%;
+
+    text-align: left;
+
 }
 
 /* ===============================
    CONTACT ICONS
 ================================= */
+
+.footer-info-contact {
+    margin-top: 1rem;
+}
 
 .footer-info-contact svg {
     width: 1.5rem;
@@ -77,6 +99,12 @@ footer {
 
 .footer-info-contact p {
     font-weight: 500;
+}
+
+.footer-info-socials {
+
+    margin-top: 2.5rem;
+
 }
 
 .info-email,
@@ -92,14 +120,111 @@ footer {
    COPYRIGHT
 ================================= */
 
-.footer-copyright {
-    text-align: center;
-    color: #faecca;
-    font-size: 0.9rem;
-    margin-top: 2rem;
-    padding: 1rem 0;
+.footer-copyright{
+
+    max-width:1200px;
+
+    margin:4rem auto 0;
+
+    padding-top:2rem;
+
+    border-top:1px solid rgba(250,236,202,.08);
+
+    text-align:center;
+
 }
 
+.footer-column {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    width: 100%;
+
+}
+
+.open-hours {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+.open-row {
+
+    display: grid;
+
+    grid-template-columns: 1fr auto;
+
+    column-gap: 3rem;   /* <-- ezt állítod */
+
+    align-items: center;
+
+    padding: .4rem 0;
+
+    border-bottom: 1px solid rgba(250,236,202,.12);
+
+}
+
+.open-row:last-child {
+
+    border-bottom: none;
+
+}
+
+.open-row span:last-child {
+
+    font-weight: 500;
+
+    text-align: right;
+
+}
+
+.open_weekdays p {
+
+    color: rgba(250,236,202,.75);
+
+}
+
+.open_hours p {
+
+    color: #faecca;
+
+    font-weight: 500;
+
+}
+
+.footer-column h2,
+.footer-hours h2{
+
+    margin-bottom:1.3rem;
+
+    position:relative;
+
+}
+
+.footer-column h2::after,
+.footer-hours h2::after{
+
+    content:"";
+
+    display:block;
+
+    width:45px;
+
+    height:2px;
+
+    margin-top:.6rem;
+
+    background:#D9AA52;
+
+    opacity:.5;
+
+}
 
 /* =====================================================
    ================== RESPONSIVE ========================
@@ -112,54 +237,44 @@ footer {
     footer {
         padding: 80px 40px 20px 40px;
     }
-
-    .footer-info-wrapper {
-        gap: 3rem;
-    }
-
-    .footer-nav-wrapper {
-        flex-direction: column;
-        gap: 2rem;
-        align-items: center;
-        text-align: center;
-    }
-
-    .footer-nav {
-        justify-content: center;
-    }
 }
 
 
 /* ---------- MOBIL (768px alatt) ---------- */
-@media (max-width: 768px) {
+@media (max-width:768px){
 
-    footer {
-        padding: 60px 25px 20px 25px;
+    .footer-content{
+
+        grid-template-columns:1fr;
+
+        gap:3rem;
+
     }
 
-    .footer-info-wrapper {
-        flex-direction: column;
-        gap: 3rem;
+    .footer-column{
+
+        align-items:flex-start;
+
     }
 
-    .footer-info-wrapper > div {
-        width: 100%;
+    .footer-links{
+
+        align-items:flex-start;
+
     }
 
-    .footer-nav {
-        flex-direction: column;
-        align-items: center;
-        gap: 1rem;
+    .footer-links a{
+
+        text-align:left;
+
     }
 
-    .footer-nav-wrapper {
-        margin-top: 3rem;
+    .footer-links a:hover{
+
+        transform:none;
+
     }
 
-    .footer-nav-img img {
-        width: 90px;
-        height: auto;
-    }
 }
 
 
@@ -170,19 +285,8 @@ footer {
         padding: 50px 20px 15px 20px;
     }
 
-    .footer-info-wrapper h2 {
-        font-size: 1.15rem;
-    }
-
-    .footer-info-wrapper p {
-        font-size: 0.95rem;
-    }
-
     .icon-social {
         width: 1.8rem;
     }
 
-    .footer-nav-img img {
-        width: 80px;
-    }
 }

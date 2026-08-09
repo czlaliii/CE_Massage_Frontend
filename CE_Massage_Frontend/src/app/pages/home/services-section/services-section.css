@@ -2,15 +2,20 @@
     position: relative;
     width: 100%;
     overflow: hidden;
+
+    background-image: url('/images/home/services_background.png');
+
+    background-repeat: no-repeat;
+
+    background-position: center;
+
+    background-size: cover;
 }
 
 .services-section::before {
     content: '';
     position: absolute;
     inset: 0;
-    background-image: url('/images/home/bg2.jpg');
-    background-size: cover;
-    background-position: center;
     opacity: 0.75;
     z-index: 0;
 }
@@ -34,6 +39,16 @@
 
     .service-item {
         max-width: 300px;
+    }
+
+    .services-section {
+
+        background-size: auto 100%;
+
+        background-position: left center;
+
+        background-repeat: no-repeat;
+
     }
 }
 
@@ -59,5 +74,15 @@
         flex-grow: 1;
         display: flex;
         align-items: center;
+    }
+
+    .services-section {
+
+        background-size: auto 100%;
+
+        background-position: left center;
+
+        background-repeat: no-repeat;
+
     }
 }

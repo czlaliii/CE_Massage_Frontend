@@ -14,79 +14,247 @@
 
     </div>
 
-    <div
-        class="dashboard-cards"
-        *ngIf="dashboardStats()"
-    >
+    <section class="dashboard-panel">
 
-        <div class="card">
+        <div class="dashboard-header">
 
-            <h3>
-                Mai foglalások
-            </h3>
+            <div>
+
+                <h2>📊 Statisztikák</h2>
+
+                <p>
+                    A havi és éves adatok a kiválasztott időszak alapján frissülnek.
+                </p>
+
+            </div>
+
+            <div class="stats-filter">
+
+                <div class="filter-group">
+
+                    <label>Hónap</label>
+
+                    <select
+                        [value]="selectedMonth()"
+                        (change)="changeMonth($event)">
+
+                        @for (month of months; track month.value) {
+
+                            <option
+                                [value]="month.value"
+                                [selected]="month.value === selectedMonth()">
+
+                                {{ month.name }}
+
+                            </option>
+
+                        }
+
+                    </select>
+
+                </div>
+
+                <div class="filter-group">
+
+                    <label>Év</label>
+
+                    <select
+                        [value]="selectedYear()"
+                        (change)="changeYear($event)">
+
+                        @for (year of years; track year) {
+
+                            <option
+                                [value]="year"
+                                [selected]="year === selectedYear()">
+
+                                {{ year }}
+
+                            </option>
+
+                        }
+
+                    </select>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div
+            class="dashboard-cards"
+            *ngIf="dashboardStats()"
+        >
+
+            <div class="card">
+
+                <div class="card-title">
+                    📅 Ma
+                </div>
+
+                <div class="card-number">
+                    {{ dashboardStats()?.todayBookings }}
+                </div>
+
+                <div class="card-subtitle">
+                    foglalás
+                </div>
+
+                <div class="card-revenue">
+                    {{ formatPrice(dashboardStats()?.todayRevenue ?? 0) }} Ft
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <div class="card-title">
+                    📆 {{ months[selectedMonth()-1].name }}
+                </div>
+
+                <div class="card-number">
+                    {{ dashboardStats()?.monthBookings }}
+                </div>
+
+                <div class="card-subtitle">
+                    foglalás
+                </div>
+
+                <div class="card-revenue">
+                    {{ formatPrice(dashboardStats()?.monthRevenue ?? 0) }} Ft
+                </div>
+
+            </div>
+
+            <div class="card">
+
+                <div class="card-title">
+                    🗓 {{ selectedYear() }}
+                </div>
+
+                <div class="card-number">
+                    {{ dashboardStats()?.yearBookings }}
+                </div>
+
+                <div class="card-subtitle">
+                    foglalás
+                </div>
+
+                <div class="card-revenue">
+                    {{ formatPrice(dashboardStats()?.yearRevenue ?? 0) }} Ft
+                </div>
+
+            </div>
+
+            <div class="card total">
+
+                <div class="card-title">
+                    🌍 Összesen
+                </div>
+
+                <div class="card-number">
+                    {{ dashboardStats()?.totalBookings }}
+                </div>
+
+                <div class="card-subtitle">
+                    foglalás
+                </div>
+
+                <div class="card-revenue">
+                    {{ formatPrice(dashboardStats()?.totalRevenue ?? 0) }} Ft
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section
+        class="today-panel"
+        *ngIf="todayBookings().length > 0">
+
+        <div class="today-header">
+
+            <h2>📅 Mai időbeosztás</h2>
+
+            <span>
+                {{ todayBookings().length }} foglalás
+            </span>
+
+        </div>
+
+        <div class="today-list">
+
+            @for(booking of todayBookings(); track booking.id){
+
+                <div class="today-item">
+
+                    <div class="today-time">
+
+                        {{ booking.startTime }}
+
+                        -
+
+                        {{ booking.endTime }}
+
+                    </div>
+
+                    <div class="today-info">
+
+                        <strong>
+
+                            {{ booking.customerName }}
+
+                        </strong>
+
+                        <span>
+
+                            {{ booking.serviceName }}
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+            }
+
+        </div>
+
+    </section>
+
+    <section
+        class="today-panel empty"
+        *ngIf="todayBookings().length === 0">
+
+        <div class="empty-state">
+
+            <div class="emoji">
+                🌿
+            </div>
+
+            <h2>
+
+                Ma nincs foglalás
+
+            </h2>
 
             <p>
-                {{
-                    dashboardStats()
-                        ?.todayBookings
-                }}
+
+                A mai napra jelenleg nincs megerősített időpont.
+
             </p>
 
         </div>
 
-        <div class="card">
-
-            <h3>
-                Mai bevétel
-            </h3>
-
-            <p>
-                {{
-                    dashboardStats()
-                        ?.todayRevenue
-                }}
-                Ft
-            </p>
-
-        </div>
-
-        <div class="card">
-
-            <h3>
-                Havi foglalások
-            </h3>
-
-            <p>
-                {{
-                    dashboardStats()
-                        ?.monthBookings
-                }}
-            </p>
-
-        </div>
-
-        <div class="card">
-
-            <h3>
-                Havi bevétel
-            </h3>
-
-            <p>
-                {{
-                    dashboardStats()
-                        ?.monthRevenue
-                }}
-                Ft
-            </p>
-
-        </div>
-
-    </div>
+    </section>
 
     <div class="chart-container">
 
         <h2>
-            Elmúlt 7 nap bevétele
+            Elmúlt 7 nap foglalásai
         </h2>
 
         <canvas
@@ -95,28 +263,38 @@
 
     </div>
 
-    <div class="calendar-legend">
+    <section class="calendar-panel">
 
-        <div class="legend-item">
-            <span class="legend-color five"></span>
-            5 Kontinens Masszázs
+        <div class="calendar-header">
+
+            <h2>📅 Foglalási naptár</h2>
+
+                <div class="calendar-legend">
+
+                    <div class="legend-item">
+                        <span class="legend-color five"></span>
+                        5 Kontinens Masszázs
+                    </div>
+
+                    <div class="legend-item">
+                        <span class="legend-color expanse"></span>
+                        Expanse Terápia
+                    </div>
+
+                    <div class="legend-item">
+                        <span class="legend-color vibecodes"></span>
+                        Vibecodes
+                    </div>
+
+                </div>
+
         </div>
 
-        <div class="legend-item">
-            <span class="legend-color expanse"></span>
-            Expanse Terápia
-        </div>
+        <full-calendar
+            [options]="calendarOptions()">
+        </full-calendar>
 
-        <div class="legend-item">
-            <span class="legend-color vibecodes"></span>
-            Vibecodes
-        </div>
-
-    </div>
-
-    <full-calendar
-        [options]="calendarOptions()">
-    </full-calendar>
+    </section>
 
     @if(showModal() && selectedBooking()) {
         <div
