@@ -793,6 +793,10 @@
 
 }
 
+.terms-checkbox span {
+	font-size: 0.9rem;
+}
+
 .terms-checkbox a:hover{
 
     text-decoration:underline;
@@ -821,6 +825,10 @@
 
     animation: fadeIn .25s ease;
 
+}
+
+.payment-info p {
+	padding: 0.5rem;
 }
 
 @keyframes fadeIn{
