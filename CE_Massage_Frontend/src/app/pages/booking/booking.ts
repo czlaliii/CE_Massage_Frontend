@@ -25,6 +25,101 @@ export class BookingComponent implements OnInit, AfterViewInit {
 
     acceptedTerms = signal(false);
 
+    errors = signal({
+        customerName: '',
+        customerEmail: '',
+        billingZip: '',
+        billingCity: '',
+        billingAddress: '',
+        general: ''
+    });
+
+    private validateForm(): boolean {
+
+        this.errors.set({
+            customerName: '',
+            customerEmail: '',
+            billingZip: '',
+            billingCity: '',
+            billingAddress: '',
+            general: ''
+        });
+
+        let valid = true;
+
+        if (!this.customerName().trim()) {
+            this.errors.update(e => ({
+                ...e,
+                customerName: 'A név megadása kötelező.'
+            }));
+            valid = false;
+        }
+
+        if (!this.customerEmail().trim()) {
+            this.errors.update(e => ({
+                ...e,
+                customerEmail: 'Az email cím megadása kötelező.'
+            }));
+            valid = false;
+        } else {
+
+            const emailRegex =
+                /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            if (!emailRegex.test(this.customerEmail())) {
+
+                this.errors.update(e => ({
+                    ...e,
+                    customerEmail: 'Érvényes email címet adj meg.'
+                }));
+
+                valid = false;
+            }
+        }
+
+        if (!this.billingZip().trim()) {
+
+            this.errors.update(e => ({
+                ...e,
+                billingZip: 'Az irányítószám kötelező.'
+            }));
+
+            valid = false;
+
+        } else if (!/^\d{4}$/.test(this.billingZip())) {
+
+            this.errors.update(e => ({
+                ...e,
+                billingZip: '4 számjegyű irányítószámot adj meg.'
+            }));
+
+            valid = false;
+        }
+
+        if (!this.billingCity().trim()) {
+
+            this.errors.update(e => ({
+                ...e,
+                billingCity: 'A város megadása kötelező.'
+            }));
+
+            valid = false;
+        }
+
+        if (!this.billingAddress().trim()) {
+
+            this.errors.update(e => ({
+                ...e,
+                billingAddress: 'A cím megadása kötelező.'
+            }));
+
+            valid = false;
+        }
+
+        return valid;
+
+    }
+
     hasServiceSelected(): boolean {
 
         return this.selectedService() !== null;
@@ -144,18 +239,17 @@ export class BookingComponent implements OnInit, AfterViewInit {
     }
 
     createBooking(): void {
-        if (
-        !this.selectedServiceOptionId() ||
-        !this.selectedDate() ||
-        !this.selectedSlot() ||
-        !this.customerName() ||
-        !this.customerEmail() ||
-        !this.billingZip() ||
-        !this.billingCity() ||
-        !this.billingAddress()
-        ) {
-        alert('Kérlek tölts ki minden kötelező mezőt.');
-        return;
+        if (!this.validateForm()) {
+
+            document
+                .querySelector('.field-error')
+                ?.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+
+            return;
+
         }
 
         this.loading.set(true);
@@ -208,11 +302,13 @@ export class BookingComponent implements OnInit, AfterViewInit {
 
             console.error(error);
 
-            alert(
-                error.status === 409
-                ? 'Ez az időpont már foglalt.'
-                : 'Hiba történt a foglalás során.'
-            );
+            this.errors.update(e => ({
+                ...e,
+                general:
+                    error.status === 409
+                    ? 'Ez az időpont időközben már foglalt. Kérjük válassz másikat.'
+                    : 'Váratlan hiba történt. Kérjük próbáld újra.'
+            }));
 
             this.loading.set(false);
             }

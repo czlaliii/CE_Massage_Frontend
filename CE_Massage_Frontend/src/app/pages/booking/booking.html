@@ -315,8 +315,19 @@
 
                             <input
                                 type="text"
+                                [class.input-error]="errors().customerName"
                                 [value]="customerName()"
                                 (input)="customerName.set($any($event.target).value)">
+
+                                @if(errors().customerName){
+
+                                    <div class="field-error">
+
+                                        {{ errors().customerName }}
+
+                                    </div>
+
+                                }
 
                         </div>
 
@@ -326,8 +337,18 @@
 
                             <input
                                 type="email"
-                                [value]="customerEmail()"
+                                [class.input-error]="errors().customerEmail"
                                 (input)="customerEmail.set($any($event.target).value)">
+
+                            @if(errors().customerEmail){
+
+                                <div class="field-error">
+
+                                    {{ errors().customerEmail }}
+
+                                </div>
+
+                            }
 
                         </div>
 
@@ -352,8 +373,18 @@
 
                             <input
                                 type="text"
-                                [value]="billingZip()"
+                                [class.input-error]="errors().billingZip"
                                 (input)="billingZip.set($any($event.target).value)">
+
+                            @if(errors().billingZip){
+
+                                <div class="field-error">
+
+                                    {{ errors().billingZip }}
+
+                                </div>
+
+                            }
                         </div>
 
                         <div class="form-group">
@@ -361,8 +392,18 @@
 
                             <input
                                 type="text"
-                                [value]="billingCity()"
+                                [class.input-error]="errors().billingCity"
                                 (input)="billingCity.set($any($event.target).value)">
+
+                            @if(errors().billingCity){
+
+                                <div class="field-error">
+
+                                    {{ errors().billingCity }}
+
+                                </div>
+
+                            }
                         </div>
 
                         <div class="form-group full-width">
@@ -370,8 +411,18 @@
 
                             <input
                                 type="text"
-                                [value]="billingAddress()"
+                                [class.input-error]="errors().billingAddress"
                                 (input)="billingAddress.set($any($event.target).value)">
+
+                            @if(errors().billingAddress){
+
+                                <div class="field-error">
+
+                                    {{ errors().billingAddress }}
+
+                                </div>
+
+                            }
                         </div>
 
                     </div>
@@ -414,6 +465,16 @@
                         </label>
 
                     </div>
+
+                    @if(errors().general){
+
+                        <div class="general-error">
+
+                            {{ errors().general }}
+
+                        </div>
+
+                    }
 
                     <button
                         type="button"
