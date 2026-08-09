@@ -10,16 +10,18 @@ import {
 } from '@angular/core';
 
 @Component({
-  selector: 'app-booking',
-  standalone: true,
-  templateUrl: './booking.html',
-  styleUrl: './booking.css'
+    selector: 'app-booking',
+    standalone: true,
+    templateUrl: './booking.html',
+    styleUrl: './booking.css'
 })
 export class BookingComponent implements OnInit, AfterViewInit {
 
     @ViewChild('datePicker')
     datePicker!: ElementRef<HTMLInputElement>;
     private calendar!: flatpickr.Instance;
+
+    acceptedTerms = signal(false);
 
     hasServiceSelected(): boolean {
 

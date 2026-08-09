@@ -387,9 +387,33 @@
 
                     </div>
 
+                    <div class="terms-checkbox">
+
+                        <label>
+
+                            <input
+                                type="checkbox"
+                                [checked]="acceptedTerms()"
+                                (change)="acceptedTerms.set($any($event.target).checked)">
+
+                            <span>
+                                Elolvastam és elfogadom az
+                                <a href="/aszf" target="_blank">
+                                    Általános Szerződési Feltételeket
+                                </a>,
+                                valamint az
+                                <a href="/adatkezeles" target="_blank">
+                                    Adatkezelési Tájékoztatót
+                                </a>.
+                            </span>
+
+                        </label>
+
+                    </div>
+
                     <button
                         type="button"
-                        [disabled]="loading()"
+                        [disabled]="loading() || !acceptedTerms()"
                         (click)="createBooking()">
 
                         @if(!loading()) {
@@ -401,6 +425,14 @@
                         }
 
                     </button>
+
+                    @if(!acceptedTerms()){
+
+                        <p class="terms-warning">
+                            A fizetés folytatásához kérjük, fogadja el a felhasználási feltételeket.
+                        </p>
+
+                    }
 
                 </div>
 
