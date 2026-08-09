@@ -160,9 +160,9 @@
 
             <div class="form-group">
 
-                <label>
+                <h2>
                     Masszázs típusa
-                </label>
+                </h2>
 
                 <div class="service-section">
                     <p class="service-intro">
@@ -298,7 +298,7 @@
 
             }
             <p class="booking-note">
-                A sikeres fizetés után e-mailben elküldjük a visszaigazolást és a számlát.
+                Az időpont a sikeres fizetést követően automatikusan véglegesítésre kerül, és e-mailben visszaigazolást küldünk.
             </p>
 
             @if(selectedSlot()) {
@@ -344,7 +344,7 @@
 
                     </div>
 
-                    <h3>Számlázási adatok</h3>
+                    <h2>Számlázási adatok</h2>
 
                     <div class="form-grid">
                         <div class="form-group">
@@ -381,8 +381,15 @@
                         <strong>5 000 Ft online fizetés szükséges.</strong>
 
                         <p>
-                            A fennmaradó összeget a kezelés napján,
-                            személyesen lehet kiegyenlíteni.
+                            Az 5 000 Ft foglaló a kezelés teljes díjába beszámításra kerül. A fennmaradó összeget a kezelés napján, személyesen szükséges kiegyenlíteni. Sikertelen vagy megszakított fizetés esetén az időpont nem kerül lefoglalásra.
+                        </p>
+
+                        <p>
+                            Az időpont a kezelés kezdete előtt legkésőbb 24 órával, a visszaigazoló e-mailben található linken díjmentesen módosítható.
+                        </p>
+
+                        <p>
+                            🔒 A fizetés biztonságos, titkosított Stripe rendszeren keresztül történik.
                         </p>
 
                     </div>
@@ -398,11 +405,11 @@
 
                             <span>
                                 Elolvastam és elfogadom az
-                                <a href="/aszf" target="_blank">
+                                <a routerLink="/legal/terms" target="_blank">
                                     Általános Szerződési Feltételeket
                                 </a>,
                                 valamint az
-                                <a href="/adatkezeles" target="_blank">
+                                <a routerLink="/legal/privacy" target="_blank">
                                     Adatkezelési Tájékoztatót
                                 </a>.
                             </span>
@@ -429,7 +436,7 @@
                     @if(!acceptedTerms()){
 
                         <p class="terms-warning">
-                            A fizetés folytatásához kérjük, fogadja el a felhasználási feltételeket.
+                            A fizetés folytatásához kérjük, fogadja el az Általános Szerződési Feltételeket és az Adatkezelési Tájékoztatót.
                         </p>
 
                     }

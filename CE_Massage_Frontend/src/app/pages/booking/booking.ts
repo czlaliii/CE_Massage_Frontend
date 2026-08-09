@@ -2,6 +2,7 @@ import { Component, inject, OnInit, signal } from '@angular/core';
 import { BookingService, Service } from '../../services/booking.service';
 import flatpickr from 'flatpickr';
 import { Hungarian } from 'flatpickr/dist/l10n/hu.js';
+import { RouterLink } from '@angular/router';
 
 import {
     AfterViewInit,
@@ -12,6 +13,7 @@ import {
 @Component({
     selector: 'app-booking',
     standalone: true,
+    imports: [RouterLink],
     templateUrl: './booking.html',
     styleUrl: './booking.css'
 })
