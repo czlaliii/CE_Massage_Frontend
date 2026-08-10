@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { Component, inject, OnInit, signal, computed } from '@angular/core';
 import { BookingService, Service } from '../../services/booking.service';
 import flatpickr from 'flatpickr';
 import { Hungarian } from 'flatpickr/dist/l10n/hu.js';
