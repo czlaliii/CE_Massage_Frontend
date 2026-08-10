@@ -959,18 +959,137 @@ h2 {
 		grid-template-columns: 1fr;
 	}
 
+	.service-card{
+        padding:1rem;
+    }
+
 	.full-width {
 
 		grid-column: auto;
 	}
 
-	.booking-steps {
+	.booking-steps{
+		position: sticky;
+		top: 0;
+		z-index: 30;
 
-		gap: .5rem;
+		margin: -2rem -2rem 2rem;
+		padding: 1rem;
+
+		background: rgba(45,45,45,.92);
+		backdrop-filter: blur(12px);
+
+		display:flex;
+		justify-content:center;
+		align-items:center;
+		gap:0;
 	}
 
-	.step-line {
+	.step{
 
-		width: 35px;
+        flex:1;
+        position:relative;
+
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+    }
+
+    .step span{
+
+        margin-top:.45rem;
+
+        font-size:.72rem;
+
+        text-align:center;
+
+        line-height:1.2;
+    }
+
+    .step-number{
+
+        width:34px;
+        height:34px;
+
+        font-size:.9rem;
+    }
+
+    .step-line{
+
+        flex:1;
+
+        height:2px;
+
+        margin:0 -.5rem;
+
+        width:auto;
+    }
+
+	.flatpickr-calendar{
+		max-width:100% !important;
 	}
+
+	.flatpickr-days{
+		width:100% !important;
+	}
+
+	.payment-info{
+		padding:1rem;
+	}
+
+	.payment-info p{
+		padding:.25rem 0;
+		font-size:.9rem;
+	}
+
+	.terms-checkbox label{
+		gap:.6rem;
+		font-size:.92rem;
+	}
+
+	.booking-container h1{
+		font-size:2rem;
+	}
+
+	.booking-form{
+		padding:1.2rem;
+		border-radius:18px;
+	}
+
+	.customer-form button{
+		padding:14px;
+		font-size:.95rem;
+	}
+
+	.success-message{
+		padding:2rem 1.2rem;
+	}
+}
+
+@media (max-width:480px){
+
+    .booking-container{
+        padding:0 .8rem;
+    }
+
+    .booking-form{
+        padding:1rem;
+    }
+
+    .service-card{
+        padding:.9rem;
+    }
+
+    .deposit-price{
+        font-size:1.2rem;
+    }
+
+    .customer-form button{
+        font-size:.92rem;
+    }
+
+    .booking-container h1{
+        font-size:1.7rem;
+    }
+
 }
