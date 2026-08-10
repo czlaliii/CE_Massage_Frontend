@@ -31,6 +31,37 @@
 
             <h1>Időpontfoglalás</h1>
 
+            <div class="booking-progress-mobile">
+
+                <div class="progress-header">
+
+                    <span class="progress-title">
+                        Foglalás
+                    </span>
+
+                    <span class="progress-step">
+                        {{ currentStep() }} / 4
+                    </span>
+
+                </div>
+
+                <div class="progress-bar">
+
+                    <div
+                        class="progress-fill"
+                        [style.width.%]="currentStep() * 25">
+                    </div>
+
+                </div>
+
+                <div class="progress-label">
+
+                    {{ currentStepLabel() }}
+
+                </div>
+
+            </div>
+
             <div class="booking-steps">
 
                 <!-- 1. Masszázs -->

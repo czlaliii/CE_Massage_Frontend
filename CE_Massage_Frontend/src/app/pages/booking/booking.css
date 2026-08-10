@@ -534,7 +534,10 @@ h2 {
 
 	cursor: pointer;
 
-	transition: .25s;
+	transition:
+        transform .25s,
+        box-shadow .25s,
+        border-color .25s;
 
 	text-align: left;
 }
@@ -884,6 +887,12 @@ h2 {
 	padding: 0.5rem;
 }
 
+.booking-progress-mobile{
+
+    display:none;
+
+}
+
 @keyframes fadeIn{
 
     from{
@@ -948,6 +957,88 @@ h2 {
 }
 
 @media (max-width:768px) {
+
+	.booking-progress-mobile{
+
+        display:block;
+
+        margin-bottom:28px;
+
+        padding:18px;
+
+        background:#ffffff;
+
+        border-radius:18px;
+
+        box-shadow:0 10px 30px rgba(0,0,0,.08);
+
+    }
+
+	.progress-title{
+
+        font-size:.95rem;
+
+        font-weight:600;
+
+        color:#444;
+
+    }
+
+    .progress-step{
+
+        font-size:.9rem;
+
+        color:#8A7967;
+
+        font-weight:600;
+
+    }
+
+    .progress-bar{
+
+        height:7px;
+
+        background:#ece7df;
+
+        border-radius:100px;
+
+        overflow:hidden;
+
+        margin-bottom:12px;
+
+    }
+
+    .progress-fill{
+
+        height:100%;
+
+        width:0;
+
+        transition: width .35s cubic-bezier(.4,0,.2,1);
+
+        border-radius:100px;
+
+        background:linear-gradient(
+            90deg,
+            #C7A86D,
+            #D8BF8A
+        );
+
+    }
+
+    .progress-label{
+
+        text-align:center;
+
+        font-size:.95rem;
+
+        color:#5a5a5a;
+
+        font-weight:500;
+
+		transition: opacity .25s;
+
+    }
 
 	.form-grid {
 

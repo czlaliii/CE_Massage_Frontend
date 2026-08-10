@@ -196,6 +196,41 @@ export class BookingComponent implements OnInit, AfterViewInit {
 
     loading = signal(false);
 
+    currentStep = computed(() => {
+
+        if (!this.selectedService())
+            return 1;
+
+        if (!this.selectedServiceOptionId())
+            return 2;
+
+        if (!this.selectedSlot())
+            return 3;
+
+        return 4;
+
+    });
+
+    currentStepLabel = computed(() => {
+
+        switch (this.currentStep()) {
+
+            case 1:
+                return 'Masszázs kiválasztása';
+
+            case 2:
+                return 'Időtartam kiválasztása';
+
+            case 3:
+                return 'Időpont kiválasztása';
+
+            default:
+                return 'Személyes adatok';
+
+        }
+
+    });
+
     formatPrice(price: number): string {
         return new Intl.NumberFormat(
             'hu-HU'
