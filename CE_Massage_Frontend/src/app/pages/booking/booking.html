@@ -197,31 +197,35 @@
 
                 <div class="service-section">
                     <p class="service-intro">
-
                         Válassza ki a kívánt kezelést. A foglalás
                         véglegesítéséhez egységesen
                         <strong>5 000 Ft online fizetés</strong>
                         szükséges.
-
                     </p>
+                    @if (loadingServices()) {
+                        <div class="service-grid service-skeleton-grid">
+                            @for (item of [1, 2, 3]; track item) {
+                                <div class="service-card service-skeleton">
+                                    <div class="skeleton-line skeleton-title"></div>
+                                    <div class="skeleton-line skeleton-duration"></div>
+                                    <div class="skeleton-line skeleton-text"></div>
+                                </div>
+                            }
+                        </div>
 
-                    <div class="service-grid">
-
-                        @for(service of services(); track service.id) {
-
-                            <button
-                                type="button"
-                                class="service-card"
-                                [class.selected]="selectedService()?.id === service.id"
-                                (click)="selectService(service)">
-
-                                <h3>{{ service.name }}</h3>
-
-                            </button>
-
-                        }
-
-                    </div>
+                    } @else {
+                        <div class="service-grid">
+                            @for(service of services(); track service.id) {
+                                <button
+                                    type="button"
+                                    class="service-card"
+                                    [class.selected]="selectedService()?.id === service.id"
+                                    (click)="selectService(service)">
+                                    <h3>{{ service.name }}</h3>
+                                </button>
+                            }
+                        </div>
+                    }
 
                     @if(selectedService()) {
 
@@ -301,7 +305,25 @@
 
             </div>
 
-            @if(availableSlots().length > 0) {
+            @if (loadingSlots()) {
+
+                <div class="slots-section">
+
+                    <h2>Elérhető időpontok</h2>
+
+                    <div class="slots-grid slots-skeleton">
+
+                        @for (item of [1, 2, 3, 4, 5, 6]; track item) {
+
+                            <div class="slot-skeleton"></div>
+
+                        }
+
+                    </div>
+
+                </div>
+
+            } @else if (availableSlots().length > 0) {
 
                 <div class="slots-section">
 
@@ -309,13 +331,14 @@
 
                     <div class="slots-grid">
 
-                        @for(slot of availableSlots(); track slot) {
+                        @for (slot of availableSlots(); track slot) {
 
                             <button
                                 type="button"
                                 class="slot-btn"
                                 [class.selected]="selectedSlot() === slot"
-                                (click)="selectedSlot.set(slot)">
+                                (click)="selectedSlot.set(slot)"
+                            >
 
                                 {{ slot }}
 
@@ -327,9 +350,32 @@
 
                 </div>
 
+            } @else if (selectedDate()) {
+
+                <div class="slots-section">
+
+                    <h2>Elérhető időpontok</h2>
+
+                    <div class="no-slots-message">
+
+                        <span class="no-slots-icon"></span>
+
+                        <p>
+                            @if (isToday()) {
+                                Mára már minden időpont betelt. Kérlek, válassz egy másik napot.
+                            } @else {
+                                Erre a napra jelenleg nincs szabad időpont. Kérlek, válassz egy másik napot.
+                            }
+                        </p>
+                    </div>
+
+                </div>
+
             }
+
             <p class="booking-note">
-                Az időpont a sikeres fizetést követően automatikusan véglegesítésre kerül, és e-mailben visszaigazolást küldünk.
+                Az időpont a sikeres fizetést követően automatikusan véglegesítésre kerül,
+                és e-mailben visszaigazolást küldünk.
             </p>
 
             @if(selectedSlot()) {

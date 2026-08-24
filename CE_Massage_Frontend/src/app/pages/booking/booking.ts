@@ -34,6 +34,11 @@ export class BookingComponent implements OnInit, AfterViewInit {
         general: ''
     });
 
+    loadingServices = signal(true);
+    loadingDates = signal(false);
+    loadingSlots = signal(false);
+    noSlotsMessage = signal('');
+
     private validateForm(): boolean {
 
         this.errors.set({
@@ -239,36 +244,97 @@ export class BookingComponent implements OnInit, AfterViewInit {
 
     ngOnInit(): void {
         this.bookingService
-        .getServices()
-        .subscribe(services => {
-            this.services.set(services);
-        });
+            .getServices()
+            .subscribe({
+
+                next: services => {
+
+                    this.services.set(services);
+                    this.loadingServices.set(false);
+
+                },
+
+                error: error => {
+
+                    console.error(
+                        'Services loading failed:',
+                        error
+                    );
+
+                    this.loadingServices.set(false);
+
+                }
+
+            });
+
+    }
+
+    isToday(): boolean {
+
+        const today =
+            new Date()
+                .toISOString()
+                .split('T')[0];
+
+        return this.selectedDate() === today;
     }
 
     loadSlots(): void {
 
         if (
-        !this.selectedServiceOptionId() ||
-        !this.selectedDate()
+            !this.selectedServiceOptionId() ||
+            !this.selectedDate()
         ) {
-        this.availableSlots.set([]);
-        return;
+            this.availableSlots.set([]);
+            this.noSlotsMessage.set('');
+            return;
         }
 
+        this.loadingSlots.set(true);
+        this.noSlotsMessage.set('');
+
         this.bookingService
-        .getSlots(
-            this.selectedDate(),
-            this.selectedServiceOptionId()
-        )
-        .subscribe(slots => {
+            .getSlots(
+                this.selectedDate(),
+                this.selectedServiceOptionId()
+            )
+            .subscribe({
 
-            this.availableSlots.set(slots);
+            next: slots => {
 
-            if (
-            this.selectedSlot() &&
-            !slots.includes(this.selectedSlot())
-            ) {
-            this.selectedSlot.set('');
+                this.availableSlots.set(slots);
+
+                if (
+                    this.selectedSlot() &&
+                    !slots.includes(this.selectedSlot())
+                ) {
+                    this.selectedSlot.set('');
+                }
+
+                this.loadingSlots.set(false);
+
+                if (slots.length === 0) {
+                    this.noSlotsMessage.set(
+                        this.isToday()
+                            ? 'Mára már minden időpont betelt. Kérlek, válassz egy másik napot.'
+                            : 'Erre a napra jelenleg nincs szabad időpont. Kérlek, válassz egy másik napot.'
+                    );
+                }
+            },
+
+            error: error => {
+
+                console.error(
+                    'Slots loading failed:',
+                    error
+                );
+
+                this.availableSlots.set([]);
+                this.loadingSlots.set(false);
+
+                this.noSlotsMessage.set(
+                    'Nem sikerült betölteni az elérhető időpontokat. Kérlek, próbáld újra.'
+                );
             }
         });
     }
@@ -321,7 +387,6 @@ export class BookingComponent implements OnInit, AfterViewInit {
         start_time:
             this.selectedSlot()
     };
-    console.log('BOOKING:', booking);
 
         this.bookingService
         .createBooking(booking)
@@ -380,46 +445,63 @@ export class BookingComponent implements OnInit, AfterViewInit {
 
     }
 
-    selectOption(
-        optionId: string
-    ) {
+    selectOption(optionId: string) {
 
-        this.selectedServiceOptionId.set(
-            optionId
-        );
+    const start = performance.now();
 
-        console.log('Option selected:', optionId);
+    this.selectedServiceOptionId.set(optionId);
 
-        this.selectedDate.set('');
+    this.selectedDate.set('');
+    this.selectedSlot.set('');
+    this.availableSlots.set([]);
 
-        this.selectedSlot.set('');
+    this.loadingDates.set(true);
 
-        this.availableSlots.set([]);
+    this.bookingService
+        .getAvailableDates(optionId)
+        .subscribe({
 
-        this.bookingService
-            .getAvailableDates(optionId)
-            .subscribe({
+            next: dates => {
 
-                next: dates => {
+                this.availableDates.set(dates);
 
-    console.log(dates);
+                this.calendar.set(
+                    'enable',
+                    dates
+                );
 
-    this.availableDates.set(dates);
+                this.loadingDates.set(false);
 
-    this.calendar.set('enable', dates);
-
-},
-
-                error: () => {
-
-                    this.calendar.set(
-                        'enable',
-                        []
-                    );
+                if (dates.length === 0) {
+                    return;
                 }
 
-            });
-    }
+                const firstAvailableDate = dates[0];
+
+                this.selectedDate.set(
+                    firstAvailableDate
+                );
+
+                this.calendar.setDate(
+                    firstAvailableDate,
+                    true
+                );
+
+                this.loadSlots();
+            },
+
+            error: error => {
+
+                console.error(
+                    'Available dates loading failed:',
+                    error
+                );
+
+                this.loadingDates.set(false);
+            }
+
+        });
+}
 
     minDate = new Date()
         .toISOString()
