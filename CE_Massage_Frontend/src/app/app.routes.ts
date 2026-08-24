@@ -26,7 +26,7 @@ export const routes: Routes = [
         { path: 'vibecodes', component: VibecodesComponent }
         ]
     },
-    { path: 'gallery', component: GalleryComponent },
+    // { path: 'gallery', component: GalleryComponent },
     { path: 'about', component: AboutComponent },
     { path: 'faq', component: FaqComponent },
     { path: 'prices', component: PricesComponent},
