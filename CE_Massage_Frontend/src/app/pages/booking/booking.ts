@@ -82,44 +82,44 @@ export class BookingComponent implements OnInit, AfterViewInit {
             }
         }
 
-        if (!this.billingZip().trim()) {
+        // if (!this.billingZip().trim()) {
 
-            this.errors.update(e => ({
-                ...e,
-                billingZip: 'Az irányítószám kötelező.'
-            }));
+        //     this.errors.update(e => ({
+        //         ...e,
+        //         billingZip: 'Az irányítószám kötelező.'
+        //     }));
 
-            valid = false;
+        //     valid = false;
 
-        } else if (!/^\d{4}$/.test(this.billingZip())) {
+        // } else if (!/^\d{4}$/.test(this.billingZip())) {
 
-            this.errors.update(e => ({
-                ...e,
-                billingZip: '4 számjegyű irányítószámot adj meg.'
-            }));
+        //     this.errors.update(e => ({
+        //         ...e,
+        //         billingZip: '4 számjegyű irányítószámot adj meg.'
+        //     }));
 
-            valid = false;
-        }
+        //     valid = false;
+        // }
 
-        if (!this.billingCity().trim()) {
+        // if (!this.billingCity().trim()) {
 
-            this.errors.update(e => ({
-                ...e,
-                billingCity: 'A város megadása kötelező.'
-            }));
+        //     this.errors.update(e => ({
+        //         ...e,
+        //         billingCity: 'A város megadása kötelező.'
+        //     }));
 
-            valid = false;
-        }
+        //     valid = false;
+        // }
 
-        if (!this.billingAddress().trim()) {
+        // if (!this.billingAddress().trim()) {
 
-            this.errors.update(e => ({
-                ...e,
-                billingAddress: 'A cím megadása kötelező.'
-            }));
+        //     this.errors.update(e => ({
+        //         ...e,
+        //         billingAddress: 'A cím megadása kötelező.'
+        //     }));
 
-            valid = false;
-        }
+        //     valid = false;
+        // }
 
         return valid;
 
@@ -366,17 +366,17 @@ export class BookingComponent implements OnInit, AfterViewInit {
         customer_phone:
             this.customerPhone(),
 
-        billing_name:
-            this.customerName(),
+        // billing_name:
+        //     this.customerName(),
 
-        billing_zip:
-            this.billingZip(),
+        // billing_zip:
+        //     this.billingZip(),
 
-        billing_city:
-            this.billingCity(),
+        // billing_city:
+        //     this.billingCity(),
 
-        billing_address:
-            this.billingAddress(),
+        // billing_address:
+        //     this.billingAddress(),
 
         service_option_id:
             this.selectedServiceOptionId(),
@@ -394,8 +394,12 @@ export class BookingComponent implements OnInit, AfterViewInit {
 
             next: (response: any) => {
 
-            window.location.href =
-                response.paymentUrl;
+            // window.location.href =
+            //     response.paymentUrl;
+            // }
+
+            this.loading.set(false);
+            this.bookingSuccess.set(true);
             },
 
             error: error => {

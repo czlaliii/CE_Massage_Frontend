@@ -122,8 +122,6 @@ h2 {
 
 	color: #faecca;
 
-	margin-bottom: 1rem;
-
 	font-size: 1.3rem;
 }
 
@@ -443,32 +441,26 @@ h2 {
 
 }
 
-.step-line.active{
-
-    background:#35B46A;
-
+.step-line.active {
+    background: #C7A86D;
 }
 
-.step.completed .step-number{
+.step.completed .step-number {
+    background: #C7A86D;
+    color: white;
 
-    background:#35B46A;
-    color:white;
-
-    transform:scale(1.05);
+    transform: scale(1.05);
 
     box-shadow:
-        0 6px 18px rgba(53,180,106,.35);
-
+        0 6px 18px rgba(199,168,109,.28);
 }
 
-.step.completed span{
-
-    color:#35B46A;
-    font-weight:600;
-
+.step.completed span {
+    color: #C7A86D;
+    font-weight: 600;
 }
 
-.payment-info {
+.booking-info {
 
 	margin-top: 1.5rem;
 	margin-bottom: 1.5rem;
@@ -659,7 +651,7 @@ h2 {
 
 .service-intro {
 
-	margin-top: 1rem;
+	margin: 1rem 0rem 1.5rem 0rem;
 
 	color: rgba(250, 236, 202, .8);
 
@@ -699,6 +691,10 @@ h2 {
     transition: .25s;
 }
 
+.calendar-section h2 {
+    font-weight: 700;
+}
+
 .hidden {
     display: none;
 }
@@ -713,7 +709,7 @@ h2 {
 
     color: rgba(250,236,202,.7);
 
-    margin-bottom: 1rem;
+    margin: 0 0 .5rem;
 }
 
 .calendar-arrow:hover {
@@ -1116,29 +1112,21 @@ h2 {
 
 }
 
-@keyframes pulseStep{
-
-    0%{
-
+@keyframes pulseStep {
+    0% {
         box-shadow:
             0 0 0 0 rgba(212,175,55,.45);
-
     }
 
-    70%{
-
+    70% {
         box-shadow:
             0 0 0 12px rgba(212,175,55,0);
-
     }
 
-    100%{
-
+    100% {
         box-shadow:
             0 0 0 0 rgba(212,175,55,0);
-
     }
-
 }
 
 @media (max-width:768px) {

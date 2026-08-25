@@ -197,10 +197,10 @@
 
                 <div class="service-section">
                     <p class="service-intro">
-                        Válassza ki a kívánt kezelést. A foglalás
+                        Válassza ki a kívánt kezelést. <!-- A foglalás
                         véglegesítéséhez egységesen
                         <strong>5 000 Ft online fizetés</strong>
-                        szükséges.
+                        szükséges. -->
                     </p>
                     @if (loadingServices()) {
                         <div class="service-grid service-skeleton-grid">
@@ -237,6 +237,10 @@
 
                             </h2>
 
+                            <p class="service-intro">
+                                Válassza ki a kezelés időtartamát.
+                            </p>
+
                             <div class="duration-grid">
 
                                 @for(option of selectedService()!.service_options; track option.id) {
@@ -257,7 +261,7 @@
 
                                         </div>
 
-                                        <div class="deposit-box">
+                                        <!-- <div class="deposit-box">
 
                                             <span class="deposit-label">
 
@@ -271,11 +275,11 @@
 
                                             </span>
 
-                                        </div>
+                                        </div> -->
 
                                         <div class="full-price">
 
-                                            Teljes ár:
+                                            Teljes helyszíni ár:
 
                                             {{ formatPrice(option.price) }} Ft
 
@@ -301,6 +305,8 @@
 
                 <h2>Dátum kiválasztása</h2>
 
+                <p class="service-intro">Válassza ki a kívánt napot.</p>
+
                 <div #datePicker></div>
 
             </div>
@@ -310,6 +316,8 @@
                 <div class="slots-section">
 
                     <h2>Elérhető időpontok</h2>
+
+                    <p class="service-intro">Válassza ki a megfelelő időpontot.</p>
 
                     <div class="slots-grid slots-skeleton">
 
@@ -328,6 +336,8 @@
                 <div class="slots-section">
 
                     <h2>Elérhető időpontok</h2>
+
+                    <p class="service-intro">Válassza ki a megfelelő időpontot.</p>
 
                     <div class="slots-grid">
 
@@ -356,6 +366,8 @@
 
                     <h2>Elérhető időpontok</h2>
 
+                    <p class="service-intro">Válassza ki a megfelelő időpontot.</p>
+
                     <div class="no-slots-message">
 
                         <span class="no-slots-icon"></span>
@@ -374,8 +386,8 @@
             }
 
             <p class="booking-note">
-                Az időpont a sikeres fizetést követően automatikusan véglegesítésre kerül,
-                és e-mailben visszaigazolást küldünk.
+                A foglalás véglegesítéséről e-mailben küldünk visszaigazolást.
+                A kezelés díját személyesen, a helyszínen kell kiegyenlíteni.
             </p>
 
             @if(selectedSlot()) {
@@ -383,6 +395,10 @@
                 <div class="customer-form">
 
                     <h2>Kapcsolati adatok</h2>
+
+                    <p class="service-intro">
+                        Adja meg az elérhetőségeit a foglalás véglegesítéséhez.
+                    </p>
 
                     <div class="form-grid">
 
@@ -442,7 +458,7 @@
 
                     </div>
 
-                    <h2>Számlázási adatok</h2>
+                    <!-- <h2>Számlázási adatok</h2>
 
                     <div class="form-grid">
                         <div class="form-group">
@@ -502,20 +518,17 @@
                             }
                         </div>
 
-                    </div>
+                    </div> -->
 
-                    <div class="payment-info">
+                    <div class="booking-info">
 
                         <p>
-                            Az 5 000 Ft foglaló a kezelés teljes díjába beszámításra kerül. A fennmaradó összeget a kezelés napján, személyesen szükséges kiegyenlíteni. Sikertelen vagy megszakított fizetés esetén az időpont nem kerül lefoglalásra.
+                            A kezelés díját személyesen, a kezelés alkalmával kell kiegyenlíteni.
                         </p>
 
                         <p>
-                            Az időpont a kezelés kezdete előtt legkésőbb 24 órával, a visszaigazoló e-mailben található linken díjmentesen módosítható.
-                        </p>
-
-                        <p>
-                            🔒 A fizetés biztonságos, titkosított Stripe rendszeren keresztül történik.
+                            Az időpont a kezelés kezdete előtt legkésőbb 24 órával,
+                            a visszaigazoló e-mailben található linken módosítható.
                         </p>
 
                     </div>
@@ -558,20 +571,22 @@
                         [disabled]="loading() || !acceptedTerms()"
                         (click)="createBooking()">
 
-                        @if(!loading()) {
+                        <!-- @if(!loading()) {
                             Tovább a biztonságos fizetéshez
                         }
 
                         @if(loading()) {
                             Átirányítás...
-                        }
+                        } -->
+
+                        Időpont lefoglalása
 
                     </button>
 
                     @if(!acceptedTerms()){
 
                         <p class="terms-warning">
-                            A fizetés folytatásához kérjük, fogadja el az Általános Szerződési Feltételeket és az Adatkezelési Tájékoztatót.
+                            A <!--  fizetés folytatásához --> folytatáshoz kérjük, fogadja el az Általános Szerződési Feltételeket és az Adatkezelési Tájékoztatót.
                         </p>
 
                     }
