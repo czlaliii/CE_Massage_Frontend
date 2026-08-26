@@ -267,26 +267,38 @@
 
         <div class="calendar-header">
 
-            <h2>📅 Foglalási naptár</h2>
+            <div>
+                <h2>📅 Foglalási naptár</h2>
+            </div>
 
-                <div class="calendar-legend">
+            <button
+                class="add-booking-btn"
+                type="button"
+                (click)="openCreateBookingModal()">
 
-                    <div class="legend-item">
-                        <span class="legend-color five"></span>
-                        5 Kontinens Masszázs
-                    </div>
+                <span>＋</span>
+                Új foglalás
 
-                    <div class="legend-item">
-                        <span class="legend-color expanse"></span>
-                        Expanse Terápia
-                    </div>
+            </button>
 
-                    <div class="legend-item">
-                        <span class="legend-color vibecodes"></span>
-                        Vibecodes
-                    </div>
+        </div>
 
-                </div>
+        <div class="calendar-legend">
+
+            <div class="legend-item">
+                <span class="legend-color five"></span>
+                5 Kontinens Masszázs
+            </div>
+
+            <div class="legend-item">
+                <span class="legend-color expanse"></span>
+                Expanse Terápia
+            </div>
+
+            <div class="legend-item">
+                <span class="legend-color vibecodes"></span>
+                Vibecodes
+            </div>
 
         </div>
 
@@ -364,6 +376,301 @@
                         Bezárás
 
                     </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    }
+
+    @if (showCreateBookingModal()) {
+
+        <div
+            class="modal-backdrop"
+            (click)="closeCreateBookingModal()">
+
+            <div
+                class="modal create-booking-modal"
+                (click)="$event.stopPropagation()">
+
+                <div class="create-booking-header">
+
+                    <div>
+
+                        <h2>
+                            Új foglalás
+                        </h2>
+
+                        <p>
+                            Foglalás hozzáadása manuálisan
+                        </p>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="modal-close-btn"
+                        (click)="closeCreateBookingModal()">
+
+                        ×
+
+                    </button>
+
+                </div>
+
+
+                <div class="admin-form">
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Vendég neve *
+                        </label>
+
+                        <input
+                            type="text"
+                            [value]="adminCustomerName()"
+                            (input)="adminCustomerName.set(
+                                $any($event.target).value
+                            )"
+                            placeholder="Valami Név">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Email *
+                        </label>
+
+                        <input
+                            type="email"
+                            [value]="adminCustomerEmail()"
+                            (input)="adminCustomerEmail.set(
+                                $any($event.target).value
+                            )"
+                            placeholder="pelda@email.hu">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Telefonszám
+                        </label>
+
+                        <input
+                            type="tel"
+                            [value]="adminCustomerPhone()"
+                            (input)="adminCustomerPhone.set(
+                                $any($event.target).value
+                            )"
+                            placeholder="+36 30 123 4567">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Szolgáltatás *
+                        </label>
+
+                        <select
+                            [value]="adminSelectedServiceOptionId()"
+                            (change)="selectAdminService(
+                                $any($event.target).value
+                            )">
+
+                            <option value="">
+                                Válassz szolgáltatást
+                            </option>
+
+                            @for (
+                                service of adminServices();
+                                track service.id
+                            ) {
+
+                                <optgroup
+                                    [label]="service.name">
+
+                                    @for (
+                                        option of service.service_options;
+                                        track option.id
+                                    ) {
+
+                                        <option
+                                            [value]="option.id">
+
+                                            {{ service.name }}
+                                            –
+                                            {{ option.duration_minutes }} perc
+                                            –
+                                            {{ formatPrice(option.price) }} Ft
+
+                                        </option>
+
+                                    }
+
+                                </optgroup>
+
+                            }
+
+                        </select>
+
+                    </div>
+
+
+                    @if (adminSelectedServiceOptionId()) {
+
+                        <div class="form-group">
+
+                            <label>
+                                Dátum *
+                            </label>
+
+                            <input
+                                type="date"
+                                [value]="adminSelectedDate()"
+                                (change)="
+                                    adminSelectedDate.set(
+                                        $any($event.target).value
+                                    );
+                                    loadAdminSlots()
+                                ">
+
+                        </div>
+
+                    }
+
+
+                    @if (
+                        adminSelectedDate() &&
+                        adminSelectedServiceOptionId()
+                    ) {
+
+                        <div class="form-group">
+
+                            <label>
+                                Időpont *
+                            </label>
+
+                            @if (
+                                adminAvailableSlots().length > 0
+                            ) {
+
+                                <div class="admin-slots">
+
+                                    @for (
+                                        slot of adminAvailableSlots();
+                                        track slot
+                                    ) {
+
+                                        <button
+                                            type="button"
+                                            class="admin-slot"
+                                            [class.selected]="
+                                                adminSelectedSlot() === slot
+                                            "
+                                            (click)="
+                                                adminSelectedSlot.set(slot)
+                                            ">
+
+                                            {{ slot }}
+
+                                        </button>
+
+                                    }
+
+                                </div>
+
+                            } @else {
+
+                                <div class="admin-no-slots">
+
+                                    Erre a napra nincs szabad időpont.
+
+                                </div>
+
+                            }
+
+                        </div>
+
+                    }
+
+
+                    <label class="email-checkbox">
+
+                        <input
+                            type="checkbox"
+                            [checked]="adminSendEmail()"
+                            (change)="
+                                adminSendEmail.set(
+                                    $any($event.target).checked
+                                )
+                            ">
+
+                        <span>
+                            Visszaigazoló email küldése a vendégnek
+                        </span>
+
+                    </label>
+
+
+                    @if (adminBookingError()) {
+
+                        <div class="admin-form-error">
+
+                            {{ adminBookingError() }}
+
+                        </div>
+
+                    }
+
+
+                    <div class="modal-actions">
+
+                        <button
+                            type="button"
+                            class="close-btn"
+                            [disabled]="adminBookingLoading()"
+                            (click)="closeCreateBookingModal()">
+
+                            Mégse
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="add-booking-submit"
+                            [disabled]="
+                                adminBookingLoading() ||
+                                !adminCustomerName().trim() ||
+                                !adminCustomerEmail().trim() ||
+                                !adminSelectedServiceOptionId() ||
+                                !adminSelectedDate() ||
+                                !adminSelectedSlot()
+                            "
+                            (click)="createAdminBooking()">
+
+                            @if (adminBookingLoading()) {
+
+                                Mentés...
+
+                            } @else {
+
+                                Foglalás létrehozása
+
+                            }
+
+                        </button>
+
+                    </div>
 
                 </div>
 

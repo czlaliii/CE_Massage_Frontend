@@ -122,6 +122,15 @@ export class BookingService {
         );
     }
 
+    createAdminBooking(body: any) {
+
+        return this.http.post(
+            `${environment.apiUrl}/admin/bookings`,
+            body
+        );
+
+    }
+
     cancelBooking(bookingId: string) {
         return this.http.delete(
             `${environment.apiUrl}/bookings/${bookingId}`
