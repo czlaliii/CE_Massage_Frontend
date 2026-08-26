@@ -806,7 +806,7 @@ export class AdminBookings implements OnInit {
 
         switch (serviceName) {
 
-        case '5 Kontinens Masszázs':
+            case '5 Kontinens Masszázs':
                 return '#D4AF37'; // arany
 
             case 'Expanse Terápia':
@@ -814,6 +814,12 @@ export class AdminBookings implements OnInit {
 
             case 'Vibecodes':
                 return '#8E44AD'; // lila
+
+            case 'Svédmasszázs':
+                return '#5FAF8F'; // zsályás zöld
+
+            case 'Prémium masszázs':
+                return '#C47A5A'; // meleg terrakotta
 
             default:
                 return '#95A5A6';

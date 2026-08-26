@@ -223,6 +223,14 @@
     background: #8E44AD;
 }
 
+.legend-color.swedish {
+    background: #5FAF8F;
+}
+
+.legend-color.premium {
+    background: #C47A5A;
+}
+
 .calendar-event {
     display: flex;
     flex-direction: column;
