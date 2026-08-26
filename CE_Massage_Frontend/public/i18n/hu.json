@@ -91,54 +91,65 @@
     "PRICES": {
         "TITLE": "Árlista",
         "SUBTITLE": "Masszázs & Terápiák",
+        "MINUTES": "perc",
 
         "FIVE_CONTINENTS": {
             "TITLE": "5 Kontinens Masszázs",
-            "PASS_TITLE": "10 alkalmas bérlet",
+            "INFO": "Különféle eredetű masszázsformák a biodinamikai elemek és a Svájcban összeállított illóolaj keverékek szinergiája. Fokozatosan segít helyreállítani az önbizalmat és a vitalitást, visszanyerni az önbecsülést, a békeérzetet és az életörömöt. Arc, fej, kar, váll, hát, has és láb érintve van.",
+            "PASS_TITLE": "3, 5 és 10 alkalmas, kedvező árú bérletek és ajándékkártyák is elérhetők",
             "PASS_NOTE": "Az egyes alkalmak között 30 napnál több idő nem telhet el. Kezdés időpontja legfeljebb 30 nap a bérlet vásárlásától számítva."
         },
 
         "EXPANSE": {
             "TITLE": "Expanse Terápia",
-            "COURSE_4": "4 alkalmas kúra",
-            "COURSE_4_MASSAGE": "4 alkalmas kúra + 1 db 100 perces 5 kontinens masszázs"
+            "INFO": "Komplex, több érzékszervre ható kezelés, amely csontkopogtatást, fényterápiát és speciális hasi masszázst is ötvözi. Segít oldani a testben rögzült traumákat és érzelmi lenyomatokat és elősegíti az energia szabadabb áramlását. A kezelés ruhában történik. Arc, fej, bordaközi izmok és has érintve van.",
+            "COURSE": "4 és 5 alkalmas, kedvező árú bérletek és ajándékkártyák is elérhetők"
         },
 
         "VIBECODES": {
             "TITLE": "Vibecodes",
-            "TREATMENT_35": "35 perc kezelés",
-            "TREATMENT_60": "60 perc kezelés és coaching",
-            "ONLINE_INFO": "Online alkalmakról további információ",
-            "FACEBOOK": "Facebookon",
-            "INSTAGRAM": "Instagramon"
+            "INFO": "Egy különleges kezelés, amely a relaxációt, vezetett belső figyelmet, érintést és aromaterápiás elemeket kapcsolja össze. Segíti a test, a lélek és szellem harmonizálását. Arc, fej, kar, hát, has és láb érintve van. A kezelés ruhán keresztül történik.",
+            "TREATMENT_35": " perc kezelés",
+            "TREATMENT_60": " perc kezelés és coaching",
+            "COURSE": "Ingyenes konzultáció – 30 perces",
+            "COURSE_PASS_NOTE": "Nem tudod, melyik kezelés lenne számodra a legmegfelelőbb, vagy szeretnél többet megtudni az 5 Kontinens Masszázsról®, az Expanse Terápiáról® vagy a Vibecodes®-ról? Jelentkezz be egy ingyenes, 30 perces konzultációra, és segítek eligazodni a lehetőségek között"
         },
 
-        "UNIT_MASSAGE": {
-            "TITLE": "Egységáras Masszázsok",
+        "SWEDISH_MASSAGES": {
+            "TITLE": "Svédmasszázsok",
+            "INFO": "Különféle svédmasszázs-kezelések közül választhatsz, amelyek a relaxációt, a feszültség oldását és a testi felfrissülést helyezik középpontba.",
+            "PRICE_NOTE": "3, 5 és 10 alkalmas, kedvező árú bérletek és ajándékkártyák is elérhetők.",
             "SERVICES_TITLE": "Választható kezelések:",
 
-            "SERVICE_1": "Svédmasszázs",
-            "SERVICE_2": "Relax masszázs",
+            "SERVICE_1": "Hátmasszázs",
+            "SERVICE_2": "Svédmasszázs",
             "SERVICE_3": "Teljes test masszázs",
             "SERVICE_4": "Frissítő masszázs",
+            "SERVICE_5": "Arc- és fejmasszázs (30 perc)",
+            "SERVICE_6": "Reflexpontos talpmasszázs (30 perc)",
 
-            "SERVICE_5": "Lomi lomi masszázs",
-            "SERVICE_6": "Hátmasszázs (30 perc)",
-            "SERVICE_7": "Arc- és fejmasszázs (30 perc)",
-            "SERVICE_8": "Reflexpontos talpmasszázs (30 perc)"
+            "SERVICE_1_INFO": "Kifejezetten erre a területre alkalmazott, az átlagosnál erősebb masszázs. Segít oldani az izomcsomókat és a kényszertartásból eredő izomfeszültséget. Hát, nyak, váll és kar érintve van.",
+            "SERVICE_2_INFO": "A láb, derék, nyak, váll és karok kifejezetten fókuszba kerülnek a teljes testmasszázs során. Célja a mozgás könnyedségének visszaállítása, a felgyülemlett feszültség oldása és a fájdalom enyhítése.",
+            "SERVICE_3_INFO": "Az egész testet érintő, átfogó masszázs a teljes kikapcsolódásért. Arc, fej, nyak, kar, váll, hát, has, láb és talp érintve van.",
+            "SERVICE_4_INFO": "Élénkítőbb, energizáló kezelés, amikor szeretnél felfrissülni és új lendületet kapni. Nyak, váll, kar, hát, láb és talp érintve van.",
+            "SERVICE_5_INFO": "Kényeztető arc- és fejmasszázs lifting jellegű elemekkel, a feszültség oldásáért és az arc felfrissítéséért.",
+            "SERVICE_6_INFO": "A talp reflexpontjainak masszírozására épülő, kellemes és pihentető kezelés. Segíti a feszültség oldását és a teljes test ellazulását támogatja. Talp, lábfej és boka érintve van."
         },
 
-        "INFO": {
-            "TITLE": "Információk az Egységáras Masszázsaimról",
+        "PREMIUM_MASSAGES": {
+            "TITLE": "Prémium masszázsok",
+            "INFO": "Prémium masszázsok különlegesebb, nyugodtabb és intenzívebb kikapcsolódást kínáló kezelésekkel.",
 
-            "OILS_TITLE": "Milyen olajakkal dolgozok?",
+            "SERVICE_1": "Relax masszázs",
+            "SERVICE_2": "Svéd-mediterrán relax masszázs",
+            "SERVICE_3": "Lomi Lomi masszázs",
 
-            "OILS_TEXT_1": "Svédmasszázs kezeléshez természetes (illatmentes) növényi és bőrbarát összetevőket tartalmazó masszázskrémeket és olajokat használok, valamint opcionálisan 5 Kontinens Masszázs olajjal is dolgozom.",
-
-            "OILS_TEXT_2": "Az arcmasszázshoz is kifejezetten erre a célra kifejlesztett 5 Kontinens Masszázs olajat használok."
+            "SERVICE_1_INFO": "Lágyabb, lassabb mozdulatokkal segít ellazulni és kiszakadni a mindennapokból. Arc, fej, nyak, kar, váll, has, hát, láb és talp érintve van.",
+            "SERVICE_2_INFO": "A svédmasszázs és a relaxáció élménye különleges, aromás olajkeverékkel kiegészítve. Arc, fej, nyak, kar, váll, hát, has, láb és talp érintve van. Célja a mozgás könnyedségének visszaállítása, a felgyülemlett feszültség oldása, a fájdalom enyhítése és az idegrendszer megnyugtatása.",
+            "SERVICE_3_INFO": "Hosszú, folyamatos mozdulatokkal végzett, különleges hawaii ihletésű masszázsélmény. Elősegíti az energia szabadabb áramlását. Arc, fej, nyak, kar, váll, hát, has, láb és talp érintve van."
         },
 
-        "BUTTON": "További kérdések"
+        "BUTTON": "Időpontfoglalás"
     },
     "FAQ": {
         "TITLE": "Gyakran Ismételt Kérdések",

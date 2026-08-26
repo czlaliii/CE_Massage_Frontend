@@ -5,17 +5,46 @@
 
   <!-- 5 Kontinens -->
   <div class="section">
-    <div class="section-title">{{ 'PRICES.FIVE_CONTINENTS.TITLE' | translate }}</div>
+    <div class="section-title service-title-with-info">
+
+        <span>
+            {{ 'PRICES.FIVE_CONTINENTS.TITLE' | translate }}
+        </span>
+
+        <button
+            type="button"
+            class="info-button"
+            [class.active]="openInfo() === 'five'"
+            (click)="toggleInfo('five')"
+            aria-label="Információ a kezelésről">
+
+            ⓘ
+
+        </button>
+
+    </div>
+
+    @if (openInfo() === 'five') {
+
+        <div class="service-info-panel">
+
+            <p>
+                {{ 'PRICES.FIVE_CONTINENTS.INFO' | translate }}
+            </p>
+
+        </div>
+
+    }
 
     <div class="price-list">
       <div class="item">
-        <div>60 perc</div>
-        <div class="price">40 000 Ft</div>
+        <div>60 {{ 'PRICES.MINUTES'  | translate }}</div>
+        <div class="price">19 500 Ft</div>
       </div>
 
       <div class="item">
-        <div>90 perc</div>
-        <div class="price">47 000 Ft</div>
+        <div>90 {{ 'PRICES.MINUTES' | translate }}</div>
+        <div class="price">24 500 Ft</div>
       </div>
 
       <div class="item multi">
@@ -27,174 +56,619 @@
           </div>
         </div>
 
-        <div class="price">250 000 Ft</div>
+        <div class="price"></div>
       </div>
     </div>
   </div>
 
   <!-- Expanse -->
   <div class="section">
-    <div class="section-title">{{ 'PRICES.EXPANSE.TITLE' | translate }}</div>
+    <div class="section-title service-title-with-info">
+
+      <span>
+          {{ 'PRICES.EXPANSE.TITLE' | translate }}
+      </span>
+
+      <button
+          type="button"
+          class="info-button"
+          [class.active]="openInfo() === 'expanse'"
+          (click)="toggleInfo('expanse')"
+          aria-label="Információ a kezelésről">
+
+          ⓘ
+
+      </button>
+
+    </div>
+
+    @if (openInfo() === 'expanse') {
+
+      <div class="service-info-panel">
+
+          <p>
+              {{ 'PRICES.EXPANSE.INFO' | translate }}
+          </p>
+
+      </div>
+
+    }
 
     <div class="price-list">
       <div class="item">
-        <div>60 perc</div>
-        <div class="price">47 000 Ft</div>
+        <div>60 {{ 'PRICES.MINUTES' | translate }}</div>
+        <div class="price">24 500 Ft</div>
       </div>
 
-      <div class="item">
-        <div>{{ 'PRICES.EXPANSE.COURSE_4' | translate }}</div>
-        <div class="price">141 000 Ft</div>
+      <div class="item multi">
+        <div>
+          {{ 'PRICES.EXPANSE.COURSE' | translate }}
+
+          <div class="note">
+            {{ 'PRICES.FIVE_CONTINENTS.PASS_NOTE' | translate }}
+          </div>
+        </div>
       </div>
 
-      <div class="item">
-        <div>{{ 'PRICES.EXPANSE.COURSE_4_MASSAGE' | translate }}</div>
-        <div class="price">166 000 Ft</div>
-      </div>
     </div>
   </div>
 
   <!-- Vibecodes -->
   <div class="section">
-    <div class="section-title">{{ 'PRICES.VIBECODES.TITLE' | translate }}</div>
+    <div class="section-title service-title-with-info">
+
+      <span>
+          {{ 'PRICES.VIBECODES.TITLE' | translate }}
+      </span>
+
+      <button
+          type="button"
+          class="info-button"
+          [class.active]="openInfo() === 'vibecodes'"
+          (click)="toggleInfo('vibecodes')"
+          aria-label="Információ a kezelésről">
+
+          ⓘ
+
+      </button>
+
+    </div>
+
+    @if (openInfo() === 'vibecodes') {
+
+        <div class="service-info-panel">
+
+            <p>
+                {{ 'PRICES.VIBECODES.INFO' | translate }}
+            </p>
+
+        </div>
+
+    }
 
     <div class="price-list">
       <div class="item">
-        <div>{{ 'PRICES.VIBECODES.TREATMENT_35' | translate }}</div>
-        <div class="price">40 000 Ft</div>
+        <div>35{{ 'PRICES.VIBECODES.TREATMENT_35' | translate }}</div>
+        <div class="price">19 500 Ft</div>
       </div>
 
       <div class="item">
-        <div>{{ 'PRICES.VIBECODES.TREATMENT_60' | translate }}</div>
-        <div class="price">50 000 Ft</div>
-      </div>
-
-      <div class="item">
-        <div>
-          {{ 'PRICES.VIBECODES.ONLINE_INFO' | translate }}
-          <a href="https://www.facebook.com/cemassagee" target="_blank">
-            {{ 'PRICES.VIBECODES.FACEBOOK' | translate }}
-          </a>
-          vagy
-          <a href="https://www.instagram.com/cemassage_/" target="_blank">
-            {{ 'PRICES.VIBECODES.INSTAGRAM' | translate }}
-          </a>
-        </div>
-      </div>
-
-      <!--
-      <div class="item multi">
-        <div>
-          21 napos csoportos online Vibecodes gyakorlás
-          <div class="note">
-            Ismétlőknek havonta 10 000 Ft
-          </div>
-        </div>
-        <div class="price">50 000 Ft</div>
+        <div>60{{ 'PRICES.VIBECODES.TREATMENT_60' | translate }}</div>
+        <div class="price">29 500 Ft</div>
       </div>
 
       <div class="item multi">
         <div>
-          8 online alkalom - Vibecodes kódjainak elsajátítása külön-külön
+          {{ 'PRICES.VIBECODES.COURSE' | translate }}
+
           <div class="note">
-            Heti 1 óra 2 hónapon keresztül
+            {{ 'PRICES.VIBECODES.COURSE_PASS_NOTE' | translate }}
           </div>
         </div>
-        <div class="price">70 000 Ft</div>
       </div>
-      -->
+
     </div>
   </div>
 
-  <!-- Egységár -->
+  <!-- ========================= -->
+  <!-- Svédmasszázsok -->
+  <!-- ========================= -->
+
   <div class="section">
-    <div class="section-title">{{ 'PRICES.UNIT_MASSAGE.TITLE' | translate }}</div>
 
-    <!-- Időtartam kártyák -->
-    <div class="unit-grid">
-      <div class="unit-card">
-        <div class="unit-time">30 perc</div>
-        <div class="unit-price">14 000 Ft</div>
-      </div>
+    <div class="section-title service-title-with-info">
 
-      <div class="unit-card">
-        <div class="unit-time">60 perc</div>
-        <div class="unit-price">17 000 Ft</div>
-      </div>
+      <span>
+        {{ 'PRICES.SWEDISH_MASSAGES.TITLE' | translate }}
+      </span>
 
-      <div class="unit-card">
-        <div class="unit-time">90 perc</div>
-        <div class="unit-price">23 000 Ft</div>
-      </div>
+      <button
+        type="button"
+        class="info-button"
+        [class.active]="openInfo() === 'swedish'"
+        (click)="toggleInfo('swedish')"
+        aria-label="Információ a svédmasszázsokról">
 
-      <div class="unit-card">
-        <div class="unit-time">120 perc</div>
-        <div class="unit-price">30 000 Ft</div>
-      </div>
+        ⓘ
+
+      </button>
+
     </div>
+
+    @if (openInfo() === 'swedish') {
+
+      <div class="service-info-panel">
+
+        <p>
+          {{ 'PRICES.SWEDISH_MASSAGES.INFO' | translate }}
+        </p>
+
+      </div>
+
+    }
+
+    <!-- Árak -->
+
+    <div class="unit-grid">
+
+      <div class="unit-card">
+        <div class="unit-time">30 {{ 'PRICES.MINUTES' | translate }}</div>
+        <div class="unit-price">6 500 Ft</div>
+      </div>
+
+      <div class="unit-card">
+        <div class="unit-time">45 {{ 'PRICES.MINUTES' | translate }}</div>
+        <div class="unit-price">9 500 Ft</div>
+      </div>
+
+      <div class="unit-card">
+        <div class="unit-time">60 {{ 'PRICES.MINUTES' | translate }}</div>
+        <div class="unit-price">12 500 Ft</div>
+      </div>
+
+      <div class="unit-card">
+        <div class="unit-time">90 {{ 'PRICES.MINUTES' | translate }}</div>
+        <div class="unit-price">16 500 Ft</div>
+      </div>
+
+      <div class="unit-card">
+        <div class="unit-time">120 {{ 'PRICES.MINUTES' | translate }}</div>
+        <div class="unit-price">22 500 Ft</div>
+      </div>
+
+    </div>
+
+    <div class="service-price-note">
+      <span class="service-price-note-icon">✦</span>
+
+      <span>
+        {{ 'PRICES.SWEDISH_MASSAGES.PRICE_NOTE' | translate }}
+      </span>
+    </div>
+
 
     <!-- Választható kezelések -->
+
     <div class="services-title">
-      {{ 'PRICES.UNIT_MASSAGE.SERVICES_TITLE' | translate }}
+      {{ 'PRICES.SWEDISH_MASSAGES.SERVICES_TITLE' | translate }}
     </div>
 
-    <div class="services-grid">
-      <section class="services-col">
-        <div>{{ 'PRICES.UNIT_MASSAGE.SERVICE_1' | translate }}</div>
-        <div>{{ 'PRICES.UNIT_MASSAGE.SERVICE_2' | translate }}</div>
-        <div>{{ 'PRICES.UNIT_MASSAGE.SERVICE_3' | translate }}</div>
-        <div>{{ 'PRICES.UNIT_MASSAGE.SERVICE_4' | translate }}</div>
-      </section>
 
-      <section class="services-col">
-        <div>{{ 'PRICES.UNIT_MASSAGE.SERVICE_5' | translate }}</div>
-        <div>{{ 'PRICES.UNIT_MASSAGE.SERVICE_6' | translate }}</div>
-        <div>{{ 'PRICES.UNIT_MASSAGE.SERVICE_7' | translate }}</div>
-        <div>{{ 'PRICES.UNIT_MASSAGE.SERVICE_8' | translate }}</div>
-      </section>
+    <!-- Hátmasszázs -->
+
+    <div class="treatment-info">
+
+      <div class="treatment-header">
+
+        <strong>
+          {{ 'PRICES.SWEDISH_MASSAGES.SERVICE_1' | translate }}
+        </strong>
+
+        <button
+          type="button"
+          class="treatment-info-button"
+          [class.active]="openTreatment() === 'back'"
+          (click)="toggleTreatment('back')"
+          aria-label="Hátmasszázs információ">
+
+          ⓘ
+
+        </button>
+
+      </div>
+
+      @if (openTreatment() === 'back') {
+
+        <div class="treatment-description">
+
+          {{ 'PRICES.SWEDISH_MASSAGES.SERVICE_1_INFO' | translate }}
+
+        </div>
+
+      }
+
     </div>
 
-    <br>
 
-    <div class="section-title">
-      {{ 'PRICES.INFO.TITLE' | translate }}
+    <!-- Svédmasszázs -->
+
+    <div class="treatment-info">
+
+      <div class="treatment-header">
+
+        <strong>
+          {{ 'PRICES.SWEDISH_MASSAGES.SERVICE_2' | translate }}
+        </strong>
+
+        <button
+          type="button"
+          class="treatment-info-button"
+          [class.active]="openTreatment() === 'swedish'"
+          (click)="toggleTreatment('swedish')"
+          aria-label="Svédmasszázs információ">
+
+          ⓘ
+
+        </button>
+
+      </div>
+
+      @if (openTreatment() === 'swedish') {
+
+        <div class="treatment-description">
+
+          {{ 'PRICES.SWEDISH_MASSAGES.SERVICE_2_INFO' | translate }}
+
+        </div>
+
+      }
+
     </div>
 
-    <div class="massage-info">
 
-      <!--
-      <h2 class="services-title">Milyen a svédmasszázsom?</h2>
+    <!-- Teljes test masszázs -->
 
-      <p>
-        Úgy masszírozok, ahogyan arra a vendégemnek éppen szüksége van...
-      </p>
+    <div class="treatment-info">
 
-      <p>
-        A kezelés során nyitott vagyok rövid, könnyed beszélgetésre...
-      </p>
+      <div class="treatment-header">
 
-      <p>
-        Nálam a masszázs nem csak kezelés...
-      </p>
-      -->
+        <strong>
+          {{ 'PRICES.SWEDISH_MASSAGES.SERVICE_3' | translate }}
+        </strong>
 
-      <h2 class="services-title">
-        {{ 'PRICES.INFO.OILS_TITLE' | translate }}
-      </h2>
+        <button
+          type="button"
+          class="treatment-info-button"
+          [class.active]="openTreatment() === 'full'"
+          (click)="toggleTreatment('full')"
+          aria-label="Teljes test masszázs információ">
 
-      <p>
-        {{ 'PRICES.INFO.OILS_TEXT_1' | translate }}
-      </p>
+          ⓘ
 
-      <p>
-        {{ 'PRICES.INFO.OILS_TEXT_2' | translate }}
-      </p>
+        </button>
+
+      </div>
+
+      @if (openTreatment() === 'full') {
+
+        <div class="treatment-description">
+
+          {{ 'PRICES.SWEDISH_MASSAGES.SERVICE_3_INFO' | translate }}
+
+        </div>
+
+      }
+
     </div>
 
-    <app-button
-      path="/faq"
-      [buttonText]="'PRICES.BUTTON' | translate">
-    </app-button>
+
+    <!-- Frissítő masszázs -->
+
+    <div class="treatment-info">
+
+      <div class="treatment-header">
+
+        <strong>
+          {{ 'PRICES.SWEDISH_MASSAGES.SERVICE_4' | translate }}
+        </strong>
+
+        <button
+          type="button"
+          class="treatment-info-button"
+          [class.active]="openTreatment() === 'refreshing'"
+          (click)="toggleTreatment('refreshing')"
+          aria-label="Frissítő masszázs információ">
+
+          ⓘ
+
+        </button>
+
+      </div>
+
+      @if (openTreatment() === 'refreshing') {
+
+        <div class="treatment-description">
+
+          {{ 'PRICES.SWEDISH_MASSAGES.SERVICE_4_INFO' | translate }}
+
+        </div>
+
+      }
+
+    </div>
+
+
+    <!-- Arc- és fejmasszázs -->
+
+    <div class="treatment-info">
+
+      <div class="treatment-header">
+
+        <strong>
+          {{ 'PRICES.SWEDISH_MASSAGES.SERVICE_5' | translate }}
+        </strong>
+
+        <button
+          type="button"
+          class="treatment-info-button"
+          [class.active]="openTreatment() === 'face'"
+          (click)="toggleTreatment('face')"
+          aria-label="Arc- és fejmasszázs információ">
+
+          ⓘ
+
+        </button>
+
+      </div>
+
+      @if (openTreatment() === 'face') {
+
+        <div class="treatment-description">
+
+          {{ 'PRICES.SWEDISH_MASSAGES.SERVICE_5_INFO' | translate }}
+
+        </div>
+
+      }
+
+    </div>
+
+
+    <!-- Reflexpontos talpmasszázs -->
+
+    <div class="treatment-info">
+
+      <div class="treatment-header">
+
+        <strong>
+          {{ 'PRICES.SWEDISH_MASSAGES.SERVICE_6' | translate }}
+        </strong>
+
+        <button
+          type="button"
+          class="treatment-info-button"
+          [class.active]="openTreatment() === 'reflex'"
+          (click)="toggleTreatment('reflex')"
+          aria-label="Reflexpontos talpmasszázs információ">
+
+          ⓘ
+
+        </button>
+
+      </div>
+
+      @if (openTreatment() === 'reflex') {
+
+        <div class="treatment-description">
+
+          {{ 'PRICES.SWEDISH_MASSAGES.SERVICE_6_INFO' | translate }}
+
+        </div>
+
+      }
+
+    </div>
+
   </div>
 
+
+  <!-- ========================= -->
+  <!-- Prémium masszázsok -->
+  <!-- ========================= -->
+
+  <div class="section">
+
+    <div class="section-title service-title-with-info">
+
+      <span>
+        {{ 'PRICES.PREMIUM_MASSAGES.TITLE' | translate }}
+      </span>
+
+      <button
+        type="button"
+        class="info-button"
+        [class.active]="openInfo() === 'premium'"
+        (click)="toggleInfo('premium')"
+        aria-label="Információ a prémium masszázsokról">
+
+        ⓘ
+
+      </button>
+
+    </div>
+
+    @if (openInfo() === 'premium') {
+
+      <div class="service-info-panel">
+
+        <p>
+          {{ 'PRICES.PREMIUM_MASSAGES.INFO' | translate }}
+        </p>
+
+      </div>
+
+    }
+
+
+    <!-- Árak -->
+
+    <div class="unit-grid">
+
+      <div class="unit-card">
+        <div class="unit-time">30 {{ 'PRICES.MINUTES' | translate }}</div>
+        <div class="unit-price">9 500 Ft</div>
+      </div>
+
+      <div class="unit-card">
+        <div class="unit-time">45 {{ 'PRICES.MINUTES' | translate }}</div>
+        <div class="unit-price">12 500 Ft</div>
+      </div>
+
+      <div class="unit-card">
+        <div class="unit-time">60 {{ 'PRICES.MINUTES' | translate }}</div>
+        <div class="unit-price">16 500 Ft</div>
+      </div>
+
+      <div class="unit-card">
+        <div class="unit-time">90 {{ 'PRICES.MINUTES' | translate }}</div>
+        <div class="unit-price">22 500 Ft</div>
+      </div>
+
+      <div class="unit-card">
+        <div class="unit-time">120 {{ 'PRICES.MINUTES' | translate }}</div>
+        <div class="unit-price">29 500 Ft</div>
+      </div>
+
+    </div>
+
+    <div class="service-price-note">
+      <span class="service-price-note-icon">✦</span>
+
+      <span>
+        {{ 'PRICES.SWEDISH_MASSAGES.PRICE_NOTE' | translate }}
+      </span>
+    </div>
+
+
+    <!-- Választható kezelések -->
+
+    <div class="services-title">
+      {{ 'PRICES.SWEDISH_MASSAGES.SERVICES_TITLE' | translate }}
+    </div>
+
+
+    <!-- Relax masszázs -->
+
+    <div class="treatment-info">
+
+      <div class="treatment-header">
+
+        <strong>
+          {{ 'PRICES.PREMIUM_MASSAGES.SERVICE_1' | translate }}
+        </strong>
+
+        <button
+          type="button"
+          class="treatment-info-button"
+          [class.active]="openTreatment() === 'relax'"
+          (click)="toggleTreatment('relax')"
+          aria-label="Relax masszázs információ">
+
+          ⓘ
+
+        </button>
+
+      </div>
+
+      @if (openTreatment() === 'relax') {
+
+        <div class="treatment-description">
+
+          {{ 'PRICES.PREMIUM_MASSAGES.SERVICE_1_INFO' | translate }}
+
+        </div>
+
+      }
+
+    </div>
+
+
+    <!-- Svéd-mediterrán relax masszázs -->
+
+    <div class="treatment-info">
+
+      <div class="treatment-header">
+
+        <strong>
+          {{ 'PRICES.PREMIUM_MASSAGES.SERVICE_2' | translate }}
+        </strong>
+
+        <button
+          type="button"
+          class="treatment-info-button"
+          [class.active]="openTreatment() === 'mediterranean'"
+          (click)="toggleTreatment('mediterranean')"
+          aria-label="Svéd-mediterrán relax masszázs információ">
+
+          ⓘ
+
+        </button>
+
+      </div>
+
+      @if (openTreatment() === 'mediterranean') {
+
+        <div class="treatment-description">
+
+          {{ 'PRICES.PREMIUM_MASSAGES.SERVICE_2_INFO' | translate }}
+
+        </div>
+
+      }
+
+    </div>
+
+
+    <!-- Lomi lomi masszázs -->
+
+    <div class="treatment-info">
+
+      <div class="treatment-header">
+
+        <strong>
+          {{ 'PRICES.PREMIUM_MASSAGES.SERVICE_3' | translate }}
+        </strong>
+
+        <button
+          type="button"
+          class="treatment-info-button"
+          [class.active]="openTreatment() === 'lomi'"
+          (click)="toggleTreatment('lomi')"
+          aria-label="Lomi lomi masszázs információ">
+
+          ⓘ
+
+        </button>
+
+      </div>
+
+      @if (openTreatment() === 'lomi') {
+
+        <div class="treatment-description">
+
+          {{ 'PRICES.PREMIUM_MASSAGES.SERVICE_3_INFO' | translate }}
+
+        </div>
+
+      }
+    </div>
+
+      <div class="booking-button-wrapper">
+
+        <app-button
+          path="/booking"
+          [buttonText]="'PRICES.BUTTON' | translate">
+        </app-button>
+
+      </div>
 </div>

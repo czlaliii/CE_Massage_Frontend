@@ -91,54 +91,65 @@
     "PRICES": {
         "TITLE": "Price List",
         "SUBTITLE": "Massages & Therapies",
+        "MINUTES": "min",
 
         "FIVE_CONTINENTS": {
             "TITLE": "5 Continents Massage",
-            "PASS_TITLE": "10-Session Package",
+            "INFO": "A combination of various massage forms, biodynamic elements and essential oil blends created in Switzerland. It gradually helps to restore self-confidence and vitality, regain self-esteem, a sense of peace and joy of life. The face, head, arms, shoulders, back, abdomen and legs are affected.",
+            "PASS_TITLE": "3, 5 and 10-session, affordable passes and gift cards are also available.",
             "PASS_NOTE": "No more than 30 days may pass between individual sessions. The first session must take place within 30 days of purchasing the package."
         },
 
         "EXPANSE": {
             "TITLE": "Expanse Therapy",
-            "COURSE_4": "4-Session Program",
-            "COURSE_4_MASSAGE": "4-Session Program + 1 x 100-minute 5 Continents Massage"
+            "INFO": "A complex, multi-sensory treatment that combines bone tapping, light therapy and a special abdominal massage. It helps to release traumas and emotional imprints stuck in the body and promotes a freer flow of energy. The treatment is performed clothed.",
+            "COURSE": "4 and 5-day passes and gift cards are also available at reasonable prices."
         },
 
         "VIBECODES": {
             "TITLE": "Vibecodes",
-            "TREATMENT_35": "35-Minute Session",
-            "TREATMENT_60": "60-Minute Session and Coaching",
-            "ONLINE_INFO": "For more information about online sessions",
-            "FACEBOOK": "on Facebook",
-            "INSTAGRAM": "on Instagram"
+            "INFO": "A special treatment that combines relaxation, guided inner attention, touch and aromatherapy elements. Helps to harmonize body, mind and spirit. The face, head, arms, back, abdomen and legs are touched. The treatment is done through clothing.",
+            "TREATMENT_35": "-minute Session",
+            "TREATMENT_60": "-minute Session and Coaching",
+            "COURSE": "Free consultation – 30 minutes",
+            "COURSE_PASS_NOTE": "Not sure which treatment would be best for you, or would you like to learn more about 5 Continents Massage®, Expanse Therapy®, or Vibecodes®? Sign up for a free 30-minute consultation and I'll help you navigate the options"
         },
 
-        "UNIT_MASSAGE": {
-            "TITLE": "Fixed-Rate Massages",
+        "SWEDISH_MASSAGES": {
+            "TITLE": "Swedish massages",
+            "INFO": "You can choose from a variety of Swedish massage treatments that focus on relaxation, tension relief, and physical refreshment.",
+            "PRICE_NOTE": "3, 5 and 10-session, affordable passes and gift cards are also available.",
             "SERVICES_TITLE": "Available Treatments:",
 
-            "SERVICE_1": "Swedish Massage",
-            "SERVICE_2": "Relaxation Massage",
-            "SERVICE_3": "Full Body Massage",
-            "SERVICE_4": "Refreshing Massage",
+            "SERVICE_1": "Back massage",
+            "SERVICE_2": "Relaxation massage",
+            "SERVICE_3": "Full Body massage",
+            "SERVICE_4": "Refreshing massage",
+            "SERVICE_5": "Face and Head massage (30 min)",
+            "SERVICE_6": "Reflexology Foot massage (30 min)",
 
-            "SERVICE_5": "Lomi Lomi Massage",
-            "SERVICE_6": "Back Massage (30 min)",
-            "SERVICE_7": "Face and Head Massage (30 min)",
-            "SERVICE_8": "Reflexology Foot Massage (30 min)"
+            "SERVICE_1_INFO": "A stronger than average massage specifically applied to this area. Helps release muscle knots and muscle tension resulting from forced posture. Back, neck, shoulders and arms are affected.",
+            "SERVICE_2_INFO": "The legs, waist, neck, shoulders and arms are the focus of this full body massage. The aim is to restore ease of movement, release accumulated tension and relieve pain.",
+            "SERVICE_3_INFO": "A comprehensive massage for complete relaxation, covering the whole body. The face, head, neck, arms, shoulders, back, abdomen, legs and soles are treated.",
+            "SERVICE_4_INFO": "A more invigorating, energizing treatment for when you want to refresh and gain new momentum. The neck, shoulders, arms, back, legs and soles are affected.",
+            "SERVICE_5_INFO": "Pampering facial and head massage with lifting elements to relieve tension and refresh the face.",
+            "SERVICE_6_INFO": "A pleasant and relaxing treatment based on massaging the reflex points of the sole. It helps to release tension and promotes relaxation of the whole body. The sole, foot and ankle are affected."
         },
 
-        "INFO": {
-            "TITLE": "Information About My Fixed-Rate Massages",
+        "PREMIUM_MASSAGES": {
+            "TITLE": "Premium massages",
+            "INFO": "Premium massages with treatments that offer more special, calmer and more intense relaxation.",
 
-            "OILS_TITLE": "What Oils Do I Use?",
+            "SERVICE_1": "Relax massage",
+            "SERVICE_2": "Swedish-Mediterranean relaxation massage",
+            "SERVICE_3": "Lomi Lomi massage",
 
-            "OILS_TEXT_1": "For Swedish massage treatments, I use natural (fragrance-free), skin-friendly massage creams and oils made from plant-based ingredients. Optionally, I also work with 5 Continents Massage oils.",
-
-            "OILS_TEXT_2": "For facial massages, I use specially developed 5 Continents Massage oils designed specifically for this purpose."
+            "SERVICE_1_INFO": "It uses softer, slower movements to help you relax and escape from everyday life. The face, head, neck, arms, shoulders, abdomen, back, legs and feet are affected.",
+            "SERVICE_2_INFO": "A Swedish massage and relaxation experience, complemented by a special, aromatic oil blend. The face, head, neck, arms, shoulders, back, abdomen, legs and soles are touched. Its aim is to restore ease of movement, release accumulated tension, relieve pain and calm the nervous system.",
+            "SERVICE_3_INFO": "A special Hawaiian-inspired massage experience performed with long, continuous strokes. Promotes a freer flow of energy. The face, head, neck, arms, shoulders, back, abdomen, legs and soles are touched."
         },
 
-        "BUTTON": "More Questions"
+        "BUTTON": "Book an Appointment"
     },
     "FAQ": {
         "TITLE": "Frequently Asked Questions",
