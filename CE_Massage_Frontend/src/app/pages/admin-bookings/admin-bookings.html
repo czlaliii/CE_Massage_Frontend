@@ -281,6 +281,15 @@
 
             </button>
 
+            <button
+                type="button"
+                class="add-blocked-btn"
+                (click)="openCreateBlockedModal()">
+
+                + Szabadidő hozzáadása
+
+            </button>
+
         </div>
 
         <div class="calendar-legend">
@@ -308,6 +317,11 @@
             <div class="legend-item">
                 <span class="legend-color premium"></span>
                 Prémium
+            </div>
+
+            <div class="legend-item">
+                <span class="legend-color blocked"></span>
+                Szabadidő
             </div>
 
         </div>
@@ -681,6 +695,156 @@
                         </button>
 
                     </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    }
+
+    @if(showBlockedModal()) {
+
+        <div
+            class="modal-backdrop"
+            (click)="closeBlockedModal()">
+
+            <div
+                class="modal blocked-modal"
+                (click)="$event.stopPropagation()">
+
+                <h2>
+
+                    @if(selectedBlockedTime()) {
+                        Szabadidő módosítása
+                    } @else {
+                        Szabadidő hozzáadása
+                    }
+
+                </h2>
+
+
+                <div class="blocked-form">
+
+                    <div class="form-group">
+
+                        <label>
+                            Megnevezés
+                        </label>
+
+                        <input
+                            type="text"
+                            [value]="blockedTitle()"
+                            (input)="blockedTitle.set(
+                                $any($event.target).value
+                            )"
+                            placeholder="pl. Magánprogram">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Dátum
+                        </label>
+
+                        <input
+                            type="date"
+                            [value]="blockedDate()"
+                            (change)="blockedDate.set(
+                                $any($event.target).value
+                            )">
+
+                    </div>
+
+
+                    <div class="blocked-time-row">
+
+                        <div class="form-group">
+
+                            <label>
+                                Kezdés
+                            </label>
+
+                            <input
+                                type="time"
+                                [value]="blockedStartTime()"
+                                (change)="blockedStartTime.set(
+                                    $any($event.target).value
+                                )">
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label>
+                                Befejezés
+                            </label>
+
+                            <input
+                                type="time"
+                                [value]="blockedEndTime()"
+                                (change)="blockedEndTime.set(
+                                    $any($event.target).value
+                                )">
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="modal-actions">
+
+                    @if(selectedBlockedTime()) {
+
+                        <button
+                            type="button"
+                            class="cancel-btn"
+                            [disabled]="blockedLoading()"
+                            (click)="deleteBlockedTime()">
+
+                            Törlés
+
+                        </button>
+
+                    }
+
+
+                    <button
+                        type="button"
+                        class="close-btn"
+                        [disabled]="blockedLoading()"
+                        (click)="closeBlockedModal()">
+
+                        Mégse
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="save-blocked-btn"
+                        [disabled]="blockedLoading()"
+                        (click)="saveBlockedTime()">
+
+                        @if(blockedLoading()) {
+                            Mentés...
+                        } @else {
+
+                            @if(selectedBlockedTime()) {
+                                Mentés
+                            } @else {
+                                Hozzáadás
+                            }
+
+                        }
+
+                    </button>
 
                 </div>
 

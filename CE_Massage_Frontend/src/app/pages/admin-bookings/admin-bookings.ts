@@ -10,7 +10,8 @@ import {
     Booking,
     BookingService,
     DashboardStats,
-    Service
+    Service,
+    BlockedTime
 } from '../../services/booking.service';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import huLocale from '@fullcalendar/core/locales/hu';
@@ -113,7 +114,31 @@ export class AdminBookings implements OnInit {
         new Date().getFullYear()
     );
 
-        months = [
+    blockedTimes =
+    signal<BlockedTime[]>([]);
+
+    showBlockedModal =
+    signal(false);
+
+    selectedBlockedTime =
+        signal<BlockedTime | null>(null);
+
+    blockedTitle =
+        signal('');
+
+    blockedDate =
+        signal('');
+
+    blockedStartTime =
+        signal('08:00');
+
+    blockedEndTime =
+        signal('20:00');
+
+    blockedLoading =
+        signal(false);
+
+    months = [
         { value: 1, name: 'Január' },
         { value: 2, name: 'Február' },
         { value: 3, name: 'Március' },
@@ -137,6 +162,7 @@ export class AdminBookings implements OnInit {
 
     ngOnInit(): void {
         this.loadBookings();
+        this.loadBlockedTimes();
         this.loadDashboardStats();
         console.log(
         this.selectedMonth(),
@@ -174,7 +200,11 @@ export class AdminBookings implements OnInit {
 
         weekends: true,
 
-        editable: false,
+        editable: true,
+
+        eventStartEditable: true,
+
+        eventDurationEditable: true,
 
         headerToolbar: {
         left: 'prev,next today',
@@ -197,75 +227,425 @@ export class AdminBookings implements OnInit {
 
         eventContent: (arg) => {
 
-        console.log(arg.event.backgroundColor);
+            const type =
+                arg.event.extendedProps['type'];
 
-        const view = arg.view.type;
 
-        const service =
-            this.shortServiceName(
-                arg.event.extendedProps['serviceName']
-            );
+            if (type === 'blocked') {
 
-        const duration =
-            arg.event.extendedProps['duration'];
+                return {
 
-        if (arg.view.type === 'dayGridMonth') {
+                    html: `
+                        <div class="calendar-blocked">
+
+                            <div class="calendar-blocked-title">
+                                ${arg.event.title}
+                            </div>
+
+                        </div>
+                    `
+
+                };
+
+            }
+
+
+            const service =
+                this.shortServiceName(
+                    arg.event.extendedProps['serviceName']
+                );
+
+            const duration =
+                arg.event.extendedProps['duration'];
+
+
+            if (
+                arg.view.type === 'dayGridMonth'
+            ) {
+
+                return {
+
+                    html: `
+                        <div class="month-booking">
+                            ${arg.event.title}
+                        </div>
+                    `
+
+                };
+
+            }
+
 
             return {
+
                 html: `
-                    <div class="month-booking">
-                        ${arg.event.title}
+                    <div class="calendar-event">
+
+                        <div class="calendar-name">
+                            ${arg.event.title}
+                        </div>
+
+                        <div class="calendar-service">
+                            ${service}
+                        </div>
+
+                        ${
+                            duration >= 60
+                                ? `
+                                    <div class="calendar-duration">
+                                        ${duration} perc
+                                    </div>
+                                `
+                                : ''
+                        }
+
                     </div>
                 `
+
             };
 
-        }
-
-        return {
-
-            html: `
-                <div class="calendar-event">
-
-                    <div class="calendar-name">
-                        ${arg.event.title}
-                    </div>
-
-                    <div class="calendar-service">
-                        ${service}
-                    </div>
-
-                    ${
-                        duration >= 60
-                        ? `<div class="calendar-duration">${duration} perc</div>`
-                        : ''
-                    }
-
-                </div>
-            `
-        };
-
-    },
+        },
 
         eventClick: (info) => {
 
-        const booking =
-        this.bookings().find(
-            booking =>
-            booking.id === info.event.id
-        );
+            const type =
+                info.event.extendedProps['type'];
 
-        if (!booking) {
-        return;
+
+            if (type === 'blocked') {
+
+                const blockedId =
+                    info.event.extendedProps[
+                        'blockedTimeId'
+                    ];
+
+
+                const blocked =
+                    this.blockedTimes().find(
+                        item =>
+                            item.id === blockedId
+                    );
+
+
+                if (!blocked) {
+                    return;
+                }
+
+
+                this.selectedBlockedTime.set(
+                    blocked
+                );
+
+                this.blockedTitle.set(
+                    blocked.title
+                );
+
+                this.blockedDate.set(
+                    blocked.booking_date
+                );
+
+                this.blockedStartTime.set(
+                    blocked.start_time.substring(0, 5)
+                );
+
+                this.blockedEndTime.set(
+                    blocked.end_time.substring(0, 5)
+                );
+
+                this.showBlockedModal.set(
+                    true
+                );
+
+                return;
+            }
+
+
+            // meglévő booking logika
+
+            const booking =
+                this.bookings().find(
+                    booking =>
+                        booking.id === info.event.id
+                );
+
+
+            if (!booking) {
+                return;
+            }
+
+
+            this.selectedBooking.set(
+                booking
+            );
+
+            this.showModal.set(
+                true
+            );
+
+        },
+
+        eventDrop: (info) => {
+
+            const type =
+                info.event.extendedProps['type'];
+
+
+            if (type !== 'blocked') {
+
+                info.revert();
+
+                return;
+            }
+
+
+            const blockedId =
+                info.event.extendedProps[
+                    'blockedTimeId'
+                ];
+
+
+            const blocked =
+                this.blockedTimes().find(
+                    item =>
+                        item.id === blockedId
+                );
+
+
+            if (!blocked) {
+
+                info.revert();
+
+                return;
+            }
+
+
+            if (!info.event.start) {
+
+                info.revert();
+
+                return;
+            }
+
+
+            const start =
+                info.event.start;
+
+
+            const end =
+                info.event.end;
+
+
+            if (!end) {
+
+                info.revert();
+
+                return;
+            }
+
+
+            const body = {
+
+                booking_date:
+                    this.formatCalendarDate(
+                        start
+                    ),
+
+                start_time:
+                    this.formatCalendarTime(
+                        start
+                    ),
+
+                end_time:
+                    this.formatCalendarTime(
+                        end
+                    ),
+
+                title:
+                    blocked.title
+
+            };
+
+
+            this.bookingService
+                .updateBlockedTime(
+                    blocked.id,
+                    body
+                )
+                .subscribe({
+
+                    next: updated => {
+
+                        this.blockedTimes.update(
+                            blocks =>
+                                blocks.map(
+                                    block =>
+                                        block.id === updated.id
+                                            ? updated
+                                            : block
+                                )
+                        );
+
+                    },
+
+                    error: error => {
+
+                        console.error(
+                            'Blocked time move failed:',
+                            error
+                        );
+
+
+                        info.revert();
+
+
+                        if (
+                            error.status === 409
+                        ) {
+
+                            alert(
+                                error.error?.message
+                                ??
+                                'Az új időpont ütközik egy meglévő időponttal.'
+                            );
+
+                        } else {
+
+                            alert(
+                                'Nem sikerült áthelyezni a szabadidő sávot.'
+                            );
+
+                        }
+
+                    }
+
+                });
+
+        },
+
+        eventResize: (info) => {
+
+            const type =
+                info.event.extendedProps['type'];
+
+
+            if (type !== 'blocked') {
+
+                info.revert();
+
+                return;
+            }
+
+
+            const blockedId =
+                info.event.extendedProps[
+                    'blockedTimeId'
+                ];
+
+
+            const blocked =
+                this.blockedTimes().find(
+                    item =>
+                        item.id === blockedId
+                );
+
+
+            if (!blocked) {
+
+                info.revert();
+
+                return;
+            }
+
+
+            if (
+                !info.event.start ||
+                !info.event.end
+            ) {
+
+                info.revert();
+
+                return;
+            }
+
+
+            const body = {
+
+                booking_date:
+                    this.formatCalendarDate(
+                        info.event.start
+                    ),
+
+                start_time:
+                    this.formatCalendarTime(
+                        info.event.start
+                    ),
+
+                end_time:
+                    this.formatCalendarTime(
+                        info.event.end
+                    ),
+
+                title:
+                    blocked.title
+
+            };
+
+
+            this.bookingService
+                .updateBlockedTime(
+                    blocked.id,
+                    body
+                )
+                .subscribe({
+
+                    next: updated => {
+
+                        this.blockedTimes.update(
+                            blocks =>
+                                blocks.map(
+                                    block =>
+                                        block.id === updated.id
+                                            ? updated
+                                            : block
+                                )
+                        );
+
+                    },
+
+                    error: error => {
+
+                        console.error(
+                            'Blocked time resize failed:',
+                            error
+                        );
+
+
+                        info.revert();
+
+
+                        if (
+                            error.status === 409
+                        ) {
+
+                            alert(
+                                error.error?.message
+                                ??
+                                'Az új időszak ütközik egy meglévő időponttal.'
+                            );
+
+                        } else {
+
+                            alert(
+                                'Nem sikerült módosítani a szabadidő sávot.'
+                            );
+
+                        }
+
+                    }
+
+                });
+
         }
-
-        this.selectedBooking.set(
-        booking
-        );
-
-        this.showModal.set(
-        true
-        );
-    }
     });
 
     changeMonth(event: Event){
@@ -361,6 +741,253 @@ export class AdminBookings implements OnInit {
         }
 
         this.showCreateBookingModal.set(false);
+
+    }
+
+    loadBlockedTimes(): void {
+
+        this.bookingService
+            .getBlockedTimes()
+            .subscribe({
+
+                next: blockedTimes => {
+
+                    this.blockedTimes.set(
+                        blockedTimes
+                    );
+
+                    this.updateCalendarEvents(
+                        this.bookings()
+                    );
+
+                },
+
+                error: error => {
+
+                    console.error(
+                        'Blocked times loading failed:',
+                        error
+                    );
+
+                }
+
+            });
+    }
+
+    openCreateBlockedModal(): void {
+
+        this.selectedBlockedTime.set(null);
+
+        this.blockedTitle.set(
+            'Szabadidő'
+        );
+
+        this.blockedDate.set(
+            new Date()
+                .toISOString()
+                .split('T')[0]
+        );
+
+        this.blockedStartTime.set(
+            '08:00'
+        );
+
+        this.blockedEndTime.set(
+            '20:00'
+        );
+
+        this.showBlockedModal.set(
+            true
+        );
+    }
+
+    saveBlockedTime(): void {
+
+        const body = {
+
+            booking_date:
+                this.blockedDate(),
+
+            start_time:
+                this.blockedStartTime(),
+
+            end_time:
+                this.blockedEndTime(),
+
+            title:
+                this.blockedTitle().trim()
+                    || 'Szabadidő'
+
+        };
+
+
+        if (
+            !body.booking_date ||
+            !body.start_time ||
+            !body.end_time
+        ) {
+
+            return;
+        }
+
+
+        if (
+            body.end_time <=
+            body.start_time
+        ) {
+
+            alert(
+                'A befejezési időnek későbbinek kell lennie a kezdési időnél.'
+            );
+
+            return;
+        }
+
+
+        this.blockedLoading.set(true);
+
+
+        const selected =
+            this.selectedBlockedTime();
+
+
+        const request = selected
+
+            ? this.bookingService
+                .updateBlockedTime(
+                    selected.id,
+                    body
+                )
+
+            : this.bookingService
+                .createBlockedTime(
+                    body
+                );
+
+
+        request.subscribe({
+
+            next: () => {
+
+                this.blockedLoading.set(
+                    false
+                );
+
+                this.closeBlockedModal();
+
+                this.loadBlockedTimes();
+
+            },
+
+            error: error => {
+
+                console.error(
+                    'Blocked time save failed:',
+                    error
+                );
+
+                this.blockedLoading.set(
+                    false
+                );
+
+
+                if (
+                    error.status === 409
+                ) {
+
+                    alert(
+                        'Ez az időszak ütközik egy meglévő foglalással.'
+                    );
+
+                } else {
+
+                    alert(
+                        'Hiba történt a szabadidő mentése során.'
+                    );
+
+                }
+
+            }
+
+        });
+
+    }
+
+    closeBlockedModal(): void {
+
+        this.showBlockedModal.set(
+            false
+        );
+
+        this.selectedBlockedTime.set(
+            null
+        );
+
+    }
+
+    deleteBlockedTime(): void {
+
+        const blocked =
+            this.selectedBlockedTime();
+
+
+        if (!blocked) {
+            return;
+        }
+
+
+        const confirmed =
+            confirm(
+                'Biztosan törölni szeretnéd ezt a szabadidő sávot?'
+            );
+
+
+        if (!confirmed) {
+            return;
+        }
+
+
+        this.blockedLoading.set(
+            true
+        );
+
+
+        this.bookingService
+            .deleteBlockedTime(
+                blocked.id
+            )
+            .subscribe({
+
+                next: () => {
+
+                    this.blockedLoading.set(
+                        false
+                    );
+
+                    this.closeBlockedModal();
+
+                    this.loadBlockedTimes();
+
+                },
+
+                error: error => {
+
+                    console.error(
+                        'Blocked time deletion failed:',
+                        error
+                    );
+
+                    this.blockedLoading.set(
+                        false
+                    );
+
+                    alert(
+                        'Nem sikerült törölni a szabadidő sávot.'
+                    );
+
+                }
+
+            });
 
     }
 
@@ -518,54 +1145,106 @@ export class AdminBookings implements OnInit {
 
     private updateCalendarEvents(
         bookings: Booking[]
-        ): void {
+    ): void {
 
-        console.log(bookings[0]);
+        const bookingEvents =
+            bookings.map(booking => ({
 
-        const events = bookings.map(booking => ({
+                id: booking.id,
 
-        id: booking.id,
+                title: booking.customerName,
 
-        title: booking.customerName,
+                start:
+                    `${booking.date}T${booking.startTime}`,
 
-        start: `${booking.date}T${booking.startTime}`,
+                end:
+                    `${booking.date}T${booking.endTime}`,
 
-        end: `${booking.date}T${booking.endTime}`,
+                backgroundColor:
+                    this.getEventColor(
+                        booking.serviceName
+                    ),
 
-        backgroundColor:
-            this.getEventColor(
-                booking.serviceName
-            ),
+                borderColor:
+                    this.getEventColor(
+                        booking.serviceName
+                    ),
 
-        borderColor:
-            this.getEventColor(
-                booking.serviceName
-            ),
+                textColor: '#fff',
 
-        textColor: '#fff',
+                editable: false,
 
-        extendedProps: {
+                extendedProps: {
 
-            serviceName:
-                booking.serviceName,
+                    type: 'booking',
 
-            duration:
-                this.getDuration(
-                    booking
-                )
+                    serviceName:
+                        booking.serviceName,
 
-        }
+                    duration:
+                        this.getDuration(
+                            booking
+                        )
 
-    }));
+                }
+
+            }));
+
+
+        const blockedEvents =
+            this.blockedTimes().map(blocked => ({
+
+                id:
+                    `blocked-${blocked.id}`,
+
+                title:
+                    blocked.title,
+
+                start:
+                    `${blocked.booking_date}T${blocked.start_time}`,
+
+                end:
+                    `${blocked.booking_date}T${blocked.end_time}`,
+
+                backgroundColor:
+                    '#777',
+
+                borderColor:
+                    '#666',
+
+                textColor:
+                    '#fff',
+
+                editable: true,
+
+                extendedProps: {
+
+                    type: 'blocked',
+
+                    blockedTimeId:
+                        blocked.id
+
+                }
+
+            }));
+
+
+        const events = [
+            ...bookingEvents,
+            ...blockedEvents
+        ];
+
 
         this.calendarOptions.update(
-        options => ({
-            ...options,
-            events
-        })
-        
+            options => ({
+
+                ...options,
+
+                events
+
+            })
         );
-        console.log(events);
+
     }
 
     private shortServiceName(
@@ -587,6 +1266,45 @@ export class AdminBookings implements OnInit {
                 return serviceName;
         }
 
+    }
+
+    private formatCalendarDate(
+        date: Date
+    ): string {
+
+        const year =
+            date.getFullYear();
+
+        const month =
+            String(
+                date.getMonth() + 1
+            ).padStart(2, '0');
+
+        const day =
+            String(
+                date.getDate()
+            ).padStart(2, '0');
+
+
+        return `${year}-${month}-${day}`;
+    }
+
+    private formatCalendarTime(
+        date: Date
+    ): string {
+
+        const hours =
+            String(
+                date.getHours()
+            ).padStart(2, '0');
+
+        const minutes =
+            String(
+                date.getMinutes()
+            ).padStart(2, '0');
+
+
+        return `${hours}:${minutes}`;
     }
 
     private createBookingsChart(

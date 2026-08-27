@@ -68,6 +68,19 @@ export interface DashboardStats {
     }[];
 }
 
+export interface BlockedTime {
+
+    id: string;
+
+    booking_date: string;
+
+    start_time: string;
+
+    end_time: string;
+
+    title: string;
+}
+
 @Injectable({
     providedIn: 'root'
 })
@@ -98,6 +111,53 @@ export class BookingService {
         return this.http.get<RescheduleBooking>(
             `${environment.apiUrl}/bookings/reschedule/${token}`
         );
+    }
+
+    getBlockedTimes() {
+
+        return this.http.get<BlockedTime[]>(
+            `${environment.apiUrl}/admin/blocked-times`
+        );
+
+    }
+
+    createBlockedTime(body: {
+        booking_date: string;
+        start_time: string;
+        end_time: string;
+        title: string;
+    }) {
+
+        return this.http.post<BlockedTime>(
+            `${environment.apiUrl}/admin/blocked-times`,
+            body
+        );
+
+    }
+
+    updateBlockedTime(
+        id: string,
+        body: {
+            booking_date: string;
+            start_time: string;
+            end_time: string;
+            title: string;
+        }
+    ) {
+
+        return this.http.put<BlockedTime>(
+            `${environment.apiUrl}/admin/blocked-times/${id}`,
+            body
+        );
+
+    }
+
+    deleteBlockedTime(id: string) {
+
+        return this.http.delete(
+            `${environment.apiUrl}/admin/blocked-times/${id}`
+        );
+
     }
 
     rescheduleBooking(
