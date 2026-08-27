@@ -448,12 +448,22 @@
 
                         <div class="form-group full-width">
 
-                            <label>Telefonszám (opcionális)</label>
+                            <label>Telefonszám *</label>
 
                             <input
                                 type="tel"
-                                [value]="customerPhone()"
+                                [class.input-error]="errors().customerPhone"
                                 (input)="customerPhone.set($any($event.target).value)">
+
+                            @if(errors().customerPhone){
+
+                                <div class="field-error">
+
+                                    {{ errors().customerPhone }}
+
+                                </div>
+
+                            }
 
                         </div>
 

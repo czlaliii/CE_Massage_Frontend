@@ -28,6 +28,7 @@ export class BookingComponent implements OnInit, AfterViewInit {
     errors = signal({
         customerName: '',
         customerEmail: '',
+        customerPhone: '',
         billingZip: '',
         billingCity: '',
         billingAddress: '',
@@ -44,6 +45,7 @@ export class BookingComponent implements OnInit, AfterViewInit {
         this.errors.set({
             customerName: '',
             customerEmail: '',
+            customerPhone: '',
             billingZip: '',
             billingCity: '',
             billingAddress: '',
@@ -76,6 +78,42 @@ export class BookingComponent implements OnInit, AfterViewInit {
                 this.errors.update(e => ({
                     ...e,
                     customerEmail: 'Érvényes email címet adj meg.'
+                }));
+
+                valid = false;
+            }
+        }
+
+        const phone = this.customerPhone().trim();
+
+        if (!phone) {
+
+            this.errors.update(e => ({
+                ...e,
+                customerPhone:
+                    'A telefonszám megadása kötelező.'
+            }));
+
+            valid = false;
+
+        } else {
+
+            const phoneRegex =
+                /^\+?[0-9\s()-]{7,20}$/;
+
+            const digitCount =
+                phone.replace(/\D/g, '').length;
+
+            if (
+                !phoneRegex.test(phone) ||
+                digitCount < 7 ||
+                digitCount > 15
+            ) {
+
+                this.errors.update(e => ({
+                    ...e,
+                    customerPhone:
+                        'Kérlek, adj meg egy érvényes telefonszámot.'
                 }));
 
                 valid = false;
