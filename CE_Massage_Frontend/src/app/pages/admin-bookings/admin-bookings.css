@@ -1151,6 +1151,167 @@
     cursor: not-allowed;
 }
 
+.admin-notification {
+
+    position: fixed;
+
+    top: 1.5rem;
+
+    right: 1.5rem;
+
+    z-index: 2000;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: .85rem;
+
+    min-width: 300px;
+
+    max-width: 440px;
+
+    padding: 1rem 1.1rem;
+
+    background: white;
+
+    border-radius: 14px;
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, .14);
+
+    animation:
+        notificationIn .25s ease;
+
+}
+
+.notification-icon {
+
+    flex-shrink: 0;
+
+    width: 30px;
+
+    height: 30px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-weight: 700;
+
+}
+
+.admin-notification.error {
+
+    border-left:
+        4px solid #c96b6b;
+
+}
+
+.admin-notification.error
+.notification-icon {
+
+    background: rgba(
+        201,
+        107,
+        107,
+        .12
+    );
+
+    color: #b85c5c;
+
+}
+
+.admin-notification.success {
+
+    border-left:
+        4px solid #6d9b7a;
+
+}
+
+.admin-notification.success
+.notification-icon {
+
+    background: rgba(
+        109,
+        155,
+        122,
+        .12
+    );
+
+    color: #5d8869;
+
+}
+
+.notification-message {
+
+    flex: 1;
+
+    color: #444;
+
+    font-size: .9rem;
+
+    line-height: 1.45;
+
+}
+
+.notification-close {
+
+    flex-shrink: 0;
+
+    border: none;
+
+    background: transparent;
+
+    color: #999;
+
+    font-size: 1.3rem;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    padding: .2rem;
+
+    transition:
+        color .2s ease;
+
+}
+
+.notification-close:hover {
+
+    color: #444;
+
+}
+
+@keyframes notificationIn {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(-10px)
+            translateX(10px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            translateX(0);
+
+    }
+
+}
+
 @media (max-width: 700px) {
 
     .calendar-header {
@@ -1166,6 +1327,20 @@
     .create-booking-modal {
         width: calc(100% - 2rem);
         max-height: 90vh;
+    }
+
+    .admin-notification {
+
+        left: 1rem;
+
+        right: 1rem;
+
+        top: 1rem;
+
+        min-width: 0;
+
+        max-width: none;
+
     }
 
 }

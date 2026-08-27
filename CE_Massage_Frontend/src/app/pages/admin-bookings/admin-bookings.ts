@@ -138,6 +138,13 @@ export class AdminBookings implements OnInit {
     blockedLoading =
         signal(false);
 
+    notification = signal<{
+        type: 'success' | 'error';
+        message: string;
+    } | null>(null);
+
+    private notificationTimer?: ReturnType<typeof setTimeout>;
+
     months = [
         { value: 1, name: 'Január' },
         { value: 2, name: 'Február' },
@@ -485,6 +492,11 @@ export class AdminBookings implements OnInit {
                                 )
                         );
 
+                        this.showNotification(
+                            'A szabadidő sáv időpontja módosítva.',
+                            'success'
+                        );
+
                     },
 
                     error: error => {
@@ -498,11 +510,9 @@ export class AdminBookings implements OnInit {
                         info.revert();
 
 
-                        if (
-                            error.status === 409
-                        ) {
+                        if (error.status === 409) {
 
-                            alert(
+                            this.showNotification(
                                 error.error?.message
                                 ??
                                 'Az új időpont ütközik egy meglévő időponttal.'
@@ -510,7 +520,7 @@ export class AdminBookings implements OnInit {
 
                         } else {
 
-                            alert(
+                            this.showNotification(
                                 'Nem sikerült áthelyezni a szabadidő sávot.'
                             );
 
@@ -836,7 +846,7 @@ export class AdminBookings implements OnInit {
             body.start_time
         ) {
 
-            alert(
+            this.showNotification(
                 'A befejezési időnek későbbinek kell lennie a kezdési időnél.'
             );
 
@@ -891,17 +901,16 @@ export class AdminBookings implements OnInit {
                 );
 
 
-                if (
-                    error.status === 409
-                ) {
+                if (error.status === 409) {
 
-                    alert(
-                        'Ez az időszak ütközik egy meglévő foglalással.'
+                    this.showNotification(
+                        error.error?.message
+                        ?? 'Az időszak ütközik egy meglévő foglalással.'
                     );
 
                 } else {
 
-                    alert(
+                    this.showNotification(
                         'Hiba történt a szabadidő mentése során.'
                     );
 
@@ -981,7 +990,7 @@ export class AdminBookings implements OnInit {
                         false
                     );
 
-                    alert(
+                    this.showNotification(
                         'Nem sikerült törölni a szabadidő sávot.'
                     );
 
@@ -1542,6 +1551,28 @@ export class AdminBookings implements OnInit {
             default:
                 return '#95A5A6';
         }
+    }
+
+    private showNotification(
+        message: string,
+        type: 'success' | 'error' = 'error'
+    ): void {
+
+        this.notification.set({
+            type,
+            message
+        });
+
+        if (this.notificationTimer) {
+            clearTimeout(this.notificationTimer);
+        }
+
+        this.notificationTimer =
+            setTimeout(() => {
+
+                this.notification.set(null);
+
+            }, 4000);
     }
 
     loadDashboardStats(): void {

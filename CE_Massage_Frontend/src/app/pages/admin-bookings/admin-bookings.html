@@ -1,5 +1,41 @@
 <section class="admin-bookings">
 
+    @if(notification()) {
+
+        <div
+            class="admin-notification"
+            [class.success]="notification()!.type === 'success'"
+            [class.error]="notification()!.type === 'error'">
+
+            <div class="notification-icon">
+
+                @if(notification()!.type === 'success') {
+                    ✓
+                } @else {
+                    !
+                }
+
+            </div>
+
+            <div class="notification-message">
+
+                {{ notification()!.message }}
+
+            </div>
+
+            <button
+                type="button"
+                class="notification-close"
+                (click)="notification.set(null)">
+
+                ×
+
+            </button>
+
+        </div>
+
+    }
+
     <div class="admin-header">
 
         <h1>Foglalások</h1>
