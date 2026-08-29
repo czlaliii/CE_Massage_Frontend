@@ -2,6 +2,7 @@ import {
     Component,
     inject,
     OnInit,
+    OnDestroy,
     signal
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -29,7 +30,9 @@ import {
     LinearScale,
     CategoryScale,
     Tooltip,
-    Legend
+    Legend,
+    DoughnutController,
+    ArcElement
 } from 'chart.js';
 
 Chart.register(
@@ -39,7 +42,9 @@ Chart.register(
     LinearScale,
     CategoryScale,
     Tooltip,
-    Legend
+    Legend,
+    DoughnutController,
+    ArcElement
 );
 
 @Component({
@@ -49,7 +54,7 @@ Chart.register(
     styleUrl: './admin-bookings.css',
 })
 
-export class AdminBookings implements OnInit {
+export class AdminBookings implements OnInit, OnDestroy {
 
     showCreateBookingModal =
     signal(false);
@@ -89,6 +94,10 @@ export class AdminBookings implements OnInit {
 
     private bookingService =
         inject(BookingService);
+
+    private bookingsChart: Chart | null = null;
+
+    private serviceChart: Chart | null = null;
 
     private router =
         inject(Router);
@@ -143,6 +152,33 @@ export class AdminBookings implements OnInit {
         message: string;
     } | null>(null);
 
+    activeTab = signal<
+        'calendar' | 'bookings' | 'website'
+    >('calendar');
+
+    setActiveTab(tab: 'calendar' | 'bookings' | 'website'): void {
+
+        this.activeTab.set(tab);
+
+        if (tab === 'bookings') {
+
+            setTimeout(() => {
+
+                const stats = this.dashboardStats();
+
+                if (stats) {
+
+                    this.createBookingsChart(stats);
+
+                    this.createServiceChart(stats);
+
+                }
+
+            });
+
+        }
+    }
+
     private notificationTimer?: ReturnType<typeof setTimeout>;
 
     months = [
@@ -171,10 +207,26 @@ export class AdminBookings implements OnInit {
         this.loadBookings();
         this.loadBlockedTimes();
         this.loadDashboardStats();
-        console.log(
-        this.selectedMonth(),
-        this.selectedYear()
-    );
+    }
+
+    ngOnDestroy(): void {
+
+        if (this.bookingsChart) {
+
+            this.bookingsChart.destroy();
+
+            this.bookingsChart = null;
+
+        }
+
+        if (this.serviceChart) {
+
+            this.serviceChart.destroy();
+
+            this.serviceChart = null;
+
+        }
+
     }
 
     selectedBooking =
@@ -213,6 +265,10 @@ export class AdminBookings implements OnInit {
 
         eventDurationEditable: true,
 
+        expandRows: false,
+
+        slotEventOverlap: false,
+
         headerToolbar: {
         left: 'prev,next today',
         center: 'title',
@@ -229,6 +285,53 @@ export class AdminBookings implements OnInit {
             info.el.style.borderRadius="6px";
 
         }
+
+        },
+
+        viewDidMount: (info) => {
+
+            if (
+                window.innerWidth <= 700 &&
+                info.view.type === 'timeGridWeek'
+            ) {
+
+                setTimeout(() => {
+
+                    info.view.calendar.changeView(
+                        'timeGridDay'
+                    );
+
+                });
+
+            }
+
+        },
+
+        windowResize: (arg) => {
+
+            const width = window.innerWidth;
+
+            if (width <= 700) {
+
+                if (arg.view.type === 'timeGridWeek') {
+
+                    arg.view.calendar.changeView(
+                        'timeGridDay'
+                    );
+
+                }
+
+            } else {
+
+                if (arg.view.type === 'timeGridDay') {
+
+                    arg.view.calendar.changeView(
+                        'timeGridWeek'
+                    );
+
+                }
+
+            }
 
         },
 
@@ -1329,88 +1432,370 @@ export class AdminBookings implements OnInit {
             return;
         }
 
-        new Chart(canvas, {
+        if (this.bookingsChart) {
 
-            type: 'line',
+            this.bookingsChart.destroy();
 
-            data: {
+            this.bookingsChart = null;
 
-                labels:
+        }
 
-                    stats.bookingsByDay.map(
-                        day => this.formatChartDate(day.date)
-                    ),
+        const labels =
+            stats.bookingsByDay.map(
+                day =>
+                    this.formatChartDate(day.date)
+            );
 
-                datasets: [
+        const values =
+            stats.bookingsByDay.map(
+                day =>
+                    day.bookings
+            );
 
-                    {
+        this.bookingsChart =
+            new Chart(
+                canvas,
+                {
 
-                        label: 'Foglalások',
+                    type: 'line',
 
-                        data:
+                    data: {
 
-                            stats.bookingsByDay.map(
-                                day => day.bookings
-                            ),
+                        labels,
 
-                        tension: .35,
+                        datasets: [
+                            {
 
-                        borderWidth: 3,
+                                label:
+                                    'Foglalások',
 
-                        pointRadius: 5,
+                                data:
+                                    values,
 
-                        pointHoverRadius: 7,
+                                tension:
+                                    0.35,
 
-                        fill: true
+                                borderWidth:
+                                    3,
 
-                    }
+                                pointRadius:
+                                    3,
 
-                ]
+                                pointHoverRadius:
+                                    6,
 
-            },
+                                fill:
+                                    true,
 
-            options: {
+                                backgroundColor:
+                                    'rgba(64, 105, 149, 0.08)',
 
-                responsive: true,
+                                borderColor:
+                                    '#406995',
 
-                scales: {
+                                pointBackgroundColor:
+                                    '#406995',
 
-                    y: {
+                                pointBorderColor:
+                                    '#ffffff',
 
-                        beginAtZero: true,
+                                pointBorderWidth:
+                                    2
 
-                        ticks: {
+                            }
+                        ]
 
-                            precision: 0,
+                    },
 
-                            stepSize: 1
+                    options: {
+
+                        responsive:
+                            true,
+
+                        maintainAspectRatio:
+                            false,
+
+                        interaction: {
+
+                            intersect:
+                                false,
+
+                            mode:
+                                'index'
+
+                        },
+
+                        plugins: {
+
+                            legend: {
+
+                                display:
+                                    false
+
+                            },
+
+                            tooltip: {
+
+                                displayColors:
+                                    false,
+
+                                padding:
+                                    10,
+
+                                callbacks: {
+
+                                    title: (items) => {
+
+                                        return items[0]?.label ?? '';
+
+                                    },
+
+                                    label: (context) => {
+
+                                        return ` ${context.parsed.y} foglalás`;
+
+                                    }
+
+                                }
+
+                            }
+
+                        },
+
+                        scales: {
+
+                            x: {
+
+                                grid: {
+
+                                    display:
+                                        false
+
+                                },
+
+                                border: {
+
+                                    display:
+                                        false
+
+                                },
+
+                                ticks: {
+
+                                    color:
+                                        '#777',
+
+                                    font: {
+
+                                        size:
+                                            12
+
+                                    },
+
+                                    maxRotation:
+                                        0,
+
+                                    minRotation:
+                                        0
+
+                                }
+
+                            },
+
+                            y: {
+
+                                beginAtZero: true,
+
+                                suggestedMax: 3,
+
+                                border: {
+                                    display: false
+                                },
+
+                                ticks: {
+
+                                    color: '#777',
+
+                                    precision: 0,
+
+                                    stepSize: 1,
+
+                                    maxTicksLimit: 6,
+
+                                    padding: 8
+
+                                },
+
+                                grid: {
+
+                                    color:
+                                        'rgba(0, 0, 0, 0.06)',
+
+                                    drawTicks: false
+
+                                }
+
+                            }
 
                         }
 
                     }
 
                 }
+            );
 
-            }
-
-        });
     }
 
-    formatChartDate(date: string): string {
+    private createServiceChart(
+        stats: DashboardStats
+    ): void {
+
+        const canvas =
+            document.getElementById(
+                'serviceChart'
+            ) as HTMLCanvasElement;
+
+        if (!canvas) {
+            return;
+        }
+
+        if (this.serviceChart) {
+
+            this.serviceChart.destroy();
+
+            this.serviceChart = null;
+
+        }
+
+        const services =
+            stats.bookingsByService ?? [];
+
+        if (services.length === 0) {
+            return;
+        }
+
+        const totalBookings =
+            services.reduce(
+                (sum, service) =>
+                    sum + service.bookings,
+                0
+            );
+
+        this.serviceChart =
+            new Chart(
+                canvas,
+                {
+
+                    type: 'doughnut',
+
+                    data: {
+
+                        labels:
+                            services.map(
+                                service =>
+                                    service.serviceName
+                            ),
+
+                        datasets: [
+                            {
+
+                                data:
+                                    services.map(
+                                        service =>
+                                            service.bookings
+                                    ),
+
+                                backgroundColor:
+                                    services.map(
+                                        service =>
+                                            this.getEventColor(
+                                                service.serviceName
+                                            )
+                                    ),
+
+                                borderWidth: 2,
+
+                                borderColor:
+                                    '#ffffff',
+
+                                hoverOffset: 6
+
+                            }
+                        ]
+
+                    },
+
+                    options: {
+
+                        responsive: true,
+
+                        maintainAspectRatio: false,
+
+                        cutout: '62%',
+
+                        plugins: {
+
+                            legend: {
+                                display: false
+                            },
+
+                            tooltip: {
+
+                                callbacks: {
+
+                                    label: (context) => {
+
+                                        const index =
+                                            context.dataIndex;
+
+                                        const service =
+                                            services[index];
+
+                                        if (!service) {
+                                            return '';
+                                        }
+
+                                        const percentage =
+                                            totalBookings === 0
+                                                ? 0
+                                                : Math.round(
+                                                    (
+                                                        service.bookings /
+                                                        totalBookings
+                                                    ) * 100
+                                                );
+
+                                        return [
+                                            `${service.bookings} foglalás`,
+                                            `${percentage}%`
+                                        ];
+
+                                    }
+
+                                }
+
+                            }
+
+                        }
+
+                    }
+
+                }
+            );
+
+    }
+
+    formatChartDate(
+        date: string
+    ): string {
 
         return new Date(date)
             .toLocaleDateString(
-
                 'hu-HU',
-
                 {
-
                     weekday: 'short',
-
                     day: 'numeric'
-
                 }
-
             );
 
     }
@@ -1527,7 +1912,56 @@ export class AdminBookings implements OnInit {
         }
     );
 
-    private getEventColor(
+    getServicePercentage(
+        bookings: number
+    ): number {
+
+        const total =
+            this.dashboardStats()
+                ?.monthBookings ?? 0;
+
+        if (total === 0) {
+            return 0;
+        }
+
+        return Math.round(
+            (bookings / total) * 100
+        );
+    }
+
+    getSortedServices(): DashboardStats['bookingsByService'] {
+
+        const services =
+            this.dashboardStats()?.bookingsByService ?? [];
+
+        return [...services].sort(
+            (a, b) =>
+                this.getServicePercentage(b.bookings) -
+                this.getServicePercentage(a.bookings)
+        );
+    }
+
+    getServiceColor(
+        index: number
+    ): string {
+
+        const colors = [
+
+            '#B8A48A',
+            '#C49A4A',
+            '#555555',
+            '#D0C1A8',
+            '#B5B5B5'
+
+        ];
+
+        return colors[
+            index % colors.length
+        ];
+
+    }
+
+    getEventColor(
         serviceName: string
     ): string {
 
@@ -1545,7 +1979,7 @@ export class AdminBookings implements OnInit {
             case 'Svédmasszázs':
                 return '#5FAF8F'; // zsályás zöld
 
-            case 'Prémium masszázs':
+            case 'Prémium Masszázs':
                 return '#C47A5A'; // meleg terrakotta
 
             default:
@@ -1589,10 +2023,19 @@ export class AdminBookings implements OnInit {
             this.dashboardStats.set(stats);
 
             setTimeout(() => {
-                this.createBookingsChart(stats);
+
+                this.createBookingsChart(
+                    stats
+                );
+
+                this.createServiceChart(
+                    stats
+                );
+
             });
 
         });
+
     }
 
     logout(): void {

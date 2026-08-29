@@ -66,6 +66,14 @@ export interface DashboardStats {
         date: string;
         revenue: number;
     }[];
+
+    bookingsByService: {
+        serviceName: string;
+        bookings: number;
+        revenue: number;
+    }[];
+
+    averageBookingValue: number;
 }
 
 export interface BlockedTime {
