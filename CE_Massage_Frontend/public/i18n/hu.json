@@ -477,7 +477,7 @@
             "FAQ": "GYIK"
         },
         "LEGAL": {
-            "IMPRESSUM": "Impresszum",
+            "IMPRINT": "Impresszum",
             "TERMS": "ÁSZF",
             "PRIVACY": "Adatkezelési tájékoztató",
             "COOKIES": "Cookie tájékoztató"
@@ -525,6 +525,269 @@
             "TITLE": "Cookie-beállítások",
             "DESCRIPTION": "A cookie-beállításait bármikor módosíthatja. Amennyiben újra szeretné kiválasztani, hogy mely sütiket engedélyezi, kattintson az alábbi gombra.",
             "BUTTON": "Cookie-beállítások megnyitása"
+        }
+    },
+    "LEGAL": {
+
+        "IMPRINT_LINK": "Imprint",
+        "PRICES_LINK": "Prices",
+        "PRIVACY_LINK": "Privacy Policy",
+
+        "TERMS": {
+
+            "TITLE": "Terms and Conditions",
+
+            "LAST_UPDATE": "Effective: August 31, 2026",
+
+
+            "SECTION_1": {
+
+                "TITLE": "1. Service Provider and Scope of the Terms",
+
+                "PARAGRAPH_1_BEFORE_LINK": "These Terms and Conditions (hereinafter: the \"Terms\") apply to the online booking and provision of massage services offered by CE Massage. Detailed information about the service provider is available on the",
+
+                "PARAGRAPH_1_AFTER_LINK": "page."
+
+            },
+
+
+            "SECTION_2": {
+
+                "TITLE": "2. Services and Prices",
+
+                "PARAGRAPH_1_BEFORE_LINK": "The available services, their duration and full price are displayed on the",
+
+                "PARAGRAPH_1_AFTER_LINK": "page, as well as for the selected service during the booking process. The total price of the service is the price indicated for the selected treatment."
+
+            },
+
+
+            "SECTION_3": {
+
+                "TITLE": "3. Booking and Formation of the Contract",
+
+                "PARAGRAPH_1": "The guest selects the service and appointment through the booking interface and then provides the requested contact and billing information. The booking becomes valid upon completion of the booking process. The service provider will send an email confirmation of the booked appointment.",
+
+                "PARAGRAPH_2": "The guest is responsible for the accuracy of the information provided during the booking process. The service provider may request clarification of any booking containing obviously incorrect or incomplete information."
+
+            },
+
+
+            "SECTION_4": {
+
+                "TITLE": "4. Payment and Invoicing",
+
+                "PARAGRAPH_1": "The price of the service is the amount indicated during the booking process for the selected treatment. The guest shall pay for the service on site at the time of the treatment.",
+
+                "PARAGRAPH_2": "Information regarding the accepted payment methods available on site is provided by the service provider during the booking process or upon request."
+
+            },
+
+
+            "SECTION_5": {
+
+                "TITLE": "5. Rescheduling and Cancellation",
+
+                "PARAGRAPH_1": "The guest may reschedule the booked appointment through the link provided in the confirmation email at least 24 hours before the start of the treatment, provided that a suitable alternative appointment is available.",
+
+                "PARAGRAPH_2": "If the guest wishes to reschedule the appointment within 24 hours before the start of the treatment, they must contact the massage therapist directly to arrange the change.",
+
+                "PARAGRAPH_3": "The guest may cancel the booked appointment before the start of the treatment. Cancellation is free of charge.",
+
+                "PARAGRAPH_4": "Guests are kindly requested to notify the service provider of any cancellation or rescheduling as early as possible so that the appointment can be made available to another guest."
+
+            },
+
+
+            "SECTION_6": {
+
+                "TITLE": "6. Provision of the Service",
+
+                "PARAGRAPH_1": "The service will be provided at the location and time specified in the booking. In the event of a late arrival, the service provider is not obliged to extend the duration of the treatment. The service provider reserves the right to refuse or discontinue the service if its provision may pose a health or safety risk, or if the guest's conduct violates professional standards."
+
+            },
+
+
+            "SECTION_7": {
+
+                "TITLE": "7. Complaints and Consumer Disputes",
+
+                "PARAGRAPH_1": "Guests may submit complaints to the service provider in writing by email at info@cemassage.hu, by post at 1065 Budapest, Hajós utca 13., or by telephone at +36 30 346 2492. Written complaints will be investigated and answered by the service provider in accordance with applicable laws.",
+
+                "PARAGRAPH_2_BEFORE_LINK": "In the event of a consumer dispute, the consumer may contact the conciliation board competent according to their place of residence or stay. The conciliation board competent according to the registered office of the service provider is the Budapest Conciliation Board (Budapesti Békéltető Testület), 1016 Budapest, Krisztina krt. 99. I. em. 111.; postal address: 1253 Budapest, Pf. 10.; telephone: +36 1 488 2131; email: bekelteto.testulet@bkik.hu; website:",
+
+                "BEKELTETES_LINK": "bekeltetes.hu",
+
+                "PARAGRAPH_2_AFTER_LINK": "",
+
+                "PARAGRAPH_3": "The consumer may also contact the competent consumer protection authority or enforce their claim through the courts."
+
+            },
+
+
+            "SECTION_8": {
+
+                "TITLE": "8. Data Protection and Final Provisions",
+
+                "PARAGRAPH_1_BEFORE_LINK": "The processing of personal data collected during the booking process is governed by the",
+
+                "PARAGRAPH_1_AFTER_LINK": "",
+
+                "PARAGRAPH_2": "Matters not regulated by these Terms shall be governed by Hungarian law, in particular the Hungarian Civil Code, consumer protection legislation and the provisions applicable to contracts concluded between parties who are not physically present."
+
+            }
+
+        },
+        "IMPRINT": {
+            "TITLE": "Impresszum",
+            "LAST_UPDATE": "Hatályos: 2026. július 30.",
+
+            "PROVIDER": {
+                "TITLE": "Szolgáltató adatai",
+                "NAME_LABEL": "Vállalkozó neve:",
+                "ADDRESS_LABEL": "Székhely:",
+                "TAX_NUMBER_LABEL": "Adószám:",
+                "REGISTRATION_NUMBER_LABEL": "Nyilvántartási szám:",
+                "REGISTRATION_AUTHORITY_LABEL": "Nyilvántartást vezető hatóság:",
+                "REGISTRATION_AUTHORITY": "Nemzeti Adó- és Vámhivatal (NAV)"
+            },
+
+            "CONTACT": {
+                "TITLE": "Kapcsolat",
+                "EMAIL_LABEL": "E-mail:",
+                "PHONE_LABEL": "Telefonszám:",
+                "WEBSITE_LABEL": "Weboldal:"
+            },
+
+            "HOSTING": {
+                "TITLE": "Tárhelyszolgáltató",
+                "NAME_LABEL": "Név:",
+                "ADDRESS_LABEL": "Cím:",
+                "WEBSITE_LABEL": "Weboldal:",
+                "EMAIL_LABEL": "Email cím:"
+            }
+        },
+        "PRIVACY": {
+            "TITLE": "Adatkezelési tájékoztató",
+            "LAST_UPDATE": "Hatályos: 2026. június 25-től",
+
+            "CONTROLLER": {
+                "TITLE": "1. Adatkezelő adatai",
+                "WEBSITE_LABEL": "Weboldal:",
+                "NAME_LABEL": "Adatkezelő:",
+                "ADDRESS_LABEL": "Székhely:",
+                "EMAIL_LABEL": "E-mail:",
+                "REGISTRATION_NUMBER_LABEL": "Nyilvántartási szám:",
+                "TAX_NUMBER_LABEL": "Adószám:"
+            },
+
+            "PURPOSE": {
+                "TITLE": "2. Az adatkezelés célja",
+                "TEXT": "Az adatkezelés célja a honlapon elérhető szolgáltatások nyújtása, kapcsolatfelvétel lehetővé tétele, időpontfoglalás kezelése, ajándékutalvány értékesítése, valamint marketingtevékenység végzése, például statisztikai elemzés és Google szolgáltatások használata."
+            },
+
+            "DATA_CATEGORIES": {
+                "TITLE": "3. A kezelt adatok köre",
+                "INTRO": "A honlapon keresztül történő kapcsolatfelvétel, időpontfoglalás vagy ajándékutalvány-vásárlás során az alábbi adatokat kezelhetem:",
+                "NAME": "név;",
+                "EMAIL": "e-mail-cím;",
+                "ADDRESS": "lakcím;",
+                "PHONE": "telefonszám;",
+                "HEALTH": "egészségügyi adatok, például masszázsra vonatkozó kérdőív alapján - ezek különleges adatok."
+            },
+
+            "LEGAL_BASIS": {
+                "TITLE": "4. Az adatkezelés jogalapja",
+                "CONTRACT": "a szolgáltatás teljesítése - GDPR 6. cikk (1) bekezdés b) pont;",
+                "LEGAL_OBLIGATION": "jogi kötelezettség teljesítése, számlázás esetén - GDPR 6. cikk (1) bekezdés c) pont;",
+                "CONSENT": "hozzájárulás marketing és egészségügyi adatok kezelése esetén - GDPR 6. cikk (1) bekezdés a) pont, illetve 9. cikk (2) bekezdés a) pont."
+            },
+
+            "RETENTION": {
+                "TITLE": "5. Az adatok tárolásának időtartama",
+                "BILLING": "számlázási adatok: a számviteli törvény szerint 8 évig;",
+                "HEALTH": "egészségügyi adatok, kérdőív alapján: a szolgáltatás igénybevételét követő 5 évig, vagy a hozzájárulás visszavonásáig;",
+                "CONTACT": "kapcsolatfelvételi adatok: 1 évig vagy a hozzájárulás visszavonásáig;",
+                "ANALYTICS": "webanalitikai adatok: a Google rendszerek saját beállításai szerint, 14 hónapig."
+            },
+
+            "PROCESSORS": {
+                "TITLE": "6. Adatfeldolgozók",
+                "INTRO": "Az adatkezelés során az alábbi adatfeldolgozók vesznek részt:",
+                "SIMPLETAX": " - könyvelő, számlázással kapcsolatos adatkezelés; ",
+                "ELIN": " - tárhelyszolgáltató; ",
+                "GOOGLE": " - Google Ads, Google Analytics, Google Forms és Google Search Console, webanalitika, marketing és űrlapok; ",
+                "GOOGLE_LINK": "Google adatvédelmi irányelvek"
+            },
+
+            "THIRD_COUNTRIES": {
+                "TITLE": "7. Adattovábbítás harmadik országba",
+                "TEXT": "A Google szolgáltatásai - Analytics, Ads, Forms és Search Console - során előfordulhat adatkezelés az Európai Unión kívül. A Google az EU-USA adatvédelmi keretrendszer alapján tanúsított szolgáltató."
+            },
+
+            "RIGHTS": {
+                "TITLE": "8. Az érintettek jogai",
+                "INTRO": "A weboldal látogatói és a szolgáltatást igénybe vevő ügyfelek jogosultak az alábbi jogaik gyakorlására a GDPR alapján.",
+
+                "INFORMATION": {
+                    "TITLE": "Tájékoztatáshoz való jog.",
+                    "TEXT": "Jogosult vagy világos és érthető információt kapni arról, hogyan, milyen célból, milyen jogalapon és mennyi ideig történik az adataid kezelése."
+                },
+
+                "ACCESS": {
+                    "TITLE": "Hozzáférési jog.",
+                    "TEXT": "Kérheted, hogy visszajelzést kapj arról, történik-e rád vonatkozó adatkezelés, és ha igen, jogosult vagy megismerni a kezelt személyes adataidat, azok forrását, célját, időtartamát és továbbításait."
+                },
+
+                "RECTIFICATION": {
+                    "TITLE": "Helyesbítéshez való jog.",
+                    "TEXT": "Jogod van arra, hogy kérd a pontatlan, hiányos vagy elavult személyes adataid helyesbítését vagy kiegészítését."
+                },
+
+                "ERASURE": {
+                    "TITLE": "Törléshez való jog („elfeledtetéshez való jog”).",
+                    "TEXT": "Bizonyos esetekben, például ha már nincs szükség az adataidra, vagy visszavonod a hozzájárulásod, kérheted személyes adataid törlését. Ez alól kivételt képezhet, ha az adatkezelés jogi kötelezettségen vagy jogos érdeken alapul."
+                },
+
+                "RESTRICTION": {
+                    "TITLE": "Az adatkezelés korlátozásához való jog.",
+                    "TEXT": "Kérheted az adatkezelés korlátozását például akkor, ha vitatod az adatok pontosságát, vagy az adatkezelés jogellenes, de nem kéred az adatok törlését."
+                },
+
+                "PORTABILITY": {
+                    "TITLE": "Adathordozhatósághoz való jog.",
+                    "TEXT": "Jogod van arra, hogy strukturált, széles körben használt formátumban megkapd az általad megadott személyes adatokat, és azokat egy másik adatkezelőhöz továbbítsd."
+                },
+
+                "OBJECTION": {
+                    "TITLE": "Tiltakozási jog.",
+                    "TEXT": "Amennyiben az adatkezelés jogos érdek alapján történik, például marketingcélokból, jogod van az adatkezelés ellen tiltakozni."
+                },
+
+                "WITHDRAWAL": {
+                    "TITLE": "Hozzájárulás visszavonásának joga.",
+                    "TEXT": "Amennyiben az adatkezelés hozzájáruláson alapul, bármikor jogosult vagy visszavonni azt. A visszavonás nem érinti a visszavonás előtti adatkezelés jogszerűségét."
+                },
+
+                "CONTACT_TEXT": "E jogok írásban a",
+                "CONTACT_SUFFIX": "e-mail-címen gyakorolhatók."
+            },
+
+            "COMPLAINTS": {
+                "TITLE": "9. Panasztételi jog",
+                "TEXT": "Ha úgy érzed, hogy az adatkezelés nem felel meg a vonatkozó jogszabályoknak, panasszal élhetsz a Nemzeti Adatvédelmi és Információszabadság Hatóságnál.",
+                "ADDRESS_LABEL": "Cím: ",
+                "WEBSITE_LABEL": "Weboldal: "
+            },
+
+            "COOKIES": {
+                "TITLE": "10. Cookie-k (sütik) kezelése",
+                "INTRO": "A weboldal cookie-kat használ, különösen:",
+                "TECHNICAL": "technikai és működéshez szükséges sütik;",
+                "ANALYTICS": "Google Analytics által használt sütik, anonimizált IP-címekkel;",
+                "ADS": "Google Ads konverziókövetés.",
+                "TEXT": "A látogatók a süti beállításokat a böngészőjükön keresztül módosíthatják vagy letilthatják."
+            }
         }
     }
 }

@@ -477,7 +477,7 @@
             "FAQ": "FAQ"
         },
         "LEGAL": {
-            "IMPRESSUM": "Impressum",
+            "IMPRINT": "Imprint",
             "TERMS": "Terms & Conditions",
             "PRIVACY": "Privacy Policy",
             "COOKIES": "Cookie Policy"
@@ -525,6 +525,195 @@
             "TITLE": "Cookie settings",
             "DESCRIPTION": "You can change your cookie settings at any time. If you would like to re-select which cookies you allow, click the button below.",
             "BUTTON": "Open cookie settings"
+        }
+    },
+    "LEGAL": {
+        "TERMS": {
+            "TITLE": "General Terms and Conditions",
+            "LAST_UPDATE": "Effective: August 9, 2026",
+
+            "SECTION_1_TITLE": "1. Service Provider and Scope of the Terms",
+            "SECTION_1_TEXT": "These General Terms and Conditions (hereinafter: the Terms) apply to the online booking and provision of massage services provided by CE Massage. The detailed information about the service provider is available on the <a href=\"/legal/imprint\">Imprint</a> page.",
+
+            "SECTION_2_TITLE": "2. Services and Prices",
+            "SECTION_2_TEXT": "The available services, their duration and full prices are displayed on the <a href=\"/prices\">Prices</a> page and during the booking process when selecting a service. The service fee is the full price of the selected treatment, which is payable at the location.",
+
+            "SECTION_3_TITLE": "3. Booking and Formation of the Contract",
+            "SECTION_3_TEXT_1": "The guest selects a service and appointment through the booking interface and then provides the requested contact and billing information. The booking becomes final once the selected appointment has been successfully confirmed. The service provider will send a confirmation email containing the details of the booking.",
+            "SECTION_3_TEXT_2": "The guest is responsible for the accuracy of the information provided during the booking process. The service provider may request clarification regarding obviously incorrect or incomplete information.",
+
+            "SECTION_4_TITLE": "4. Payment and Invoicing",
+            "SECTION_4_TEXT_1": "Payment for the selected service is made at the location on the day of the appointment. The accepted payment methods are communicated by the service provider during the booking process or upon request.",
+            "SECTION_4_TEXT_2": "The service provider issues an invoice for the service in accordance with the applicable legal requirements.",
+
+            "SECTION_5_TITLE": "5. Rescheduling, Cancellation and No-Show",
+            "SECTION_5_TEXT_1": "The guest may reschedule the booked appointment to another available time through the link provided in the confirmation email, provided that the request is made at least 24 hours before the scheduled start of the treatment. The change becomes effective once the new appointment has been successfully confirmed.",
+            "SECTION_5_TEXT_2": "If the guest wishes to modify the appointment within 24 hours before the scheduled start, they should contact the massage therapist directly. At present, no additional fee or other consequence applies to modifications made within this 24-hour period.",
+            "SECTION_5_TEXT_3": "The guest is kindly requested to cancel or reschedule an appointment as early as possible so that the time slot may be made available to other guests.",
+
+            "SECTION_6_TITLE": "6. Provision of the Service",
+            "SECTION_6_TEXT": "The service is provided at the location and time specified in the booking. In case of late arrival, the service provider is not obliged to extend the duration of the treatment. The service provider reserves the right to refuse or discontinue the service if providing the treatment could pose a health or safety risk, or if the guest's conduct violates professional standards.",
+
+            "SECTION_7_TITLE": "7. Complaints and Consumer Disputes",
+            "SECTION_7_TEXT_1": "Guests may submit complaints to the service provider in writing by email at info@cemassage.hu, by post at 1065 Budapest, Hajós utca 13, or by telephone at +36 30 346 2492. Written complaints will be investigated and answered by the service provider in accordance with the applicable legislation.",
+            "SECTION_7_TEXT_2": "In the event of a consumer dispute, the consumer may contact the conciliation board competent according to their place of residence or stay. The conciliation board competent according to the registered office of the service provider is the Budapest Conciliation Board: 1016 Budapest, Krisztina krt. 99. 1st floor, room 111; mailing address: 1253 Budapest, Pf. 10.; telephone: +36 1 488 2131; email: bekelteto.testulet@bkik.hu; website:",
+            "BEKELTETES_LINK": "bekeltetes.hu",
+            "SECTION_7_TEXT_3": "The consumer may also contact the consumer protection authority or enforce their claim through the courts.",
+
+            "SECTION_8_TITLE": "8. Data Processing and Final Provisions",
+            "SECTION_8_TEXT_1": "The processing of personal data collected during the booking process is governed by the <a href=\"/legal/privacy\">Privacy Policy</a>.",
+            "SECTION_8_TEXT_2": "Matters not regulated by these Terms are governed by Hungarian law, in particular the Hungarian Civil Code, consumer protection legislation and the provisions applicable to contracts concluded between parties who are not physically present together."
+        },
+        "IMPRINT": {
+            "TITLE": "Imprint",
+            "LAST_UPDATE": "Effective: July 30, 2026",
+
+            "PROVIDER": {
+                "TITLE": "Service Provider Information",
+                "NAME_LABEL": "Name of entrepreneur:",
+                "ADDRESS_LABEL": "Registered office:",
+                "TAX_NUMBER_LABEL": "Tax number:",
+                "REGISTRATION_NUMBER_LABEL": "Registration number:",
+                "REGISTRATION_AUTHORITY_LABEL": "Registration authority:",
+                "REGISTRATION_AUTHORITY": "National Tax and Customs Administration of Hungary (NAV)"
+            },
+
+            "CONTACT": {
+                "TITLE": "Contact",
+                "EMAIL_LABEL": "E-mail:",
+                "PHONE_LABEL": "Phone number:",
+                "WEBSITE_LABEL": "Website:"
+            },
+
+            "HOSTING": {
+                "TITLE": "Hosting Provider",
+                "NAME_LABEL": "Name:",
+                "ADDRESS_LABEL": "Address:",
+                "WEBSITE_LABEL": "Website:",
+                "EMAIL_LABEL": "Email address:"
+            }
+        },
+        "PRIVACY": {
+            "TITLE": "Privacy Policy",
+            "LAST_UPDATE": "Effective from: June 25, 2026",
+
+            "CONTROLLER": {
+                "TITLE": "1. Data Controller Information",
+                "WEBSITE_LABEL": "Website:",
+                "NAME_LABEL": "Data Controller:",
+                "ADDRESS_LABEL": "Registered office:",
+                "EMAIL_LABEL": "E-mail:",
+                "REGISTRATION_NUMBER_LABEL": "Registration number:",
+                "TAX_NUMBER_LABEL": "Tax number:"
+            },
+
+            "PURPOSE": {
+                "TITLE": "2. Purpose of Data Processing",
+                "TEXT": "The purpose of data processing is to provide the services available on the website, enable contact, manage appointments, sell gift vouchers, and carry out marketing activities, such as statistical analysis and the use of Google services."
+            },
+
+            "DATA_CATEGORIES": {
+                "TITLE": "3. Categories of Personal Data Processed",
+                "INTRO": "When contacting us through the website, making an appointment, or purchasing a gift voucher, I may process the following personal data:",
+                "NAME": "name;",
+                "EMAIL": "e-mail address;",
+                "ADDRESS": "address;",
+                "PHONE": "telephone number;",
+                "HEALTH": "health data, for example based on a massage-related questionnaire - these constitute special categories of personal data."
+            },
+
+            "LEGAL_BASIS": {
+                "TITLE": "4. Legal Basis for Data Processing",
+                "CONTRACT": "performance of the service - Article 6(1)(b) GDPR;",
+                "LEGAL_OBLIGATION": "compliance with a legal obligation, in the case of invoicing - Article 6(1)(c) GDPR;",
+                "CONSENT": "consent for marketing purposes and the processing of health data - Article 6(1)(a) GDPR and Article 9(2)(a) GDPR."
+            },
+
+            "RETENTION": {
+                "TITLE": "5. Data Retention Period",
+                "BILLING": "billing data: for 8 years in accordance with the Accounting Act;",
+                "HEALTH": "health data based on a questionnaire: for 5 years following the use of the service, or until consent is withdrawn;",
+                "CONTACT": "contact information: for 1 year or until consent is withdrawn;",
+                "ANALYTICS": "web analytics data: for 14 months, in accordance with the settings of Google's systems."
+            },
+
+            "PROCESSORS": {
+                "TITLE": "6. Data Processors",
+                "INTRO": "The following data processors are involved in the processing of personal data:",
+                "SIMPLETAX": " - accountant, processing of data related to invoicing; ",
+                "ELIN": " - hosting provider; ",
+                "GOOGLE": " - Google Ads, Google Analytics, Google Forms and Google Search Console, web analytics, marketing and forms; ",
+                "GOOGLE_LINK": "Google Privacy Policy"
+            },
+
+            "THIRD_COUNTRIES": {
+                "TITLE": "7. Transfer of Data to Third Countries",
+                "TEXT": "When using Google's services - Analytics, Ads, Forms and Search Console - data processing may take place outside the European Union. Google is a certified provider under the EU-U.S. Data Privacy Framework."
+            },
+
+            "RIGHTS": {
+                "TITLE": "8. Rights of Data Subjects",
+                "INTRO": "Website visitors and customers using the services are entitled to exercise the following rights under the GDPR.",
+
+                "INFORMATION": {
+                    "TITLE": "Right to information.",
+                    "TEXT": "You have the right to receive clear and understandable information about how, for what purposes, on what legal basis, and for how long your personal data is processed."
+                },
+
+                "ACCESS": {
+                    "TITLE": "Right of access.",
+                    "TEXT": "You may request confirmation as to whether personal data concerning you is being processed and, if so, you have the right to access your personal data, its source, purpose, retention period, and transfers."
+                },
+
+                "RECTIFICATION": {
+                    "TITLE": "Right to rectification.",
+                    "TEXT": "You have the right to request the correction or completion of inaccurate, incomplete, or outdated personal data."
+                },
+
+                "ERASURE": {
+                    "TITLE": "Right to erasure (\"right to be forgotten\").",
+                    "TEXT": "In certain cases, for example when your data is no longer necessary or you withdraw your consent, you may request the deletion of your personal data. This may not apply where processing is based on a legal obligation or legitimate interest."
+                },
+
+                "RESTRICTION": {
+                    "TITLE": "Right to restriction of processing.",
+                    "TEXT": "You may request restriction of processing, for example if you dispute the accuracy of the data or if the processing is unlawful but you do not request the deletion of the data."
+                },
+
+                "PORTABILITY": {
+                    "TITLE": "Right to data portability.",
+                    "TEXT": "You have the right to receive the personal data you have provided in a structured, commonly used format and to transmit that data to another data controller."
+                },
+
+                "OBJECTION": {
+                    "TITLE": "Right to object.",
+                    "TEXT": "Where processing is based on a legitimate interest, for example for marketing purposes, you have the right to object to such processing."
+                },
+
+                "WITHDRAWAL": {
+                    "TITLE": "Right to withdraw consent.",
+                    "TEXT": "Where processing is based on consent, you have the right to withdraw your consent at any time. Withdrawal of consent does not affect the lawfulness of processing carried out before the withdrawal."
+                },
+
+                "CONTACT_TEXT": "These rights may be exercised in writing by contacting",
+                "CONTACT_SUFFIX": "via e-mail."
+            },
+
+            "COMPLAINTS": {
+                "TITLE": "9. Right to Lodge a Complaint",
+                "TEXT": "If you believe that the processing of your personal data does not comply with the applicable legislation, you may lodge a complaint with the Hungarian National Authority for Data Protection and Freedom of Information.",
+                "ADDRESS_LABEL": "Address: ",
+                "WEBSITE_LABEL": "Website: "
+            },
+
+            "COOKIES": {
+                "TITLE": "10. Use of Cookies",
+                "INTRO": "The website uses cookies, in particular:",
+                "TECHNICAL": "technical and strictly necessary cookies;",
+                "ANALYTICS": "cookies used by Google Analytics, with anonymized IP addresses;",
+                "ADS": "Google Ads conversion tracking.",
+                "TEXT": "Visitors can modify or disable cookie settings through their browser."
+            }
         }
     }
 }

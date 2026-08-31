@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 import { TranslatePipe } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-terms',
+  selector: 'app-imprint',
   imports: [TranslatePipe],
-  templateUrl: './terms.html',
+  templateUrl: './imprint.html',
   styleUrl: '../legal.css',
 })
-export class Terms {
+export class Imprint {
 
 }

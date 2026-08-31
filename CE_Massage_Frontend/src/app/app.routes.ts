@@ -14,7 +14,7 @@ import { authGuard } from './guards/auth.guard';
 import { Terms } from './pages/legal/terms/terms';
 import { Privacy } from './pages/legal/privacy/privacy';
 import { Cookies } from './pages/legal/cookies/cookies';
-import { Impressum } from './pages/legal/impressum/impressum';
+import { Imprint } from './pages/legal/imprint/imprint';
 
 export const routes: Routes = [
     { path: '', component: HomeComponent },
@@ -58,6 +58,6 @@ export const routes: Routes = [
     { path: 'legal/terms', component: Terms},
     { path: 'legal/privacy', component: Privacy},
     { path: 'legal/cookies', component: Cookies},
-    { path: 'legal/impressum', component: Impressum},
+    { path: 'legal/imprint', component: Imprint},
     { path: '**', redirectTo: '' }
 ];
