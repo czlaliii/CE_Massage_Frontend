@@ -161,29 +161,57 @@
         },
 
         "QUESTIONS": {
-                "QUESTION_1": {
+            "QUESTION_1": {
                 "QUESTION": "Can I arrive without an appointment? If not, how far in advance should I book?",
                 "ANSWER": "You are welcome to arrive without an appointment, but availability cannot be guaranteed. To secure your preferred time, it is recommended to book at least 2 hours in advance, though appointments can also be made 1–2 weeks ahead."
             },
-                "QUESTION_2": {
+            "QUESTION_2": {
                 "QUESTION": "When do I need to pay? Can I pay by cash or card?",
                 "ANSWER": "Payment is made after the treatment. Both cash and bank card payments are accepted."
             },
-                "QUESTION_3": {
+            "QUESTION_3": {
                 "QUESTION": "When should I arrive for my appointment?",
                 "ANSWER": "Please arrive 10–15 minutes early. Unfortunately, treatment times cannot be extended in the event of a late arrival."
             },
-                "QUESTION_4": {
+            "QUESTION_4": {
                 "QUESTION": "What does the therapist wear during the treatment?",
                 "ANSWER": "During treatments, I wear professional work attire (shirt and trousers). All services are provided strictly within professional boundaries."
             },
-                "QUESTION_5": {
+            "QUESTION_5": {
                 "QUESTION": "Is the therapist qualified and continuously developing professionally?",
                 "ANSWER": "Yes. I am qualified in Swedish massage and hold practitioner and trainer certifications in 5 Continents Massage, Expanse Therapy, and Vibecodes Therapy through the International Massage Federation of the 5 Continents. Continuous professional development is very important to me, and I regularly participate in advanced training programs."
             },
             "QUESTION_6": {
-            "QUESTION": "Can I request additional, non-standard, or erotic services?",
-            "ANSWER": "All treatments are provided strictly within professional boundaries. No erotic or sexual services are offered. During full-body treatments, clients remain in their underwear, and towels are used to ensure comfort and privacy. Any request or implication that falls outside professional boundaries will result in the treatment being terminated and the client being asked to leave."
+                "QUESTION": "Can I request an extra, different, or erotic service?",
+                "ANSWER": "The treatments are provided exclusively within professional boundaries; no erotic or sexual services are available. During a full-body treatment, the guest remains in underwear, while a towel ensures comfort and discretion. If a request or suggestion falls outside the professional boundaries, I will discontinue the treatment and ask the guest to leave."
+            },
+            "QUESTION_7": {
+                "QUESTION": "How intense is the Swedish massage?",
+                "ANSWER": "During the treatment, we adjust the intensity and focus of the massage according to what feels best for you. It can be a more refreshing and intense massage, for example after a workout, or a gentler, relaxing treatment at the end of a tiring day that helps you slow down and unwind."
+            },
+            "QUESTION_8": {
+                "QUESTION": "Is the 5 Continents Massage just a simple relaxation massage?",
+                "ANSWER": "It is a complete protocol that works on the muscles, fascia, and nervous system – all within a single 1 hour and 20 minute treatment, combining five different traditions. Phase 1: detoxification, Phase 2: deep relaxation, Phase 3: revitalization. Each phase uses a special essential oil blend. The treatment works on the nervous system. The result: restored sleep, released tension, and renewed energy – much more than simple relaxation."
+            },
+            "QUESTION_9": {
+                "QUESTION": "What is the difference between the 5 Continents Massage® and Swedish massage?",
+                "ANSWER": "While Swedish massage primarily focuses on working the muscles and relieving physical tension, the 5 Continents Massage® is a more varied, experience-focused treatment. It combines several massage techniques – including Swedish, Lomi-Lomi, Tuina, Ayurvedic, and Californian – complemented by an aromatherapy experience. As a result, the treatment provides a smoother, more dynamic, and more varied experience than a traditional Swedish massage."
+            },
+            "QUESTION_10": {
+                "QUESTION": "How is Expanse Therapy different from the 5 Continents Massage?",
+                "ANSWER": "While the 5 Continents Massage is a more dynamic, full-body massage experience, Expanse Therapy is a slower, more inward-focused treatment that combines several unique elements."
+            },
+            "QUESTION_11": {
+                "QUESTION": "What happens during a Vibecodes treatment?",
+                "ANSWER": "During the session, we work with one of the 8 Vibecodes, depending on the topic being addressed. Guided relaxation, meditation, and self-reflection play a central role. This is complemented by a body treatment that includes stimulation of meridian and vital points, as well as the inhalation of 7 different essential oil blends."
+            },
+            "QUESTION_12": {
+                "QUESTION": "How is Vibecodes different from the 5 Continents Massage and Expanse Therapy?",
+                "ANSWER": "The 5 Continents Massage® is primarily a dynamic, full-body massage experience. Expanse Therapy offers a complex relaxation experience involving multiple senses in addition to relaxing the body. In Vibecodes, the focus is on a specific topic, thought pattern, or personal block, which we approach through guided exercises and relaxation elements."
+            },
+            "QUESTION_13": {
+                "QUESTION": "What oils do I use?",
+                "ANSWER": "During Swedish massage, I use natural, fragrance-free, plant-based and skin-friendly massage creams and oils from the Sara Beauty range. Upon request, 5 Continents Massage® oils can also be selected for the treatment. For facial massage, I use 5 Continents Massage® oils specifically developed for this purpose. The oils and other products used for Premium and Swiss treatments are sourced from the Aromalchimie range."
             }
         }
     },
