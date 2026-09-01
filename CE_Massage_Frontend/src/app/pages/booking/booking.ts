@@ -413,8 +413,8 @@ export class BookingComponent implements OnInit, AfterViewInit {
         // billing_city:
         //     this.billingCity(),
 
-        // billing_address:
-        //     this.billingAddress(),
+        billing_address:
+            this.billingAddress(),
 
         service_option_id:
             this.selectedServiceOptionId(),

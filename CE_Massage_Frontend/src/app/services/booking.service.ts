@@ -26,6 +26,7 @@ export interface Booking {
     customerName: string;
     customerEmail: string;
     customerPhone: string | null;
+    billingAddress: string | null;
     date: string;
     startTime: string;
     endTime: string;
