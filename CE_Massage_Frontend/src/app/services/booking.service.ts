@@ -22,15 +22,26 @@ export interface Service {
 }
 
 export interface Booking {
+
     id: string;
+
     customerName: string;
+
     customerEmail: string;
+
     customerPhone: string | null;
+
     billingAddress: string | null;
+
     date: string;
+
     startTime: string;
+
     endTime: string;
+
     serviceName: string;
+
+    serviceOptionId: string;
 }
 
 export interface RescheduleBooking {
@@ -167,6 +178,37 @@ export class BookingService {
             `${environment.apiUrl}/admin/blocked-times/${id}`
         );
 
+    }
+
+    updateAdminBookingTime(
+        bookingId: string,
+        body: {
+            booking_date: string;
+            start_time: string;
+        }
+    ) {
+        return this.http.put<Booking>(
+            `${environment.apiUrl}/admin/bookings/${bookingId}/time`,
+            body
+        );
+    }
+
+    updateAdminBooking(
+        bookingId: string,
+        body: {
+            customer_name: string;
+            customer_email: string;
+            customer_phone: string;
+            billing_address: string;
+            service_option_id: string;
+            booking_date: string;
+            start_time: string;
+        }
+    ) {
+        return this.http.put<Booking>(
+            `${environment.apiUrl}/admin/bookings/${bookingId}`,
+            body
+        );
     }
 
     rescheduleBooking(

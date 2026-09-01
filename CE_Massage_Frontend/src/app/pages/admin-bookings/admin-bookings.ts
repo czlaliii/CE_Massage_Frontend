@@ -83,6 +83,9 @@ export class AdminBookings implements OnInit, OnDestroy {
     adminCustomerPhone =
         signal('');
 
+    adminCustomerAddress =
+        signal('');
+
     adminSendEmail =
         signal(true);
 
@@ -155,6 +158,20 @@ export class AdminBookings implements OnInit, OnDestroy {
     activeTab = signal<
         'calendar' | 'bookings' | 'website'
     >('calendar');
+
+    editingBooking = signal(false);
+
+    editCustomerName = signal('');
+    editCustomerEmail = signal('');
+    editCustomerPhone = signal('');
+    editBillingAddress = signal('');
+
+    editServiceOptionId = signal('');
+    editBookingDate = signal('');
+    editStartTime = signal('');
+
+    editBookingLoading = signal(false);
+    editBookingError = signal('');
 
     setActiveTab(tab: 'calendar' | 'bookings' | 'website'): void {
 
@@ -499,6 +516,14 @@ export class AdminBookings implements OnInit, OnDestroy {
             const type =
                 info.event.extendedProps['type'];
 
+            if (type === 'booking') {
+
+                this.moveBooking(
+                    info
+                );
+
+                return;
+            }
 
             if (type !== 'blocked') {
 
@@ -507,12 +532,10 @@ export class AdminBookings implements OnInit, OnDestroy {
                 return;
             }
 
-
             const blockedId =
                 info.event.extendedProps[
                     'blockedTimeId'
                 ];
-
 
             const blocked =
                 this.blockedTimes().find(
@@ -520,14 +543,12 @@ export class AdminBookings implements OnInit, OnDestroy {
                         item.id === blockedId
                 );
 
-
             if (!blocked) {
 
                 info.revert();
 
                 return;
             }
-
 
             if (!info.event.start) {
 
@@ -787,13 +808,14 @@ export class AdminBookings implements OnInit, OnDestroy {
 
     closeModal(): void {
 
-        this.showModal.set(
-        false
-        );
+        this.showModal.set(false);
 
-        this.selectedBooking.set(
-        null
-        );
+        this.selectedBooking.set(null);
+
+        this.editingBooking.set(false);
+
+        this.editBookingError.set('');
+
     }
 
     formatPrice(price: number): string {
@@ -804,6 +826,130 @@ export class AdminBookings implements OnInit, OnDestroy {
 
     }
 
+    private moveBooking(info: any): void {
+
+        const bookingId =
+            info.event.id;
+
+        const booking =
+            this.bookings().find(
+                item =>
+                    item.id === bookingId
+            );
+
+        if (!booking) {
+            info.revert();
+            return;
+        }
+
+        if (!info.event.start) {
+            info.revert();
+            return;
+        }
+
+        const newDate =
+            this.formatCalendarDate(
+                info.event.start
+            );
+
+        const newStartTime =
+            this.formatCalendarTime(
+                info.event.start
+            );
+
+        const oldDate =
+            booking.date;
+
+        const oldStartTime =
+            booking.startTime.substring(0, 5);
+
+        /*
+        * Ha valójában ugyanoda került,
+        * nincs mit menteni.
+        */
+        if (
+            newDate === oldDate &&
+            newStartTime === oldStartTime
+        ) {
+            info.revert();
+            return;
+        }
+
+        /*
+        * Megerősítés
+        */
+        const confirmed =
+            confirm(
+                `Biztosan módosítani szeretnéd a foglalás időpontját?\n\n` +
+                `${oldDate} ${oldStartTime} → ${newDate} ${newStartTime}`
+            );
+
+        /*
+        * Mégse
+        */
+        if (!confirmed) {
+            info.revert();
+            return;
+        }
+
+        /*
+        * Mentés
+        */
+        this.bookingService
+            .updateAdminBookingTime(
+                bookingId,
+                {
+                    booking_date: newDate,
+                    start_time: newStartTime
+                }
+            )
+            .subscribe({
+
+                next: () => {
+
+                    this.showNotification(
+                        'A foglalás időpontja módosítva.',
+                        'success'
+                    );
+
+                    /*
+                    * Friss állapot lekérése
+                    */
+                    this.loadBookings();
+                },
+
+                error: error => {
+
+                    console.error(
+                        'Booking move failed:',
+                        error
+                    );
+
+                    /*
+                    * Ha a backend elutasítja,
+                    * visszatesszük az eredeti helyre.
+                    */
+                    info.revert();
+
+                    if (error.status === 409) {
+
+                        this.showNotification(
+                            error.error?.message
+                            ??
+                            'Az új időpont ütközik egy meglévő foglalással.'
+                        );
+
+                    } else {
+
+                        this.showNotification(
+                            'Nem sikerült módosítani a foglalás időpontját.'
+                        );
+
+                    }
+                }
+            });
+    }
+
     openCreateBookingModal(): void {
 
         this.showCreateBookingModal.set(true);
@@ -811,7 +957,7 @@ export class AdminBookings implements OnInit, OnDestroy {
         this.adminSelectedServiceOptionId.set('');
         this.adminSelectedDate.set('');
         this.adminSelectedSlot.set('');
-
+        this.adminCustomerAddress.set('');
         this.adminCustomerName.set('');
         this.adminCustomerEmail.set('');
         this.adminCustomerPhone.set('');
@@ -1149,6 +1295,9 @@ export class AdminBookings implements OnInit, OnDestroy {
             customer_phone:
                 this.adminCustomerPhone().trim(),
 
+            billing_address:
+                this.adminCustomerAddress().trim(),
+
             service_option_id:
                 this.adminSelectedServiceOptionId(),
 
@@ -1284,7 +1433,9 @@ export class AdminBookings implements OnInit, OnDestroy {
 
                 textColor: '#fff',
 
-                editable: false,
+                editable: true,
+                eventStartEditable: true,
+                eventDurationEditable: false,
 
                 extendedProps: {
 
@@ -1911,6 +2062,179 @@ export class AdminBookings implements OnInit, OnDestroy {
         return `${hour}:${minute}`;
         }
     );
+
+    startEditingBooking(): void {
+
+        const booking =
+            this.selectedBooking();
+
+        if (!booking) {
+            return;
+        }
+
+        this.editCustomerName.set(
+            booking.customerName
+        );
+
+        this.editCustomerEmail.set(
+            booking.customerEmail
+        );
+
+        this.editCustomerPhone.set(
+            booking.customerPhone ?? ''
+        );
+
+        this.editBillingAddress.set(
+            booking.billingAddress ?? ''
+        );
+
+        this.editServiceOptionId.set(
+            booking.serviceOptionId
+        );
+
+        this.editBookingDate.set(
+            booking.date
+        );
+
+        this.editStartTime.set(
+            booking.startTime.substring(0, 5)
+        );
+
+        this.editBookingError.set('');
+
+        this.editingBooking.set(true);
+
+        if (this.adminServices().length > 0) {
+            return;
+        }
+
+        this.bookingService
+            .getServices()
+            .subscribe({
+                next: services =>
+                    this.adminServices.set(services)
+            });
+
+    }
+
+    saveEditedBooking(): void {
+
+        const booking =
+            this.selectedBooking();
+
+        if (!booking) {
+            return;
+        }
+
+        this.editBookingError.set('');
+
+        if (
+            !this.editCustomerName().trim() ||
+            !this.editCustomerEmail().trim() ||
+            !this.editServiceOptionId() ||
+            !this.editBookingDate() ||
+            !this.editStartTime()
+        ) {
+
+            this.editBookingError.set(
+                'Kérlek tölts ki minden kötelező mezőt.'
+            );
+
+            return;
+        }
+
+        this.editBookingLoading.set(true);
+
+        this.bookingService
+            .updateAdminBooking(
+                booking.id,
+                {
+                    customer_name:
+                        this.editCustomerName(),
+
+                    customer_email:
+                        this.editCustomerEmail(),
+
+                    customer_phone:
+                        this.editCustomerPhone(),
+
+                    billing_address:
+                        this.editBillingAddress(),
+
+                    service_option_id:
+                        this.editServiceOptionId(),
+
+                    booking_date:
+                        this.editBookingDate(),
+
+                    start_time:
+                        this.editStartTime()
+                }
+            )
+            .subscribe({
+
+                next: updated => {
+
+                    this.editBookingLoading.set(
+                        false
+                    );
+
+                    this.editingBooking.set(
+                        false
+                    );
+
+                    this.showModal.set(
+                        false
+                    );
+
+                    this.selectedBooking.set(
+                        null
+                    );
+
+                    this.showNotification(
+                        'A foglalás sikeresen módosítva.',
+                        'success'
+                    );
+
+                    this.loadBookings();
+
+                    this.loadDashboardStats();
+
+                },
+
+                error: error => {
+
+                    console.error(
+                        'Booking update failed:',
+                        error
+                    );
+
+                    this.editBookingLoading.set(
+                        false
+                    );
+
+                    if (
+                        error.status === 409
+                    ) {
+
+                        this.editBookingError.set(
+                            error.error?.message ??
+                            'Az új időpont ütközik egy meglévő időponttal.'
+                        );
+
+                    } else {
+
+                        this.editBookingError.set(
+                            'A foglalás módosítása sikertelen.'
+                        );
+
+                    }
+
+                }
+
+            });
+
+    }
 
     getServicePercentage(
         bookings: number
