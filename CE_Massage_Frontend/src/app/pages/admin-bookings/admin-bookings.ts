@@ -95,6 +95,9 @@ export class AdminBookings implements OnInit, OnDestroy {
     adminBookingError =
         signal('');
 
+    adminBillingAddress =
+        signal('');
+
     private bookingService =
         inject(BookingService);
 
@@ -961,7 +964,7 @@ export class AdminBookings implements OnInit, OnDestroy {
         this.adminCustomerName.set('');
         this.adminCustomerEmail.set('');
         this.adminCustomerPhone.set('');
-
+        this.adminBillingAddress.set('');
         this.adminAvailableSlots.set([]);
         this.adminBookingError.set('');
 
@@ -1296,7 +1299,7 @@ export class AdminBookings implements OnInit, OnDestroy {
                 this.adminCustomerPhone().trim(),
 
             billing_address:
-                this.adminCustomerAddress().trim(),
+                this.adminBillingAddress().trim(),
 
             service_option_id:
                 this.adminSelectedServiceOptionId(),

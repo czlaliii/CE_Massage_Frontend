@@ -198,17 +198,19 @@ export class BookingService {
         body: {
             customer_name: string;
             customer_email: string;
-            customer_phone: string;
-            billing_address: string;
+            customer_phone?: string;
+            billing_address?: string;
             service_option_id: string;
             booking_date: string;
             start_time: string;
         }
     ) {
+
         return this.http.put<Booking>(
             `${environment.apiUrl}/admin/bookings/${bookingId}`,
             body
         );
+
     }
 
     rescheduleBooking(
