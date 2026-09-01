@@ -136,9 +136,9 @@
             "SERVICE_6_INFO": "A pleasant and relaxing treatment based on massaging the reflex points of the sole. It helps to release tension and promotes relaxation of the whole body. The sole, foot and ankle are affected."
         },
 
-        "PREMIUM_MASSAGES": {
-            "TITLE": "Premium massages",
-            "INFO": "Premium massages with treatments that offer more special, calmer and more intense relaxation.",
+        "RELAX_MASSAGES": {
+            "TITLE": "Relax massages",
+            "INFO": "Relax massages with treatments that offer more special, calmer and more intense relaxation.",
 
             "SERVICE_1": "Relax massage",
             "SERVICE_2": "Swedish-Mediterranean relaxation massage",
@@ -211,7 +211,7 @@
             },
             "QUESTION_13": {
                 "QUESTION": "What oils do I use?",
-                "ANSWER": "During Swedish massage, I use natural, fragrance-free, plant-based and skin-friendly massage creams and oils from the Sara Beauty range. Upon request, 5 Continents Massage® oils can also be selected for the treatment. For facial massage, I use 5 Continents Massage® oils specifically developed for this purpose. The oils and other products used for Premium and Swiss treatments are sourced from the Aromalchimie range."
+                "ANSWER": "During Swedish massage, I use natural, fragrance-free, plant-based and skin-friendly massage creams and oils from the Sara Beauty range. Upon request, 5 Continents Massage® oils can also be selected for the treatment. For facial massage, I use 5 Continents Massage® oils specifically developed for this purpose. The oils and other products used for Relax and Swiss treatments are sourced from the Aromalchimie range."
             }
         }
     },

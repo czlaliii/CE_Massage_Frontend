@@ -1979,7 +1979,7 @@ export class AdminBookings implements OnInit, OnDestroy {
             case 'Svédmasszázs':
                 return '#5FAF8F'; // zsályás zöld
 
-            case 'Prémium Masszázs':
+            case 'Relax Masszázs':
                 return '#C47A5A'; // meleg terrakotta
 
             default:

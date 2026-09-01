@@ -12,13 +12,13 @@ import { signal } from '@angular/core';
 export class PricesComponent {
 
   openInfo = signal<
-    'five' | 'expanse' | 'vibecodes' | 'swedish' | 'premium' | null
+    'five' | 'expanse' | 'vibecodes' | 'swedish' | 'relax' | null
   >(null);
 
   openTreatment = signal<string | null>(null);
 
   toggleInfo(
-    service: 'five' | 'expanse' | 'vibecodes' | 'swedish' | 'premium'
+    service: 'five' | 'expanse' | 'vibecodes' | 'swedish' | 'relax'
   ): void {
 
     if (this.openInfo() === service) {

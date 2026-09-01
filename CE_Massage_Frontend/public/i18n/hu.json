@@ -136,9 +136,9 @@
             "SERVICE_6_INFO": "A talp reflexpontjainak masszírozására épülő, kellemes és pihentető kezelés. Segíti a feszültség oldását és a teljes test ellazulását támogatja. Talp, lábfej és boka érintve van."
         },
 
-        "PREMIUM_MASSAGES": {
-            "TITLE": "Prémium masszázsok",
-            "INFO": "Prémium masszázsok különlegesebb, nyugodtabb és intenzívebb kikapcsolódást kínáló kezelésekkel.",
+        "RELAX_MASSAGES": {
+            "TITLE": "Relax masszázsok",
+            "INFO": "Relax masszázsok különlegesebb, nyugodtabb és intenzívebb kikapcsolódást kínáló kezelésekkel.",
 
             "SERVICE_1": "Relax masszázs",
             "SERVICE_2": "Svéd-mediterrán relax masszázs",
@@ -211,7 +211,7 @@
             },
                 "QUESTION_13": {
                 "QUESTION": "Milyen olajakkal dolgozok?",
-                "ANSWER": "A svédmasszázs során természetes, illatmentes, növényi és bőrbarát összetevőket tartalmazó masszázskr meket és olajokat használok, amelyeket a Sara Beauty kínálatából szerzek be. Igény szerint a kezeléshez 5 Kontinens Masszázs® olaj is választható. Az arcmasszázshoz kifejezetten erre a célra kifejlesztett 5 Kontinens Masszázs® olajat használok. A Prémium és Svájci kezelésekhez használt olajokat és egyéb termékeket az Aromalchimie kínálatából szerzem be."
+                "ANSWER": "A svédmasszázs során természetes, illatmentes, növényi és bőrbarát összetevőket tartalmazó masszázskr meket és olajokat használok, amelyeket a Sara Beauty kínálatából szerzek be. Igény szerint a kezeléshez 5 Kontinens Masszázs® olaj is választható. Az arcmasszázshoz kifejezetten erre a célra kifejlesztett 5 Kontinens Masszázs® olajat használok. A Relax és Svájci kezelésekhez használt olajokat és egyéb termékeket az Aromalchimie kínálatából szerzem be."
             }
         }
     },

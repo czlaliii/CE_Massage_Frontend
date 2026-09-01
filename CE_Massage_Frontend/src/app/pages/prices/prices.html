@@ -473,7 +473,7 @@
 
 
   <!-- ========================= -->
-  <!-- Prémium masszázsok -->
+  <!-- Relax masszázsok -->
   <!-- ========================= -->
 
   <div class="section">
@@ -481,15 +481,15 @@
     <div class="section-title service-title-with-info">
 
       <span>
-        {{ 'PRICES.PREMIUM_MASSAGES.TITLE' | translate }}
+        {{ 'PRICES.RELAX_MASSAGES.TITLE' | translate }}
       </span>
 
       <button
         type="button"
         class="info-button"
-        [class.active]="openInfo() === 'premium'"
-        (click)="toggleInfo('premium')"
-        aria-label="Információ a prémium masszázsokról">
+        [class.active]="openInfo() === 'relax'"
+        (click)="toggleInfo('relax')"
+        aria-label="Információ a relax masszázsokról">
 
         ⓘ
 
@@ -497,12 +497,12 @@
 
     </div>
 
-    @if (openInfo() === 'premium') {
+    @if (openInfo() === 'relax') {
 
       <div class="service-info-panel">
 
         <p>
-          {{ 'PRICES.PREMIUM_MASSAGES.INFO' | translate }}
+          {{ 'PRICES.RELAX_MASSAGES.INFO' | translate }}
         </p>
 
       </div>
@@ -564,7 +564,7 @@
       <div class="treatment-header">
 
         <strong>
-          {{ 'PRICES.PREMIUM_MASSAGES.SERVICE_1' | translate }}
+          {{ 'PRICES.RELAX_MASSAGES.SERVICE_1' | translate }}
         </strong>
 
         <button
@@ -584,7 +584,7 @@
 
         <div class="treatment-description">
 
-          {{ 'PRICES.PREMIUM_MASSAGES.SERVICE_1_INFO' | translate }}
+          {{ 'PRICES.RELAX_MASSAGES.SERVICE_1_INFO' | translate }}
 
         </div>
 
@@ -600,7 +600,7 @@
       <div class="treatment-header">
 
         <strong>
-          {{ 'PRICES.PREMIUM_MASSAGES.SERVICE_2' | translate }}
+          {{ 'PRICES.RELAX_MASSAGES.SERVICE_2' | translate }}
         </strong>
 
         <button
@@ -620,7 +620,7 @@
 
         <div class="treatment-description">
 
-          {{ 'PRICES.PREMIUM_MASSAGES.SERVICE_2_INFO' | translate }}
+          {{ 'PRICES.RELAX_MASSAGES.SERVICE_2_INFO' | translate }}
 
         </div>
 
@@ -636,7 +636,7 @@
       <div class="treatment-header">
 
         <strong>
-          {{ 'PRICES.PREMIUM_MASSAGES.SERVICE_3' | translate }}
+          {{ 'PRICES.RELAX_MASSAGES.SERVICE_3' | translate }}
         </strong>
 
         <button
@@ -656,7 +656,7 @@
 
         <div class="treatment-description">
 
-          {{ 'PRICES.PREMIUM_MASSAGES.SERVICE_3_INFO' | translate }}
+          {{ 'PRICES.RELAX_MASSAGES.SERVICE_3_INFO' | translate }}
 
         </div>
 
