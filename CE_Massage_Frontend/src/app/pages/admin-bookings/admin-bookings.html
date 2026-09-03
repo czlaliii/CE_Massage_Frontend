@@ -754,6 +754,14 @@
                         {{ selectedBooking()!.endTime }}
                     </p>
 
+                    @if(selectedBooking()!.note) {
+
+                        <p>
+                            <strong>Megjegyzés:</strong>
+                            {{ selectedBooking()!.note }}
+                        </p>
+
+                    }
 
                     <div class="modal-actions">
 
@@ -947,6 +955,32 @@
 
                         </div>
 
+                        <div class="form-group note-form-group">
+
+                            <label for="admin-booking-note">
+                                Megjegyzés
+                            </label>
+
+                            <div class="note-input-wrapper">
+
+                                <span class="note-icon">
+                                    📝
+                                </span>
+                                <textarea
+                                    id="edit-booking-note"
+                                    rows="4"
+                                    [ngModel]="editBookingNote()"
+                                    (ngModelChange)="editBookingNote.set($event)"
+                                    placeholder="Opcionális megjegyzés..."
+                                ></textarea>
+
+                            </div>
+
+                            <span class="note-hint">
+                                Belső megjegyzés a foglaláshoz
+                            </span>
+
+                        </div>
 
                         @if(editBookingError()) {
 
@@ -965,7 +999,7 @@
                                 type="button"
                                 class="close-btn"
                                 [disabled]="editBookingLoading()"
-                                (click)="editingBooking.set(false)">
+                                (click)="cancelEditingBooking()">
 
                                 Mégse
 
@@ -1104,6 +1138,36 @@
                                 $any($event.target).value
                             )"
                             placeholder="Pl. 1111 Budapest, Minta utca 12.">
+
+                    </div>
+
+                    <div class="form-group note-form-group">
+
+                        <label for="admin-booking-note">
+                            Megjegyzés
+                        </label>
+
+                        <div class="note-input-wrapper">
+
+                            <span class="note-icon">
+                                📝
+                            </span>
+
+                            <textarea
+                                id="admin-booking-note"
+                                [value]="adminBookingNote()"
+                                (input)="adminBookingNote.set(
+                                    $any($event.target).value
+                                )"
+                                rows="3"
+                                placeholder="Opcionális megjegyzés a foglaláshoz..."
+                            ></textarea>
+
+                        </div>
+
+                        <span class="note-hint">
+                            Belső megjegyzés a foglaláshoz
+                        </span>
 
                     </div>
 

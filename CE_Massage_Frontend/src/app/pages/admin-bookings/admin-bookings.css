@@ -1913,6 +1913,96 @@
 
 }
 
+/* =========================================
+   Megjegyzés mező
+   ========================================= */
+
+.note-form-group {
+    margin-top: 4px;
+}
+
+.note-input-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+
+    padding: 12px 14px;
+
+    background: #faf8f5;
+
+    border: 1px solid #ded7cf;
+    border-radius: 14px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.note-input-wrapper:focus-within {
+    background: #fff;
+
+    border-color: #8a7967;
+
+    box-shadow:
+        0 0 0 3px rgba(138, 121, 103, 0.10);
+}
+
+.note-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 30px;
+    height: 30px;
+
+    flex: 0 0 30px;
+
+    margin-top: 1px;
+
+    background: rgba(138, 121, 103, 0.10);
+
+    border-radius: 9px;
+
+    font-size: 14px;
+}
+
+.note-input-wrapper textarea {
+    width: 100%;
+
+    min-height: 72px;
+
+    padding: 2px 0;
+
+    border: none;
+    outline: none;
+
+    resize: vertical;
+
+    background: transparent;
+
+    color: #3f3832;
+
+    font-family: inherit;
+    font-size: 14px;
+    line-height: 1.55;
+}
+
+.note-input-wrapper textarea::placeholder {
+    color: #aaa19a;
+}
+
+.note-hint {
+    display: block;
+
+    margin-top: 6px;
+    margin-left: 2px;
+
+    color: #a39a92;
+
+    font-size: 11px;
+}
+
 @keyframes notificationIn {
 
     from {

@@ -86,16 +86,44 @@ implements OnInit {
       return;
     }
 
+    this.availableSlots.set([]);
+
+    this.selectedSlot.set('');
+
+    this.errorMessage.set('');
+
     this.bookingService
       .getSlots(
         this.selectedDate(),
-        booking.serviceId
+        booking.serviceOptionId
       )
-      .subscribe(slots => {
+      .subscribe({
 
-        this.availableSlots.set(
-          slots
-        );
+        next: slots => {
+
+          this.availableSlots.set(
+            slots
+          );
+
+        },
+
+        error: error => {
+
+          console.error(
+            'Időpontok lekérése sikertelen:',
+            error
+          );
+
+          this.availableSlots.set([]);
+
+          this.selectedSlot.set('');
+
+          this.errorMessage.set(
+            error?.error?.message ??
+            'Az elérhető időpontok betöltése sikertelen.'
+          );
+
+        }
 
       });
   }
@@ -145,7 +173,22 @@ implements OnInit {
       });
   }
 
-  minDate = new Date()
-    .toISOString()
-    .split('T')[0];
+  minDate = (() => {
+
+    const today = new Date();
+
+    const year =
+      today.getFullYear();
+
+    const month =
+      String(today.getMonth() + 1)
+        .padStart(2, '0');
+
+    const day =
+      String(today.getDate())
+        .padStart(2, '0');
+
+    return `${year}-${month}-${day}`;
+
+  })();
 }

@@ -42,6 +42,8 @@ export interface Booking {
     serviceName: string;
 
     serviceOptionId: string;
+
+    note: string | null;
 }
 
 export interface RescheduleBooking {
@@ -203,14 +205,13 @@ export class BookingService {
             service_option_id: string;
             booking_date: string;
             start_time: string;
+            note?: string;
         }
     ) {
-
         return this.http.put<Booking>(
             `${environment.apiUrl}/admin/bookings/${bookingId}`,
             body
         );
-
     }
 
     rescheduleBooking(
@@ -235,9 +236,19 @@ export class BookingService {
         );
     }
 
-    createAdminBooking(body: any) {
+    createAdminBooking(body: {
+        customer_name: string;
+        customer_email: string;
+        customer_phone?: string;
+        billing_address?: string;
+        service_option_id: string;
+        booking_date: string;
+        start_time: string;
+        note?: string;
+        send_confirmation_email?: boolean;
+    }) {
 
-        return this.http.post(
+        return this.http.post<Booking>(
             `${environment.apiUrl}/admin/bookings`,
             body
         );

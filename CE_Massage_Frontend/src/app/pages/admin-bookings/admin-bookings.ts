@@ -14,6 +14,7 @@ import {
     Service,
     BlockedTime
 } from '../../services/booking.service';
+import { FormsModule } from '@angular/forms';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import huLocale from '@fullcalendar/core/locales/hu';
 import dayGridPlugin from '@fullcalendar/daygrid';
@@ -49,7 +50,7 @@ Chart.register(
 
 @Component({
     selector: 'app-admin-bookings',
-    imports: [CommonModule, FullCalendarModule],
+    imports: [CommonModule, FullCalendarModule, FormsModule],
     templateUrl: './admin-bookings.html',
     styleUrl: './admin-bookings.css',
 })
@@ -96,6 +97,9 @@ export class AdminBookings implements OnInit, OnDestroy {
         signal('');
 
     adminBillingAddress =
+        signal('');
+
+    adminBookingNote =
         signal('');
 
     private bookingService =
@@ -172,6 +176,8 @@ export class AdminBookings implements OnInit, OnDestroy {
     editServiceOptionId = signal('');
     editBookingDate = signal('');
     editStartTime = signal('');
+
+    editBookingNote = signal('');
 
     editBookingLoading = signal(false);
     editBookingError = signal('');
@@ -360,6 +366,8 @@ export class AdminBookings implements OnInit, OnDestroy {
             const type =
                 arg.event.extendedProps['type'];
 
+            const note =
+                arg.event.extendedProps['note'];
 
             if (type === 'blocked') {
 
@@ -398,13 +406,13 @@ export class AdminBookings implements OnInit, OnDestroy {
                     html: `
                         <div class="month-booking">
                             ${arg.event.title}
+                            ${note ? ' 📝' : ''}
                         </div>
                     `
 
                 };
 
             }
-
 
             return {
 
@@ -429,9 +437,18 @@ export class AdminBookings implements OnInit, OnDestroy {
                                 : ''
                         }
 
+                        ${
+                            note
+                                ? `
+                                    <div class="calendar-note">
+                                        📝 ${note}
+                                    </div>
+                                `
+                                : ''
+                        }
+
                     </div>
                 `
-
             };
 
         },
@@ -967,6 +984,7 @@ export class AdminBookings implements OnInit, OnDestroy {
         this.adminBillingAddress.set('');
         this.adminAvailableSlots.set([]);
         this.adminBookingError.set('');
+        this.adminBookingNote.set('');
 
         this.bookingService
             .getServices()
@@ -1310,6 +1328,9 @@ export class AdminBookings implements OnInit, OnDestroy {
             start_time:
                 this.adminSelectedSlot(),
 
+            note:
+                this.adminBookingNote().trim(),
+
             send_confirmation_email:
                 this.adminSendEmail()
 
@@ -1448,9 +1469,10 @@ export class AdminBookings implements OnInit, OnDestroy {
                         booking.serviceName,
 
                     duration:
-                        this.getDuration(
-                            booking
-                        )
+                        this.getDuration(booking),
+
+                    note:
+                        booking.note
 
                 }
 
@@ -1943,15 +1965,20 @@ export class AdminBookings implements OnInit, OnDestroy {
         date: string
     ): string {
 
-        return new Date(date)
-            .toLocaleDateString(
-                'hu-HU',
-                {
-                    weekday: 'short',
-                    day: 'numeric'
-                }
-            );
+        const [year, month, day] =
+            date.split('-').map(Number);
 
+        return new Date(
+            year,
+            month - 1,
+            day
+        ).toLocaleDateString(
+            'hu-HU',
+            {
+                weekday: 'short',
+                day: 'numeric'
+            }
+        );
     }
 
     loadBookings(): void {
@@ -2076,11 +2103,11 @@ export class AdminBookings implements OnInit, OnDestroy {
         }
 
         this.editCustomerName.set(
-            booking.customerName
+            booking.customerName ?? ''
         );
 
         this.editCustomerEmail.set(
-            booking.customerEmail
+            booking.customerEmail ?? ''
         );
 
         this.editCustomerPhone.set(
@@ -2092,15 +2119,21 @@ export class AdminBookings implements OnInit, OnDestroy {
         );
 
         this.editServiceOptionId.set(
-            booking.serviceOptionId
+            booking.serviceOptionId ?? ''
         );
 
         this.editBookingDate.set(
-            booking.date
+            booking.date ?? ''
         );
 
         this.editStartTime.set(
-            booking.startTime.substring(0, 5)
+            booking.startTime
+                ? booking.startTime.substring(0, 5)
+                : ''
+        );
+
+        this.editBookingNote.set(
+            booking.note ?? ''
         );
 
         this.editBookingError.set('');
@@ -2117,6 +2150,13 @@ export class AdminBookings implements OnInit, OnDestroy {
                 next: services =>
                     this.adminServices.set(services)
             });
+    }
+
+    cancelEditingBooking(): void {
+
+        this.editingBooking.set(false);
+
+        this.editBookingError.set('');
 
     }
 
@@ -2171,38 +2211,39 @@ export class AdminBookings implements OnInit, OnDestroy {
                         this.editBookingDate(),
 
                     start_time:
-                        this.editStartTime()
+                        this.editStartTime(),
+
+                    note:
+                        this.editBookingNote().trim()
                 }
             )
             .subscribe({
 
-                next: updated => {
+                next: () => {
 
-                    this.editBookingLoading.set(
-                        false
-                    );
+                    this.editBookingLoading.set(false);
 
-                    this.editingBooking.set(
-                        false
-                    );
+                    // Szerkesztő bezárása
+                    this.editingBooking.set(false);
 
-                    this.showModal.set(
-                        false
-                    );
+                    // Foglalás részleteinek modalja is bezáródik
+                    this.showModal.set(false);
 
-                    this.selectedBooking.set(
-                        null
-                    );
+                    // Régi / inkomplett objektum eltávolítása
+                    this.selectedBooking.set(null);
+
+                    // Hiba törlése
+                    this.editBookingError.set('');
 
                     this.showNotification(
                         'A foglalás sikeresen módosítva.',
                         'success'
                     );
 
+                    // Friss adatok betöltése az adatbázisból
                     this.loadBookings();
 
                     this.loadDashboardStats();
-
                 },
 
                 error: error => {
