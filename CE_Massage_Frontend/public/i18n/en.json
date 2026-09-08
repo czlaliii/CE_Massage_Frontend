@@ -556,41 +556,116 @@
         }
     },
     "LEGAL": {
+        "IMPRINT_LINK": "Imprint",
+        "PRICES_LINK": "Prices",
+        "PRIVACY_LINK": "Privacy Policy",
+
         "TERMS": {
-            "TITLE": "General Terms and Conditions",
-            "LAST_UPDATE": "Effective: August 9, 2026",
 
-            "SECTION_1_TITLE": "1. Service Provider and Scope of the Terms",
-            "SECTION_1_TEXT": "These General Terms and Conditions (hereinafter: the Terms) apply to the online booking and provision of massage services provided by CE Massage. The detailed information about the service provider is available on the <a href=\"/legal/imprint\">Imprint</a> page.",
+            "TITLE": "Terms and Conditions",
 
-            "SECTION_2_TITLE": "2. Services and Prices",
-            "SECTION_2_TEXT": "The available services, their duration and full prices are displayed on the <a href=\"/prices\">Prices</a> page and during the booking process when selecting a service. The service fee is the full price of the selected treatment, which is payable at the location.",
+            "LAST_UPDATE": "Effective: August 31, 2026",
 
-            "SECTION_3_TITLE": "3. Booking and Formation of the Contract",
-            "SECTION_3_TEXT_1": "The guest selects a service and appointment through the booking interface and then provides the requested contact and billing information. The booking becomes final once the selected appointment has been successfully confirmed. The service provider will send a confirmation email containing the details of the booking.",
-            "SECTION_3_TEXT_2": "The guest is responsible for the accuracy of the information provided during the booking process. The service provider may request clarification regarding obviously incorrect or incomplete information.",
 
-            "SECTION_4_TITLE": "4. Payment and Invoicing",
-            "SECTION_4_TEXT_1": "Payment for the selected service is made at the location on the day of the appointment. The accepted payment methods are communicated by the service provider during the booking process or upon request.",
-            "SECTION_4_TEXT_2": "The service provider issues an invoice for the service in accordance with the applicable legal requirements.",
+            "SECTION_1": {
 
-            "SECTION_5_TITLE": "5. Rescheduling, Cancellation and No-Show",
-            "SECTION_5_TEXT_1": "The guest may reschedule the booked appointment to another available time through the link provided in the confirmation email, provided that the request is made at least 24 hours before the scheduled start of the treatment. The change becomes effective once the new appointment has been successfully confirmed.",
-            "SECTION_5_TEXT_2": "If the guest wishes to modify the appointment within 24 hours before the scheduled start, they should contact the massage therapist directly. At present, no additional fee or other consequence applies to modifications made within this 24-hour period.",
-            "SECTION_5_TEXT_3": "The guest is kindly requested to cancel or reschedule an appointment as early as possible so that the time slot may be made available to other guests.",
+                "TITLE": "1. Service Provider and Scope of the Terms",
 
-            "SECTION_6_TITLE": "6. Provision of the Service",
-            "SECTION_6_TEXT": "The service is provided at the location and time specified in the booking. In case of late arrival, the service provider is not obliged to extend the duration of the treatment. The service provider reserves the right to refuse or discontinue the service if providing the treatment could pose a health or safety risk, or if the guest's conduct violates professional standards.",
+                "PARAGRAPH_1_BEFORE_LINK": "These Terms and Conditions (hereinafter: the \"Terms\") apply to the online booking and provision of massage services offered by CE Massage. Detailed information about the service provider is available on the",
 
-            "SECTION_7_TITLE": "7. Complaints and Consumer Disputes",
-            "SECTION_7_TEXT_1": "Guests may submit complaints to the service provider in writing by email at info@cemassage.hu, by post at 1065 Budapest, Hajós utca 13, or by telephone at +36 30 346 2492. Written complaints will be investigated and answered by the service provider in accordance with the applicable legislation.",
-            "SECTION_7_TEXT_2": "In the event of a consumer dispute, the consumer may contact the conciliation board competent according to their place of residence or stay. The conciliation board competent according to the registered office of the service provider is the Budapest Conciliation Board: 1016 Budapest, Krisztina krt. 99. 1st floor, room 111; mailing address: 1253 Budapest, Pf. 10.; telephone: +36 1 488 2131; email: bekelteto.testulet@bkik.hu; website:",
-            "BEKELTETES_LINK": "bekeltetes.hu",
-            "SECTION_7_TEXT_3": "The consumer may also contact the consumer protection authority or enforce their claim through the courts.",
+                "PARAGRAPH_1_AFTER_LINK": "page."
 
-            "SECTION_8_TITLE": "8. Data Processing and Final Provisions",
-            "SECTION_8_TEXT_1": "The processing of personal data collected during the booking process is governed by the <a href=\"/legal/privacy\">Privacy Policy</a>.",
-            "SECTION_8_TEXT_2": "Matters not regulated by these Terms are governed by Hungarian law, in particular the Hungarian Civil Code, consumer protection legislation and the provisions applicable to contracts concluded between parties who are not physically present together."
+            },
+
+
+            "SECTION_2": {
+
+                "TITLE": "2. Services and Prices",
+
+                "PARAGRAPH_1_BEFORE_LINK": "The available services, their duration and full price are displayed on the",
+
+                "PARAGRAPH_1_AFTER_LINK": "page, as well as for the selected service during the booking process. The total price of the service is the price indicated for the selected treatment."
+
+            },
+
+
+            "SECTION_3": {
+
+                "TITLE": "3. Booking and Formation of the Contract",
+
+                "PARAGRAPH_1": "The guest selects the service and appointment through the booking interface and then provides the requested contact and billing information. The booking becomes valid upon completion of the booking process. The service provider will send an email confirmation of the booked appointment.",
+
+                "PARAGRAPH_2": "The guest is responsible for the accuracy of the information provided during the booking process. The service provider may request clarification of any booking containing obviously incorrect or incomplete information."
+
+            },
+
+
+            "SECTION_4": {
+
+                "TITLE": "4. Payment and Invoicing",
+
+                "PARAGRAPH_1": "The price of the service is the amount indicated during the booking process for the selected treatment. The guest shall pay for the service on site at the time of the treatment.",
+
+                "PARAGRAPH_2": "Information regarding the accepted payment methods available on site is provided by the service provider during the booking process or upon request."
+
+            },
+
+
+            "SECTION_5": {
+
+                "TITLE": "5. Rescheduling and Cancellation",
+
+                "PARAGRAPH_1": "The guest may reschedule the booked appointment through the link provided in the confirmation email at least 24 hours before the start of the treatment, provided that a suitable alternative appointment is available.",
+
+                "PARAGRAPH_2": "If the guest wishes to reschedule the appointment within 24 hours before the start of the treatment, they must contact the massage therapist directly to arrange the change.",
+
+                "PARAGRAPH_3": "The guest may cancel the booked appointment before the start of the treatment. Cancellation at least 24 hours before the start of the treatment is free of charge.",
+
+                "PARAGRAPH_4": "In the event of cancellation within 24 hours before the start of the treatment, or if the guest fails to attend the appointment without prior cancellation, the service provider will charge a cancellation fee of HUF 5,000 per hour based on the duration of the booked treatment.",
+
+                "PARAGRAPH_5": "Guests are kindly requested to notify the service provider of any cancellation or rescheduling as early as possible so that the appointment can be made available to another guest."
+
+            },
+
+
+            "SECTION_6": {
+
+                "TITLE": "6. Provision of the Service",
+
+                "PARAGRAPH_1": "The service will be provided at the location and time specified in the booking. In the event of a late arrival, the service provider is not obliged to extend the duration of the treatment. The service provider reserves the right to refuse or discontinue the service if its provision may pose a health or safety risk, or if the guest's conduct violates professional standards."
+
+            },
+
+
+            "SECTION_7": {
+
+                "TITLE": "7. Complaints and Consumer Disputes",
+
+                "PARAGRAPH_1": "Guests may submit complaints to the service provider in writing by email at info@cemassage.hu, by post at 1065 Budapest, Hajós utca 13., or by telephone at +36 30 346 2492. Written complaints will be investigated and answered by the service provider in accordance with applicable laws.",
+
+                "PARAGRAPH_2_BEFORE_LINK": "In the event of a consumer dispute, the consumer may contact the conciliation board competent according to their place of residence or stay. The conciliation board competent according to the registered office of the service provider is the Budapest Conciliation Board (Budapesti Békéltető Testület), 1016 Budapest, Krisztina krt. 99. I. em. 111.; postal address: 1253 Budapest, Pf. 10.; telephone: +36 1 488 2131; email: bekelteto.testulet@bkik.hu; website:",
+
+                "BEKELTETES_LINK": "bekeltetes.hu",
+
+                "PARAGRAPH_2_AFTER_LINK": "",
+
+                "PARAGRAPH_3": "The consumer may also contact the competent consumer protection authority or enforce their claim through the courts."
+
+            },
+
+
+            "SECTION_8": {
+
+                "TITLE": "8. Data Protection and Final Provisions",
+
+                "PARAGRAPH_1_BEFORE_LINK": "The processing of personal data collected during the booking process is governed by the",
+
+                "PARAGRAPH_1_AFTER_LINK": "",
+
+                "PARAGRAPH_2": "Matters not regulated by these Terms shall be governed by Hungarian law, in particular the Hungarian Civil Code, consumer protection legislation and the provisions applicable to contracts concluded between parties who are not physically present."
+
+            }
+
         },
         "IMPRINT": {
             "TITLE": "Imprint",
