@@ -2,13 +2,11 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Socials } from '../../../shared/socials/socials';
 import { AfterViewInit } from '@angular/core';
 import { ScrollAnimateDirective } from '../../../shared/directives/scroll.directive';
-import { Button } from "../../../shared/button/button";
 import { TranslatePipe } from '@ngx-translate/core';
-import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-hero',
-  imports: [RouterLink, ScrollAnimateDirective, Button, TranslatePipe],
+  imports: [ScrollAnimateDirective, TranslatePipe, Socials],
   templateUrl: './hero.html',
   styleUrl: './hero.css',
 })
